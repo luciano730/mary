@@ -266,6 +266,39 @@ main,footer{overflow-x:clip}
 .promo-foot .red{color:var(--crimson)}
 @media (max-width:640px){.promo-foot{grid-template-columns:1fr}}
 
+
+/* ACERVO */
+.acervo{background:var(--paper);overflow:hidden}
+.acervo-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(40px,6vw,90px);align-items:center}
+.set-card{background:#fff;border-radius:28px;padding:clamp(16px,2.5vw,28px);box-shadow:0 40px 70px -45px rgba(75,29,42,.45);border:1px solid rgba(191,147,82,.3)}
+.set-stage{position:relative;aspect-ratio:1/1;overflow:hidden;border-radius:18px}
+.set-stage img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;opacity:0;transform:translateX(40px) scale(.96);transition:opacity .8s var(--ease),transform 1s var(--ease)}
+.set-stage img.on{opacity:1;transform:none}
+.set-stage img.out{opacity:0;transform:translateX(-40px) scale(.96)}
+.swatches{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:18px}
+.swatches button{display:flex;align-items:center;gap:10px;padding:8px 16px 8px 8px;border-radius:999px;border:1px solid var(--line);background:var(--paper);cursor:pointer;font-family:var(--display);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--wine);transition:border-color .3s,box-shadow .3s,transform .3s var(--ease)}
+.swatches button:hover{transform:translateY(-2px)}
+.swatches button.active{border-color:var(--gold);box-shadow:0 0 0 3px rgba(191,147,82,.2)}
+.swatches i{width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,var(--a) 50%,var(--b) 50%);box-shadow:inset 0 0 0 2px #fff,0 0 0 1px var(--line);transition:transform .5s var(--ease)}
+.swatches button.active i{transform:rotate(180deg)}
+.set-caption{text-align:center;margin-top:12px;font-family:var(--serif);font-style:italic;font-size:19px;color:var(--wine-soft)}
+.acervo-text{display:grid;gap:18px}
+.acervo-text h2{font-size:clamp(28px,3.6vw,46px);text-transform:uppercase;letter-spacing:.03em}
+.acervo-text p{color:var(--wine-soft)}
+.panels{position:relative;height:clamp(260px,30vw,380px);margin-top:20px}
+.panel{position:absolute;width:62%;aspect-ratio:1;border:0;padding:0;background:none;cursor:zoom-in;border-radius:50%;box-shadow:0 30px 50px -25px rgba(75,29,42,.5);transition:transform .6s var(--ease),z-index 0s}
+.panel img{width:100%;height:100%;border-radius:50%;object-fit:cover;animation:spin 60s linear infinite;animation-play-state:paused}
+.panel:hover img{animation-play-state:running}
+.panel:hover{z-index:3;transform:scale(1.06)}
+.panel.p1{left:0;top:0;z-index:2}
+.panel.p2{right:0;bottom:0}
+.panel span{position:absolute;left:50%;bottom:-8px;transform:translateX(-50%);background:var(--wine);color:var(--gold-light);font-family:var(--display);font-size:10px;letter-spacing:.2em;text-transform:uppercase;padding:6px 14px;border-radius:999px;white-space:nowrap}
+.anim .panel{opacity:0;transform:rotate(-140deg) scale(.5);transition:opacity .8s var(--ease),transform 1.4s var(--ease)}
+.anim .panel.p2{transform:rotate(140deg) scale(.5);transition-delay:.2s}
+.anim .panels.in .panel{opacity:1;transform:none}
+.anim .panels.in .panel:hover{transform:scale(1.06)}
+@media (max-width:960px){.acervo-grid{grid-template-columns:1fr}.panels{height:min(90vw,420px);max-width:460px;margin-inline:auto;width:100%}}
+
 /* KITS */
 .kits{background:var(--blush)}
 .kits-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(40px,6vw,90px)}
@@ -475,7 +508,7 @@ main,footer{overflow-x:clip}
       <a href="#promocoes">Promoções</a>
       <a href="#kits">Kits</a>
       <a href="#temas">Temas</a>
-      <a href="#sobre">Sobre</a>
+      <a href="#acervo">Acervo</a>
       <a href="#como-funciona">Como funciona</a>
       <a href="#contato" class="btn">Orçamento</a>
     </nav>
@@ -610,6 +643,37 @@ main,footer{overflow-x:clip}
         <!-- cards gerados pelo script a partir da lista KITS -->
       </div>
       <div class="h-bar" aria-hidden="true"><i id="hBar"></i></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ACERVO -->
+<section class="section acervo" id="acervo">
+  <div class="wrap acervo-grid">
+    <div class="set-card" data-reveal="left">
+      <div class="set-stage" id="setStage">
+        <img class="on" src="img/acervo-azul-amarelo.jpg" alt="Conjunto de painéis ripados em arco, painel redondo, mesa com pés ondulados e duas mesinhas em azul e amarelo">
+        <img src="img/acervo-caramelo.jpg" alt="O mesmo conjunto de painéis e mesas em tons de caramelo e bege" loading="lazy">
+        <img src="img/acervo-verde-laranja.jpg" alt="O mesmo conjunto de painéis e mesas em verde e laranja" loading="lazy">
+      </div>
+      <div class="swatches" role="group" aria-label="Escolha a combinação de cores">
+        <button type="button" class="active" style="--a:#A9C4EA;--b:#F3E29A" aria-pressed="true"><i></i>Azul e amarelo</button>
+        <button type="button" style="--a:#C98A57;--b:#F0D6B0" aria-pressed="false"><i></i>Caramelo</button>
+        <button type="button" style="--a:#A8BF94;--b:#E98B4A" aria-pressed="false"><i></i>Verde e laranja</button>
+      </div>
+      <p class="set-caption" id="setCaption">Toque nas cores para ver outras combinações</p>
+    </div>
+    <div class="acervo-text">
+      <p class="eyebrow" data-reveal>Nosso acervo</p>
+      <h2 data-split>Peças que combinam com o <span class="it">seu tema</span></h2>
+      <p data-reveal style="--d:.2s">Painéis ripados, mesas e mesinhas em várias combinações de cores. A gente escolhe junto com você as peças que deixam a festa com a cara do tema.</p>
+      <p class="eyebrow" data-reveal style="--d:.25s;margin-top:10px">Painéis exclusivos</p>
+      <p data-reveal style="--d:.3s">Cada tema ganha uma arte feita pela Deluxxe para o painel redondo. Toque para ver de perto.</p>
+      <div class="panels" id="panels">
+        <button type="button" class="panel p1" data-painel="0"><img src="img/painel-moranguinho.jpg" alt="Painel redondo tema Moranguinho" loading="lazy"><span>Moranguinho</span></button>
+        <button type="button" class="panel p2" data-painel="1"><img src="img/painel-jesusinho.jpg" alt="Painel redondo tema Jesusinho com arco-íris, flores e borboletas" loading="lazy"><span>Jesusinho</span></button>
+      </div>
     </div>
   </div>
 </section>
@@ -1007,7 +1071,7 @@ const PROMOS = [
         io.unobserve(en.target);
       });
     }, { threshold: .15, rootMargin: "0px 0px -8% 0px" });
-    document.querySelectorAll("[data-reveal], [data-split], .mask, .step, .feat, .kit, .ally-title").forEach(el => io.observe(el));
+    document.querySelectorAll("[data-reveal], [data-split], .mask, .step, .feat, .kit, .ally-title, .panels").forEach(el => io.observe(el));
 
     /* kit ativo troca a foto fixa */
     const frameImgs = [...kitFrame.querySelectorAll("img")], dots = [...kitDots.children];
@@ -1033,7 +1097,7 @@ const PROMOS = [
         navLinks.forEach(a => a.classList.toggle("current", a.getAttribute("href") === "#" + en.target.id));
       });
     }, { rootMargin: "-50% 0px -50% 0px" });
-    ["promocoes","kits","temas","sobre","como-funciona"].forEach(id => sio.observe(document.getElementById(id)));
+    ["promocoes","kits","temas","acervo","como-funciona"].forEach(id => sio.observe(document.getElementById(id)));
   }
 
   /* ---------- efeitos ligados à rolagem ---------- */
@@ -1103,6 +1167,21 @@ const PROMOS = [
   window.addEventListener("load", () => { sizeHScroll(); onScroll(); });
   sizeHScroll(); onScroll();
 
+
+  /* ---------- acervo: troca de cores ---------- */
+  const setImgs = [...document.querySelectorAll("#setStage img")], swBtns = [...document.querySelectorAll(".swatches button")];
+  let setCur = 0, setTimer;
+  function setColor(i){
+    if (i === setCur) return;
+    setImgs[setCur].classList.remove("on"); setImgs[setCur].classList.add("out");
+    const old = setImgs[setCur]; setTimeout(() => old.classList.remove("out"), 900);
+    setImgs[i].classList.add("on");
+    swBtns.forEach((b, k) => { b.classList.toggle("active", k === i); b.setAttribute("aria-pressed", k === i); });
+    setCur = i;
+  }
+  swBtns.forEach((b, i) => b.addEventListener("click", () => { clearInterval(setTimer); setColor(i); }));
+  if (!reduce) setTimer = setInterval(() => setColor((setCur + 1) % setImgs.length), 3500);
+
   /* ---------- lightbox ---------- */
   const lb = document.getElementById("lightbox"), lbImg = document.getElementById("lbImg"), lbCap = document.getElementById("lbCaption");
   let lbList = [], cur = 0;
@@ -1117,6 +1196,7 @@ const PROMOS = [
   document.addEventListener("click", e => {
     const a = e.target.closest("[data-arte]"); if (a) openLb(artes, +a.dataset.arte);
     const t = e.target.closest("[data-tema]"); if (t) openLb(cenas, +t.dataset.tema);
+    const pn = e.target.closest("[data-painel]"); if (pn) openLb([{ src: "img/painel-moranguinho.jpg", cap: "Painel Moranguinho" }, { src: "img/painel-jesusinho.jpg", cap: "Painel Jesusinho" }], +pn.dataset.painel);
     const pr = e.target.closest("[data-promo]"); if (pr && !moved) openLb(promoArtes, +pr.dataset.promo);
   });
   const close = () => lb.classList.remove("open");

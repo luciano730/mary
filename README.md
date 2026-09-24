@@ -9,6 +9,7 @@ Site de uma página com animações ao rolar a tela. Tudo está em `index.html` 
    - `logo.jpg` e `hero.jpg` (recortados dos prints do Canva)
    - `kit-<nome>.jpg` (foto da decoração) e `kit-<nome>-arte.jpg` (arte completa do kit)
    - `promo-<nome>.jpg` e `promo-<nome>-arte.jpg` (kits da promoção)
+   - `acervo-*.jpg` (mesas nas combinações de cor) e `painel-*.jpg` (painéis redondos)
    - `mascote.jpg` (a personagem na seção Vamos conversar, ainda falta)
 3. **Kits e promoções**: no fim do `index.html`, a lista `PROMOS` tem preços e itens dos kits em promoção, e a lista `KITS` tem nome, descrição e itens de cada kit. Para um kit novo, copie um bloco e coloque as duas imagens com o mesmo `id`.
 4. **Textos**: edite direto no `index.html`.
