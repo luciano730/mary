@@ -174,8 +174,9 @@ main,footer{overflow-x:clip}
 .anim [data-reveal="right"]{transform:translateX(50px)}
 .anim [data-reveal="zoom"]{transform:scale(.92)}
 .anim [data-reveal].in{opacity:1;transform:none}
-.anim .mask{clip-path:inset(100% 0 0 0);transition:clip-path 1.4s var(--ease)}
-.anim .mask.in{clip-path:inset(0 0 0 0)}
+.anim .mask > img{clip-path:inset(100% 0 0 0);transition:clip-path 1.4s var(--ease),transform 1.2s var(--ease)}
+.anim .mask.in > img{clip-path:inset(0 0 0 0)}
+.anim .mask:not(.in){background:transparent}
 /* títulos que sobem palavra por palavra */
 .anim [data-split] .sw{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.08em;margin-bottom:-.08em}
 .anim [data-split] .sw > span{display:inline-block;transform:translateY(110%) rotate(4deg);transform-origin:left bottom;transition:transform 1s var(--ease);transition-delay:calc(var(--i) * 70ms)}
@@ -299,6 +300,20 @@ main,footer{overflow-x:clip}
 .anim .panels.in .panel:hover{transform:scale(1.06)}
 @media (max-width:960px){.acervo-grid{grid-template-columns:1fr}.panels{height:min(90vw,420px);max-width:460px;margin-inline:auto;width:100%}}
 
+
+.about-media .photo.owner{background:#fff}
+.about-media .photo.owner img{object-position:50% 12%}
+.about-media .photo.small.store{width:40%;aspect-ratio:3/5;border-radius:16px;border:8px solid var(--blush);padding:0;cursor:zoom-in;rotate:4deg;box-shadow:0 30px 40px -24px rgba(75,29,42,.55);transition:rotate .6s var(--ease)}
+.about-media .photo.small.store:hover{rotate:0deg}
+.about-media .photo.store img{object-position:30% 50%}
+.signature{font-family:var(--script);font-size:52px;color:var(--rose);margin-top:18px;line-height:1}
+.offer{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:30px;padding-top:26px;border-top:1px solid var(--line)}
+.offer div{display:grid;justify-items:center;text-align:center;gap:10px}
+.offer svg{width:52px;height:52px;padding:11px;border:1px solid var(--gold);border-radius:50%;color:var(--gold);transition:transform .6s var(--ease),background .4s,color .4s}
+.offer div:hover svg{transform:rotate(-12deg) scale(1.1);background:var(--wine);color:var(--gold-light)}
+.offer span{font-family:var(--display);font-size:11px;letter-spacing:.12em;text-transform:uppercase;line-height:1.5}
+@media (max-width:560px){.offer{grid-template-columns:repeat(2,1fr);row-gap:22px}}
+
 /* KITS */
 .kits{background:var(--blush)}
 .kits-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(40px,6vw,90px)}
@@ -408,7 +423,7 @@ main,footer{overflow-x:clip}
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,90px);align-items:start}
 .contact h2{font-size:clamp(34px,4.6vw,60px);text-transform:uppercase;letter-spacing:.03em;margin-block:18px 20px}
 .mascot{display:block;margin-top:34px;text-decoration:none;position:relative}
-.mascot .photo{aspect-ratio:16/10;border-radius:6px;box-shadow:0 30px 50px -30px rgba(75,29,42,.45)}
+.mascot .photo{aspect-ratio:4/3;border-radius:6px;box-shadow:0 30px 50px -30px rgba(75,29,42,.45)}
 .mascot:hover img{transform:scale(1.04)}
 .mascot span{position:absolute;z-index:2;left:16px;bottom:16px;background:var(--paper);padding:8px 16px;border-radius:999px;font-family:var(--display);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--rose)}
 .contact-info{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:30px}
@@ -509,8 +524,8 @@ main,footer{overflow-x:clip}
       <a href="#kits">Kits</a>
       <a href="#temas">Temas</a>
       <a href="#acervo">Acervo</a>
-      <a href="#como-funciona">Como funciona</a>
-      <a href="#contato" class="btn">Orçamento</a>
+      <a href="#sobre">Viviane</a>
+            <a href="#contato" class="btn">Orçamento</a>
     </nav>
     <button class="menu-btn" id="menuBtn" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
@@ -678,30 +693,37 @@ main,footer{overflow-x:clip}
   </div>
 </section>
 
-<!-- SOBRE -->
+<!-- SOBRE / VIVIANE -->
 <section class="section" id="sobre">
   <div class="wrap about-grid">
     <div class="about-media">
-      <div class="photo main mask" data-parallax="-0.05">
-        <img src="img/kit-essencial.jpg" alt="Decoração floral rosa e dourada do Kit Deluxxe Essencial">
+      <div class="photo main owner mask" data-parallax="-0.05">
+        <img src="img/viviane.jpg" alt="Viviane, dona da Deluxxe Boutique de Festa, de blazer rosa com o brasão da marca">
       </div>
-      <div class="photo small" data-reveal="zoom" style="--d:.3s" data-parallax="0.07">
-        <img src="img/kit-mini-luxxo.jpg" alt="Decoração tema moranguinho do Kit Mini Luxxo">
-      </div>
+      <button type="button" class="photo small store" data-reveal="zoom" style="--d:.3s" data-parallax="0.07" data-fachada>
+        <img src="img/fachada.jpg" alt="Personagem da Viviane na frente da fachada da Deluxxe">
+      </button>
       <div class="badge" aria-hidden="true">
         <svg viewBox="0 0 120 120">
           <defs><path id="circ" d="M60,60 m-44,0 a44,44 0 1,1 88,0 a44,44 0 1,1 -88,0"/></defs>
           <circle cx="60" cy="60" r="58" fill="#FFF8F5" stroke="#BF9352" stroke-width=".8"/>
-          <text font-family="Cinzel, serif" font-size="9.6" letter-spacing="3" fill="#933A51"><textPath href="#circ">MEMÓRIAS PARA SEMPRE ♛ DELUXXE ♛</textPath></text>
+          <text font-family="Cinzel, serif" font-size="9.6" letter-spacing="3" fill="#933A51"><textPath href="#circ">DECORAÇÃO ♛ ENCANTO ♛ MEMÓRIAS ♛</textPath></text>
           <text x="60" y="72" text-anchor="middle" font-family="Pinyon Script, cursive" font-size="36" fill="#BF9352">D</text>
         </svg>
       </div>
     </div>
     <div class="about-text">
-      <p class="eyebrow" data-reveal>Sobre a Deluxxe</p>
-      <h2 data-split>Cada evento é uma <span class="it">experiência</span> única</h2>
-      <p data-reveal style="--d:.2s">Na Deluxxe, cada evento é uma experiência cuidadosamente planejada, refletindo a personalidade e os sonhos dos clientes. Combinamos criatividade, sofisticação e personalização para criar decorações únicas e significativas.</p>
-      <p data-reveal style="--d:.3s;margin-top:16px">Desde o conceito até os detalhes finais, buscamos proporcionar uma identidade própria ao evento, criando memórias inesquecíveis com uma decoração exclusiva.</p>
+      <p class="eyebrow" data-reveal>Quem faz a Deluxxe</p>
+      <h2 data-split>Prazer, eu sou a <span class="it">Viviane</span></h2>
+      <p data-reveal style="--d:.2s">Sou a dona da Deluxxe Boutique de Festa. Aqui, cada evento é uma experiência cuidadosamente planejada, refletindo a personalidade e os sonhos de cada cliente. Combino criatividade, sofisticação e personalização para criar decorações únicas e significativas.</p>
+      <p data-reveal style="--d:.3s;margin-top:16px">Desde o conceito até os detalhes finais, busco dar uma identidade própria ao seu evento, criando memórias inesquecíveis com uma decoração exclusiva.</p>
+      <p class="signature" data-reveal style="--d:.35s">Viviane</p>
+      <div class="offer">
+        <div data-reveal style="--d:.1s"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><rect x="6" y="15" width="28" height="7"/><rect x="8" y="22" width="24" height="13"/><path d="M20 15v20M20 15c-3-7-10-7-9-2s9 2 9 2c3-7 10-7 9-2s-9 2-9 2"/></svg><span>Kits digitais<br>pega e monta</span></div>
+        <div data-reveal style="--d:.18s"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="M8 16l12-7 12 7v16l-12 7-12-7z"/><path d="M8 16l12 7 12-7M20 23v16"/></svg><span>Kits montados<br>e prontos</span></div>
+        <div data-reveal style="--d:.26s"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="M6 30h28l3-18-9 7-8-12-8 12-9-7z"/><path d="M7 34h26"/></svg><span>Locações<br>exclusivas</span></div>
+        <div data-reveal style="--d:.34s"><svg viewBox="0 0 40 40" fill="currentColor"><path d="M20 35S5 26 5 15a7.5 7.5 0 0 1 15-3 7.5 7.5 0 0 1 15 3c0 11-15 20-15 20z"/></svg><span>Feito<br>com amor</span></div>
+      </div>
     </div>
   </div>
 </section>
@@ -746,12 +768,12 @@ main,footer{overflow-x:clip}
       <h2 data-split>Vamos criar o seu <span class="it">evento</span>?</h2>
       <p data-reveal style="--d:.2s;color:var(--wine-soft)">Preencha o formulário e ele abre direto no nosso WhatsApp com todas as informações.</p>
       <a class="mascot" id="mascot" href="#" target="_blank" rel="noopener" data-reveal style="--d:.25s">
-        <div class="photo"><img src="img/mascote.jpg" alt="Personagem da Deluxxe chamando para conversar"><div class="ph"><div><small>Imagem da personagem</small></div></div></div>
+        <div class="photo"><img src="img/mascote.jpg" alt="Personagem da Viviane no estúdio da Deluxxe mostrando uma sacola da marca"></div>
         <span>Toque para falar com a gente</span>
       </a>
       <div class="contact-info">
-        <div data-reveal style="--d:.3s"><span>WhatsApp</span><a id="waText" href="#" target="_blank" rel="noopener">(00) 00000-0000</a></div>
-        <div data-reveal style="--d:.35s"><span>Instagram</span><a id="igText" href="#" target="_blank" rel="noopener">@deluxxe</a></div>
+        <div data-reveal style="--d:.3s"><span>WhatsApp</span><a id="waText" href="#" target="_blank" rel="noopener">(65) 9 9305-3223</a></div>
+        <div data-reveal style="--d:.35s"><span>Instagram</span><a id="igText" href="#" target="_blank" rel="noopener">@deluxxeboutiquedefesta</a></div>
       </div>
     </div>
     <form class="form" id="form" data-reveal="left" style="--d:.2s">
@@ -801,9 +823,9 @@ main,footer{overflow-x:clip}
    CONFIGURAÇÃO: troque aqui pelos dados reais da Deluxxe
    ========================================================= */
 const CONFIG = {
-  whatsapp: "5500000000000",           // só números: 55 + DDD + número
-  whatsappTexto: "(00) 00000-0000",    // como aparece no site
-  instagram: "deluxxe"                 // sem o @
+  whatsapp: "5565993053223",           // só números: 55 + DDD + número
+  whatsappTexto: "(65) 9 9305-3223",   // como aparece no site
+  instagram: "deluxxeboutiquedefesta"   // sem o @
 };
 
 /* =========================================================
@@ -1097,7 +1119,7 @@ const PROMOS = [
         navLinks.forEach(a => a.classList.toggle("current", a.getAttribute("href") === "#" + en.target.id));
       });
     }, { rootMargin: "-50% 0px -50% 0px" });
-    ["promocoes","kits","temas","acervo","como-funciona"].forEach(id => sio.observe(document.getElementById(id)));
+    ["promocoes","kits","temas","acervo","sobre"].forEach(id => sio.observe(document.getElementById(id)));
   }
 
   /* ---------- efeitos ligados à rolagem ---------- */
@@ -1196,6 +1218,7 @@ const PROMOS = [
   document.addEventListener("click", e => {
     const a = e.target.closest("[data-arte]"); if (a) openLb(artes, +a.dataset.arte);
     const t = e.target.closest("[data-tema]"); if (t) openLb(cenas, +t.dataset.tema);
+    if (e.target.closest("[data-fachada]")) openLb([{ src: "img/fachada.jpg", cap: "Aqui é Deluxxe!" }], 0);
     const pn = e.target.closest("[data-painel]"); if (pn) openLb([{ src: "img/painel-moranguinho.jpg", cap: "Painel Moranguinho" }, { src: "img/painel-jesusinho.jpg", cap: "Painel Jesusinho" }], +pn.dataset.painel);
     const pr = e.target.closest("[data-promo]"); if (pr && !moved) openLb(promoArtes, +pr.dataset.promo);
   });
@@ -1275,13 +1298,91 @@ const PROMOS = [
     }
   } else trail.remove();
 
-  /* ---------- hero: arco de balões em volta da foto + brilhos ---------- */
+  /* ---------- hero: arco de balões realistas em volta da foto + brilhos ---------- */
   const hero = document.getElementById("inicio");
   const archWrap = document.getElementById("archWrap");
   const cv = document.getElementById("fx"), ctx = cv.getContext("2d");
-  const palette = [["#F9D3DA","#E394A8"],["#FFFFFF","#F0D9DC"],["#EAA7B7","#B5536A"],["#F4E0B8","#BF9352"],["#FBE7C6","#C99A4E"]];
-  let W, H, garland = [], sparks = [], mx = 0, my = 0;
 
+  /* cada tipo de balão é desenhado uma vez numa imagem (sprite), com sombra e brilho */
+  const TYPES = [
+    { kind: "latex",  light: "#FFE4EA", base: "#F4B8C6", dark: "#C9788E" },   // rosa claro
+    { kind: "latex",  light: "#F7A9BD", base: "#D9667F", dark: "#8E2E48" },   // rosa escuro
+    { kind: "latex",  light: "#FFFFFF", base: "#F6ECEA", dark: "#CDB8B5" },   // branco pérola
+    { kind: "chrome", stops: ["#9A6F2C","#EACB88","#FFF8E4","#DDB464","#B7873A","#F5DDA6"] }, // dourado metalizado
+    { kind: "chrome", stops: ["#A45A66","#EDB3B8","#FFF0EF","#E7A9AE","#B86A76","#F7CFCF"] }, // rosé metalizado
+    { kind: "latex",  light: "#FFF4DE", base: "#EBD3AE", dark: "#B99466" },   // champanhe
+    { kind: "clear" }                                                        // transparente com confete
+  ];
+  const WEIGHTS = [5, 3, 3, 4, 2, 2, 1];
+  const SPR = 220, SR = 80; // tamanho do sprite e raio base
+  function eggPath(c, r){
+    const rx = r * .97, ry = r * 1.0;
+    c.beginPath();
+    c.moveTo(0, -ry);
+    c.bezierCurveTo(rx * 1.1, -ry, rx * 1.12, ry * .78, 0, ry);
+    c.bezierCurveTo(-rx * 1.12, ry * .78, -rx * 1.1, -ry, 0, -ry);
+    c.closePath();
+  }
+  function makeSprite(t, seed){
+    const cnv = document.createElement("canvas"); cnv.width = cnv.height = SPR;
+    const c = cnv.getContext("2d"); c.translate(SPR / 2, SPR / 2 - 8);
+    const r = SR;
+    // sombra projetada (faz os balões de trás ficarem na sombra dos da frente)
+    c.save();
+    c.shadowColor = "rgba(75,29,42,.28)"; c.shadowBlur = r * .35; c.shadowOffsetX = r * .08; c.shadowOffsetY = r * .22;
+    eggPath(c, r); c.fillStyle = t.kind === "clear" ? "rgba(255,255,255,.18)" : (t.base || t.stops[2]); c.fill();
+    c.restore();
+    eggPath(c, r); c.save(); c.clip();
+    if (t.kind === "latex") {
+      const g = c.createRadialGradient(-r * .35, -r * .45, r * .05, -r * .05, 0, r * 1.25);
+      g.addColorStop(0, t.light); g.addColorStop(.42, t.base); g.addColorStop(.86, t.dark); g.addColorStop(1, t.dark);
+      c.fillStyle = g; c.fillRect(-r * 1.3, -r * 1.3, r * 2.6, r * 2.6);
+      // textura acetinada do látex
+      const sat = c.createLinearGradient(-r, -r, r, r);
+      sat.addColorStop(0, "rgba(255,255,255,.10)"); sat.addColorStop(.5, "rgba(255,255,255,0)"); sat.addColorStop(1, "rgba(0,0,0,.08)");
+      c.fillStyle = sat; c.fillRect(-r * 1.3, -r * 1.3, r * 2.6, r * 2.6);
+    } else if (t.kind === "chrome") {
+      const st = t.stops;
+      const g = c.createRadialGradient(-r * .3, -r * .38, r * .02, 0, 0, r * 1.12);
+      g.addColorStop(0, st[2]); g.addColorStop(.22, st[1]); g.addColorStop(.48, st[3]); g.addColorStop(.72, st[4]); g.addColorStop(.9, st[5]); g.addColorStop(1, st[0]);
+      c.fillStyle = g; c.fillRect(-r * 1.3, -r * 1.3, r * 2.6, r * 2.6);
+      const v = c.createRadialGradient(0, 0, r * .4, 0, 0, r * 1.15);
+      v.addColorStop(0, "rgba(0,0,0,0)"); v.addColorStop(1, "rgba(90,50,10,.22)");
+      c.fillStyle = v; c.fillRect(-r * 1.3, -r * 1.3, r * 2.6, r * 2.6);
+    } else {
+      // transparente: leve reflexo rosado e confete dourado dentro
+      const g = c.createRadialGradient(-r * .3, -r * .4, r * .1, 0, 0, r * 1.15);
+      g.addColorStop(0, "rgba(255,255,255,.35)"); g.addColorStop(.7, "rgba(255,230,236,.12)"); g.addColorStop(1, "rgba(201,120,142,.35)");
+      c.fillStyle = g; c.fillRect(-r * 1.3, -r * 1.3, r * 2.6, r * 2.6);
+      let sd = seed * 7 + 3; const rn = () => (sd = (sd * 9301 + 49297) % 233280) / 233280;
+      for (let i = 0; i < 26; i++) {
+        const a = rn() * 6.28, d = Math.sqrt(rn()) * r * .8;
+        c.save(); c.translate(Math.cos(a) * d, Math.sin(a) * d * 1.05 + r * .15); c.rotate(rn() * 3);
+        c.fillStyle = rn() > .5 ? "#D9B26A" : "#F3D9A0"; c.globalAlpha = .9;
+        rn() > .5 ? c.fillRect(-3, -1.5, 6, 3) : (c.beginPath(), c.arc(0, 0, 2.6, 0, 6.28), c.fill());
+        c.restore();
+      }
+    }
+    // luz refletida embaixo
+    const bounce = c.createRadialGradient(r * .35, r * .6, 0, r * .35, r * .6, r * .6);
+    bounce.addColorStop(0, "rgba(255,255,255,.22)"); bounce.addColorStop(1, "rgba(255,255,255,0)");
+    c.fillStyle = bounce; c.fillRect(-r * 1.3, -r * 1.3, r * 2.6, r * 2.6);
+    c.restore();
+    // brilho principal suave + ponto de luz forte
+    c.save(); c.translate(-r * .36, -r * .44); c.rotate(-.65);
+    const hl = c.createRadialGradient(0, 0, 0, 0, 0, r * .34);
+    hl.addColorStop(0, t.kind === "chrome" ? "rgba(255,255,255,.95)" : "rgba(255,255,255,.75)"); hl.addColorStop(1, "rgba(255,255,255,0)");
+    c.scale(1, .55); c.fillStyle = hl; c.beginPath(); c.arc(0, 0, r * .34, 0, 6.28); c.fill();
+    c.restore();
+    c.fillStyle = "rgba(255,255,255,.95)";
+    c.beginPath(); c.ellipse(-r * .44, -r * .52, r * .07, r * .045, -.7, 0, 6.28); c.fill();
+    c.beginPath(); c.ellipse(r * .42, r * .38, r * .05, r * .1, -.5, 0, 6.28); c.fillStyle = "rgba(255,255,255,.25)"; c.fill();
+    return cnv;
+  }
+  const sprites = TYPES.map((t, i) => makeSprite(t, i));
+  const pickType = rnd => { let x = rnd() * WEIGHTS.reduce((a, b) => a + b, 0); for (let i = 0; i < WEIGHTS.length; i++) { if ((x -= WEIGHTS[i]) < 0) return i; } return 0; };
+
+  let W, H, garland = [], sparks = [], mx = 0, my = 0;
   function build(){
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
     W = hero.clientWidth; H = hero.clientHeight;
@@ -1289,31 +1390,33 @@ const PROMOS = [
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     const hr = hero.getBoundingClientRect(), ar = archWrap.getBoundingClientRect();
     const ax = ar.left - hr.left, ay = ar.top - hr.top, aw = ar.width;
-    const cx = ax + aw / 2, cy = ay + aw / 2, R = aw / 2 + 10;
+    const cx = ax + aw / 2, cy = ay + aw / 2, R = aw / 2 + 8;
     garland = [];
     let seed = 11; const rnd = () => (seed = (seed * 9301 + 49297) % 233280) / 233280;
-    const n = Math.round(aw / 8);
+    const n = Math.round(aw / 9);
     for (let i = 0; i < n; i++) {
       const t = i / (n - 1);
-      const ang = Math.PI * (.92 + t * .78);
-      const off = (rnd() - .35) * aw * .12;
-      const r = aw * (.035 + rnd() * .06) * (1 - Math.abs(t - .45) * .6);
-      garland.push({ x: cx + Math.cos(ang) * (R + off), y: cy + Math.sin(ang) * (R + off), r,
-        c: palette[Math.floor(rnd() * palette.length)], ph: rnd() * 6.28, sp: .6 + rnd() * .8, z: r / 40 });
+      const ang = Math.PI * (.9 + t * .82);                 // do lado esquerdo até o topo direito
+      const taper = 1 - Math.abs(t - .42) * .75;              // mais cheio no meio, afinando nas pontas
+      const main = { t, ang, off: (rnd() - .45) * aw * .06, r: aw * (.058 + rnd() * .05) * (.45 + taper * .55), layer: 1 };
+      garland.push(main);
+      // balões menores preenchendo, um pouco atrás
+      const fillers = rnd() > .35 ? 1 : 0;
+      for (let k = 0; k < fillers; k++) {
+        garland.push({ t, ang: ang + (rnd() - .5) * .1, off: (rnd() - .5) * aw * .15, r: aw * (.028 + rnd() * .022) * (.6 + taper * .4), layer: rnd() > .25 ? 0 : 2 });
+      }
     }
-    garland.sort((a, b) => a.r - b.r);
+    garland.forEach((b, i) => {
+      b.x = cx + Math.cos(b.ang) * (R + b.off); b.y = cy + Math.sin(b.ang) * (R + b.off);
+      b.type = pickType(rnd); b.ph = rnd() * 6.28; b.sp = .5 + rnd() * .7; b.z = b.r / 40;
+      b.rot = (rnd() - .5) * .35;                           // leve inclinação, luz sempre do mesmo lado
+      b.order = b.layer * 1000 + b.r;
+    });
+    garland.sort((a, b) => a.order - b.order);
+    garland.forEach((b, i) => b.delay = b.t);                 // aparecem da esquerda para a direita
     sparks = [];
     const sn = W < 760 ? 22 : 40;
     for (let i = 0; i < sn; i++) sparks.push({ x: Math.random() * W, y: Math.random() * H, s: 1.5 + Math.random() * 3.5, ph: Math.random() * 6.28, sp: .5 + Math.random() * 1.2, vy: .1 + Math.random() * .25 });
-  }
-  function balloon(x, y, r, c, rot){
-    ctx.save(); ctx.translate(x, y); ctx.rotate(rot);
-    const g = ctx.createRadialGradient(-r * .35, -r * .4, r * .1, 0, 0, r * 1.2);
-    g.addColorStop(0, c[0]); g.addColorStop(1, c[1]);
-    ctx.fillStyle = g;
-    ctx.beginPath(); ctx.ellipse(0, 0, r * .95, r * 1.05, 0, 0, Math.PI * 2); ctx.fill();
-    ctx.beginPath(); ctx.ellipse(-r * .34, -r * .4, r * .14, r * .24, -.5, 0, Math.PI * 2); ctx.fillStyle = "rgba(255,255,255,.6)"; ctx.fill();
-    ctx.restore();
   }
   function spark(x, y, s, a){
     ctx.save(); ctx.translate(x, y); ctx.globalAlpha = a;
@@ -1326,21 +1429,26 @@ const PROMOS = [
   function frame(t){
     if (!root.classList.contains("loaded") && !reduce) { requestAnimationFrame(frame); return; }
     if (start === null) start = t;
-    const s = t / 1000, grow = Math.min((t - start) / 1600, 1);
+    const s = t / 1000, el = (t - start) / 1000;
     ctx.clearRect(0, 0, W, H);
     sparks.forEach(p => {
       if (!reduce) { p.y -= p.vy; if (p.y < -10) { p.y = H + 10; p.x = Math.random() * W; } }
-      const a = reduce ? .5 : (Math.sin(s * p.sp * 2 + p.ph) + 1) / 2 * .8;
-      spark(p.x, p.y, p.s, a);
-    });
-    garland.forEach((b, i) => {
-      const k = reduce ? 1 : Math.min(Math.max(grow * garland.length * 1.4 - i * .6, 0) / 4, 1);
-      if (k <= 0) return;
-      const e = 1 - Math.pow(1 - k, 3);
-      const bob = reduce ? 0 : Math.sin(s * b.sp + b.ph) * 3;
-      balloon(b.x + mx * b.z * 10, b.y + bob + my * b.z * 8, b.r * e, b.c, reduce ? 0 : Math.sin(s * .7 + b.ph) * .05);
+      spark(p.x, p.y, p.s, reduce ? .5 : (Math.sin(s * p.sp * 2 + p.ph) + 1) / 2 * .8);
     });
     ctx.globalAlpha = 1;
+    garland.forEach(b => {
+      let k = reduce ? 1 : Math.min(Math.max((el - b.delay * 1.3) / .7, 0), 1);
+      if (k <= 0) return;
+      const e = k < 1 ? 1 + 2.4 * Math.pow(k - 1, 3) + 1.4 * Math.pow(k - 1, 2) : 1; // cresce com um leve "pulo"
+      const bob = reduce ? 0 : Math.sin(s * b.sp + b.ph) * 2.5;
+      const sway = reduce ? 0 : Math.sin(s * .6 + b.ph) * .04;
+      const size = (b.r * 2 / (SR * 2)) * SPR * e;
+      ctx.save();
+      ctx.translate(b.x + mx * b.z * 10, b.y + bob + my * b.z * 8);
+      ctx.rotate(b.rot + sway);
+      ctx.drawImage(sprites[b.type], -size / 2, -size / 2 + size * .036, size, size);
+      ctx.restore();
+    });
     if (!reduce) {
       window.scrollY < H ? requestAnimationFrame(frame) : setTimeout(() => requestAnimationFrame(frame), 300);
     }
