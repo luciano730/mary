@@ -221,6 +221,51 @@ main,footer{overflow-x:clip}
 .feat:hover .feat-ico svg.ico{transform:scale(1.18) rotate(-8deg)}
 .feat strong{font-family:var(--display);font-weight:500;font-size:14px;letter-spacing:.16em;text-transform:uppercase;line-height:1.5}
 
+
+/* PROMOÇÕES */
+.promo{background:linear-gradient(180deg,var(--paper) 0%,var(--blush) 100%);overflow:hidden}
+.promo-ribbon{display:inline-flex;align-items:center;gap:10px;background:var(--wine);color:var(--gold-light);padding:10px 20px;border-radius:999px;font-family:var(--display);font-size:12px;letter-spacing:.18em;text-transform:uppercase}
+.promo-ribbon svg{width:18px;height:18px;animation:tick 2s steps(8) infinite}
+@keyframes tick{to{transform:rotate(360deg)}}
+.promo-rail{display:flex;gap:26px;overflow-x:auto;scroll-snap-type:x mandatory;padding:20px var(--gutter) 40px;margin-inline:calc(var(--gutter) * -1);scrollbar-width:none;cursor:grab}
+.promo-rail::-webkit-scrollbar{display:none}
+.promo-rail.drag{cursor:grabbing;scroll-snap-type:none}
+.pcard{flex:0 0 min(340px,84vw);scroll-snap-align:center;background:var(--paper);border:1px solid rgba(191,147,82,.45);border-radius:22px;padding:14px 14px 24px;display:flex;flex-direction:column;position:relative;box-shadow:0 30px 50px -36px rgba(75,29,42,.5);transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
+.pcard:hover{transform:translateY(-8px);box-shadow:0 40px 60px -30px rgba(191,147,82,.6)}
+.pcard .photo{aspect-ratio:1/1;border-radius:999px 999px 12px 12px}
+.pcard:hover .photo img{transform:scale(1.06)}
+.p-off{position:absolute;top:26px;right:26px;z-index:3;width:78px;height:78px;border-radius:50%;background:var(--gold-grad);background-size:200% 100%;animation:shine 5s linear infinite,bob 3s ease-in-out infinite;color:var(--wine);display:grid;place-items:center;text-align:center;font-family:var(--display);font-weight:600;font-size:11px;line-height:1.15;letter-spacing:.06em;box-shadow:0 10px 20px -8px rgba(75,29,42,.5)}
+.p-off b{display:block;font-size:17px}
+@keyframes bob{50%{transform:translateY(-5px) rotate(-6deg)}}
+.p-body{padding:20px 10px 0;display:grid;gap:10px;text-align:center;flex:1;align-content:start}
+.p-body h3{font-size:22px;letter-spacing:.08em;text-transform:uppercase;color:var(--rose-deep)}
+.p-hint{font-family:var(--serif);font-style:italic;font-size:17px;color:var(--gold);margin-top:-6px}
+.p-price{display:grid;justify-items:center;gap:2px;padding-block:6px 10px;border-block:1px dashed rgba(191,147,82,.5)}
+.p-old{position:relative;font-size:15px;color:var(--wine-soft)}
+.p-old::after{content:"";position:absolute;left:-4px;right:-4px;top:52%;height:1.5px;background:var(--crimson);transform-origin:left;transform:scaleX(1)}
+.anim .pcard .p-old::after{transform:scaleX(0);transition:transform .7s var(--ease) .3s}
+.anim .pcard.in .p-old::after{transform:scaleX(1)}
+.p-now{font-family:var(--display);color:var(--crimson);line-height:1;display:flex;align-items:flex-start;gap:4px}
+.p-now small{font-size:18px;margin-top:10px}
+.p-now strong{font-weight:600;font-size:54px;font-variant-numeric:tabular-nums}
+.p-now span{font-size:20px;margin-top:8px}
+.p-list{list-style:none;margin:0;padding:0;display:grid;gap:7px;text-align:left}
+.p-list li{position:relative;padding-left:26px;font-size:14.5px;line-height:1.4}
+.p-list li::before{content:"";position:absolute;left:0;top:1px;width:17px;height:17px;border-radius:50%;background:var(--rose) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 8.5l2.5 2.5L12 5.5' fill='none' stroke='white' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E") center/13px no-repeat}
+.p-list li.opt{color:var(--rose);font-size:13px;font-style:italic;padding-left:0}
+.p-list li.opt::before{display:none}
+.p-actions{display:grid;gap:8px;margin-top:16px;padding-inline:6px}
+.p-actions .btn{justify-content:center;padding:13px 18px;font-size:12px}
+.promo-nav{display:flex;justify-content:center;gap:12px}
+.promo-nav button{width:50px;height:50px;border-radius:50%;border:1px solid var(--gold);background:transparent;color:var(--wine);font-size:18px;cursor:pointer;transition:background .3s,color .3s,transform .3s var(--ease)}
+.promo-nav button:hover{background:var(--wine);color:var(--gold-light);transform:scale(1.08)}
+.promo-foot{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:880px;margin:40px auto 0;background:var(--paper);border:1px solid rgba(191,147,82,.45);border-radius:18px;padding:22px 28px}
+.promo-foot div{display:flex;align-items:center;gap:16px;font-family:var(--display);font-size:13px;letter-spacing:.08em;text-transform:uppercase;line-height:1.5}
+.promo-foot svg{flex:0 0 46px;width:46px;height:46px;color:var(--rose)}
+.promo-foot em{font-family:var(--script);font-style:normal;text-transform:none;letter-spacing:0;font-size:28px;color:var(--crimson);display:block;line-height:1}
+.promo-foot .red{color:var(--crimson)}
+@media (max-width:640px){.promo-foot{grid-template-columns:1fr}}
+
 /* KITS */
 .kits{background:var(--blush)}
 .kits-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(40px,6vw,90px)}
@@ -427,6 +472,7 @@ main,footer{overflow-x:clip}
       <span><b>DELUXXE</b><small>Boutique de festa</small></span>
     </a>
     <nav class="nav" id="nav" aria-label="Menu principal">
+      <a href="#promocoes">Promoções</a>
       <a href="#kits">Kits</a>
       <a href="#temas">Temas</a>
       <a href="#sobre">Sobre</a>
@@ -452,8 +498,8 @@ main,footer{overflow-x:clip}
       </h1>
       <p class="lead fade-in d2">Kits de decoração completos, temas exclusivos e lembranças de luxo para tornar seu evento inesquecível.</p>
       <div class="hero-actions fade-in d3">
-        <a href="#kits" class="btn magnetic">Conheça os kits <span class="arrow">→</span></a>
-        <a href="#contato" class="btn ghost magnetic">Faça seu orçamento</a>
+        <a href="#promocoes" class="btn magnetic">Ver promoções <span class="arrow">→</span></a>
+        <a href="#kits" class="btn ghost magnetic">Conheça os kits</a>
       </div>
     </div>
     <div class="arch-wrap" id="archWrap">
@@ -471,8 +517,8 @@ main,footer{overflow-x:clip}
 <div class="marquee" aria-hidden="true">
   <div class="marquee-skew" id="marqueeSkew">
     <div class="marquee-track">
-      <span>Kit Petit Luxxe</span><b>♛</b><span class="sc">Sonhe</span><b>♛</b><span>Kit Mini Luxxo</span><b>♛</b><span class="sc">Celebre</span><b>♛</b><span>Kit Essencial</span><b>♛</b><span class="sc">Encante</span><b>♛</b><span>Kit Festa Boutique</span><b>♛</b><span>Kit Celebration</span><b>♛</b>
-      <span>Kit Petit Luxxe</span><b>♛</b><span class="sc">Sonhe</span><b>♛</b><span>Kit Mini Luxxo</span><b>♛</b><span class="sc">Celebre</span><b>♛</b><span>Kit Essencial</span><b>♛</b><span class="sc">Encante</span><b>♛</b><span>Kit Festa Boutique</span><b>♛</b><span>Kit Celebration</span><b>♛</b>
+      <span>Promoção por tempo limitado</span><b>♛</b><span>Kit Petit Luxxe</span><b>♛</b><span class="sc">Sonhe</span><b>♛</b><span>Kit Mini Luxxo</span><b>♛</b><span class="sc">Celebre</span><b>♛</b><span>Kit Essencial</span><b>♛</b><span class="sc">Encante</span><b>♛</b><span>Kit Festa Boutique</span><b>♛</b><span>Kit Celebration</span><b>♛</b>
+      <span>Promoção por tempo limitado</span><b>♛</b><span>Kit Petit Luxxe</span><b>♛</b><span class="sc">Sonhe</span><b>♛</b><span>Kit Mini Luxxo</span><b>♛</b><span class="sc">Celebre</span><b>♛</b><span>Kit Essencial</span><b>♛</b><span class="sc">Encante</span><b>♛</b><span>Kit Festa Boutique</span><b>♛</b><span>Kit Celebration</span><b>♛</b>
     </div>
   </div>
 </div>
@@ -509,6 +555,24 @@ main,footer{overflow-x:clip}
         <div class="feat-ico" style="--d:.45s"><svg class="ring" viewBox="0 0 96 96"><circle cx="48" cy="48" r="46"/></svg><svg class="ico" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><rect x="6" y="15" width="28" height="7"/><rect x="8" y="22" width="24" height="13"/><path d="M20 15v20M20 15c-3-7-10-7-9-2s9 2 9 2c3-7 10-7 9-2s-9 2-9 2"/></svg></div>
         <strong>Praticidade<br>para sua festa</strong>
       </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- PROMOÇÕES -->
+<section class="section promo" id="promocoes">
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="promo-ribbon" data-reveal><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Promoção por tempo limitado</span>
+      <h2 data-split>Kits com <span class="it">preço especial</span></h2>
+      <p data-reveal style="--d:.2s">Válida para temas existentes do acervo. Arraste para o lado para ver todos.</p>
+    </div>
+    <div class="promo-rail" id="promoRail"></div>
+    <div class="promo-nav"><button type="button" id="promoPrev" aria-label="Kit anterior">←</button><button type="button" id="promoNext" aria-label="Próximo kit">→</button></div>
+    <div class="promo-foot" data-reveal>
+      <div><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="24" cy="24" r="20"/><path d="M24 12v12l8 5"/></svg><span>Promoção por <span class="red">tempo limitado</span>, válida para temas existentes do acervo.</span></div>
+      <div><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M8 40l8-22 14 14z"/><path d="M26 10c2 2 2 5 0 7M32 16c3 0 5 2 5 5M36 8l1 3M40 13l-3 1M30 6v3"/></svg><span>Reserve já o seu kit e faça uma festa <em>inesquecível!</em></span></div>
     </div>
   </div>
 </section>
@@ -724,6 +788,23 @@ const KITS = [
   }
 ];
 
+
+/* =========================================================
+   PROMOÇÕES: preços e itens de cada kit promocional
+   ========================================================= */
+const PROMOS = [
+  { id: "festa-na-mesa", nome: "Kit Festa na Mesa", dica: "Kit ideal para montar na sua mesa", de: 149, por: 99,
+    itens: ["1 painel temático","1 boleira","3 doceiras","1 arranjo floral"], tema: "Moranguinho" },
+  { id: "pocket-table", nome: "Pocket Table", dica: "Mesa completa com placa personalizada", de: 299, por: 249,
+    itens: ["1 mesa desmontável","1 painel temático","1 mini guirlanda de balões","1 boleira + 4 doceiras","1 arranjo floral","1 placa personalizada com nome e idade da criança"], tema: "Princesas" },
+  { id: "kit-1", nome: "Kit 1", dica: "Artes exclusivas Deluxxe", de: 399, por: 299,
+    itens: ["1 painel (modular ou circular)","1 trio de mini mesas ou cilindros","1 arranjo de flores permanentes","5 doceiras + 1 boleira","1 totem/display temático"], tema: "Patrulha Canina" },
+  { id: "kit-2", nome: "Kit 2", dica: "Dois painéis e cinco módulos", de: 599, por: 499,
+    itens: ["2 painéis temáticos","5 módulos de mesa (com opção de acrílico)","2 arranjos de flores permanentes","8 doceiras + 1 boleira","Totens/display temático existente no acervo"], tema: "Pôneis e unicórnios" },
+  { id: "kit-3", nome: "Kit 3", dica: "O mais completo da promoção", de: 799, por: 699,
+    itens: ["3 painéis modulares temáticos","1 trio de mesas + 4 cubos acrílicos","4 arranjos de flores permanentes em vasos","10 doceiras + 1 boleira","Totens/display temático do acervo"], opcional: "Nome da criança é opcional", tema: "Ursinhos carinhosos" }
+];
+
 (function(){
   const root = document.documentElement;
   const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -772,6 +853,44 @@ const KITS = [
     kitList.appendChild(art);
   });
 
+
+  /* ---------- monta as promoções ---------- */
+  const brl = n => n.toLocaleString("pt-BR", { minimumFractionDigits: 2 });
+  const promoRail = document.getElementById("promoRail");
+  PROMOS.forEach((k, i) => {
+    const c = document.createElement("article");
+    c.className = "pcard"; c.dataset.reveal = "zoom"; c.style.setProperty("--d", (i * .08) + "s");
+    c.innerHTML =
+      '<div class="photo"><img src="img/promo-' + k.id + '.jpg" alt="Exemplo do ' + esc(k.nome) + ', tema ' + esc(k.tema) + '" loading="lazy" draggable="false"></div>' +
+      '<div class="p-off" aria-hidden="true"><div>economize<b>R$ ' + (k.de - k.por) + '</b></div></div>' +
+      '<div class="p-body">' +
+        '<h3>' + esc(k.nome) + '</h3><p class="p-hint">' + esc(k.dica) + '</p>' +
+        '<div class="p-price"><span class="p-old">De R$ ' + brl(k.de) + '</span>' +
+        '<p class="p-now" aria-label="Por R$ ' + brl(k.por) + '"><small>R$</small><strong data-price="' + k.por + '">' + k.por + '</strong><span>,00</span></p></div>' +
+        '<ul class="p-list">' + k.itens.map(t => '<li>' + esc(t) + '</li>').join("") + (k.opcional ? '<li class="opt">(' + esc(k.opcional) + ')</li>' : '') + '</ul>' +
+      '</div>' +
+      '<div class="p-actions">' +
+        '<a class="btn magnetic" target="_blank" rel="noopener" href="' + waMsg("Olá, Deluxxe! Quero reservar o " + k.nome + " (promoção R$ " + brl(k.por) + ").") + '">Reservar meu kit <span class="arrow">→</span></a>' +
+        '<button class="btn ghost" type="button" data-promo="' + i + '">Ver arte completa</button>' +
+      '</div>';
+    promoRail.appendChild(c);
+  });
+  /* setas e arrastar com o mouse */
+  const step = () => (promoRail.querySelector(".pcard")?.offsetWidth || 340) + 26;
+  document.getElementById("promoPrev").onclick = () => promoRail.scrollBy({ left: -step(), behavior: "smooth" });
+  document.getElementById("promoNext").onclick = () => promoRail.scrollBy({ left: step(), behavior: "smooth" });
+  let dragX = null, dragLeft = 0, moved = false;
+  promoRail.addEventListener("pointerdown", e => { if (e.pointerType !== "mouse" || e.target.closest("a,button")) return; dragX = e.clientX; dragLeft = promoRail.scrollLeft; moved = false; promoRail.classList.add("drag"); });
+  window.addEventListener("pointermove", e => { if (dragX === null) return; const d = e.clientX - dragX; if (Math.abs(d) > 4) moved = true; promoRail.scrollLeft = dragLeft - d; });
+  window.addEventListener("pointerup", () => { if (dragX === null) return; dragX = null; promoRail.classList.remove("drag"); });
+  /* preço sobe contando quando o cartão aparece */
+  function countPrice(el){
+    const end = +el.dataset.price;
+    if (reduce) return;
+    const t0 = performance.now(), dur = 1200;
+    (function tick(t){ const p = Math.min((t - t0) / dur, 1); el.textContent = Math.round(end * (1 - Math.pow(1 - p, 3))); if (p < 1) requestAnimationFrame(tick); })(t0);
+  }
+
   /* cards dos temas */
   const hTrack = document.getElementById("hTrack");
   KITS.forEach((k, i) => {
@@ -781,6 +900,13 @@ const KITS = [
       '<div class="card-body"><span class="tag">' + esc(k.nome) + '</span><h3>' + esc(k.tema) + '</h3><p>Exemplo de tema, feito sob medida</p></div>';
     hTrack.appendChild(b);
   });
+  PROMOS.forEach((k, i) => {
+    const b = document.createElement("button");
+    b.className = "card tilt"; b.type = "button"; b.dataset.tema = KITS.length + i;
+    b.innerHTML = '<div class="photo"><img src="img/promo-' + k.id + '.jpg" alt="Tema ' + esc(k.tema) + '" loading="lazy"></div>' +
+      '<div class="card-body"><span class="tag">' + esc(k.nome) + '</span><h3>' + esc(k.tema) + '</h3><p>Exemplo de tema do acervo</p></div>';
+    hTrack.appendChild(b);
+  });
   const cta = document.createElement("a");
   cta.className = "card cta-card"; cta.href = "#contato";
   cta.innerHTML = '<span class="tag">Seu tema aqui</span><h3>Qual é o seu sonho?</h3><p>Conta pra gente o tema da sua festa e criamos tudo com a sua identidade.</p><span class="btn">Pedir orçamento <span class="arrow">→</span></span>';
@@ -788,7 +914,7 @@ const KITS = [
 
   /* opções do formulário */
   const sel = document.getElementById("f-tipo");
-  [...KITS.map(k => k.label + " " + k.nome), "Ainda não sei, quero ajuda", "Decoração personalizada"].forEach(t => { const o = document.createElement("option"); o.textContent = t; sel.appendChild(o); });
+  [...PROMOS.map(k => k.nome + " (promoção R$ " + brl(k.por) + ")"), ...KITS.map(k => k.label + " " + k.nome), "Ainda não sei, quero ajuda", "Decoração personalizada"].forEach(t => { const o = document.createElement("option"); o.textContent = t; sel.appendChild(o); });
 
   /* fotos que ainda não existem mostram o desenho no lugar */
   document.querySelectorAll(".photo img").forEach(img => {
@@ -877,6 +1003,7 @@ const KITS = [
       entries.forEach(en => {
         if (!en.isIntersecting) return;
         en.target.classList.add("in");
+        en.target.querySelectorAll("[data-price]").forEach(countPrice);
         io.unobserve(en.target);
       });
     }, { threshold: .15, rootMargin: "0px 0px -8% 0px" });
@@ -906,7 +1033,7 @@ const KITS = [
         navLinks.forEach(a => a.classList.toggle("current", a.getAttribute("href") === "#" + en.target.id));
       });
     }, { rootMargin: "-50% 0px -50% 0px" });
-    ["kits","temas","sobre","como-funciona"].forEach(id => sio.observe(document.getElementById(id)));
+    ["promocoes","kits","temas","sobre","como-funciona"].forEach(id => sio.observe(document.getElementById(id)));
   }
 
   /* ---------- efeitos ligados à rolagem ---------- */
@@ -985,10 +1112,12 @@ const KITS = [
   }
   function openLb(list, i){ lbList = list; show(i); lb.classList.add("open"); document.getElementById("lbClose").focus(); }
   const artes = KITS.map(k => ({ src: "img/kit-" + k.id + "-arte.jpg", cap: k.label + " " + k.nome }));
-  const cenas = KITS.map(k => ({ src: "img/kit-" + k.id + ".jpg", cap: k.tema + " · " + k.nome }));
+  const cenas = [...KITS.map(k => ({ src: "img/kit-" + k.id + ".jpg", cap: k.tema + " · " + k.nome })), ...PROMOS.map(k => ({ src: "img/promo-" + k.id + ".jpg", cap: k.tema + " · " + k.nome }))];
+  const promoArtes = PROMOS.map(k => ({ src: "img/promo-" + k.id + "-arte.jpg", cap: k.nome + " · por R$ " + brl(k.por) }));
   document.addEventListener("click", e => {
     const a = e.target.closest("[data-arte]"); if (a) openLb(artes, +a.dataset.arte);
     const t = e.target.closest("[data-tema]"); if (t) openLb(cenas, +t.dataset.tema);
+    const pr = e.target.closest("[data-promo]"); if (pr && !moved) openLb(promoArtes, +pr.dataset.promo);
   });
   const close = () => lb.classList.remove("open");
   document.getElementById("lbClose").onclick = close;
