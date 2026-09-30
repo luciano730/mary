@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mary Criativa</title>
+<meta name="description" content="Mary Criativa: identidade visual para eventos, convite virtual, cardápios, placas de mesa, placa de boas-vindas e projeto da decoração.">
+<meta name="theme-color" content="#F7DDE2">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Allura&family=Jost:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap">
+<style>
+:root{
+  color-scheme: light;
+  --white:#FFFFFF;
+  --snow:#FFFAFA;
+  --blush:#FBEEF0;
+  --pink:#F7DDE2;
+  --pink-2:#EFC3CC;
+  --rose:#D99AA8;
+  --rose-2:#C47D8C;
+  --rosé:#B76E79;
+  --rosé-deep:#9A5563;
+  --ink:#5A3940;
+  --ink-soft:#8A6A70;
+  --line:rgba(90,57,64,.12);
+  --rosegold:linear-gradient(120deg,#B76E79 0%,#E8B4B8 35%,#C98B8B 55%,#F3D3D3 75%,#B76E79 100%);
+  --serif:"Playfair Display", Georgia, "Times New Roman", serif;
+  --body:"Jost", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+  --script:"Allura", "Snell Roundhand", cursive;
+  --gutter:clamp(16px, 5vw, 64px);
+  --ease:cubic-bezier(.22,.8,.24,1);
+  --shadow:0 24px 60px -28px rgba(154,85,99,.45);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--snow);color:var(--ink);
+  font-family:var(--body);font-weight:300;font-size:17px;line-height:1.65;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.12;margin:0;text-wrap:balance}
+p{margin:0}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--rosé);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1240px;margin-inline:auto;padding-inline:var(--gutter)}
+.eyebrow{font-size:12px;letter-spacing:.32em;text-transform:uppercase;font-weight:500;color:var(--rosé)}
+.script{font-family:var(--script);font-weight:400}
+.rg{background:var(--rosegold);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 7s linear infinite}
+@keyframes shine{to{background-position:-200% 0}}
+h2 em,h1 em{font-style:italic;color:var(--rosé)}
+.sec-head{display:grid;justify-items:center;text-align:center;gap:14px;margin-bottom:clamp(36px,6vw,64px)}
+.sec-head h2{font-size:clamp(32px,5vw,54px)}
+.sec-head p{max-width:560px;color:var(--ink-soft)}
+.section{padding-block:clamp(72px,11vw,140px)}
+
+/* botoes */
+.btn{display:inline-flex;align-items:center;gap:10px;padding:15px 28px;border-radius:999px;text-decoration:none;font-size:13px;letter-spacing:.16em;text-transform:uppercase;font-weight:500;border:1px solid transparent;cursor:pointer;transition:transform .4s var(--ease),box-shadow .4s var(--ease),background .3s,color .3s;position:relative;overflow:hidden;white-space:nowrap}
+.btn svg{width:18px;height:18px;flex:none}
+.btn-solid{background:var(--rosé);color:#fff;box-shadow:0 14px 30px -14px rgba(154,85,99,.8)}
+.btn-solid::after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.45) 50%,transparent 70%);transform:translateX(-120%);transition:transform .9s var(--ease)}
+.btn-solid:hover::after{transform:translateX(120%)}
+.btn-solid:hover{transform:translateY(-2px);background:var(--rosé-deep)}
+.btn-ghost{border-color:var(--rose);color:var(--rosé-deep);background:rgba(255,255,255,.6)}
+.btn-ghost:hover{background:#fff;transform:translateY(-2px)}
+.btn-sm{padding:11px 20px;font-size:12px}
+
+/* carregando */
+.preloader{display:none}
+.anim .preloader{position:fixed;inset:0;z-index:100;background:var(--snow);display:grid;place-items:center;transition:opacity .8s var(--ease),visibility .8s}
+.preloader.done{opacity:0;visibility:hidden}
+.pre-inner{text-align:center}
+.pre-name{font-family:var(--script);font-size:64px;line-height:1;color:var(--rosé);clip-path:inset(0 100% 0 0);animation:write 1.4s var(--ease) .1s forwards}
+.pre-sub{font-size:11px;letter-spacing:.5em;text-transform:uppercase;color:var(--ink-soft);opacity:0;animation:fade .8s ease .9s forwards;margin-top:6px;padding-left:.5em}
+@keyframes write{to{clip-path:inset(0 0 0 0)}}
+@keyframes fade{to{opacity:1}}
+
+.progress{position:fixed;inset:0 0 auto 0;height:3px;z-index:60;background:var(--rosegold);transform-origin:0 50%;transform:scaleX(0)}
+
+/* topo */
+.header{position:fixed;top:0;left:0;right:0;z-index:50;padding-top:env(safe-area-inset-top,0px);transition:background .4s,box-shadow .4s,transform .5s var(--ease)}
+.header .wrap{display:flex;align-items:center;justify-content:space-between;height:86px;transition:height .4s var(--ease)}
+.header.scrolled{background:rgba(255,250,250,.86);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 1px 0 var(--line)}
+.header.scrolled .wrap{height:66px}
+.header.hidden{transform:translateY(-100%)}
+.logo{display:flex;align-items:baseline;gap:8px;text-decoration:none;line-height:1}
+.logo .script{font-size:38px;color:var(--rosé)}
+.logo small{font-size:10px;letter-spacing:.38em;text-transform:uppercase;color:var(--ink-soft)}
+.nav{display:flex;gap:30px;align-items:center}
+.nav a{text-decoration:none;font-size:13px;letter-spacing:.14em;text-transform:uppercase;position:relative;padding-block:6px}
+.nav a:not(.btn)::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--rosé);transform:scaleX(0);transform-origin:right;transition:transform .45s var(--ease)}
+.nav a:not(.btn):hover::after,.nav a.current::after{transform:scaleX(1);transform-origin:left}
+.menu-btn{display:none;background:none;border:0;width:44px;height:44px;cursor:pointer;position:relative;color:var(--ink)}
+.menu-btn span{position:absolute;left:10px;right:10px;height:1.5px;background:currentColor;transition:transform .4s var(--ease),opacity .3s}
+.menu-btn span:nth-child(1){top:16px}.menu-btn span:nth-child(2){top:22px}.menu-btn span:nth-child(3){top:28px}
+.menu-open .menu-btn span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.menu-open .menu-btn span:nth-child(2){opacity:0}
+.menu-open .menu-btn span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+
+/* hero */
+.hero{position:relative;min-height:100svh;display:flex;align-items:center;padding-top:110px;padding-bottom:60px;overflow:hidden;background:
+  radial-gradient(60% 70% at 85% 30%,var(--pink) 0%,transparent 70%),
+  radial-gradient(50% 60% at 10% 90%,var(--blush) 0%,transparent 70%),var(--snow)}
+.hero .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(24px,5vw,80px);align-items:center;width:100%}
+.hero-text{display:grid;gap:24px;justify-items:start;position:relative;z-index:2}
+.hero h1{font-size:clamp(42px,6.6vw,86px);letter-spacing:-.01em}
+.hero h1 .script{display:block;font-size:1.25em;line-height:.9;color:var(--rosé);margin-top:.05em}
+.hero-lead{font-size:clamp(17px,1.6vw,20px);color:var(--ink-soft);max-width:500px}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:12px}
+.hero-tags{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:13px;color:var(--ink-soft);letter-spacing:.06em}
+.hero-tags span{display:flex;align-items:center;gap:8px}
+.hero-tags span::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--rose)}
+.line{display:block;overflow:hidden;padding-bottom:.08em}
+.line>span{display:block}
+.anim .line>span{transform:translateY(110%);transition:transform 1.1s var(--ease)}
+.anim .ready .line>span{transform:none}
+.anim .ready .line:nth-child(2)>span{transition-delay:.12s}
+.anim .ready .line:nth-child(3)>span{transition-delay:.24s}
+.anim .hero-fade{opacity:0;transform:translateY(20px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
+.anim .ready .hero-fade{opacity:1;transform:none}
+.anim .ready .hero-fade.d1{transition-delay:.45s}.anim .ready .hero-fade.d2{transition-delay:.6s}.anim .ready .hero-fade.d3{transition-delay:.75s}
+
+.hero-art{position:relative;aspect-ratio:1/1.08;width:100%;max-width:600px;justify-self:center}
+.arch{position:absolute;inset:4% 12% 0 12%;border-radius:999px 999px 28px 28px;background:linear-gradient(180deg,#fff 0%,var(--pink) 100%);overflow:hidden;box-shadow:var(--shadow)}
+.arch img{width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1s}
+.arch img.ok{opacity:1}
+.arch::after{content:"";position:absolute;inset:14px;border:1px solid rgba(255,255,255,.8);border-radius:inherit;pointer-events:none}
+.float{position:absolute;will-change:transform}
+.float>.pp{animation:bob 7s ease-in-out infinite}
+.f1{width:40%;left:0;top:14%}
+.f2{width:30%;right:0;top:6%}
+.f2>.pp{animation-delay:-2s}
+.f3{width:34%;right:4%;bottom:6%}
+.f3>.pp{animation-delay:-4s}
+.f4{width:26%;left:8%;bottom:4%}
+.f4>.pp{animation-delay:-1s}
+@keyframes bob{0%,100%{translate:0 0;rotate:var(--r,0deg)}50%{translate:0 -12px;rotate:calc(var(--r,0deg) + 1.5deg)}}
+.scroll-cue{position:absolute;left:50%;bottom:22px;translate:-50% 0;display:grid;justify-items:center;gap:8px;font-size:10px;letter-spacing:.4em;text-transform:uppercase;color:var(--ink-soft);text-decoration:none}
+.scroll-cue i{width:1px;height:42px;background:linear-gradient(var(--rosé),transparent);animation:cue 2s ease-in-out infinite;transform-origin:top}
+@keyframes cue{0%{transform:scaleY(0)}50%{transform:scaleY(1)}100%{transform:scaleY(1);opacity:0}}
+
+/* papelaria desenhada (aparece enquanto nao tem foto) */
+.pp{--bg:#fff;--ac:var(--rosé);--soft:var(--pink);position:relative;background:var(--bg);color:var(--ac);border-radius:6px;box-shadow:0 18px 40px -18px rgba(154,85,99,.55),0 2px 6px rgba(154,85,99,.08);display:grid;place-items:center;text-align:center;overflow:hidden;container-type:inline-size;rotate:var(--r,0deg)}
+.pp[data-tema="blush"]{--bg:#FBEEF0;--ac:#B76E79;--soft:#EFC3CC}
+.pp[data-tema="rose"]{--bg:#E9B9C2;--ac:#fff;--soft:rgba(255,255,255,.55)}
+.pp[data-tema="nude"]{--bg:#F6E7E1;--ac:#9A5563;--soft:#E3C2BA}
+.pp[data-tema="branco"]{--bg:#fff;--ac:#C47D8C;--soft:#F7DDE2}
+.pp .s{font-size:6.5cqw;letter-spacing:.3em;text-transform:uppercase;font-weight:500}
+.pp .nm{font-family:var(--script);font-size:19cqw;line-height:1}
+.pp .dt{font-family:var(--serif);font-style:italic;font-size:7cqw}
+.pp .bar{display:block;height:1.4cqw;border-radius:2px;background:var(--soft);margin-inline:auto}
+.pp .flower{position:absolute;width:44cqw;height:44cqw;opacity:.9;color:var(--soft)}
+.pp .flower.tl{top:-10cqw;left:-10cqw}
+.pp .flower.br{bottom:-10cqw;right:-10cqw;rotate:180deg}
+.pp .frame{position:absolute;inset:5cqw;border:1px solid var(--soft);border-radius:3px;pointer-events:none}
+.pp-invite{aspect-ratio:3/4.2;padding:12% 8%}
+.pp-invite .in{display:grid;gap:4cqw;justify-items:center;position:relative}
+.pp-phone{aspect-ratio:9/17;border-radius:14%/7.4%;padding:5%;background:#3d2a2e}
+.pp-phone .screen{position:absolute;inset:4cqw;border-radius:9cqw;background:var(--bg);display:grid;place-items:center;overflow:hidden}
+.pp-phone .screen .in{display:grid;gap:4cqw;justify-items:center;padding:8cqw;position:relative}
+.pp-phone .notch{position:absolute;top:6cqw;left:50%;translate:-50% 0;width:28cqw;height:5cqw;border-radius:9cqw;background:#3d2a2e;z-index:2}
+.pp-phone .rsvp{margin-top:3cqw;padding:3cqw 8cqw;border-radius:99px;background:var(--ac);color:var(--bg);font-size:5.5cqw;letter-spacing:.2em;text-transform:uppercase}
+.pp-menu{aspect-ratio:1/2.1;padding:12% 10%}
+.pp-menu .in{display:grid;gap:5cqw;justify-items:center;width:100%;position:relative}
+.pp-menu .nm{font-size:26cqw}
+.pp-menu .it{display:grid;gap:2cqw;width:100%;justify-items:center}
+.pp-menu .it b{font-size:6.5cqw;letter-spacing:.24em;text-transform:uppercase;font-weight:500}
+.pp-table{aspect-ratio:1/1.05;padding:8%;border-radius:6px 6px 2px 2px}
+.pp-table::after{content:"";position:absolute;left:0;right:0;bottom:0;height:10%;background:linear-gradient(transparent,rgba(154,85,99,.12))}
+.pp-table .in{display:grid;gap:1cqw;justify-items:center;position:relative}
+.pp-table .num{font-family:var(--serif);font-size:44cqw;line-height:1}
+.pp-welcome{aspect-ratio:3/4;padding:10%;border-radius:4px}
+.pp-welcome .in{display:grid;gap:4cqw;justify-items:center;position:relative}
+.pp-welcome .nm{font-size:22cqw}
+.pp-welcome .arcb{position:absolute;inset:6cqw;border:1.5px solid var(--soft);border-radius:999px 999px 4px 4px}
+.pp-id{aspect-ratio:1/1;padding:8%}
+.pp-id .in{display:grid;gap:6cqw;justify-items:center;position:relative}
+.pp-id .mono{width:48cqw;height:48cqw;border-radius:50%;border:1.5px solid var(--ac);display:grid;place-items:center;font-family:var(--serif);font-style:italic;font-size:20cqw;position:relative}
+.pp-id .mono::after{content:"";position:absolute;inset:3cqw;border:1px dashed var(--soft);border-radius:50%}
+.pp-id .sw{display:flex;gap:3cqw}
+.pp-id .sw i{width:10cqw;height:10cqw;border-radius:50%;border:1px solid rgba(0,0,0,.06)}
+.pp-deco{aspect-ratio:4/3;padding:0;background:#fff;--ac:#B76E79}
+.pp-deco svg{width:100%;height:100%}
+.pp-deco .grid{position:absolute;inset:0;background-image:linear-gradient(var(--blush) 1px,transparent 1px),linear-gradient(90deg,var(--blush) 1px,transparent 1px);background-size:6cqw 6cqw}
+.pp-deco .lbl{position:absolute;left:5cqw;bottom:3cqw;background:#fff;padding:.5cqw 1.5cqw;font-size:5cqw;letter-spacing:.2em;text-transform:uppercase;font-weight:500;color:var(--ac)}
+
+/* faixa */
+.marquee{background:var(--rosé);color:#fff;overflow:hidden;padding-block:18px;position:relative;z-index:1}
+.marquee-track{display:flex;gap:44px;width:max-content;animation:marq 38s linear infinite}
+.marquee span{font-family:var(--serif);font-style:italic;font-size:clamp(20px,2.4vw,28px);display:flex;align-items:center;gap:44px;white-space:nowrap}
+.marquee span::after{content:"✦";font-style:normal;font-size:.6em;opacity:.7}
+@keyframes marq{to{transform:translateX(-50%)}}
+
+/* servicos */
+.services{background:var(--white)}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.svc{position:relative;padding:38px 30px 34px;border-radius:22px;background:var(--snow);border:1px solid var(--line);display:grid;gap:14px;align-content:start;transition:transform .6s var(--ease),box-shadow .6s var(--ease),background .4s;overflow:hidden}
+.svc::before{content:"";position:absolute;width:220px;height:220px;border-radius:50%;background:radial-gradient(var(--pink),transparent 70%);top:-110px;right:-80px;transition:transform .8s var(--ease);opacity:.9}
+.svc:hover{transform:translateY(-6px);box-shadow:var(--shadow);background:#fff}
+.svc:hover::before{transform:scale(1.5)}
+.svc .ic{width:58px;height:58px;border-radius:50%;background:var(--pink);display:grid;place-items:center;color:var(--rosé);position:relative}
+.svc .ic svg{width:28px;height:28px}
+.svc .n{position:absolute;top:26px;right:28px;font-family:var(--serif);font-style:italic;font-size:15px;color:var(--rose)}
+.svc h3{font-size:24px;position:relative}
+.svc p{color:var(--ink-soft);font-size:16px;position:relative}
+.svc a{position:relative;font-size:12px;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;color:var(--rosé);font-weight:500;display:inline-flex;gap:8px;align-items:center;margin-top:6px}
+.svc a span{transition:transform .4s var(--ease)}
+.svc a:hover span{transform:translateX(5px)}
+
+/* catalogo */
+.catalog{background:linear-gradient(180deg,var(--blush),var(--snow))}
+.filters{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:40px}
+.filters button{border:1px solid var(--pink-2);background:rgba(255,255,255,.7);padding:10px 20px;border-radius:999px;font-size:13px;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:background .3s,color .3s,border-color .3s}
+.filters button:hover{border-color:var(--rosé)}
+.filters button[aria-pressed="true"]{background:var(--rosé);border-color:var(--rosé);color:#fff}
+.cat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.item{background:#fff;border-radius:20px;overflow:hidden;border:1px solid var(--line);display:flex;flex-direction:column;transition:transform .6s var(--ease),box-shadow .6s var(--ease),opacity .4s}
+.item:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+.item.out{display:none}
+.item .thumb{all:unset;cursor:zoom-in;display:grid;place-items:center;aspect-ratio:4/5;background:var(--bg,var(--pink));position:relative;overflow:hidden}
+.item .thumb:focus-visible{outline:2px solid var(--rosé);outline-offset:-4px}
+.item .thumb .stage{width:100%;height:100%;display:grid;place-items:center;padding:14%;transition:transform .9s var(--ease)}
+.item:hover .stage{transform:scale(1.05)}
+.item .thumb img.photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.stage .pp{max-height:100%;width:auto}
+.stage .pp-invite{height:100%}
+.stage .pp-phone{height:100%}
+.stage .pp-menu{height:100%}
+.stage .pp-table{width:78%}
+.stage .pp-welcome{height:100%}
+.stage .pp-id{width:88%}
+.stage .pp-deco{width:100%}
+.item .tag{position:absolute;top:14px;left:14px;background:rgba(255,255,255,.9);padding:5px 12px;border-radius:99px;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--rosé);font-weight:500}
+.item .zoom{position:absolute;right:14px;bottom:14px;width:38px;height:38px;border-radius:50%;background:#fff;display:grid;place-items:center;color:var(--rosé);opacity:0;transform:scale(.7);transition:opacity .4s,transform .4s var(--ease)}
+.item .zoom svg{width:18px;height:18px}
+.item:hover .zoom{opacity:1;transform:none}
+.item .info{padding:18px 20px 20px;display:grid;gap:6px;flex:1;align-content:start}
+.item h3{font-size:20px}
+.item p{font-size:14.5px;color:var(--ink-soft);line-height:1.5}
+.item .want{margin-top:auto;padding-top:10px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;color:var(--rosé);font-weight:500;display:inline-flex;align-items:center;gap:8px}
+.item .want svg{width:16px;height:16px}
+.cat-note{text-align:center;margin-top:36px;color:var(--ink-soft);font-size:15px}
+
+/* pacotes */
+.packs{background:var(--white)}
+.pack-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;align-items:stretch}
+.pack{border-radius:26px;padding:40px 32px;border:1px solid var(--line);background:var(--snow);display:grid;gap:18px;align-content:start;position:relative;transition:transform .6s var(--ease),box-shadow .6s var(--ease)}
+.pack:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+.pack.star{background:linear-gradient(170deg,var(--rosé),var(--rosé-deep));color:#fff;border-color:transparent}
+.pack.star .eyebrow,.pack.star li::before{color:#fff}
+.pack.star p,.pack.star li{color:rgba(255,255,255,.9)}
+.pack .ribbon{position:absolute;top:22px;right:22px;background:#fff;color:var(--rosé);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;padding:6px 12px;border-radius:99px;font-weight:500}
+.pack h3{font-size:34px}
+.pack h3 .script{font-size:1.3em;display:block;line-height:.9}
+.pack p{color:var(--ink-soft);font-size:15.5px}
+.pack ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.pack li{display:flex;gap:12px;font-size:15.5px}
+.pack li::before{content:"✦";color:var(--rosé);font-size:12px;line-height:2}
+.pack .btn{justify-self:start;margin-top:8px}
+.pack.star .btn-solid{background:#fff;color:var(--rosé-deep)}
+.pack.star .btn-solid:hover{background:var(--pink)}
+
+/* como funciona */
+.steps-sec{background:var(--pink);position:relative;overflow:hidden}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;position:relative}
+.steps::before{content:"";position:absolute;top:36px;left:12%;right:12%;height:1px;background:repeating-linear-gradient(90deg,var(--rosé) 0 6px,transparent 6px 12px);opacity:.6}
+.step{display:grid;justify-items:center;text-align:center;gap:14px;position:relative}
+.step .dot{width:72px;height:72px;border-radius:50%;background:#fff;display:grid;place-items:center;font-family:var(--serif);font-style:italic;font-size:26px;color:var(--rosé);box-shadow:0 10px 30px -12px rgba(154,85,99,.6);transition:transform .6s var(--ease)}
+.step:hover .dot{transform:scale(1.08) rotate(-6deg)}
+.step h3{font-size:22px}
+.step p{font-size:15.5px;color:var(--ink-soft);max-width:250px}
+
+/* sobre */
+.about .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(32px,7vw,110px);align-items:center}
+.about-pic{position:relative;aspect-ratio:4/5;border-radius:999px 999px 26px 26px;overflow:hidden;background:linear-gradient(180deg,var(--pink),var(--pink-2));box-shadow:var(--shadow);display:grid;place-items:center}
+.about-pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.about-pic .ph{font-family:var(--script);font-size:clamp(90px,14vw,160px);color:#fff;line-height:1}
+.about-pic::after{content:"";position:absolute;inset:14px;border:1px solid rgba(255,255,255,.75);border-radius:inherit}
+.about-text{display:grid;gap:22px}
+.about-text h2{font-size:clamp(34px,4.6vw,52px)}
+.about-text p{color:var(--ink-soft)}
+.sign{font-family:var(--script);font-size:54px;color:var(--rosé);line-height:1}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chips span{padding:8px 16px;border-radius:99px;background:var(--blush);border:1px solid var(--pink-2);font-size:13.5px;color:var(--rosé-deep)}
+
+/* contato */
+.contact{background:linear-gradient(160deg,var(--rosé),var(--rosé-deep));color:#fff;text-align:center;position:relative;overflow:hidden}
+.contact .wrap{display:grid;justify-items:center;gap:22px;position:relative}
+.contact .eyebrow{color:#fff;opacity:.85}
+.contact h2{font-size:clamp(36px,6vw,68px)}
+.contact h2 .script{font-size:1.3em;display:block;line-height:.9}
+.contact p{max-width:560px;opacity:.9}
+.contact .btn-solid{background:#fff;color:var(--rosé-deep)}
+.contact .btn-solid:hover{background:var(--pink)}
+.contact .btn-ghost{background:transparent;border-color:rgba(255,255,255,.6);color:#fff}
+.contact .btn-ghost:hover{background:rgba(255,255,255,.12)}
+.contact-row{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.petals{position:absolute;inset:0;pointer-events:none}
+.petal{position:absolute;top:-30px;width:14px;height:18px;border-radius:80% 0 80% 0;background:rgba(255,255,255,.35);animation:fall linear infinite}
+@keyframes fall{to{transform:translate3d(var(--dx,40px),calc(100vh + 700px),0) rotate(540deg)}}
+
+.footer{background:var(--snow);padding-block:40px;border-top:1px solid var(--line)}
+.footer .wrap{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center;font-size:14px;color:var(--ink-soft)}
+.footer .logo .script{font-size:32px}
+.footer nav{display:flex;gap:20px;flex-wrap:wrap}
+.footer nav a{text-decoration:none}
+.footer nav a:hover{color:var(--rosé)}
+
+/* whatsapp flutuante */
+.wa-float{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:40;width:60px;height:60px;border-radius:50%;background:#25D366;color:#fff;display:grid;place-items:center;box-shadow:0 12px 30px -8px rgba(37,211,102,.6);transition:transform .4s var(--ease)}
+.wa-float::before{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid #25D366;animation:ping 2.2s ease-out infinite}
+.wa-float:hover{transform:scale(1.08)}
+.wa-float svg{width:30px;height:30px}
+@keyframes ping{to{transform:scale(1.6);opacity:0}}
+
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:80;background:rgba(90,57,64,.55);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);display:grid;place-items:center;padding:20px;opacity:0;visibility:hidden;transition:opacity .4s,visibility .4s}
+.lb.open{opacity:1;visibility:visible}
+.lb-box{background:#fff;border-radius:26px;overflow:hidden;display:grid;grid-template-columns:1.1fr 1fr;max-width:920px;width:100%;max-height:calc(100svh - 40px);transform:translateY(20px) scale(.97);transition:transform .5s var(--ease);position:relative}
+.lb.open .lb-box{transform:none}
+.lb-media{background:var(--pink);display:grid;place-items:center;min-height:420px;position:relative}
+.lb-media .stage{width:100%;height:100%;display:grid;place-items:center;padding:12%;aspect-ratio:4/5}
+.lb-media img.photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.lb-info{padding:44px 36px;display:grid;gap:16px;align-content:center;overflow:auto}
+.lb-info h3{font-size:34px}
+.lb-info p{color:var(--ink-soft)}
+.lb-info ul{margin:0;padding:0;list-style:none;display:grid;gap:8px;font-size:15.5px}
+.lb-info li{display:flex;gap:10px}
+.lb-info li::before{content:"✦";color:var(--rosé);font-size:11px;line-height:2.1}
+.lb-close{position:absolute;top:14px;right:14px;z-index:2;width:42px;height:42px;border-radius:50%;border:0;background:#fff;cursor:pointer;display:grid;place-items:center;box-shadow:0 6px 16px rgba(0,0,0,.08)}
+.lb-close svg{width:18px;height:18px}
+.lb-nav{position:absolute;top:50%;translate:0 -50%;width:42px;height:42px;border-radius:50%;border:0;background:rgba(255,255,255,.9);cursor:pointer;display:grid;place-items:center;z-index:2}
+.lb-nav svg{width:18px;height:18px}
+.lb-prev{left:12px}.lb-next{right:12px}
+
+/* animacao ao rolar */
+.anim .rv{opacity:0;transform:translateY(40px);transition:opacity 1s var(--ease),transform 1s var(--ease);transition-delay:var(--d,0s)}
+.anim .rv.in{opacity:1;transform:none}
+.anim .rv-l{opacity:0;transform:translateX(-50px);transition:opacity 1.1s var(--ease),transform 1.1s var(--ease)}
+.anim .rv-r{opacity:0;transform:translateX(50px);transition:opacity 1.1s var(--ease),transform 1.1s var(--ease)}
+.anim .rv-l.in,.anim .rv-r.in{opacity:1;transform:none}
+
+@media (max-width:1080px){
+  .cat-grid{grid-template-columns:repeat(3,1fr)}
+}
+@media (max-width:900px){
+  .nav{position:fixed;inset:0;background:var(--snow);flex-direction:column;justify-content:center;gap:26px;transform:translateY(-100%);transition:transform .6s var(--ease);z-index:-1}
+  .nav a{font-size:16px}
+  .menu-open .nav{transform:none}
+  .menu-btn{display:block}
+  .hero .wrap{grid-template-columns:1fr}
+  .hero-art{max-width:460px;order:-1;margin-top:10px}
+  .hero-text{justify-items:center;text-align:center}
+  .hero-ctas,.hero-tags{justify-content:center}
+  .scroll-cue{display:none}
+  .svc-grid,.pack-grid{grid-template-columns:1fr 1fr}
+  .steps{grid-template-columns:1fr 1fr;row-gap:44px}
+  .steps::before{display:none}
+  .about .wrap{grid-template-columns:1fr}
+  .about-pic{max-width:420px;width:100%;justify-self:center}
+  .lb-box{grid-template-columns:1fr;overflow:auto}
+  .lb-media{min-height:0}
+  .lb-media .stage{max-height:48svh}
+  .lb-info{padding:28px 24px 30px}
+}
+@media (max-width:640px){
+  body{font-size:16px}
+  .cat-grid{grid-template-columns:1fr 1fr;gap:12px}
+  .item .info{padding:14px 14px 16px}
+  .item h3{font-size:17px}
+  .item p{display:none}
+  .item .tag{top:10px;left:10px;font-size:9px;padding:4px 9px}
+  .svc-grid,.pack-grid,.steps{grid-template-columns:1fr}
+  .logo small{display:none}
+  .filters{flex-wrap:nowrap;justify-content:flex-start;overflow-x:auto;margin-inline:calc(var(--gutter) * -1);padding-inline:var(--gutter);scrollbar-width:none;padding-bottom:4px}
+  .filters::-webkit-scrollbar{display:none}
+  .filters button{flex:none}
+  .btn{padding:14px 22px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<div class="preloader" id="preloader" aria-hidden="true">
+  <div class="pre-inner">
+    <div class="pre-name">Mary Criativa</div>
+    <div class="pre-sub">papelaria &amp; identidade para eventos</div>
+  </div>
+</div>
+
+<div class="progress" id="progress"></div>
+
+<header class="header" id="header">
+  <div class="wrap">
+    <a class="logo" href="#inicio" aria-label="Mary Criativa, voltar ao início">
+      <span class="script">Mary Criativa</span>
+      <small>eventos</small>
+    </a>
+    <nav class="nav" id="nav" aria-label="Menu principal">
+      <a href="#servicos">Serviços</a>
+      <a href="#catalogo">Catálogo</a>
+      <a href="#pacotes">Pacotes</a>
+      <a href="#como-funciona">Como funciona</a>
+      <a href="#sobre">Sobre</a>
+      <a class="btn btn-solid btn-sm js-wa" href="#" data-msg="Oi Mary! Vim pelo site e quero fazer um orçamento.">Orçamento</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="inicio">
+  <div class="wrap">
+    <div class="hero-text">
+      <span class="eyebrow hero-fade">Identidade visual para eventos</span>
+      <h1>
+        <span class="line"><span>Cada detalhe</span></span>
+        <span class="line"><span>do seu evento</span></span>
+        <span class="line"><span class="script">com a sua cara</span></span>
+      </h1>
+      <p class="hero-lead hero-fade d1">Convite virtual, cardápios, placas de mesa, placa de boas-vindas e o projeto da decoração, tudo criado com a mesma identidade para a sua festa ficar linda do começo ao fim.</p>
+      <div class="hero-ctas hero-fade d2">
+        <a class="btn btn-solid" href="#catalogo">Ver catálogo</a>
+        <a class="btn btn-ghost js-wa" href="#" data-msg="Oi Mary! Vim pelo site e quero fazer um orçamento.">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#i-wa"/></svg>
+          Pedir orçamento
+        </a>
+      </div>
+      <div class="hero-tags hero-fade d3">
+        <span>Casamentos</span><span>15 anos</span><span>Aniversários</span><span>Chá de bebê</span><span>Batizados</span>
+      </div>
+    </div>
+
+    <div class="hero-art hero-fade d1" id="heroArt" aria-hidden="true">
+      <div class="arch"><img src="img/hero.jpg" alt="" onload="this.classList.add('ok')" onerror="this.remove()"></div>
+      <div class="float f1" data-depth="18"></div>
+      <div class="float f2" data-depth="-24"></div>
+      <div class="float f3" data-depth="14"></div>
+      <div class="float f4" data-depth="-10"></div>
+    </div>
+  </div>
+  <a class="scroll-cue" href="#servicos">role<i></i></a>
+</section>
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track" id="marquee"></div>
+</div>
+
+<section class="section services" id="servicos">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow">O que eu crio</span>
+      <h2>Tudo do seu evento <em>conversando</em> entre si</h2>
+      <p>Você escolhe um item ou monta o pacote completo. Tudo sai com a mesma identidade, as mesmas cores e o mesmo carinho.</p>
+    </div>
+    <div class="svc-grid" id="svcGrid"></div>
+  </div>
+</section>
+
+<section class="section catalog" id="catalogo">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow">Catálogo</span>
+      <h2>Escolha o seu <em>estilo</em></h2>
+      <p>Toque em qualquer peça para ver os detalhes. Todas são personalizadas com o nome, a data, as cores e o tema do seu evento.</p>
+    </div>
+    <div class="filters rv" id="filters" role="group" aria-label="Filtrar catálogo"></div>
+    <div class="cat-grid" id="catGrid"></div>
+    <p class="cat-note rv">Não achou o que imaginou? Eu crio do zero pra você.
+      <a class="js-wa" href="#" data-msg="Oi Mary! Quero uma arte criada do zero para o meu evento.">Me chama no WhatsApp</a>.</p>
+  </div>
+</section>
+
+<section class="section packs" id="pacotes">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow">Pacotes</span>
+      <h2>Monte a sua <em>festa completa</em></h2>
+      <p>Três caminhos para começar. Todos podem ser ajustados do jeitinho que você precisa.</p>
+    </div>
+    <div class="pack-grid" id="packGrid"></div>
+  </div>
+</section>
+
+<section class="section steps-sec" id="como-funciona">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow">Como funciona</span>
+      <h2>Simples, leve e <em>sem correria</em></h2>
+    </div>
+    <div class="steps">
+      <div class="step rv" style="--d:0s"><div class="dot">1</div><h3>Conversa</h3><p>Você me chama no WhatsApp e conta sobre o evento: tema, cores, data e o que precisa.</p></div>
+      <div class="step rv" style="--d:.12s"><div class="dot">2</div><h3>Proposta</h3><p>Envio o orçamento com os itens escolhidos e já combinamos os prazos.</p></div>
+      <div class="step rv" style="--d:.24s"><div class="dot">3</div><h3>Criação</h3><p>Crio a identidade e as peças, você acompanha e pede os ajustes que quiser.</p></div>
+      <div class="step rv" style="--d:.36s"><div class="dot">4</div><h3>Entrega</h3><p>Você recebe tudo pronto, com os arquivos certinhos para enviar ou imprimir.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section about" id="sobre">
+  <div class="wrap">
+    <div class="about-pic rv-l">
+      <span class="ph">M</span>
+      <img src="img/mary.jpg" alt="Mary, criadora da Mary Criativa" onerror="this.remove()">
+    </div>
+    <div class="about-text rv-r">
+      <span class="eyebrow">Muito prazer</span>
+      <h2>Eu sou a Mary, e amo transformar ideias em <em>detalhes</em></h2>
+      <p>A Mary Criativa nasceu da vontade de deixar cada evento com uma identidade só dele. Do convite que chega no celular dos convidados até a placa que recebe todo mundo na entrada, cada peça é pensada para contar a sua história.</p>
+      <p>Trabalho junto com você em cada etapa, com calma e atenção, para que o resultado seja exatamente o que você sonhou.</p>
+      <div class="chips"><span>Identidade visual</span><span>Convite virtual</span><span>Cardápios</span><span>Placas</span><span>Projeto da decoração</span></div>
+      <div class="sign">Mary</div>
+    </div>
+  </div>
+</section>
+
+<section class="section contact" id="contato">
+  <div class="petals" id="petals" aria-hidden="true"></div>
+  <div class="wrap">
+    <span class="eyebrow rv">Vamos conversar</span>
+    <h2 class="rv">Seu evento merece <span class="script">ser inesquecível</span></h2>
+    <p class="rv">Me conta a data e o tema que eu te ajudo a escolher as peças ideais. O orçamento é pelo WhatsApp, rapidinho.</p>
+    <div class="contact-row rv">
+      <a class="btn btn-solid js-wa" href="#" data-msg="Oi Mary! Vim pelo site e quero fazer um orçamento.">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#i-wa"/></svg>
+        <span id="waText">WhatsApp</span>
+      </a>
+      <a class="btn btn-ghost js-ig" href="#" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+        <span id="igText">Instagram</span>
+      </a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <a class="logo" href="#inicio"><span class="script">Mary Criativa</span></a>
+    <nav aria-label="Rodapé">
+      <a href="#servicos">Serviços</a><a href="#catalogo">Catálogo</a><a href="#pacotes">Pacotes</a><a href="#contato">Contato</a>
+    </nav>
+    <span>© <span id="year"></span> Mary Criativa</span>
+  </div>
+</footer>
+
+<a class="wa-float js-wa" href="#" data-msg="Oi Mary! Vim pelo site e quero fazer um orçamento." aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#i-wa"/></svg>
+</a>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-labelledby="lbTitle" hidden>
+  <div class="lb-box">
+    <button class="lb-close" id="lbClose" aria-label="Fechar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    <div class="lb-media" id="lbMedia">
+      <button class="lb-nav lb-prev" id="lbPrev" aria-label="Anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 5l-7 7 7 7"/></svg></button>
+      <button class="lb-nav lb-next" id="lbNext" aria-label="Próximo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5l7 7-7 7"/></svg></button>
+    </div>
+    <div class="lb-info">
+      <span class="eyebrow" id="lbCat"></span>
+      <h3 id="lbTitle"></h3>
+      <p id="lbDesc"></p>
+      <ul id="lbList"></ul>
+      <a class="btn btn-solid js-wa" id="lbWa" href="#">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#i-wa"/></svg>
+        Quero um assim
+      </a>
+    </div>
+  </div>
+</div>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-wa" viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2Zm0 18.15a8.2 8.2 0 0 1-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.21 8.21 0 0 1 6.99-12.53c4.54 0 8.23 3.7 8.23 8.24s-3.69 8.15-8.23 8.15Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.16.04-.31-.02-.43-.06-.13-.56-1.35-.77-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28Z"/></symbol>
+    <symbol id="i-flower" viewBox="0 0 100 100"><g fill="currentColor"><circle cx="50" cy="30" r="16"/><circle cx="70" cy="46" r="16"/><circle cx="62" cy="70" r="16"/><circle cx="38" cy="70" r="16"/><circle cx="30" cy="46" r="16"/></g><circle cx="50" cy="52" r="9" fill="#fff" opacity=".7"/></symbol>
+  </defs>
+</svg>
+
+<script>
+/* ============================================================
+   CONFIGURAÇÃO: troque aqui pelos dados reais da Mary Criativa
+   ============================================================ */
+const CONFIG = {
+  whatsapp: "5500000000000",           // só números: 55 + DDD + número
+  whatsappTexto: "(00) 0 0000-0000",   // como aparece no site
+  instagram: "marycriativa"            // sem o @
+};
+
+/* Serviços (seção "O que eu crio") */
+const SERVICOS = [
+  { titulo: "Identidade visual", texto: "Monograma, paleta de cores e elementos que viram a marca do seu evento em todas as peças.", icone: "id", filtro: "identidade" },
+  { titulo: "Convite virtual", texto: "Convite digital lindo para mandar no WhatsApp e nas redes, com todas as informações da festa.", icone: "convite", filtro: "convite" },
+  { titulo: "Cardápios", texto: "Cardápio de comidas, doces e drinks, no mesmo estilo da identidade do evento.", icone: "cardapio", filtro: "cardapio" },
+  { titulo: "Placas de mesa", texto: "Numeração ou nomes das mesas para organizar os convidados com elegância.", icone: "mesa", filtro: "placas" },
+  { titulo: "Placa de boas-vindas", texto: "A primeira coisa que seus convidados veem na entrada. Tem que ser especial.", icone: "boasvindas", filtro: "placas" },
+  { titulo: "Projeto da decoração", texto: "Planejamento visual do espaço e das mesas para você enxergar a festa antes dela acontecer.", icone: "deco", filtro: "decoracao" }
+];
+
+/* Categorias do catálogo */
+const CATEGORIAS = {
+  identidade: "Identidade visual",
+  convite: "Convites",
+  cardapio: "Cardápios",
+  placas: "Placas",
+  decoracao: "Decoração"
+};
+
+/* Catálogo: para trocar o desenho por foto, coloque img/catalogo/<id>.jpg */
+const CATALOGO = [
+  { id: "identidade-floral", cat: "identidade", tipo: "id", tema: "blush", titulo: "Identidade Floral Rosé", texto: "Monograma com as iniciais, paleta rosé e florzinhas delicadas.", nomes: "A&L",
+    itens: ["Monograma personalizado", "Paleta de cores do evento", "Elementos para usar em todas as peças"] },
+  { id: "convite-jardim", cat: "convite", tipo: "phone", tema: "branco", titulo: "Convite Virtual Jardim", texto: "Convite para celular com flores e espaço para confirmação de presença.", nomes: "Ana & Leo", data: "12 . 12 . 2026",
+    itens: ["Formato para celular", "Pronto para enviar no WhatsApp", "Nome, data, local e horário"] },
+  { id: "cardapio-classico", cat: "cardapio", tipo: "menu", tema: "branco", titulo: "Cardápio Clássico", texto: "Cardápio alto e elegante, perfeito para ficar sobre o prato.",
+    itens: ["Entrada, prato principal e sobremesa", "Nas cores da identidade", "Arquivo pronto para impressão"] },
+  { id: "placa-mesa-numero", cat: "placas", tipo: "table", tema: "blush", titulo: "Placa de Mesa Numerada", texto: "Número da mesa com detalhe floral, no estilo do evento.", num: "5",
+    itens: ["Numeração de todas as mesas", "Opção com nomes no lugar dos números", "Arquivo pronto para impressão"] },
+  { id: "boas-vindas-floral", cat: "placas", tipo: "welcome", tema: "rose", titulo: "Boas-vindas Floral", texto: "Placa de entrada em formato de arco, com nome e data.", nomes: "Bem-vindos", sub: "Ana & Leo",
+    itens: ["Nome dos anfitriões e data", "Formato arco ou retangular", "Tamanho grande para cavalete"] },
+  { id: "projeto-mesa-principal", cat: "decoracao", tipo: "deco", tema: "branco", titulo: "Projeto da Mesa Principal", texto: "Planejamento da mesa do bolo com painel, arranjos e doces.", deco: "mesa",
+    itens: ["Posição de cada elemento", "Sugestão de cores e flores", "Referência para o decorador"] },
+  { id: "convite-15-anos", cat: "convite", tipo: "invite", tema: "rose", titulo: "Convite 15 Anos", texto: "Convite com o nome em letra cursiva e moldura delicada.", nomes: "Júlia", sub: "meus 15 anos", data: "20 . 03 . 2027",
+    itens: ["Versão digital", "Nome em letra cursiva", "Cores do tema da festa"] },
+  { id: "cardapio-drinks", cat: "cardapio", tipo: "menu", tema: "rose", titulo: "Cardápio de Drinks", texto: "Carta de drinks para o bar, com o nome de cada bebida.", titulo2: "Drinks",
+    itens: ["Nome e descrição dos drinks", "Formato para o bar ou para as mesas", "No estilo da identidade"] },
+  { id: "identidade-minimal", cat: "identidade", tipo: "id", tema: "branco", titulo: "Identidade Minimal", texto: "Monograma limpo e moderno, com tons de rosa suave.", nomes: "J",
+    itens: ["Monograma personalizado", "Paleta de cores do evento", "Versões para fundo claro e escuro"] },
+  { id: "boas-vindas-minimal", cat: "placas", tipo: "welcome", tema: "branco", titulo: "Boas-vindas Minimal", texto: "Placa clean com letra cursiva, para quem ama o simples.", nomes: "Welcome", sub: "Júlia 15",
+    itens: ["Nome e data", "Letra cursiva elegante", "Tamanho grande para cavalete"] },
+  { id: "convite-cha-bebe", cat: "convite", tipo: "phone", tema: "blush", titulo: "Convite Chá de Bebê", texto: "Convite virtual doce e delicado para receber o bebê.", nomes: "Helena", sub: "chá de bebê", data: "08 . 11 . 2026",
+    itens: ["Formato para celular", "Pronto para enviar no WhatsApp", "Tema e cores à escolha"] },
+  { id: "projeto-salao", cat: "decoracao", tipo: "deco", tema: "branco", titulo: "Projeto do Salão", texto: "Planta do espaço com posição das mesas, pista e mesa principal.", deco: "salao",
+    itens: ["Layout das mesas de convidados", "Posição da mesa principal e pista", "Ajuda para organizar o espaço"] }
+];
+
+/* Pacotes */
+const PACOTES = [
+  { nome: "Essencial", texto: "Para quem quer o básico lindo e bem feito.", itens: ["Convite virtual", "Placa de boas-vindas", "Cardápio"] },
+  { nome: "Completo", destaque: true, texto: "Toda a papelaria do evento com a mesma identidade.", itens: ["Identidade visual do evento", "Convite virtual", "Cardápios", "Placas de mesa", "Placa de boas-vindas"] },
+  { nome: "Assinatura", texto: "Tudo do Completo e mais o projeto do espaço.", itens: ["Tudo do pacote Completo", "Projeto da decoração", "Acompanhamento até o dia do evento"] }
+];
+
+/* ============================================================ */
+(function () {
+  const root = document.documentElement;
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (!reduce && "IntersectionObserver" in window) root.classList.add("anim");
+
+  const waLink = msg => "https://wa.me/" + CONFIG.whatsapp + (msg ? "?text=" + encodeURIComponent(msg) : "");
+  const setWa = (el, msg) => { el.href = waLink(msg); el.target = "_blank"; el.rel = "noopener"; };
+  document.querySelectorAll(".js-wa").forEach(a => setWa(a, a.dataset.msg));
+  document.querySelectorAll(".js-ig").forEach(a => a.href = "https://instagram.com/" + CONFIG.instagram);
+  document.getElementById("waText").textContent = CONFIG.whatsappTexto;
+  document.getElementById("igText").textContent = "@" + CONFIG.instagram;
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  /* desenhos das pecas */
+  const flower = cls => `<svg class="flower ${cls}" aria-hidden="true"><use href="#i-flower"/></svg>`;
+  const bars = (n, w) => Array.from({ length: n }, (_, i) => `<i class="bar" style="width:${w[i % w.length]}%"></i>`).join("");
+  function paper(p) {
+    const t = p.tema || "branco";
+    switch (p.tipo) {
+      case "invite":
+        return `<div class="pp pp-invite" data-tema="${t}">${flower("tl")}${flower("br")}<span class="frame"></span>
+          <div class="in"><span class="s">${p.sub || "save the date"}</span><span class="nm">${p.nomes}</span><span class="dt">${p.data || ""}</span></div></div>`;
+      case "phone":
+        return `<div class="pp pp-phone" data-tema="${t}"><span class="notch"></span><div class="screen">${flower("tl")}${flower("br")}
+          <div class="in"><span class="s">${p.sub || "vamos casar"}</span><span class="nm">${p.nomes}</span><span class="dt">${p.data || ""}</span>${bars(2, [70, 50])}<span class="rsvp">confirmar</span></div></div></div>`;
+      case "menu":
+        return `<div class="pp pp-menu" data-tema="${t}"><span class="frame"></span>
+          <div class="in"><span class="nm">${p.titulo2 || "Menu"}</span>
+          <div class="it"><b>entrada</b>${bars(2, [80, 60])}</div>
+          <div class="it"><b>principal</b>${bars(3, [85, 70, 55])}</div>
+          <div class="it"><b>sobremesa</b>${bars(2, [75, 50])}</div></div></div>`;
+      case "table":
+        return `<div class="pp pp-table" data-tema="${t}">${flower("tl")}<span class="frame"></span>
+          <div class="in"><span class="s">mesa</span><span class="num">${p.num || "1"}</span></div></div>`;
+      case "welcome":
+        return `<div class="pp pp-welcome" data-tema="${t}"><span class="arcb"></span>${flower("br")}
+          <div class="in"><span class="nm">${p.nomes}</span><span class="s">${p.sub || ""}</span>${bars(1, [40])}</div></div>`;
+      case "id": {
+        const sw = ["#FFFFFF", "#F7DDE2", "#D99AA8", "#B76E79"];
+        return `<div class="pp pp-id" data-tema="${t}"><div class="in"><span class="mono">${p.nomes}</span>
+          <span class="sw">${sw.map(c => `<i style="background:${c}"></i>`).join("")}</span></div></div>`;
+      }
+      case "deco":
+        return `<div class="pp pp-deco"><span class="grid"></span>${p.deco === "salao" ? salao() : mesa()}<span class="lbl">${p.deco === "salao" ? "planta do salão" : "mesa principal"}</span></div>`;
+    }
+    return "";
+  }
+  function mesa() {
+    return `<svg viewBox="0 0 200 150" fill="none" stroke="currentColor" style="color:#B76E79;position:relative">
+      <path d="M40 110 V55 a60 60 0 0 1 120 0 V110" stroke-width="1.5" fill="#FBEEF0"/>
+      <circle cx="100" cy="62" r="22" stroke-dasharray="3 3"/>
+      <rect x="30" y="110" width="140" height="14" rx="2" fill="#F7DDE2"/>
+      <rect x="88" y="84" width="24" height="26" rx="2" fill="#fff"/><rect x="92" y="72" width="16" height="12" rx="2" fill="#fff"/>
+      <g fill="#EFC3CC" stroke="none"><circle cx="52" cy="104" r="6"/><circle cx="62" cy="106" r="4"/><circle cx="148" cy="104" r="6"/><circle cx="138" cy="106" r="4"/></g>
+      <g fill="#D99AA8" stroke="none"><circle cx="45" cy="60" r="9"/><circle cx="36" cy="72" r="7"/><circle cx="160" cy="48" r="9"/><circle cx="166" cy="62" r="6"/></g>
+      <path d="M100 28 v-10 M112 22 l6 -8" stroke-width=".8" stroke-dasharray="2 2"/><text x="120" y="14" font-size="7" fill="#B76E79" stroke="none" font-family="Jost">painel</text>
+    </svg>`;
+  }
+  function salao() {
+    const tables = [];
+    [[40, 40], [75, 40], [40, 75], [75, 75], [40, 110], [75, 110], [160, 110], [125, 110]].forEach(([x, y]) =>
+      tables.push(`<circle cx="${x}" cy="${y}" r="11" fill="#FBEEF0"/>`));
+    return `<svg viewBox="0 0 200 150" fill="none" stroke="#B76E79" style="position:relative">
+      <rect x="14" y="14" width="172" height="122" rx="4" stroke-width="1.5"/>
+      ${tables.join("")}
+      <rect x="112" y="28" width="62" height="18" rx="2" fill="#F7DDE2"/>
+      <rect x="112" y="58" width="62" height="36" rx="2" stroke-dasharray="3 3"/>
+      <text x="126" y="80" font-size="8" fill="#B76E79" stroke="none" font-family="Jost">pista</text>
+      <path d="M88 136 v-6 h24 v6" stroke-width="1.5"/>
+    </svg>`;
+  }
+
+  /* hero: pecas flutuando */
+  const floats = document.querySelectorAll("#heroArt .float");
+  const heroPieces = [
+    Object.assign({}, CATALOGO[6], { tema: "branco" }),
+    { tipo: "table", tema: "rose", num: "7" },
+    { tipo: "menu", tema: "blush" },
+    { tipo: "id", tema: "branco", nomes: "M" }
+  ];
+  const tilt = ["-6deg", "5deg", "4deg", "-4deg"];
+  floats.forEach((f, i) => { f.innerHTML = paper(heroPieces[i]); f.firstElementChild.style.setProperty("--r", tilt[i]); });
+
+  /* faixa */
+  const words = ["Identidade visual", "Convite virtual", "Cardápios", "Placas de mesa", "Placa de boas-vindas", "Projeto da decoração"];
+  const once = words.map(w => `<span>${w}</span>`).join("");
+  document.getElementById("marquee").innerHTML = once + once;
+
+  /* servicos */
+  const icons = {
+    id: '<circle cx="12" cy="12" r="8"/><path d="M9 14.5c1.5-4 4.5-6 6-5s-1 5-5 6.5"/>',
+    convite: '<rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M10.5 5h3M12 11.5c-1.5-1.8-3.5-.4-2.4 1.2L12 15l2.4-2.3c1.1-1.6-.9-3-2.4-1.2Z"/>',
+    cardapio: '<rect x="6" y="2.5" width="12" height="19" rx="1.5"/><path d="M9 7h6M9.5 11h5M9.5 14h5M10.5 17h3"/>',
+    mesa: '<path d="M5 20 8 6h8l3 14"/><path d="M10.5 11.5 12 10v5"/>',
+    boasvindas: '<path d="M6 16V9a6 6 0 0 1 12 0v7Z"/><path d="M8 16l-2 5M16 16l2 5M12 16v5"/>',
+    deco: '<rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="2"/><circle cx="8.5" cy="15.5" r="2"/><path d="M13 7h5v10h-5z"/>'
+  };
+  document.getElementById("svcGrid").innerHTML = SERVICOS.map((s, i) => `
+    <article class="svc rv" style="--d:${(i % 3) * 0.1}s">
+      <span class="n">0${i + 1}</span>
+      <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${icons[s.icone]}</svg></span>
+      <h3>${s.titulo}</h3>
+      <p>${s.texto}</p>
+      <a href="#catalogo" data-go="${s.filtro}">Ver no catálogo <span>→</span></a>
+    </article>`).join("");
+
+  /* catalogo */
+  const bgByTema = { branco: "#F7DDE2", blush: "#FFFFFF", rose: "#FBEEF0", nude: "#FBEEF0" };
+  const grid = document.getElementById("catGrid");
+  grid.innerHTML = CATALOGO.map((p, i) => `
+    <article class="item rv" data-cat="${p.cat}" style="--d:${(i % 4) * 0.08}s">
+      <button class="thumb" data-i="${i}" style="--bg:${bgByTema[p.tema] || "#F7DDE2"}" aria-label="Ver detalhes: ${p.titulo}">
+        <div class="stage">${paper(p)}</div>
+        <img class="photo" src="img/catalogo/${p.id}.jpg" alt="${p.titulo}" loading="lazy" onerror="this.remove()">
+        <span class="tag">${CATEGORIAS[p.cat]}</span>
+        <span class="zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5M11 8.5v5M8.5 11h5"/></svg></span>
+      </button>
+      <div class="info">
+        <h3>${p.titulo}</h3>
+        <p>${p.texto}</p>
+        <a class="want" href="${waLink("Oi Mary! Vi no catálogo e quero o " + p.titulo + ".")}" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#i-wa"/></svg>Quero esse</a>
+      </div>
+    </article>`).join("");
+
+  const filters = document.getElementById("filters");
+  filters.innerHTML = [["todos", "Todos"], ...Object.entries(CATEGORIAS)]
+    .map(([k, v], i) => `<button type="button" data-f="${k}" aria-pressed="${i === 0}">${v}</button>`).join("");
+  let visible = CATALOGO.map((_, i) => i);
+  function applyFilter(f) {
+    filters.querySelectorAll("button").forEach(b => b.setAttribute("aria-pressed", b.dataset.f === f));
+    visible = [];
+    grid.querySelectorAll(".item").forEach((el, i) => {
+      const show = f === "todos" || el.dataset.cat === f;
+      el.classList.toggle("out", !show);
+      if (show) { visible.push(i); el.classList.add("in"); }
+    });
+  }
+  filters.addEventListener("click", e => { const b = e.target.closest("button"); if (b) applyFilter(b.dataset.f); });
+  document.querySelectorAll("[data-go]").forEach(a => a.addEventListener("click", () => applyFilter(a.dataset.go)));
+
+  /* lightbox */
+  const lb = document.getElementById("lb"), lbMedia = document.getElementById("lbMedia");
+  let cur = 0, lastFocus = null;
+  function fill(i) {
+    const p = CATALOGO[i]; cur = i;
+    lbMedia.querySelectorAll(".stage,.photo").forEach(n => n.remove());
+    lbMedia.style.background = bgByTema[p.tema] || "#F7DDE2";
+    lbMedia.insertAdjacentHTML("afterbegin", `<div class="stage">${paper(p)}</div><img class="photo" src="img/catalogo/${p.id}.jpg" alt="${p.titulo}" onerror="this.remove()">`);
+    document.getElementById("lbCat").textContent = CATEGORIAS[p.cat];
+    document.getElementById("lbTitle").textContent = p.titulo;
+    document.getElementById("lbDesc").textContent = p.texto;
+    document.getElementById("lbList").innerHTML = p.itens.map(t => `<li>${t}</li>`).join("");
+    setWa(document.getElementById("lbWa"), "Oi Mary! Vi no catálogo e quero o " + p.titulo + ".");
+  }
+  function openLb(i) {
+    lastFocus = document.activeElement; fill(i);
+    lb.hidden = false; requestAnimationFrame(() => lb.classList.add("open"));
+    document.body.style.overflow = "hidden"; document.getElementById("lbClose").focus();
+  }
+  function closeLb() {
+    lb.classList.remove("open"); document.body.style.overflow = "";
+    setTimeout(() => { lb.hidden = true; }, 400); lastFocus && lastFocus.focus();
+  }
+  function step(d) { const k = visible.indexOf(cur); fill(visible[(k + d + visible.length) % visible.length]); }
+  grid.addEventListener("click", e => { const t = e.target.closest(".thumb"); if (t) openLb(+t.dataset.i); });
+  document.getElementById("lbClose").onclick = closeLb;
+  document.getElementById("lbPrev").onclick = () => step(-1);
+  document.getElementById("lbNext").onclick = () => step(1);
+  lb.addEventListener("click", e => { if (e.target === lb) closeLb(); });
+  document.addEventListener("keydown", e => {
+    if (lb.hidden) return;
+    if (e.key === "Escape") closeLb();
+    if (e.key === "ArrowLeft") step(-1);
+    if (e.key === "ArrowRight") step(1);
+  });
+
+  /* pacotes */
+  document.getElementById("packGrid").innerHTML = PACOTES.map((p, i) => `
+    <article class="pack rv${p.destaque ? " star" : ""}" style="--d:${i * 0.12}s">
+      ${p.destaque ? '<span class="ribbon">Mais pedido</span>' : ""}
+      <span class="eyebrow">Pacote</span>
+      <h3><span class="script">${p.nome}</span></h3>
+      <p>${p.texto}</p>
+      <ul>${p.itens.map(t => `<li>${t}</li>`).join("")}</ul>
+      <a class="btn ${p.destaque ? "btn-solid" : "btn-ghost"} btn-sm" href="${waLink("Oi Mary! Quero um orçamento do pacote " + p.nome + ".")}" target="_blank" rel="noopener">Pedir orçamento</a>
+    </article>`).join("");
+
+  /* menu celular */
+  const header = document.getElementById("header"), menuBtn = document.getElementById("menuBtn");
+  menuBtn.addEventListener("click", () => {
+    const open = document.body.classList.toggle("menu-open");
+    menuBtn.setAttribute("aria-expanded", open);
+    menuBtn.setAttribute("aria-label", open ? "Fechar menu" : "Abrir menu");
+  });
+  document.querySelectorAll("#nav a").forEach(a => a.addEventListener("click", () => {
+    document.body.classList.remove("menu-open"); menuBtn.setAttribute("aria-expanded", false);
+  }));
+
+  /* rolagem: topo, progresso, menu ativo */
+  const progress = document.getElementById("progress");
+  const navLinks = [...document.querySelectorAll('#nav a[href^="#"]:not(.btn)')];
+  let lastY = 0, ticking = false;
+  function onScroll() {
+    const y = scrollY, max = document.documentElement.scrollHeight - innerHeight;
+    progress.style.transform = `scaleX(${max > 0 ? y / max : 0})`;
+    header.classList.toggle("scrolled", y > 30);
+    header.classList.toggle("hidden", y > 500 && y > lastY && !document.body.classList.contains("menu-open"));
+    lastY = y;
+    let current = null;
+    navLinks.forEach(a => { const s = document.querySelector(a.getAttribute("href")); if (s && s.getBoundingClientRect().top < innerHeight * .4) current = a; });
+    navLinks.forEach(a => a.classList.toggle("current", a === current));
+    ticking = false;
+  }
+  addEventListener("scroll", () => { if (!ticking) { requestAnimationFrame(onScroll); ticking = true; } }, { passive: true });
+  onScroll();
+
+  /* parallax das pecas do hero com o mouse */
+  if (!reduce && matchMedia("(pointer:fine)").matches) {
+    const art = document.getElementById("heroArt");
+    addEventListener("mousemove", e => {
+      const x = e.clientX / innerWidth - .5, y = e.clientY / innerHeight - .5;
+      floats.forEach(f => { const d = +f.dataset.depth; f.style.transform = `translate3d(${x * d}px,${y * d}px,0)`; });
+    }, { passive: true });
+  }
+
+  /* petalas no contato */
+  if (!reduce) {
+    const pet = document.getElementById("petals");
+    for (let i = 0; i < 16; i++) {
+      const s = document.createElement("span"); s.className = "petal";
+      s.style.left = Math.random() * 100 + "%";
+      s.style.animationDuration = 9 + Math.random() * 9 + "s";
+      s.style.animationDelay = -Math.random() * 18 + "s";
+      s.style.setProperty("--dx", (Math.random() * 160 - 80) + "px");
+      s.style.scale = .6 + Math.random() * .8;
+      pet.appendChild(s);
+    }
+  }
+
+  /* aparecer ao rolar */
+  if (root.classList.contains("anim")) {
+    const io = new IntersectionObserver(entries => entries.forEach(en => {
+      if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); }
+    }), { threshold: .12, rootMargin: "0px 0px -40px 0px" });
+    document.querySelectorAll(".rv,.rv-l,.rv-r").forEach(el => io.observe(el));
+  }
+
+  /* abertura */
+  const pre = document.getElementById("preloader");
+  const start = () => { pre.classList.add("done"); document.querySelector(".hero").classList.add("ready"); };
+  if (root.classList.contains("anim")) {
+    let done = false;
+    const go = () => { if (!done) { done = true; setTimeout(start, 1500); } };
+    addEventListener("load", go); setTimeout(go, 2500);
+  } else start();
+})();
+</script>
+</body>
+</html>
