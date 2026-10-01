@@ -6,7 +6,7 @@ A identidade da Isadora Freitas aparece só como **projeto modelo**, para mostra
 
 ## Como personalizar
 
-1. **Contato e nome da marca**: no fim do `index.html`, procure `CONFIG` e coloque o nome da marca, o WhatsApp e o Instagram reais.
+1. **Contato e nome da marca**: no fim do `index.html`, procure `CONFIG`. Já está com o WhatsApp (15) 99840-4102 e o Instagram @marycriativa0.
 2. **Fotos dos mockups da Isadora** (JPG, na pasta `img/projeto-modelo/`). Enquanto a foto não existir, aparece um desenho no lugar. Nomes:
    `convite.jpg`, `necessaire.jpg`, `garrafa.jpg`, `sacola.jpg`, `menu.jpg`, `menu-arco.jpg`, `placa-mesa.jpg`, `decoracao.jpg`, `pulseira.jpg`,
    `lembranca.jpg`, `embalagem.jpg`, `robe.jpg`, `chinelo.jpg`, `papelaria.jpg`, `boas-vindas.jpg`

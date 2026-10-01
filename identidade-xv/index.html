@@ -106,7 +106,7 @@ em.it{font-style:italic;color:var(--gold)}
 .float{position:absolute;z-index:2;background:var(--white);padding:6px;box-shadow:var(--shadow);cursor:zoom-in;border:0;animation:bob 7s ease-in-out infinite}
 .float img{width:100%;height:100%;object-fit:cover;display:block}
 .f1{left:-16%;bottom:14%;width:34%;aspect-ratio:4/5;rotate:-7deg}
-.f2{right:-14%;top:10%;width:29%;aspect-ratio:9/14;rotate:6deg;animation-delay:-3.5s}
+.f2{right:-14%;top:10%;width:30%;aspect-ratio:4/5;rotate:6deg;animation-delay:-3.5s}
 @keyframes bob{50%{translate:0 -14px}}
 .hello{position:absolute;z-index:3;left:50%;bottom:-26px;translate:-50% 0;background:var(--white);padding:14px 26px 12px;box-shadow:var(--shadow-sm);text-align:center;white-space:nowrap}
 .hello b{display:block;font-family:var(--script);font-weight:400;font-size:30px;color:var(--gold);line-height:1}
@@ -167,12 +167,20 @@ em.it{font-style:italic;color:var(--gold)}
 .tabs button[aria-selected=true]{background:var(--rose-deep);color:#fff;box-shadow:none}
 .tabs i{font-style:normal;opacity:.55;margin-left:6px}
 .tab-desc{text-align:center;color:var(--ink-soft);font-size:15px;max-width:640px;margin:0 auto clamp(28px,4vw,44px);min-height:3.4em;transition:opacity .3s}
-.masonry{columns:3;column-gap:clamp(12px,1.6vw,20px);transition:opacity .3s,transform .3s}
+.masonry{--h:250px;transition:opacity .3s,transform .3s}
+.jrow{display:grid;grid-template-columns:repeat(5,1fr);gap:clamp(10px,1.4vw,16px)}
+.jfill{display:none}
+.grp+.grp{margin-top:clamp(40px,5vw,64px)}
+.grp-h{display:flex;align-items:baseline;gap:8px 22px;flex-wrap:wrap;padding-bottom:14px;margin-bottom:18px;border-bottom:1px solid var(--line)}
+.grp-h b{font-family:var(--serif);font-weight:400;font-size:clamp(26px,3vw,34px);line-height:1.1}
+.grp-h span{color:var(--ink-soft);font-size:14px;flex:1 1 320px}
 .masonry.out,.tab-desc.out{opacity:0}
 .masonry.out{transform:translateY(12px)}
-.gi{break-inside:avoid;margin:0 0 clamp(12px,1.6vw,20px);display:block;width:100%;position:relative;border:0;padding:0;background:var(--blush);cursor:zoom-in;overflow:hidden;text-align:left;animation:pop .9s var(--ease) both;animation-delay:var(--d,0s)}
+.gi{aspect-ratio:4/5;display:block;position:relative;border:0;padding:0;background:var(--blush);cursor:zoom-in;overflow:hidden;text-align:left;animation:pop .9s var(--ease) both;animation-delay:var(--d,0s)}
 @keyframes pop{from{opacity:0;transform:translateY(26px) scale(.97)}}
-.gi img,.gi svg{display:block;width:100%;height:auto;transition:transform 1.2s var(--ease)}
+.gi.fit{background:#fff}
+.gi.fit img{object-fit:contain}
+.gi img,.gi svg{display:block;width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
 .gi:hover img,.gi:hover svg{transform:scale(1.05)}
 .gi .tag{position:absolute;left:12px;top:12px;padding:6px 12px;font-size:9px}
 .gi .ov{position:absolute;left:0;right:0;bottom:0;padding:44px 16px 14px;background:linear-gradient(transparent,rgba(30,20,18,.62));color:#fff;opacity:0;translate:0 12px;transition:opacity .5s var(--ease),translate .5s var(--ease)}
@@ -247,12 +255,15 @@ em.it{font-style:italic;color:var(--gold)}
 .screen-row figcaption{text-align:center;font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
 .screen .reel{width:min(320px,78vw);aspect-ratio:9/16;background:var(--ink)}
 .ig-card{position:relative;display:block;width:min(320px,78vw);aspect-ratio:9/16;overflow:hidden;border-radius:34px;box-shadow:var(--shadow);text-decoration:none;color:#fff;background:var(--ink)}
-.ig-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:blur(2px) brightness(.62);transform:scale(1.08);transition:transform 1.2s var(--ease),filter .8s}
-.ig-card:hover img{transform:scale(1.14);filter:blur(0) brightness(.55)}
-.ig-play{position:absolute;left:50%;top:44%;translate:-50% -50%;width:78px;height:78px;border-radius:50%;background:rgba(255,255,255,.18);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);display:grid;place-items:center;box-shadow:inset 0 0 0 1px rgba(255,255,255,.5);animation:pulse 2.6s ease-in-out infinite}
+.ig-card{background:#0B2465}
+.ig-card img{position:absolute;left:0;right:0;top:4%;width:100%;height:auto;aspect-ratio:1;object-fit:cover;filter:brightness(.92);transition:transform 1.2s var(--ease)}
+.ig-card:hover img{transform:scale(1.05)}
+.ig-card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 35%,rgba(8,22,64,.85) 70%);pointer-events:none}
+.ig-card>span{z-index:1}
+.ig-play{position:absolute;left:50%;top:62%;translate:-50% -50%;width:78px;height:78px;border-radius:50%;background:rgba(255,255,255,.18);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);display:grid;place-items:center;box-shadow:inset 0 0 0 1px rgba(255,255,255,.5);animation:pulse 2.6s ease-in-out infinite}
 .ig-play svg{width:30px;height:30px;margin-left:4px}
 @keyframes pulse{50%{box-shadow:inset 0 0 0 1px rgba(255,255,255,.5),0 0 0 14px rgba(255,255,255,.08)}}
-.ig-txt{position:absolute;left:0;right:0;top:58%;text-align:center;font-family:var(--serif);font-size:26px;line-height:1.2;padding:0 20px}
+.ig-txt{position:absolute;left:0;right:0;top:72%;text-align:center;font-family:var(--serif);font-size:26px;line-height:1.2;padding:0 20px}
 .ig-txt small{display:block;font-family:var(--sans);font-size:10px;letter-spacing:.26em;text-transform:uppercase;opacity:.8;margin-bottom:8px}
 .ig-foot{position:absolute;left:0;right:0;bottom:22px;display:flex;justify-content:center;align-items:center;gap:8px;font-size:12px;letter-spacing:.14em}
 .ig-foot svg{width:18px;height:18px}
@@ -365,7 +376,7 @@ svg .caps{font-family:var(--sans);letter-spacing:.3em}
   .steps{grid-template-columns:1fr 1fr}
   .step:nth-child(2){border-right:0}
   .step:nth-child(-n+2){border-bottom:1px solid var(--line);padding-bottom:30px}
-  .masonry{columns:2}
+  .jrow{grid-template-columns:repeat(3,1fr)}
   .me .wrap{grid-template-columns:1fr}
   .invites .wrap{grid-template-columns:1fr}
   .inv-stage{max-width:440px}
@@ -382,8 +393,9 @@ svg .caps{font-family:var(--sans);letter-spacing:.3em}
   .pieces{grid-template-columns:1fr}
   .piece:nth-child(odd){border-right:0;padding-right:8px}
   .piece:nth-child(even){padding-left:8px}
-  .masonry{column-gap:10px}
-  .gi{margin-bottom:10px}
+  .jrow{grid-template-columns:1fr 1fr;gap:8px}
+  .gi .tag{display:none}
+  .grp-h span{font-size:13px}
   .gi .tag{left:8px;top:8px;font-size:8px;padding:5px 8px;letter-spacing:.14em}
   .gi .tag::before{display:none}
   .gi .ov{padding:30px 10px 10px}
@@ -478,7 +490,7 @@ svg .caps{font-family:var(--sans);letter-spacing:.3em}
       <span class="ring" aria-hidden="true"></span>
       <div class="arch"><img id="heroImg" src="img/designer/designer.jpg" alt="Designer de identidade visual no estúdio" fetchpriority="high"></div>
       <button class="float f1" type="button" data-lb="isadora" data-i="0" aria-label="Ver garrafa térmica do projeto modelo"><img src="img/projeto-modelo/garrafa.jpg" alt=""></button>
-      <button class="float f2" type="button" data-lb="leticia" data-i="2" aria-label="Ver copo do projeto modelo"><img src="img/projeto-leticia/copo.jpg" alt=""></button>
+      <button class="float f2" type="button" data-lb="isadora" data-i="3" aria-label="Ver placa de mesa do projeto modelo"><img src="img/projeto-modelo/placa-mesa.jpg" alt=""></button>
       <div class="hello"><b>Prazer!</b><span>Designer de identidade visual</span></div>
     </div>
   </div>
@@ -587,12 +599,12 @@ svg .caps{font-family:var(--sans);letter-spacing:.3em}
       </figure>
       <figure class="rv" style="--d:.12s">
         <a class="ig-card" href="https://www.instagram.com/reel/DazEGxWNQfD/" target="_blank" rel="noopener" aria-label="Assistir ao reel da festa no Instagram">
-          <img src="video/reel-capa.jpg" alt="" loading="lazy">
+          <img src="img/projeto-helena/monograma.jpg" alt="" loading="lazy">
           <span class="ig-play"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5Z"/></svg></span>
           <span class="ig-txt"><small>Reel no Instagram</small>Assista à festa completa</span>
           <span class="ig-foot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg><span class="js-ig-name">@marycriativa0</span></span>
         </a>
-        <figcaption>Mais dessa festa</figcaption>
+        <figcaption>Reel no Instagram</figcaption>
       </figure>
     </div>
     <div class="ctas rv">
@@ -630,8 +642,8 @@ svg .caps{font-family:var(--sans);letter-spacing:.3em}
 </section>
 
 <section class="sec final" id="orcamento">
-  <button class="ff ff1" type="button" data-lb="isadora" data-i="3" aria-label="Ver placa de mesa"><img src="img/projeto-modelo/placa-mesa.jpg" alt="" loading="lazy"></button>
-  <button class="ff ff2" type="button" data-lb="helena" data-i="3" aria-label="Ver necessaire"><img src="img/projeto-helena/necessaire.jpg" alt="" loading="lazy"></button>
+  <button class="ff ff1" type="button" data-lb="isadora" data-i="1" aria-label="Ver menu de drinks"><img src="img/projeto-modelo/menu.jpg" alt="" loading="lazy"></button>
+  <button class="ff ff2" type="button" data-lb="isadora" data-i="2" aria-label="Ver pulseira"><img src="img/projeto-modelo/pulseira.jpg" alt="" loading="lazy"></button>
   <div class="wrap">
     <svg class="crest rv" viewBox="0 0 120 140" aria-hidden="true"><use href="#crest-plain"/></svg>
     <h2 class="rv">Seus 15 anos merecem uma identidade só sua.</h2>
@@ -734,8 +746,8 @@ svg .caps{font-family:var(--sans);letter-spacing:.3em}
    ============================================================ */
 const CONFIG = {
   marca: "Mary Criativa",              // nome que aparece no topo e no rodapé
-  whatsapp: "5500000000000",           // só números: 55 + DDD + número
-  whatsappTexto: "(00) 0 0000-0000",   // como aparece no site
+  whatsapp: "5515998404102",           // só números: 55 + DDD + número
+  whatsappTexto: "(15) 99840-4102",    // como aparece no site
   instagram: "marycriativa0"           // sem o @
 };
 
@@ -1024,10 +1036,14 @@ const PASSOS = [
   /* parallax leve na foto do topo */
   const heroImg = $("heroImg");
 
-  /* faixa de fotos em movimento */
-  const fotos = GALERIA.filter(g => g.src);
-  const half = Math.ceil(fotos.length / 2);
-  const rowHtml = arr => { const h = arr.map(g => `<button type="button" data-src="${g.src}" aria-label="Ampliar ${g.nome}"><img src="${g.src}" alt="" loading="lazy" style="aspect-ratio:${g.r}"></button>`).join(""); return h + h; };
+  /* ordem por cor: rosa, azuis, turquesa e convites */
+  const ORDEM = ["isadora", "lais", "helena", "leticia", "convites"];
+  PROJETOS.sort((a, b) => (a.id === "todos" ? -1 : b.id === "todos" ? 1 : (ORDEM.indexOf(a.id) + 1 || 99) - (ORDEM.indexOf(b.id) + 1 || 99)));
+
+  /* faixa de fotos em movimento: uma fileira rosa e azul, outra turquesa e convites */
+  const fotos = ORDEM.flatMap(id => GALERIA.filter(g => g.src && g.p === id));
+  const half = fotos.findIndex(g => g.p === "leticia");
+  const rowHtml = arr => { const h = arr.concat(arr).map(g => `<button type="button" data-src="${g.src}" aria-label="Ampliar ${g.nome}"><img src="${g.src}" alt="" loading="lazy" style="aspect-ratio:${g.r}"></button>`).join(""); return h + h; };
   $("marq").innerHTML = `<div class="row">${rowHtml(fotos.slice(0, half))}</div><div class="row rev">${rowHtml(fotos.slice(half))}</div>`;
 
   /* o que e */
@@ -1038,9 +1054,7 @@ const PASSOS = [
   const LISTS = {};
   PROJETOS.forEach(pr => {
     if (pr.id !== "todos") { LISTS[pr.id] = byP(pr.id); return; }
-    const grupos = ["isadora", "lais", "helena", "convites", "leticia"].map(byP), mix = [];
-    for (let i = 0; i < Math.max(...grupos.map(g => g.length)); i++) grupos.forEach(g => g[i] && mix.push(g[i]));
-    LISTS.todos = mix;
+    LISTS.todos = ORDEM.flatMap(byP);
   });
   const media = g => g.scene ? SCENES[g.scene]() : `<img src="${g.src}" alt="${g.nome}, projeto modelo" loading="lazy" style="aspect-ratio:${g.r}">`;
   let tab = "todos";
@@ -1048,11 +1062,16 @@ const PASSOS = [
   function renderTab(first) {
     const items = LISTS[tab], pr = PROJETOS.find(x => x.id === tab);
     $("gDesc").textContent = pr.desc;
-    $("gallery").innerHTML = items.map((g, i) => `
-      <button class="gi" type="button" data-lb="${tab}" data-i="${i}" style="--d:${first ? 0 : Math.min(i, 9) * .06}s" aria-label="Ampliar ${g.nome}">
+    const card = (g, i) => `
+      <button class="gi${g.r > 1.3 && !g.scene && g.nome.startsWith("Logo") ? " fit" : ""}" type="button" data-lb="${tab}" data-i="${i}" style="--r:${g.r};--d:${first ? 0 : Math.min(i % 6, 5) * .06}s" aria-label="Ampliar ${g.nome}">
         ${media(g)}<span class="tag">${g.scene ? "Ilustração" : "Projeto modelo"}</span>
         <span class="ov"><small>${PROJETOS.find(x => x.id === g.p).nome}</small><b>${g.nome}</b></span>
-      </button>`).join("");
+      </button>`;
+    const row = arr => `<div class="jrow">${arr.map(([g, i]) => card(g, i)).join("")}<i class="jfill"></i></div>`;
+    const idx = items.map((g, i) => [g, i]);
+    $("gallery").innerHTML = tab !== "todos" ? row(idx)
+      : ORDEM.map(id => { const pr = PROJETOS.find(x => x.id === id);
+          return `<div class="grp"><div class="grp-h"><b>${pr.nome}</b><span>${pr.desc}</span></div>${row(idx.filter(([g]) => g.p === id))}</div>`; }).join("");
   }
   function setTab(t) {
     if (t === tab) return;
