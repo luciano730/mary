@@ -39,3 +39,7 @@ Ficam em `img/designer/`: `designer.jpg` (topo do site) e `designer-sobre.jpg` (
 ## Galeria com abas
 
 A galeria tem abas por projeto (Sakura, Conto de fadas, Pérolas e laços, Ilustrações). Para mudar fotos ou textos, edite as listas `PROJETOS` e `GALERIA` no `index.html`.
+
+## Convites
+
+A seção "Convites digitais" usa as fotos de `img/convites/`. As fotos do projeto Laís (flores azuis) ficam em `img/projeto-lais/`.
