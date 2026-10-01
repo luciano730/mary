@@ -199,6 +199,25 @@ em.it{font-style:italic;color:var(--gold)}
 .lb-next{right:16px;top:50%;transform:translateY(-50%)}
 .lb-count{position:absolute;top:calc(24px + env(safe-area-inset-top,0px));left:24px;color:#F4EBE6;font-size:12px;letter-spacing:.24em}
 
+/* festa real */
+.real{background:var(--ink);color:var(--bg);overflow:hidden}
+.real .wrap{display:grid;grid-template-columns:1fr auto;gap:clamp(36px,7vw,110px);align-items:center}
+.real h2{font-size:clamp(38px,5.4vw,64px);margin:20px 0 22px}
+.real h2 .scr{font-family:var(--script);color:var(--gold-soft);font-size:1.1em}
+.real p{color:rgba(251,247,243,.75);max-width:520px;font-size:17px}
+.real ul{list-style:none;margin:28px 0 34px;padding:0;display:grid;gap:10px}
+.real li{display:flex;gap:14px;align-items:baseline;font-family:var(--serif);font-size:21px}
+.real li::before{content:"✦";font-size:11px;color:var(--gold-soft)}
+.real .tag{background:rgba(255,255,255,.08);color:var(--bg);box-shadow:inset 0 0 0 1px rgba(217,195,160,.5)}
+.real .btn-line{color:var(--bg);box-shadow:inset 0 0 0 1px var(--bg)}
+.real .btn-line:hover{background:var(--bg);color:var(--ink)}
+.reel{position:relative;width:min(340px,78vw);aspect-ratio:356/634;padding:10px;border-radius:34px;background:#1d1715;box-shadow:0 40px 80px -30px rgba(0,0,0,.7),inset 0 0 0 1px rgba(255,255,255,.08)}
+.reel video{width:100%;height:100%;object-fit:cover;border-radius:25px;display:block;background:#000}
+.reel .tag{position:absolute;left:24px;top:24px;z-index:2;pointer-events:none}
+.reel .snd{position:absolute;right:22px;bottom:22px;z-index:2;width:46px;height:46px;border:0;border-radius:50%;background:rgba(0,0,0,.55);color:#fff;cursor:pointer;display:grid;place-items:center}
+.reel .snd svg{width:22px;height:22px}
+.reel .snd[hidden]{display:none}
+
 /* pacotes */
 .packs{background:var(--blush)}
 .pack-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2vw,24px);align-items:stretch}
@@ -330,6 +349,8 @@ svg .caps{font-family:var(--sans);letter-spacing:.3em}
   .hero .wrap{grid-template-columns:1fr}
   .stage{max-width:480px}
   .about .wrap{grid-template-columns:1fr}
+  .real .wrap{grid-template-columns:1fr;justify-items:center}
+  .real .wrap>div:first-child{justify-self:stretch}
   .about .head{position:static}
   .pack-grid{grid-template-columns:1fr;max-width:540px;margin-inline:auto}
   .ex-head{grid-template-columns:1fr}
@@ -488,6 +509,23 @@ svg .caps{font-family:var(--sans);letter-spacing:.3em}
     <div class="gallery-foot rv">
       <p>Imagens ilustrativas de um projeto modelo, criadas para demonstrar as possibilidades de aplicação. Cada identidade é desenvolvida de forma exclusiva para cada cliente.</p>
       <a class="btn btn-dark" href="#pacotes">Conhecer os pacotes</a>
+    </div>
+  </div>
+</section>
+
+<section class="sec real" id="festa-real">
+  <div class="wrap">
+    <div class="rv">
+      <span class="eyebrow">Festa real</span>
+      <h2>Do papel para a festa: <span class="scr">XV da Alícia</span></h2>
+      <p>Criei a identidade visual da festa da Alícia, com tema Alice no País das Maravilhas. Veja como ela ganhou vida no dia: nas canecas personalizadas, nos detalhes da decoração, nas mesas e no bolo.</p>
+      <ul><li>Identidade visual exclusiva</li><li>Aplicada nas lembranças e na decoração</li><li>Tudo conversando com o tema</li></ul>
+      <a class="btn btn-line" href="#pacotes">Quero a minha identidade</a>
+    </div>
+    <div class="reel rv" style="--d:.1s">
+      <span class="tag">Festa real</span>
+      <video id="reel" src="video/xv-alicia.mp4" poster="video/xv-alicia.jpg" muted loop playsinline preload="metadata" aria-label="Vídeo da festa XV da Alícia"></video>
+      <button class="snd" id="snd" type="button" aria-label="Ativar som"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4Z"/><path id="sndX" d="m16 9 5 6m0-6-5 6"/></svg></button>
     </div>
   </div>
 </section>
@@ -1059,6 +1097,20 @@ const PASSOS = [
   $("steps").innerHTML = PASSOS.map(([t, p], i) => `<div class="step rv" style="--d:${i * .08}s"><span class="n">${String(i + 1).padStart(2, "0")}</span><h3>${t}</h3><p>${p}</p></div>`).join("");
 
   bindWa(document);
+
+  /* video da festa real: toca quando aparece na tela */
+  const reel = $("reel"), snd = $("snd");
+  if ("IntersectionObserver" in window && !reduce) {
+    new IntersectionObserver(en => en.forEach(x => { if (x.isIntersecting) reel.play().catch(() => {}); else reel.pause(); }), { threshold: .35 }).observe(reel);
+  } else { reel.controls = true; snd.hidden = true; }
+  snd.onclick = () => {
+    reel.muted = !reel.muted;
+    if (!reel.muted) reel.play().catch(() => {});
+    snd.setAttribute("aria-label", reel.muted ? "Ativar som" : "Desativar som");
+    snd.innerHTML = reel.muted ? '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4Z"/><path d="m16 9 5 6m0-6-5 6"/></svg>'
+      : '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4Z"/><path d="M16 9a4 4 0 0 1 0 6M18.5 6.5a8 8 0 0 1 0 11"/></svg>';
+  };
+  reel.addEventListener("click", () => reel.paused ? reel.play() : reel.pause());
 
   /* menu lateral */
   const sheet = $("sheet"), menuBtn = $("menuBtn");

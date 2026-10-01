@@ -27,3 +27,7 @@ As fotos do projeto modelo azul (Helena Bacin) ficam em `img/projeto-helena/`. A
 ## Exemplo do Pacote 03
 
 As fotos do projeto modelo turquesa (Letícia) ficam em `img/projeto-leticia/`. A lista `EXEMPLO_P3` no `index.html` diz quais aparecem.
+
+## Vídeo da festa real
+
+O vídeo da seção "Festa real" fica em `video/xv-alicia.mp4` (a capa é `video/xv-alicia.jpg`). Para trocar, substitua os arquivos com os mesmos nomes.
