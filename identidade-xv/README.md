@@ -31,3 +31,11 @@ As fotos do projeto modelo turquesa (Letícia) ficam em `img/projeto-leticia/`. 
 ## Vídeo da festa real
 
 O vídeo da seção "Festa real" fica em `video/xv-alicia.mp4` (a capa é `video/xv-alicia.jpg`). Para trocar, substitua os arquivos com os mesmos nomes.
+
+## Foto da designer
+
+Ficam em `img/designer/`: `designer.jpg` (topo do site) e `designer-sobre.jpg` (seção Sobre).
+
+## Galeria com abas
+
+A galeria tem abas por projeto (Sakura, Conto de fadas, Pérolas e laços, Ilustrações). Para mudar fotos ou textos, edite as listas `PROJETOS` e `GALERIA` no `index.html`.
