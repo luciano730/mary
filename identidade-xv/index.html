@@ -99,6 +99,7 @@ em.it{font-style:italic;color:var(--gold)}
 .stage{position:relative;aspect-ratio:1/1.08;max-width:560px;width:100%;justify-self:center}
 .stage .card{position:absolute;overflow:hidden;background:var(--white);box-shadow:var(--shadow);transition:transform 1.4s var(--ease),opacity 1.2s}
 .stage .card svg{display:block;width:100%;height:100%}
+.stage .card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .stage .c1{left:0;top:14%;width:44%;aspect-ratio:4/5;transform:rotate(-5deg)}
 .stage .c2{left:28%;top:0;width:46%;aspect-ratio:4/5;z-index:2}
 .stage .c3{right:0;top:26%;width:42%;aspect-ratio:4/5;transform:rotate(5deg)}
@@ -146,16 +147,16 @@ em.it{font-style:italic;color:var(--gold)}
 .tile .art{flex:1;display:grid;place-items:center;padding-block:18px}
 .t-crest{grid-row:span 2;background:var(--blush)}
 .t-crest svg{width:min(260px,72%);height:auto;color:var(--gold)}
-.t-mono svg{width:120px;height:120px;color:#A8636B}
+.t-mono svg{width:120px;height:120px;color:#D2507A}
 .t-logo .art{text-align:center}
-.t-logo .nm{font-family:var(--script);font-size:clamp(44px,5vw,58px);line-height:1.1;color:#A8636B}
+.t-logo .nm{font-family:var(--script);font-size:clamp(44px,5vw,58px);line-height:1.1;color:#D2507A}
 .t-logo .sub{font-size:10.5px;letter-spacing:.5em;color:var(--gold);margin-top:6px}
 .swatches{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;width:100%}
 .swatches div{display:grid;gap:8px;font-size:10px;letter-spacing:.06em;color:var(--ink-soft);text-align:center}
 .swatches i{display:block;aspect-ratio:1/1.5;border-radius:999px 999px 6px 6px}
 .type .big{font-family:var(--serif);font-size:64px;line-height:1}
 .type .row{display:flex;align-items:baseline;gap:20px;width:100%;justify-content:center}
-.type .row span{font-family:var(--script);font-size:54px;color:#A8636B;line-height:1}
+.type .row span{font-family:var(--script);font-size:54px;color:#D2507A;line-height:1}
 .type small{display:block;font-size:11px;letter-spacing:.14em;color:var(--ink-soft);text-align:center;margin-top:10px}
 .t-els{grid-column:1/-1}
 .t-els .art{padding-bottom:0}
@@ -254,6 +255,13 @@ em.it{font-style:italic;color:var(--gold)}
 .ex-fig .lab{position:absolute;left:0;right:0;bottom:0;padding:26px 14px 12px;background:linear-gradient(transparent,rgba(20,32,60,.55));color:#fff;font-family:var(--serif);font-size:20px;line-height:1.2}
 .ex-fig.contain .lab{background:none;color:var(--ink)}
 .ex-fig .lab small{display:block;font-family:var(--sans);font-size:10px;letter-spacing:.2em;text-transform:uppercase;opacity:.85}
+.ex-row.r3{grid-template-columns:1.25fr repeat(4,1fr)}
+.ex-row.r3 .ex-fig{aspect-ratio:auto!important}
+.ex-row.r3 .ex-fig:first-child{aspect-ratio:9/16!important}
+.ex-row.r3 .ex-fig img{position:absolute;inset:0}
+.example.tiffany .ex-fig{background:#0E8C8C}
+.pack .peek.p3{grid-template-columns:1fr 1fr}
+.pack .peek.p3 img{aspect-ratio:4/5;object-fit:cover}
 .ex-sub{margin:30px 0 4px;font-size:10.5px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold)}
 .ex-note{margin-top:16px;font-size:13.5px;color:var(--ink-soft)}
 
@@ -328,6 +336,10 @@ svg .caps{font-family:var(--sans);letter-spacing:.3em}
   .ex-sw{grid-column:1;grid-row:auto}
   .ex-row.r2{grid-template-columns:1fr 1fr}
   .ex-row.r2 .ex-fig:first-child{grid-column:1/-1;aspect-ratio:1.5!important}
+  .ex-row.r3{grid-template-columns:1fr 1fr}
+  .ex-row.r3 .ex-fig{aspect-ratio:9/16!important}
+  .ex-row.r3 .ex-fig:first-child{grid-column:1/-1;aspect-ratio:4/5!important}
+  .ex-row.r3 .ex-fig:first-child img{object-position:50% 58%}
   .steps{grid-template-columns:1fr 1fr}
   .step:nth-child(2){border-right:0}
   .step:nth-child(-n+2){border-bottom:1px solid var(--line);padding-bottom:30px}
@@ -355,8 +367,12 @@ svg .caps{font-family:var(--sans);letter-spacing:.3em}
   .shot .tag::before{display:none}
   .steps{grid-template-columns:1fr}
   .ex-row.r1,.ex-row.r2{grid-template-columns:1fr}
-  .ex-row .ex-fig{aspect-ratio:auto!important}
-  .ex-row .ex-fig img{height:auto}
+  .ex-row.r3{gap:8px}
+  .ex-row.r3 .ex-fig .tag{display:none}
+  .ex-row.r3 .ex-fig:first-child .tag{display:inline-flex}
+  .ex-row.r3 .ex-fig .lab{font-size:16px;padding:22px 10px 10px}
+  .ex-row:not(.r3) .ex-fig{aspect-ratio:auto!important}
+  .ex-row:not(.r3) .ex-fig img{height:auto}
   .ex-fig.contain .lab{position:static;padding:4px 14px 14px}
   .ex-row.r2 .ex-fig:first-child img{aspect-ratio:1;object-fit:cover}
   .step{border-right:0;border-bottom:1px solid var(--line);padding:26px 0}
@@ -499,6 +515,19 @@ svg .caps{font-family:var(--sans);letter-spacing:.3em}
       <p class="ex-sub">A identidade aplicada em materiais da festa</p>
       <div class="ex-row r2" id="exR2"></div>
       <p class="ex-note">Projeto modelo usado só como demonstração. As aplicações em mockups fazem parte do Pacote 03. No Pacote 01 você recebe os elementos da identidade para usar onde quiser.</p>
+    </div>
+
+    <div class="example tiffany rv" id="exemplo-pacote-03">
+      <div class="ex-head">
+        <div>
+          <span class="eyebrow">Exemplo do Pacote 03</span>
+          <h3>Um projeto modelo com <em class="it">pérolas e laços</em></h3>
+        </div>
+        <p>A identidade completa levada para a festa: o brasão com coroa, pérolas e laços e as aplicações em mockups, como o carrinho de drinks, os copos, a caixa de presente e os chinelos.</p>
+        <div class="ex-sw" aria-label="Cartela de cores do exemplo"><i style="background:#7FD6D3"></i><i style="background:#1BA3A3"></i><i style="background:#111111"></i><i style="background:#F4EEE6"></i><i style="background:#C9A35F"></i></div>
+      </div>
+      <div class="ex-row r3" id="exR3"></div>
+      <p class="ex-note">Projeto modelo usado só como demonstração. Cada identidade é criada do zero, com o nome, o tema e as cores de cada debutante.</p>
     </div>
 
     <div class="compare rv">
@@ -652,15 +681,17 @@ const PACOTES = [
 /* Galeria. Para usar as fotos reais dos mockups, coloque em img/projeto-modelo/<id>.jpg (ex.: necessaire.jpg).
    Enquanto a foto não existir, aparece um desenho no lugar. */
 const MOCKUPS = [
+  { id: "menu", nome: "Menu de drinks", texto: "Menu em acrílico para o bar da festa" },
+  { id: "garrafa", nome: "Garrafa térmica", texto: "Garrafa com caixa, tag e flores de cerejeira" },
+  { id: "placa-mesa", nome: "Placa de mesa", texto: "Número da mesa em acrílico com a identidade" },
+  { id: "pulseira", nome: "Pulseira de acesso", texto: "Monograma repetido na pulseira da entrada", wide: true, solo: true },
+  { id: "menu-arco", nome: "Menu em arco", texto: "Acrílico em arco com flores de cerejeira" },
   { id: "convite", nome: "Convite digital", texto: "Convite cinematográfico com botões interativos", wide: true },
   { id: "necessaire", nome: "Necessaire", texto: "Brasão aplicado em dourado" },
-  { id: "garrafa", nome: "Garrafa térmica", texto: "Nome e brasão em uma lembrança útil" },
   { id: "sacola", nome: "Sacola", texto: "Para os mimos das convidadas" },
-  { id: "menu", nome: "Menu de drinks", texto: "Papelaria para o bar da festa" },
-  { id: "placa-mesa", nome: "Placa de mesa", texto: "Organização com a identidade da festa" },
-  { id: "decoracao", nome: "Decoração", texto: "Painel e mesa principal com o brasão", wide: true, solo: true },
   { id: "lembranca", nome: "Lembrança", texto: "Caixinha com laço e tag do monograma" },
   { id: "embalagem", nome: "Embalagem", texto: "Latinhas personalizadas para doces" },
+  { id: "decoracao", nome: "Decoração", texto: "Painel e mesa principal com o brasão", wide: true, solo: true },
   { id: "robe", nome: "Robe", texto: "Para o making of da debutante" },
   { id: "chinelo", nome: "Chinelo", texto: "Para a pista de dança" },
   { id: "papelaria", nome: "Papelaria", texto: "Convite impresso, tags e adesivos" },
@@ -674,6 +705,15 @@ const EXEMPLO_P1 = [
   { id: "necessaire-azul", nome: "Necessaire", texto: "Monograma aplicado em relevo", r: 1, row: 2 },
   { id: "necessaire", nome: "Necessaire box", texto: "Logotipo, tag e elementos do tema", r: 1.5, row: 2 },
   { id: "sacola", nome: "Sacola", texto: "Logotipo e tag com o monograma", r: 1.5, row: 2 }
+];
+
+/* Exemplo do Pacote 03 (fotos em img/projeto-leticia/) */
+const EXEMPLO_P3 = [
+  { id: "brasao", nome: "Brasão", texto: "Brasão com coroa, pérolas, laços e o nome", tipo: "Identidade" },
+  { id: "carrinho-drinks", nome: "Carrinho de drinks", texto: "Menu, painel e copos com a identidade", tipo: "Mockup" },
+  { id: "copo", nome: "Copo personalizado", texto: "Estampa de corações e brasão aplicado", tipo: "Mockup" },
+  { id: "caixa-presente", nome: "Caixa de presente", texto: "Caixa, cartão e fita com o nome", tipo: "Mockup" },
+  { id: "chinelos", nome: "Chinelos", texto: "Estampas criadas com a identidade", tipo: "Mockup" }
 ];
 
 const ELEMENTOS = ["Brasão", "Monograma", "Logotipo", "Paleta de cores", "Tipografias", "Elementos gráficos", "Padrões e estampas", "Papelaria", "Convites", "Materiais digitais", "Lembranças", "Decoração", "Aplicações personalizadas"];
@@ -892,10 +932,11 @@ const PASSOS = [
   };
 
   /* hero */
+  const heroPhoto = id => `<img src="img/projeto-modelo/${id}.jpg" alt="" onerror="this.remove()">`;
   $("stage").innerHTML = `
-    <div class="card c1">${SCENES.necessaire()}</div>
-    <div class="card c2">${SCENES["placa-mesa"]()}</div>
-    <div class="card c3">${SCENES.garrafa()}</div>
+    <div class="card c1">${SCENES.menu()}${heroPhoto("menu")}</div>
+    <div class="card c2">${SCENES.garrafa()}${heroPhoto("garrafa")}</div>
+    <div class="card c3">${SCENES["placa-mesa"]()}${heroPhoto("placa-mesa")}</div>
     <span class="tag">Projeto modelo</span>`;
 
   /* faixa */
@@ -919,7 +960,7 @@ const PASSOS = [
     rosa: '<path d="M12 21v-7M12 14c-4 0-6-3-6-6 2 1 3 1 4 0 1 1 3 1 4 0 1 1 2 1 4 0 0 3-2 6-6 6Z"/><path d="M10 8c0-2 1-4 2-5 1 1 2 3 2 5"/><path d="M12 17c2-1 4-1 5 0"/>'
   };
   const ic = k => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${EL[k]}</svg>`;
-  const CORES = [["#F2DCD8", "Blush"], ["#D7A2A6", "Rosé"], ["#A8636B", "Malva"], ["#E7D2C4", "Nude"], ["#B08D57", "Dourado"]];
+  const CORES = [["#FBE3EA", "Blush"], ["#F4A9C0", "Sakura"], ["#DE5A82", "Pink"], ["#7D93CF", "Azul Fuji"], ["#C8927A", "Rosé gold"]];
   $("board").innerHTML = `
     <div class="tile t-crest rv"><span class="lbl">Brasão <b>01</b></span><div class="art"><svg viewBox="0 0 120 140" role="img" aria-label="Brasão do projeto modelo"><use href="#crest"/></svg></div></div>
     <div class="tile t-mono rv" style="--d:.06s"><span class="lbl">Monograma <b>02</b></span><div class="art"><svg viewBox="0 0 100 100" role="img" aria-label="Monograma do projeto modelo"><use href="#mono"/></svg></div></div>
@@ -932,7 +973,7 @@ const PASSOS = [
   const photo = m => `<img src="img/projeto-modelo/${m.id}.jpg" alt="${m.nome} com a identidade do projeto modelo" loading="lazy" onerror="this.remove()">`;
   $("gallery").innerHTML = MOCKUPS.map((m, i) => `
     <button class="shot rv${m.wide ? " wide" : ""}${m.solo ? " solo" : ""}" type="button" data-lb="galeria" data-i="${i}" style="--d:${(i % 3) * .07}s" aria-label="Ampliar ${m.nome}">
-      <div class="media">${SCENES[m.id]()}${photo(m)}<span class="tag">Exemplo de aplicação</span></div>
+      <div class="media">${SCENES[m.id] ? SCENES[m.id]() : ""}${photo(m)}<span class="tag">Exemplo de aplicação</span></div>
       <div class="cap"><b>${m.nome}</b><span>Projeto modelo</span></div>
     </button>`).join("");
 
@@ -940,7 +981,8 @@ const PASSOS = [
   const lb = $("lb");
   const LISTS = {
     galeria: MOCKUPS.map(m => ({ nome: m.nome, texto: m.texto + " · Exemplo de aplicação", scene: SCENES[m.id], src: `img/projeto-modelo/${m.id}.jpg`, r: m.wide ? 1.6 : .8 })),
-    p1: EXEMPLO_P1.map(e => ({ nome: e.nome, texto: e.texto + " · Exemplo do Pacote 01", src: `img/projeto-helena/${e.id}.jpg`, r: e.r }))
+    p1: EXEMPLO_P1.map(e => ({ nome: e.nome, texto: e.texto + " · Exemplo do Pacote 01", src: `img/projeto-helena/${e.id}.jpg`, r: e.r })),
+    p3: EXEMPLO_P3.map(e => ({ nome: e.nome, texto: e.texto + " · Exemplo do Pacote 03", src: `img/projeto-leticia/${e.id}.jpg`, r: 9 / 16 }))
   };
   let list = LISTS.galeria, cur = 0;
   function show(i) {
@@ -983,6 +1025,9 @@ const PASSOS = [
       <span class="lab"><small>${e.row === 1 ? "Pacote 01" : "Exemplo de uso"}</small>${e.nome}</span></button>`;
   $("exR1").innerHTML = EXEMPLO_P1.map((e, i) => e.row === 1 ? exFig(e, i) : "").join("");
   $("exR2").innerHTML = EXEMPLO_P1.map((e, i) => e.row === 2 ? exFig(e, i) : "").join("");
+  $("exR3").innerHTML = EXEMPLO_P3.map((e, i) => `<button class="ex-fig" type="button" data-lb="p3" data-i="${i}" aria-label="Ampliar ${e.nome}">
+      <img src="img/projeto-leticia/${e.id}.jpg" alt="${e.nome} do projeto modelo" loading="lazy"><span class="tag">Projeto modelo</span>
+      <span class="lab"><small>${e.tipo}</small>${e.nome}</span></button>`).join("");
 
   /* pacotes */
   $("packs").innerHTML = PACOTES.map((p, i) => `
@@ -995,6 +1040,7 @@ const PASSOS = [
       ${p.grupos.map(g => `<div class="group"><h4>${g.t}</h4><ul>${g.itens.map(t => `<li>${t}</li>`).join("")}</ul></div>`).join("")}
       ${p.detalhes.length ? `<div class="group">${p.detalhes.map(d => `<details><summary>${d.t}</summary><ul>${d.itens.map(t => `<li>${t}</li>`).join("")}</ul></details>`).join("")}</div>` : ""}
       ${i === 0 ? `<a class="peek" href="#exemplo-pacote-01"><img src="img/projeto-helena/monograma.jpg" alt="" loading="lazy"><img src="img/projeto-helena/logotipo.jpg" alt="" loading="lazy"><span>Ver exemplo deste pacote <i>→</i></span></a>` : ""}
+      ${i === 2 ? `<a class="peek p3" href="#exemplo-pacote-03"><img src="img/projeto-leticia/brasao.jpg" alt="" loading="lazy" style="object-position:50% 58%"><img src="img/projeto-leticia/carrinho-drinks.jpg" alt="" loading="lazy"><span>Ver exemplo deste pacote <i>→</i></span></a>` : ""}
       <div class="spacer"></div>
       <a class="btn btn-dark js-wa" href="#" data-msg="Oi! Vi o site e quero o ${p.num}: ${p.nome} (R$ ${p.preco},00) para os meus 15 anos.">Quero este pacote</a>
     </article>`).join("");
