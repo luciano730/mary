@@ -46,8 +46,8 @@ p{margin:0}
 .eyebrow{display:inline-flex;align-items:center;gap:12px;font-size:11.5px;font-weight:500;letter-spacing:.32em;text-transform:uppercase;color:var(--gold)}
 .eyebrow::before,.eyebrow.both::after{content:"";width:28px;height:1px;background:currentColor;opacity:.7}
 em.it{font-style:italic;color:var(--gold)}
-.sec{padding-block:clamp(72px,10vw,136px)}
-.head{display:grid;justify-items:center;text-align:center;gap:18px;margin-bottom:clamp(40px,6vw,72px)}
+.sec{padding-block:clamp(56px,7vw,96px)}
+.head{display:grid;justify-items:center;text-align:center;gap:16px;margin-bottom:clamp(30px,4.5vw,52px)}
 .head h2{font-size:clamp(36px,5.6vw,64px)}
 .head p{color:var(--ink-soft);max-width:600px;font-size:17px}
 .rule{display:flex;align-items:center;gap:14px;color:var(--gold-soft)}
@@ -116,7 +116,7 @@ em.it{font-style:italic;color:var(--gold)}
 .ready .portrait{opacity:1;transform:none}
 .ready .portrait .float{opacity:1}
 
-/* selo de projeto modelo */
+/* selo */
 .tag{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;background:rgba(255,255,255,.92);color:var(--ink);font-size:10.5px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;box-shadow:inset 0 0 0 1px var(--gold-soft)}
 .tag::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--gold)}
 
@@ -147,49 +147,25 @@ em.it{font-style:italic;color:var(--gold)}
 .me-list li{padding:14px 0;border-bottom:1px solid var(--line);color:var(--ink-soft);font-size:15.5px}
 .me-list b{font-family:var(--serif);font-weight:500;font-size:21px;color:var(--ink);margin-right:6px}
 
-/* o que e */
-.about .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(40px,7vw,100px);align-items:start}
-.about .head{justify-items:start;text-align:left;margin:0;position:sticky;top:120px}
-.about blockquote{margin:6px 0 0;font-family:var(--serif);font-style:italic;font-size:clamp(26px,3vw,34px);line-height:1.25;color:var(--ink)}
-.about .head p{font-size:16.5px}
-.pieces{display:grid;grid-template-columns:repeat(2,1fr);border-top:1px solid var(--line)}
-.piece{display:flex;align-items:center;gap:16px;padding:20px 8px;border-bottom:1px solid var(--line)}
-.piece:nth-child(odd){border-right:1px solid var(--line);padding-right:16px}
-.piece:nth-child(even){padding-left:20px}
-.piece i{font-style:normal;font-family:var(--serif);font-size:15px;color:var(--gold);min-width:22px}
-.piece span{font-family:var(--serif);font-size:21px}
-.about .connect{grid-column:1/-1;margin-top:8px;text-align:center;font-family:var(--serif);font-size:clamp(22px,2.6vw,30px);color:var(--ink-soft)}
-
-/* galeria com abas */
-.tabs{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin-bottom:18px}
-.tabs button{flex:none;border:0;background:transparent;padding:11px 18px;font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-soft);cursor:pointer;box-shadow:inset 0 0 0 1px var(--line);transition:background .35s,color .35s,box-shadow .35s}
-.tabs button:hover{color:var(--ink);box-shadow:inset 0 0 0 1px var(--gold-soft)}
-.tabs button[aria-selected=true]{background:var(--rose-deep);color:#fff;box-shadow:none}
-.tabs i{font-style:normal;opacity:.55;margin-left:6px}
-.tab-desc{text-align:center;color:var(--ink-soft);font-size:15px;max-width:640px;margin:0 auto clamp(28px,4vw,44px);min-height:3.4em;transition:opacity .3s}
-.masonry{--h:250px;transition:opacity .3s,transform .3s}
-.jrow{display:grid;grid-template-columns:repeat(5,1fr);gap:clamp(10px,1.4vw,16px)}
-.jfill{display:none}
-.grp+.grp{margin-top:clamp(40px,5vw,64px)}
-.grp-h{display:flex;align-items:baseline;gap:8px 22px;flex-wrap:wrap;padding-bottom:14px;margin-bottom:18px;border-bottom:1px solid var(--line)}
-.grp-h b{font-family:var(--serif);font-weight:400;font-size:clamp(26px,3vw,34px);line-height:1.1}
-.grp-h span{color:var(--ink-soft);font-size:14px;flex:1 1 320px}
-.masonry.out,.tab-desc.out{opacity:0}
-.masonry.out{transform:translateY(12px)}
-.gi{aspect-ratio:4/5;display:block;position:relative;border:0;padding:0;background:var(--blush);cursor:zoom-in;overflow:hidden;text-align:left;animation:pop .9s var(--ease) both;animation-delay:var(--d,0s)}
-@keyframes pop{from{opacity:0;transform:translateY(26px) scale(.97)}}
-.gi.fit{background:#fff}
-.gi.fit img{object-fit:contain}
-.gi img,.gi svg{display:block;width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
-.gi:hover img,.gi:hover svg{transform:scale(1.05)}
-.gi .tag{position:absolute;left:12px;top:12px;padding:6px 12px;font-size:9px}
-.gi .ov{position:absolute;left:0;right:0;bottom:0;padding:44px 16px 14px;background:linear-gradient(transparent,rgba(30,20,18,.62));color:#fff;opacity:0;translate:0 12px;transition:opacity .5s var(--ease),translate .5s var(--ease)}
-.gi:hover .ov,.gi:focus-visible .ov{opacity:1;translate:0 0}
-.gi .ov b{display:block;font-family:var(--serif);font-weight:400;font-size:22px;line-height:1.2}
-.gi .ov small{font-size:10px;letter-spacing:.22em;text-transform:uppercase;opacity:.85}
-@media (hover:none){.gi .ov{opacity:1;translate:0 0}}
-.gallery-foot{text-align:center;margin-top:clamp(28px,4vw,48px);display:grid;justify-items:center;gap:22px}
-.gallery-foot p{max-width:560px;color:var(--ink-soft);font-size:14.5px}
+/* galeria: um card por identidade, abre para passar o dedo */
+.proj-row{display:flex;gap:clamp(12px,1.6vw,20px);overflow-x:auto;scroll-snap-type:x mandatory;padding:6px var(--gutter) 22px;margin-inline:calc(-1 * var(--gutter));scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.proj-row::-webkit-scrollbar{display:none}
+.proj{flex:0 0 min(270px,74vw);scroll-snap-align:start;position:relative;aspect-ratio:4/5;border:0;padding:0;background:var(--blush);cursor:pointer;overflow:hidden;text-align:left;box-shadow:var(--shadow-sm);transition:transform .6s var(--ease),box-shadow .6s var(--ease)}
+.proj:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+.proj img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+.proj:hover img{transform:scale(1.06)}
+.proj::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 45%,rgba(40,22,18,.78))}
+.proj .pt{position:absolute;left:0;right:0;bottom:0;z-index:1;padding:0 20px 20px;color:#fff}
+.proj .pt b{display:block;font-family:var(--serif);font-weight:400;font-size:28px;line-height:1.1}
+.proj .pt span{display:flex;align-items:center;gap:8px;margin-top:8px;font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;opacity:.85}
+.proj .pt span i{font-style:normal;transition:transform .4s var(--ease)}
+.proj:hover .pt span i{transform:translateX(4px)}
+.proj .n{position:absolute;right:14px;top:14px;z-index:1;padding:6px 10px;background:rgba(255,255,255,.9);color:var(--ink);font-size:10px;letter-spacing:.2em;text-transform:uppercase}
+.proj-nav{display:flex;justify-content:center;gap:10px;margin-top:6px}
+.proj-nav button{width:46px;height:46px;border:0;border-radius:50%;background:var(--white);color:var(--ink);cursor:pointer;display:grid;place-items:center;box-shadow:inset 0 0 0 1px var(--line);transition:background .3s,color .3s}
+.proj-nav button:hover{background:var(--rose-deep);color:#fff}
+.proj-nav svg{width:20px;height:20px}
+.swipe-hint{text-align:center;font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-top:14px}
 
 /* lightbox */
 .lb{border:0;padding:0;background:transparent;max-width:none;max-height:none;width:100%;height:100%;overflow:hidden}
@@ -229,24 +205,32 @@ em.it{font-style:italic;color:var(--gold)}
 .anim .inv-stage.in .inv{opacity:1;translate:0 0}
 .anim .inv-stage.in .i2{transition-delay:.2s}
 
-/* festa real */
+/* festas reais */
 .real{background:var(--ink);color:var(--bg);overflow:hidden}
-.real .wrap{display:grid;grid-template-columns:1fr auto;gap:clamp(36px,7vw,110px);align-items:center}
-.real h2{font-size:clamp(38px,5.4vw,64px);margin:20px 0 22px}
-.real h2 .scr{font-family:var(--script);color:var(--gold-soft);font-size:1.1em}
-.real p{color:rgba(251,247,243,.75);max-width:520px;font-size:17px}
-.real ul{list-style:none;margin:28px 0 34px;padding:0;display:grid;gap:10px}
-.real li{display:flex;gap:14px;align-items:baseline;font-family:var(--serif);font-size:21px}
-.real li::before{content:"✦";font-size:11px;color:var(--gold-soft)}
-.real .tag{background:rgba(255,255,255,.08);color:var(--bg);box-shadow:inset 0 0 0 1px rgba(217,195,160,.5)}
-.real .btn-line{color:var(--bg);box-shadow:inset 0 0 0 1px var(--bg)}
-.real .btn-line:hover{background:var(--bg);color:var(--ink)}
-.reel{position:relative;width:min(340px,78vw);aspect-ratio:356/634;padding:10px;border-radius:34px;background:#1d1715;box-shadow:0 40px 80px -30px rgba(0,0,0,.7),inset 0 0 0 1px rgba(255,255,255,.08)}
-.reel video{width:100%;height:100%;object-fit:cover;border-radius:25px;display:block;background:#000}
-.reel .tag{position:absolute;left:24px;top:24px;z-index:2;pointer-events:none}
-.reel .snd{position:absolute;right:22px;bottom:22px;z-index:2;width:46px;height:46px;border:0;border-radius:50%;background:rgba(0,0,0,.55);color:#fff;cursor:pointer;display:grid;place-items:center}
+.real .head h2,.real .head p{color:inherit}
+.real .head p{color:rgba(251,247,243,.72)}
+.real .tag{background:rgba(255,255,255,.1);color:var(--bg);box-shadow:inset 0 0 0 1px rgba(221,185,166,.5)}
+.reel{position:relative;width:min(300px,78vw);aspect-ratio:9/16;padding:9px;border-radius:32px;background:#1d1715;box-shadow:0 40px 80px -30px rgba(0,0,0,.7),inset 0 0 0 1px rgba(255,255,255,.08)}
+.reel video{width:100%;height:100%;object-fit:cover;border-radius:24px;display:block;background:#000}
+.reel .tag{position:absolute;left:22px;top:22px;z-index:2;pointer-events:none}
+.reel .snd{position:absolute;right:20px;bottom:20px;z-index:2;width:44px;height:44px;border:0;border-radius:50%;background:rgba(0,0,0,.55);color:#fff;cursor:pointer;display:grid;place-items:center}
 .reel .snd svg{width:22px;height:22px}
 .reel .snd[hidden]{display:none}
+.screen-row{display:flex;justify-content:center;align-items:flex-start;gap:clamp(20px,3vw,40px);flex-wrap:wrap}
+.screen-row figure{margin:0;display:grid;justify-items:center;gap:14px}
+.screen-row figcaption{text-align:center;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft);max-width:300px}
+.ig-card{position:relative;display:block;width:min(300px,78vw);aspect-ratio:9/16;overflow:hidden;border-radius:32px;box-shadow:var(--shadow);text-decoration:none;color:#fff;background:#0B2465}
+.ig-card img{position:absolute;left:0;right:0;top:4%;width:100%;height:auto;aspect-ratio:1;object-fit:cover;filter:brightness(.92);transition:transform 1.2s var(--ease)}
+.ig-card:hover img{transform:scale(1.05)}
+.ig-card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 35%,rgba(8,22,64,.85) 70%);pointer-events:none}
+.ig-card>span{z-index:1}
+.ig-play{position:absolute;left:50%;top:62%;translate:-50% -50%;width:72px;height:72px;border-radius:50%;background:rgba(255,255,255,.18);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);display:grid;place-items:center;box-shadow:inset 0 0 0 1px rgba(255,255,255,.5);animation:pulse 2.6s ease-in-out infinite}
+.ig-play svg{width:28px;height:28px;margin-left:4px}
+@keyframes pulse{50%{box-shadow:inset 0 0 0 1px rgba(255,255,255,.5),0 0 0 14px rgba(255,255,255,.08)}}
+.ig-txt{position:absolute;left:0;right:0;top:72%;text-align:center;font-family:var(--serif);font-size:24px;line-height:1.2;padding:0 20px}
+.ig-txt small{display:block;font-family:var(--sans);font-size:10px;letter-spacing:.26em;text-transform:uppercase;opacity:.8;margin-bottom:8px}
+.ig-foot{position:absolute;left:0;right:0;bottom:20px;display:flex;justify-content:center;align-items:center;gap:8px;font-size:12px;letter-spacing:.14em}
+.ig-foot svg{width:18px;height:18px}
 
 /* site personalizado */
 .site{background:var(--white);overflow:hidden}
@@ -276,27 +260,6 @@ em.it{font-style:italic;color:var(--gold)}
 .ph .pics b{aspect-ratio:1;border-radius:6px;background:var(--c-ac);opacity:.18}
 .ph .pics b:nth-child(2n){opacity:.32}
 .site .tag{position:absolute;z-index:3;left:50%;bottom:-4%;translate:-50% 0;white-space:nowrap}
-
-/* telao */
-.screen{background:var(--blush)}
-.screen-row{display:flex;justify-content:center;align-items:flex-start;gap:clamp(24px,5vw,72px);flex-wrap:wrap}
-.screen-row figure{margin:0;display:grid;justify-items:center;gap:16px}
-.screen-row figcaption{text-align:center;font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
-.screen .reel{width:min(320px,78vw);aspect-ratio:9/16;background:var(--ink)}
-.ig-card{position:relative;display:block;width:min(320px,78vw);aspect-ratio:9/16;overflow:hidden;border-radius:34px;box-shadow:var(--shadow);text-decoration:none;color:#fff;background:var(--ink)}
-.ig-card{background:#0B2465}
-.ig-card img{position:absolute;left:0;right:0;top:4%;width:100%;height:auto;aspect-ratio:1;object-fit:cover;filter:brightness(.92);transition:transform 1.2s var(--ease)}
-.ig-card:hover img{transform:scale(1.05)}
-.ig-card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 35%,rgba(8,22,64,.85) 70%);pointer-events:none}
-.ig-card>span{z-index:1}
-.ig-play{position:absolute;left:50%;top:62%;translate:-50% -50%;width:78px;height:78px;border-radius:50%;background:rgba(255,255,255,.18);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);display:grid;place-items:center;box-shadow:inset 0 0 0 1px rgba(255,255,255,.5);animation:pulse 2.6s ease-in-out infinite}
-.ig-play svg{width:30px;height:30px;margin-left:4px}
-@keyframes pulse{50%{box-shadow:inset 0 0 0 1px rgba(255,255,255,.5),0 0 0 14px rgba(255,255,255,.08)}}
-.ig-txt{position:absolute;left:0;right:0;top:72%;text-align:center;font-family:var(--serif);font-size:26px;line-height:1.2;padding:0 20px}
-.ig-txt small{display:block;font-family:var(--sans);font-size:10px;letter-spacing:.26em;text-transform:uppercase;opacity:.8;margin-bottom:8px}
-.ig-foot{position:absolute;left:0;right:0;bottom:22px;display:flex;justify-content:center;align-items:center;gap:8px;font-size:12px;letter-spacing:.14em}
-.ig-foot svg{width:18px;height:18px}
-.screen .ctas{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-top:clamp(32px,4vw,48px)}
 
 /* pacotes */
 .packs{background:var(--blush)}
@@ -329,7 +292,7 @@ em.it{font-style:italic;color:var(--gold)}
 .pack .spacer{flex:1;min-height:28px}
 .pack .btn{width:100%}
 .packs-note{text-align:center;margin-top:28px;font-size:13.5px;color:var(--ink-soft)}
-.pack .see{display:inline-flex;align-items:center;gap:10px;margin-top:22px;font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);text-decoration:none}
+.pack .see{border:0;background:none;padding:0;cursor:pointer;font:inherit;display:inline-flex;align-items:center;gap:10px;margin-top:22px;font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);text-decoration:none}
 .pack .see:hover{color:var(--ink)}
 .pack .see i{font-style:normal;transition:transform .4s var(--ease)}
 .pack .see:hover i{transform:translateX(4px)}
@@ -398,8 +361,6 @@ svg .caps{font-family:var(--sans);letter-spacing:.3em}
 @media (max-width:940px){
   .hero .wrap{grid-template-columns:1fr}
   .about .wrap{grid-template-columns:1fr}
-  .real .wrap{grid-template-columns:1fr;justify-items:center}
-  .real .wrap>div:first-child{justify-self:stretch}
   .about .head{position:static}
   .pack-grid{grid-template-columns:1fr;max-width:540px;margin-inline:auto}
   .steps{grid-template-columns:1fr 1fr}
@@ -491,13 +452,12 @@ svg .caps{font-family:var(--sans);letter-spacing:.3em}
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true"><path d="M5 5l14 14M19 5 5 19"/></svg>
     </button>
     <a href="#sobre">Sobre <span>01</span></a>
-    <a href="#identidade">Identidade visual <span>02</span></a>
-    <a href="#aplicacoes">Galeria <span>03</span></a>
-    <a href="#convites">Convites <span>04</span></a>
-    <a href="#festa-real">Festas reais <span>05</span></a>
-    <a href="#pacotes">Pacotes <span>06</span></a>
-    <a href="#site">Site da debutante <span>07</span></a>
-    <a href="#como-funciona">Como funciona <span>08</span></a>
+    <a href="#aplicacoes">Galeria <span>02</span></a>
+    <a href="#convites">Convites <span>03</span></a>
+    <a href="#festa-real">Festas reais <span>04</span></a>
+    <a href="#pacotes">Pacotes <span>05</span></a>
+    <a href="#site">Site da debutante <span>06</span></a>
+    <a href="#como-funciona">Como funciona <span>07</span></a>
     <a class="btn btn-dark js-wa" href="#" data-msg="Oi! Vi o site e quero solicitar um orçamento de Identidade Visual para os meus 15 anos.">Solicitar orçamento</a>
     <p class="note">Identidade visual personalizada para debutantes, do convite às lembranças da festa.</p>
   </div>
@@ -524,14 +484,14 @@ svg .caps{font-family:var(--sans);letter-spacing:.3em}
     <div class="portrait">
       <span class="ring" aria-hidden="true"></span>
       <div class="arch"><img id="heroImg" src="img/designer/designer.jpg" alt="Designer de identidade visual no estúdio" fetchpriority="high"></div>
-      <button class="float f1" type="button" data-lb="isadora" data-i="0" aria-label="Ver garrafa térmica do projeto modelo"><img src="img/projeto-modelo/garrafa.jpg" alt=""></button>
-      <button class="float f2" type="button" data-lb="isadora" data-i="3" aria-label="Ver placa de mesa do projeto modelo"><img src="img/projeto-modelo/placa-mesa.jpg" alt=""></button>
+      <button class="float f1" type="button" data-lb="isadora" data-i="0" aria-label="Ver garrafa térmica"><img src="img/projeto-modelo/garrafa.jpg" alt=""></button>
+      <button class="float f2" type="button" data-lb="isadora" data-i="3" aria-label="Ver placa de mesa"><img src="img/projeto-modelo/placa-mesa.jpg" alt=""></button>
       <div class="hello"><b>Prazer!</b><span>Designer de identidade visual</span></div>
     </div>
   </div>
 </section>
 
-<div class="marq" id="marq" aria-label="Fotos de projetos"></div>
+<div class="marq" id="marq" aria-label="Fotos de identidades visuais"></div>
 
 <section class="sec me" id="sobre">
   <div class="wrap">
@@ -550,34 +510,17 @@ svg .caps{font-family:var(--sans);letter-spacing:.3em}
   </div>
 </section>
 
-<section class="sec about" id="identidade">
-  <div class="wrap">
-    <div class="head rv">
-      <span class="eyebrow">O que é identidade visual?</span>
-      <h2>Uma linguagem única para o seu <em class="it">evento</em></h2>
-      <blockquote>“Mais do que um brasão bonito, a identidade visual cria uma linguagem única para o seu evento.”</blockquote>
-      <p>É o conjunto de elementos que dá personalidade à sua festa. Ele nasce do seu estilo e das suas referências e depois é aplicado em tudo: do primeiro convite até a lembrança que o convidado leva para casa.</p>
-    </div>
-    <div>
-      <div class="pieces" id="pieces"></div>
-    </div>
-    <p class="connect rv">Quando tudo nasce da mesma identidade, <em class="it">todos os detalhes conversam entre si.</em></p>
-  </div>
-</section>
-
 <section class="sec" id="aplicacoes">
   <div class="wrap">
     <div class="head rv">
       <span class="eyebrow both">Galeria</span>
-      <h2>A identidade em <em class="it">cada detalhe</em></h2>
-      <p>Projetos modelo aplicados em produtos, papelaria e decoração. Escolha um tema e toque nas imagens para ver maior.</p>
+      <h2>Veja identidades visuais que <em class="it">já criei</em></h2>
+      <p>Toque em uma identidade e passe o dedo para ver todas as fotos.</p>
     </div>
-    <div class="tabs rv" id="gTabs" role="tablist" aria-label="Projetos"></div>
-    <p class="tab-desc" id="gDesc"></p>
-    <div class="masonry" id="gallery"></div>
-    <div class="gallery-foot rv">
-      <p>Imagens ilustrativas de projetos modelo, criadas para demonstrar as possibilidades de aplicação. Cada identidade é desenvolvida de forma exclusiva para cada cliente.</p>
-      <a class="btn btn-dark" href="#pacotes">Conhecer os pacotes</a>
+    <div class="proj-row rv" id="projRow"></div>
+    <div class="proj-nav rv" aria-hidden="true">
+      <button type="button" id="projPrev" aria-label="Anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+      <button type="button" id="projNext" aria-label="Próxima"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
     </div>
   </div>
 </section>
@@ -593,58 +536,45 @@ svg .caps{font-family:var(--sans);letter-spacing:.3em}
       <a class="btn btn-dark" href="#pacotes">Ver os pacotes</a>
     </div>
     <div class="inv-stage rv">
-      <button class="inv i1" type="button" data-lb="convites" data-i="0" aria-label="Ampliar convite azul"><img src="img/convites/convite-lais.jpg" alt="Convite digital azul com save the date e contagem regressiva" loading="lazy"><span class="tag">Projeto modelo</span></button>
-      <button class="inv i2" type="button" data-lb="convites" data-i="1" aria-label="Ampliar convite vermelho"><img src="img/convites/convite-maria-eloisa.jpg" alt="Convite digital vermelho com save the date e confirmação de presença" loading="lazy"><span class="tag">Projeto modelo</span></button>
+      <button class="inv i1" type="button" data-lb="convites" data-i="0" aria-label="Ampliar convite azul"><img src="img/convites/convite-lais.jpg" alt="Convite digital azul com save the date e contagem regressiva" loading="lazy"></button>
+      <button class="inv i2" type="button" data-lb="convites" data-i="1" aria-label="Ampliar convite vermelho"><img src="img/convites/convite-maria-eloisa.jpg" alt="Convite digital vermelho com save the date e confirmação de presença" loading="lazy"></button>
     </div>
   </div>
 </section>
 
 <section class="sec real" id="festa-real">
   <div class="wrap">
-    <div class="rv">
-      <span class="eyebrow">Festa real</span>
-      <h2>Do papel para a festa: <span class="scr">XV da Alícia</span></h2>
-      <p>Criei a identidade visual da festa da Alícia, com tema Alice no País das Maravilhas. Veja como ela ganhou vida no dia: nas canecas personalizadas, nos detalhes da decoração, nas mesas e no bolo.</p>
-      <ul><li>Identidade visual exclusiva</li><li>Aplicada nas lembranças e na decoração</li><li>Tudo conversando com o tema</li></ul>
-      <a class="btn btn-line" href="#pacotes">Quero a minha identidade</a>
-    </div>
-    <div class="reel rv" style="--d:.1s">
-      <span class="tag">Festa real</span>
-      <video src="video/xv-alicia.mp4" poster="video/xv-alicia.jpg" muted loop playsinline preload="metadata" aria-label="Vídeo da festa XV da Alícia"></video>
-      <button class="snd" type="button" aria-label="Ativar som"></button>
-    </div>
-  </div>
-</section>
-
-<section class="sec screen" id="telao">
-  <div class="wrap">
     <div class="head rv">
-      <span class="eyebrow both">Festa real · XV da Manuela</span>
-      <h2>Arte para <em class="it">telão de LED</em></h2>
-      <p>A arte animada do telão recebe os convidados com o nome da debutante em movimento. No XV da Manuela, as pétalas em pink deram vida à entrada da festa. Incluso no Pacote 03.</p>
+      <span class="eyebrow both">Festas reais</span>
+      <h2>Do papel para a <em class="it">festa</em></h2>
+      <p>Identidades que criei e que ganharam vida no dia: nas lembranças, na decoração e no telão de LED.</p>
     </div>
     <div class="screen-row">
       <figure class="rv">
         <div class="reel">
           <span class="tag">Festa real</span>
+          <video src="video/xv-alicia.mp4" poster="video/xv-alicia.jpg" muted loop playsinline preload="metadata" aria-label="Vídeo da festa XV da Alícia"></video>
+          <button class="snd" type="button" aria-label="Ativar som"></button>
+        </div>
+        <figcaption>XV da Alícia · decoração e lembranças</figcaption>
+      </figure>
+      <figure class="rv" style="--d:.1s">
+        <div class="reel">
+          <span class="tag">Festa real</span>
           <video src="video/telao-manuela.mp4" poster="video/telao-manuela.jpg" muted loop playsinline preload="metadata" aria-label="Vídeo da arte do telão de LED do XV da Manuela"></video>
           <button class="snd" type="button" aria-label="Ativar som"></button>
         </div>
-        <figcaption>Arte do telão</figcaption>
+        <figcaption>XV da Manuela · arte para telão de LED</figcaption>
       </figure>
-      <figure class="rv" style="--d:.12s">
+      <figure class="rv" style="--d:.2s">
         <a class="ig-card" href="https://www.instagram.com/reel/DazEGxWNQfD/" target="_blank" rel="noopener" aria-label="Assistir ao reel da festa no Instagram">
           <img src="img/projeto-helena/monograma.jpg" alt="" loading="lazy">
           <span class="ig-play"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5Z"/></svg></span>
           <span class="ig-txt"><small>Reel no Instagram</small>Assista à festa completa</span>
           <span class="ig-foot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg><span class="js-ig-name">@marycriativa0</span></span>
         </a>
-        <figcaption>Reel no Instagram</figcaption>
+        <figcaption>Mais no Instagram</figcaption>
       </figure>
-    </div>
-    <div class="ctas rv">
-      <a class="btn btn-dark" href="#pacotes">Quero meu telão</a>
-      <a class="btn btn-line js-ig" href="#" target="_blank" rel="noopener">Ver mais no Instagram</a>
     </div>
   </div>
 </section>
@@ -677,7 +607,6 @@ svg .caps{font-family:var(--sans);letter-spacing:.3em}
         <div class="menu"><span><i></i>Lista de convidados</span><span class="on"><i></i>Galeria de fotos</span></div>
         <div class="pics"><b></b><b></b><b></b><b></b><b></b><b></b></div>
       </div></div>
-      <span class="tag">Exemplo de site</span>
     </div>
   </div>
 </section>
@@ -730,7 +659,6 @@ svg .caps{font-family:var(--sans);letter-spacing:.3em}
 <footer class="footer">
   <div class="wrap">
     <span>© <span id="year"></span> <span class="js-brand">Mary Criativa</span>. Identidade visual para eventos.</span>
-    <span>Projeto modelo usado apenas como demonstração.</span>
   </div>
 </footer>
 
@@ -751,58 +679,15 @@ svg .caps{font-family:var(--sans);letter-spacing:.3em}
   </div>
 </dialog>
 
-<!-- simbolos do projeto modelo (desenhos usados enquanto as fotos dos mockups nao estao na pasta) -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
-    <linearGradient id="g-gold" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#D8BE8C"/><stop offset=".5" stop-color="#B08D57"/><stop offset="1" stop-color="#8E6E3E"/>
-    </linearGradient>
-    <linearGradient id="g-shine" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".35"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
-    </linearGradient>
-    <pattern id="p-wall" width="36" height="36" patternUnits="userSpaceOnUse"><path d="M18 10l2.2 8-2.2 8-2.2-8Z" fill="#B08D57" opacity=".09"/><circle cx="0" cy="0" r="1.2" fill="#B08D57" opacity=".1"/><circle cx="36" cy="36" r="1.2" fill="#B08D57" opacity=".1"/></pattern>
-    <radialGradient id="g-light" cx=".5" cy=".18" r=".7"><stop offset="0" stop-color="#fff" stop-opacity=".55"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
-    <linearGradient id="g-table" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFFFF" stop-opacity=".75"/><stop offset="1" stop-color="#F3E6DF" stop-opacity=".9"/></linearGradient>
-    <g id="laurel" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round">
-      <path d="M30 44C17 66 20 98 50 126"/>
-      <g fill="currentColor" stroke="none">
-        <ellipse rx="6.5" ry="2.4" transform="translate(23 56) rotate(-62)"/>
-        <ellipse rx="6.5" ry="2.4" transform="translate(30 59) rotate(-20)"/>
-        <ellipse rx="6.5" ry="2.4" transform="translate(18 72) rotate(-80)"/>
-        <ellipse rx="6.5" ry="2.4" transform="translate(26 75) rotate(-28)"/>
-        <ellipse rx="6.5" ry="2.4" transform="translate(18 89) rotate(-100)"/>
-        <ellipse rx="6.5" ry="2.4" transform="translate(27 91) rotate(-36)"/>
-        <ellipse rx="6.5" ry="2.4" transform="translate(23 106) rotate(-120)"/>
-        <ellipse rx="6.5" ry="2.4" transform="translate(33 106) rotate(-48)"/>
-        <ellipse rx="6.5" ry="2.4" transform="translate(33 119) rotate(-138)"/>
-        <ellipse rx="6.5" ry="2.4" transform="translate(42 117) rotate(-62)"/>
-      </g>
-    </g>
-    <g id="crest-body">
-      <use href="#laurel"/>
-      <use href="#laurel" transform="translate(120 0) scale(-1 1)"/>
+    <symbol id="crest-plain" viewBox="0 0 120 140">
       <g fill="none" stroke="currentColor" stroke-linejoin="round" stroke-linecap="round">
-        <path d="M42 30 38 13 50 21 60 7 70 21 82 13 78 30Z" stroke-width="1.4"/>
-        <path d="M41 35h38" stroke-width="1.4"/>
-        <path d="M34 41h52v36c0 22-26 38-26 38S34 99 34 77Z" stroke-width="1.6"/>
-        <path d="M39 46h42v31c0 18-21 31-21 31S39 95 39 77Z" stroke-width=".7"/>
+        <path d="M42 30 38 13 50 21 60 7 70 21 82 13 78 30Z" stroke-width="1.4"/><path d="M41 35h38" stroke-width="1.4"/>
+        <path d="M34 41h52v36c0 22-26 38-26 38S34 99 34 77Z" stroke-width="1.6"/><path d="M39 46h42v31c0 18-21 31-21 31S39 95 39 77Z" stroke-width=".7"/>
       </g>
       <g fill="currentColor"><circle cx="60" cy="5" r="2"/><circle cx="38" cy="11" r="1.6"/><circle cx="82" cy="11" r="1.6"/><circle cx="60" cy="25" r="1.6"/></g>
-      <path d="M60 128l2 4-2 4-2-4Z" fill="currentColor"/>
-    </g>
-    <symbol id="crest" viewBox="0 0 120 140">
-      <use href="#crest-body"/>
-      <text x="60" y="86" text-anchor="middle" font-size="31" font-style="italic" fill="currentColor" style="font-family:'Cormorant Garamond',Georgia,serif">IF</text>
-    </symbol>
-    <symbol id="crest-plain" viewBox="0 0 120 140">
-      <use href="#crest-body"/>
       <text x="60" y="88" text-anchor="middle" font-size="30" fill="currentColor" style="font-family:'Cormorant Garamond',Georgia,serif">XV</text>
-    </symbol>
-    <symbol id="mono" viewBox="0 0 100 100">
-      <circle cx="50" cy="50" r="46" fill="none" stroke="currentColor" stroke-width="1.2"/>
-      <circle cx="50" cy="50" r="41" fill="none" stroke="currentColor" stroke-width=".5" stroke-dasharray="1 3"/>
-      <text x="50" y="64" text-anchor="middle" font-size="42" fill="currentColor" style="font-family:'Pinyon Script',cursive">If</text>
-      <path d="M50 10l1.6 3.4L55 15l-3.4 1.6L50 20l-1.6-3.4L45 15l3.4-1.6Z" fill="currentColor"/>
     </symbol>
     <symbol id="i-wa" viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2Zm0 18.15a8.2 8.2 0 0 1-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.21 8.21 0 0 1 6.99-12.53c4.54 0 8.23 3.7 8.23 8.24s-3.69 8.15-8.23 8.15Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.16.04-.31-.02-.43-.06-.13-.56-1.35-.77-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28Z"/></symbol>
   </defs>
@@ -818,9 +703,6 @@ const CONFIG = {
   whatsappTexto: "(15) 99840-4102",    // como aparece no site
   instagram: "marycriativa0"           // sem o @
 };
-
-/* Projeto modelo (só para demonstração). Mude aqui se trocar o projeto de exemplo. */
-const MODELO = { nome: "Isadora", sobrenome: "Freitas", iniciais: "IF" };
 
 /* Os 3 pacotes. Valores oficiais: não alterar. */
 const BASE = ["Brasão personalizado", "Monograma", "Logotipo extenso do nome", "Cartela de cores", "Tipografia", "10 elementos gráficos personalizados"];
@@ -845,13 +727,13 @@ const PACOTES = [
 /* Galeria com abas. Cada projeto tem as suas fotos (pasta img/).
    r = largura / altura da foto. */
 const PROJETOS = [
-  { id: "todos", nome: "Todos", desc: "Projetos modelo criados para mostrar as possibilidades de uma identidade visual de 15 anos." },
-  { id: "isadora", nome: "Sakura", desc: "Flores de cerejeira, pink e rosé gold. Projeto modelo aplicado em garrafa, menus, placa de mesa e pulseira." },
-  { id: "helena", nome: "Conto de fadas", desc: "Azul e prata, com carruagem, tiara e sapatinho de cristal. Exemplo do Pacote 01: monograma e logotipo, com ideias de aplicação." },
-  { id: "lais", nome: "Flores azuis", desc: "Azul, branco e flores, com coroa e laços. Projeto modelo com convite, topo com monograma, leque, chinelos e lembrança." },
-  { id: "convites", nome: "Convites", desc: "Convites digitais com save the date, contagem regressiva e botões para confirmar presença e ver a localização." },
-  { id: "leticia", nome: "Pérolas e laços", desc: "Turquesa, preto e pérolas. Exemplo do Pacote 03: brasão e aplicações em mockups." }
+  { id: "isadora", nome: "Sakura", desc: "Flores de cerejeira, pink e rosé gold", capa: "img/projeto-modelo/garrafa.jpg" },
+  { id: "lais", nome: "Flores azuis", desc: "Azul, branco e flores, com coroa e laços", capa: "img/projeto-lais/topo-monograma.jpg" },
+  { id: "helena", nome: "Conto de fadas", desc: "Azul e prata, com carruagem, tiara e sapatinho de cristal", capa: "img/projeto-helena/necessaire.jpg" },
+  { id: "leticia", nome: "Pérolas e laços", desc: "Turquesa, preto e pérolas", capa: "img/projeto-leticia/copo.jpg" },
+  { id: "convites", nome: "Convites digitais", desc: "Save the date, contagem regressiva e confirmação de presença", capa: "img/convites/convite-lais.jpg" }
 ];
+
 const GALERIA = [
   { p: "isadora", src: "img/projeto-modelo/garrafa.jpg", r: 1145 / 1374, nome: "Garrafa térmica", texto: "Garrafa com caixa, tag e flores de cerejeira" },
   { p: "isadora", src: "img/projeto-modelo/menu.jpg", r: 1145 / 1374, nome: "Menu de drinks", texto: "Menu em acrílico para o bar da festa" },
@@ -873,8 +755,6 @@ const GALERIA = [
   { p: "convites", src: "img/convites/convite-lais.jpg", r: 2 / 3, nome: "Convite digital azul", texto: "Save the date, contagem regressiva e confirmação de presença" },
   { p: "convites", src: "img/convites/convite-maria-eloisa.jpg", r: 2 / 3, nome: "Convite digital vermelho", texto: "Brasão com rosas, save the date e botões interativos" }
 ];
-
-const ELEMENTOS = ["Brasão", "Monograma", "Logotipo", "Paleta de cores", "Tipografias", "Elementos gráficos", "Padrões e estampas", "Papelaria", "Convites", "Materiais digitais", "Lembranças", "Decoração", "Aplicações personalizadas"];
 
 const PASSOS = [
   ["Você escolhe o pacote", "Escolha a opção que mais combina com o que você deseja para o seu evento."],
@@ -901,201 +781,11 @@ const PASSOS = [
   $("igText").textContent = "@" + CONFIG.instagram;
   $("year").textContent = new Date().getFullYear();
 
-  /* ---------- desenhos do projeto modelo ---------- */
-  const C = { cream: "#FBF4EF", blush: "#F2DCD8", rose: "#D7A2A6", deep: "#A8636B", nude: "#E7D2C4", gold: "url(#g-gold)", goldS: "#B08D57" };
-  const N = MODELO.nome;
-  const crest = (x, y, w, color) => `<use href="#crest" x="${x}" y="${y}" width="${w}" height="${w * 7 / 6}" style="color:${color || C.goldS}"/>`;
-  const mono = (x, y, w, color) => `<use href="#mono" x="${x}" y="${y}" width="${w}" height="${w}" style="color:${color || C.goldS}"/>`;
-  const shadow = (cx, cy, rx) => `<ellipse cx="${cx}" cy="${cy}" rx="${rx}" ry="${rx * .09}" fill="#5B3C30" opacity=".12"/>`;
-  const bg = (a, b, flat) => `<defs><linearGradient id="bg-${a.slice(1)}${b.slice(1)}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${a}"/><stop offset="1" stop-color="${b}"/></linearGradient></defs>
-    <rect width="400" height="500" fill="url(#bg-${a.slice(1)}${b.slice(1)})"/>
-    <rect width="400" height="500" fill="url(#p-wall)"/><rect width="400" height="500" fill="url(#g-light)"/>
-    ${flat ? "" : `<rect x="34" y="40" width="332" height="300" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="1.2"/><rect x="44" y="50" width="312" height="280" fill="none" stroke="#B08D57" stroke-opacity=".18"/>
-    <rect y="362" width="400" height="138" fill="url(#g-table)"/><rect y="360" width="400" height="3" fill="#fff" opacity=".7"/>`}`;
-  const sparkles = pts => pts.map(([x, y, s]) => `<path transform="translate(${x} ${y}) scale(${s || 1})" d="M0-7 1.6-1.6 7 0 1.6 1.6 0 7-1.6 1.6-7 0-1.6-1.6Z" fill="${C.goldS}" opacity=".55"/>`).join("");
-  const txt = (x, y, s, t, o) => `<text x="${x}" y="${y}" text-anchor="middle" font-size="${s}" ${o || ""}>${t}</text>`;
-
-  const SCENES = {
-    convite: () => `<svg viewBox="0 0 640 400" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Convite digital do projeto modelo">
-      <defs><linearGradient id="bgc" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F6E6E1"/><stop offset="1" stop-color="#EAD3C8"/></linearGradient>
-      <linearGradient id="scr" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FBF1EE"/><stop offset="1" stop-color="#F0D6D3"/></linearGradient></defs>
-      <rect width="640" height="400" fill="url(#bgc)"/>${sparkles([[90, 80], [560, 70, 1.3], [520, 330], [120, 320, .8]])}
-      ${shadow(320, 382, 120)}
-      <g transform="translate(150 36) rotate(-8 60 160)"><rect width="120" height="250" rx="18" fill="#3B2F2C"/><rect x="6" y="6" width="108" height="238" rx="13" fill="url(#scr)"/>
-        ${crest(36, 40, 48)}<text x="60" y="140" text-anchor="middle" font-size="22" class="scr" fill="${C.deep}">Save the date</text>
-        <text x="60" y="166" text-anchor="middle" font-size="9" class="caps" fill="${C.goldS}">12 . 09 . 2027</text></g>
-      <g transform="translate(250 20)"><rect width="150" height="314" rx="22" fill="#3B2F2C"/><rect x="7" y="7" width="136" height="300" rx="16" fill="url(#scr)"/>
-        <rect x="55" y="14" width="40" height="7" rx="3.5" fill="#3B2F2C"/>
-        ${crest(43, 38, 64)}
-        <text x="75" y="148" text-anchor="middle" font-size="30" class="scr" fill="${C.deep}">${N}</text>
-        <text x="75" y="168" text-anchor="middle" font-size="7.5" class="caps" fill="${C.goldS}">MEUS XV ANOS</text>
-        <text x="75" y="196" text-anchor="middle" font-size="18" fill="#3B2F2C">12 . 09 . 2027</text>
-        <rect x="24" y="214" width="102" height="24" rx="12" fill="${C.deep}"/><text x="75" y="229" text-anchor="middle" font-size="7" class="caps" fill="#fff">CONFIRMAR</text>
-        <rect x="24" y="244" width="49" height="22" rx="11" fill="none" stroke="${C.goldS}"/><text x="48.5" y="258" text-anchor="middle" font-size="6" class="caps" fill="${C.goldS}">LOCAL</text>
-        <rect x="77" y="244" width="49" height="22" rx="11" fill="none" stroke="${C.goldS}"/><text x="101.5" y="258" text-anchor="middle" font-size="6" class="caps" fill="${C.goldS}">PRESENTES</text>
-        <circle cx="75" cy="286" r="9" fill="none" stroke="${C.deep}"/><path d="M72 281.5v9l7.5-4.5Z" fill="${C.deep}"/></g>
-      <g transform="translate(420 70) rotate(7 60 120)"><rect width="120" height="250" rx="18" fill="#3B2F2C"/><rect x="6" y="6" width="108" height="238" rx="13" fill="url(#scr)"/>
-        ${mono(30, 40, 60, C.deep)}<text x="60" y="140" text-anchor="middle" font-size="9" class="caps" fill="${C.goldS}">LEMBRETE</text>
-        <text x="60" y="166" text-anchor="middle" font-size="16" fill="#3B2F2C">faltam 7 dias</text>
-        <rect x="22" y="184" width="76" height="20" rx="10" fill="none" stroke="${C.deep}"/><text x="60" y="197" text-anchor="middle" font-size="6" class="caps" fill="${C.deep}">VER CONVITE</text></g>
-    </svg>`,
-
-    necessaire: () => `<svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Necessaire do projeto modelo">${bg("#F7ECE8", "#EBD7CD")}${sparkles([[70, 90], [330, 110, 1.2], [340, 420, .8]])}
-      ${shadow(200, 404, 150)}
-      <path d="M82 182q0-22 22-22h192q22 0 22 22l20 192q2 24-22 24H84q-24 0-22-24Z" fill="${C.blush}"/>
-      <path d="M82 182q0-22 22-22h192q22 0 22 22l20 192q2 24-22 24H84q-24 0-22-24Z" fill="url(#g-shine)" opacity=".5"/>
-      <path d="M84 192h232" stroke="${C.goldS}" stroke-width="5" stroke-dasharray="2 2.5"/>
-      <path d="M86 186h228" stroke="${C.rose}" stroke-width="1"/>
-      <rect x="290" y="186" width="14" height="40" rx="6" fill="${C.gold}"/><circle cx="297" cy="218" r="3" fill="${C.blush}"/>
-      ${crest(150, 230, 100, C.goldS)}
-      <text x="200" y="378" text-anchor="middle" font-size="28" class="scr" fill="${C.deep}">${N}</text>
-    </svg>`,
-
-    garrafa: () => `<svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Garrafa térmica do projeto modelo">${bg("#F3E4DE", "#E6CFC3")}${sparkles([[90, 120], [310, 90, 1.2], [80, 400, .8]])}
-      ${shadow(200, 432, 90)}
-      <rect x="160" y="54" width="80" height="52" rx="12" fill="${C.gold}"/>
-      <rect x="152" y="100" width="96" height="12" rx="3" fill="#8E6E3E"/>
-      <rect x="140" y="108" width="120" height="320" rx="34" fill="${C.rose}"/>
-      <rect x="156" y="130" width="12" height="270" rx="6" fill="#fff" opacity=".22"/>
-      ${crest(166, 166, 68, C.cream)}
-      <text x="200" y="300" text-anchor="middle" font-size="34" class="scr" fill="${C.cream}">${N}</text>
-      <text x="200" y="326" text-anchor="middle" font-size="8.5" class="caps" fill="${C.cream}">XV ANOS</text>
-    </svg>`,
-
-    sacola: () => `<svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Sacola do projeto modelo">${bg("#F8EFEB", "#EBD8CF")}${sparkles([[70, 70], [340, 140, 1.2]])}
-      ${shadow(200, 424, 140)}
-      <path d="M150 168c0-78 100-78 100 0" fill="none" stroke="${C.goldS}" stroke-width="6" stroke-linecap="round"/>
-      <path d="M96 158h208l16 262H80Z" fill="${C.cream}"/>
-      <path d="M96 158h208l2 26H94Z" fill="${C.blush}"/>
-      <path d="M96 158 80 420" stroke="#E2CABF" stroke-width="2"/><path d="M304 158l16 262" stroke="#E2CABF" stroke-width="2"/>
-      ${crest(155, 214, 90, C.goldS)}
-      <text x="200" y="356" text-anchor="middle" font-size="34" class="scr" fill="${C.deep}">${N}</text>
-      <text x="200" y="380" text-anchor="middle" font-size="8.5" class="caps" fill="${C.goldS}">MEUS XV ANOS</text>
-    </svg>`,
-
-    menu: () => `<svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Menu de drinks do projeto modelo">${bg("#EEDCD4", "#E2C8BC")}${sparkles([[60, 80], [345, 70, 1.2], [340, 440, .8]])}
-      ${shadow(200, 448, 110)}
-      <path d="M110 440V178a90 90 0 0 1 180 0v262Z" fill="${C.cream}"/>
-      <path d="M122 428V180a78 78 0 0 1 156 0v248Z" fill="none" stroke="${C.goldS}" stroke-width="1"/>
-      ${mono(174, 104, 52, C.deep)}
-      <text x="200" y="200" text-anchor="middle" font-size="34" class="scr" fill="${C.deep}">Menu</text>
-      <text x="200" y="220" text-anchor="middle" font-size="8" class="caps" fill="${C.goldS}">DRINKS</text>
-      ${[["Pink Lemonade", 258], ["Sweet Fifteen", 302], ["Berry Fizz", 346], ["Rosé Soda", 390]].map(([t, y]) => `
-        <text x="200" y="${y}" text-anchor="middle" font-size="15" fill="#3B2F2C">${t}</text>
-        <rect x="160" y="${y + 9}" width="80" height="2" rx="1" fill="${C.nude}"/>`).join("")}
-    </svg>`,
-
-    "placa-mesa": () => `<svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Placa de mesa do projeto modelo">${bg("#F6E9E4", "#E9D3C8")}${sparkles([[80, 90], [320, 120, 1.2]])}
-      ${shadow(200, 428, 120)}
-      <path d="M150 380 128 428M250 380l22 48" stroke="${C.goldS}" stroke-width="5" stroke-linecap="round"/>
-      <rect x="112" y="110" width="176" height="270" fill="${C.gold}"/>
-      <rect x="120" y="118" width="160" height="254" fill="${C.cream}"/>
-      <rect x="130" y="128" width="140" height="234" fill="none" stroke="${C.goldS}" stroke-width=".8"/>
-      ${mono(176, 146, 48, C.deep)}
-      <text x="200" y="232" text-anchor="middle" font-size="10" class="caps" fill="${C.goldS}">MESA</text>
-      <text x="200" y="306" text-anchor="middle" font-size="76" fill="#3B2F2C">07</text>
-      <text x="200" y="346" text-anchor="middle" font-size="22" class="scr" fill="${C.deep}">${N}</text>
-    </svg>`,
-
-    decoracao: () => `<svg viewBox="0 0 640 400" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Decoração com painel do projeto modelo">
-      <defs><linearGradient id="bgd" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F7ECE7"/><stop offset="1" stop-color="#E7D0C4"/></linearGradient></defs>
-      <rect width="640" height="400" fill="url(#bgd)"/><rect y="330" width="640" height="70" fill="#E2C9BC"/>
-      <circle cx="320" cy="180" r="140" fill="${C.blush}"/><circle cx="320" cy="180" r="128" fill="none" stroke="${C.goldS}" stroke-width="1.4"/>
-      ${crest(282, 62, 76, C.goldS)}
-      <text x="320" y="196" text-anchor="middle" font-size="40" class="scr" fill="${C.deep}">${N}</text>
-      <g>${[[178, 120, 36], [150, 160, 24], [200, 86, 20], [470, 250, 34], [496, 214, 22], [446, 286, 20], [188, 296, 26]].map(([x, y, r], i) =>
-        `<circle cx="${x}" cy="${y}" r="${r}" fill="${i % 2 ? C.rose : "#fff"}" opacity="${i % 2 ? .85 : .95}"/><circle cx="${x}" cy="${y}" r="${r * .4}" fill="${i % 2 ? C.deep : C.blush}" opacity=".5"/>`).join("")}</g>
-      <rect x="250" y="270" width="140" height="80" fill="${C.cream}"/><ellipse cx="320" cy="270" rx="70" ry="10" fill="#fff"/>
-      <rect x="160" y="300" width="80" height="50" fill="${C.rose}"/><ellipse cx="200" cy="300" rx="40" ry="6" fill="#E8B8BB"/>
-      <rect x="400" y="290" width="86" height="60" fill="${C.nude}"/><ellipse cx="443" cy="290" rx="43" ry="7" fill="#F0E0D6"/>
-      <rect x="298" y="236" width="44" height="30" rx="3" fill="#fff"/><rect x="306" y="216" width="28" height="22" rx="3" fill="#fff"/>
-      <rect x="298" y="248" width="44" height="4" fill="${C.goldS}" opacity=".7"/><rect x="306" y="225" width="28" height="3" fill="${C.goldS}" opacity=".7"/>
-      ${sparkles([[90, 60, 1.3], [560, 80, 1.2], [600, 200], [60, 250, .8]])}
-    </svg>`,
-
-    lembranca: () => `<svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Caixa de lembrança do projeto modelo">${bg("#F5E7E2", "#E8D1C6")}${sparkles([[80, 80], [330, 100, 1.2], [70, 400, .8]])}
-      ${shadow(200, 412, 130)}
-      <rect x="110" y="236" width="180" height="170" fill="${C.blush}"/>
-      <rect x="100" y="200" width="200" height="44" fill="${C.rose}"/>
-      <rect x="188" y="200" width="24" height="206" fill="${C.gold}"/>
-      <path d="M200 200c-30-40-74-30-60 0 8 14 40 4 60 0Zm0 0c30-40 74-30 60 0-8 14-40 4-60 0Z" fill="${C.gold}"/>
-      <path d="M200 202l-26 50M200 202l26 50" stroke="#8E6E3E" stroke-width="7" stroke-linecap="round"/>
-      <path d="M262 242l20 46" stroke="${C.goldS}" stroke-width="1.2"/>
-      <circle cx="292" cy="320" r="38" fill="${C.cream}"/>${mono(262, 290, 60, C.deep)}
-    </svg>`,
-
-    embalagem: () => `<svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Latinhas personalizadas do projeto modelo">${bg("#F4E5DF", "#E5CEC2")}${sparkles([[70, 100], [330, 80, 1.2]])}
-      ${shadow(200, 420, 160)}
-      <g><rect x="70" y="190" width="140" height="220" fill="${C.rose}"/><ellipse cx="140" cy="410" rx="70" ry="14" fill="${C.rose}"/>
-        <rect x="70" y="250" width="140" height="100" fill="${C.cream}"/>
-        <ellipse cx="140" cy="190" rx="70" ry="14" fill="${C.gold}"/><ellipse cx="140" cy="186" rx="64" ry="11" fill="#D8BE8C"/>
-        ${mono(110, 264, 60, C.deep)}<rect x="82" y="200" width="10" height="200" fill="#fff" opacity=".2"/></g>
-      <g><rect x="220" y="260" width="110" height="150" fill="${C.blush}"/><ellipse cx="275" cy="410" rx="55" ry="11" fill="${C.blush}"/>
-        <ellipse cx="275" cy="260" rx="55" ry="11" fill="${C.gold}"/><ellipse cx="275" cy="257" rx="50" ry="8" fill="#D8BE8C"/>
-        <text x="275" y="346" text-anchor="middle" font-size="30" class="scr" fill="${C.deep}">${N}</text>
-        <text x="275" y="366" text-anchor="middle" font-size="7" class="caps" fill="${C.goldS}">XV ANOS</text></g>
-    </svg>`,
-
-    robe: () => `<svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Robe do projeto modelo">${bg("#F6E9E4", "#E9D2C7", true)}${sparkles([[70, 80], [335, 90, 1.2], [340, 420, .8]])}
-      ${shadow(200, 444, 120)}
-      <path d="M200 52v20" stroke="${C.goldS}" stroke-width="3"/><path d="M160 92q40-34 80 0" fill="none" stroke="${C.goldS}" stroke-width="3"/>
-      <path d="M150 92 200 116 250 92l70 40 40 140-46 14-24-90v226H110V196l-24 90-46-14 40-140Z" fill="${C.blush}"/>
-      <path d="M150 92 200 116 250 92l70 40 40 140-46 14-24-90v226H110V196l-24 90-46-14 40-140Z" fill="url(#g-shine)" opacity=".35"/>
-      <path d="M150 92l50 132 50-132" fill="none" stroke="${C.rose}" stroke-width="12" stroke-linejoin="round"/>
-      <path d="M200 224v198" stroke="${C.rose}" stroke-width="2"/>
-      <rect x="110" y="258" width="180" height="14" fill="${C.rose}"/>
-      <path d="M196 270l-20 70M204 270l16 66" stroke="${C.rose}" stroke-width="9" stroke-linecap="round"/>
-      ${mono(226, 150, 44, C.goldS)}
-      <text x="200" y="408" text-anchor="middle" font-size="22" class="scr" fill="${C.deep}">${N}</text>
-    </svg>`,
-
-    chinelo: () => {
-      const sole = (tx, rot) => `<g transform="translate(${tx} 250) rotate(${rot})">
-        <path d="M0-138c46 0 56 60 50 116-6 64 4 110-50 138-54-28-44-74-50-138-6-56 4-116 50-116Z" fill="${C.cream}"/>
-        <path d="M0-126c38 0 46 54 40 104-5 58 3 100-40 124-43-24-35-66-40-124-6-50 2-104 40-104Z" fill="${C.blush}"/>
-        <path d="M0-90-40 0M0-90l40 90" stroke="${C.gold}" stroke-width="12" stroke-linecap="round"/>
-        <circle cx="0" cy="-90" r="8" fill="#8E6E3E"/>
-        ${mono(-22, 40, 44, C.deep)}</g>`;
-      return `<svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Chinelos do projeto modelo">${bg("#F4E6E0", "#E7D0C5", true)}${sparkles([[60, 70], [345, 80, 1.2], [200, 460, .8]])}
-        ${sole(130, -8)}${sole(270, 8)}</svg>`;
-    },
-
-    papelaria: () => `<svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Papelaria do projeto modelo">${bg("#EFDDD5", "#E4CBBF", true)}
-      <g transform="rotate(-6 150 230)"><rect x="70" y="90" width="170" height="236" fill="${C.cream}"/><rect x="80" y="100" width="150" height="216" fill="none" stroke="${C.goldS}" stroke-width=".8"/>
-        ${crest(122, 120, 66)}<text x="155" y="236" text-anchor="middle" font-size="26" class="scr" fill="${C.deep}">${N}</text>
-        <text x="155" y="256" text-anchor="middle" font-size="7" class="caps" fill="${C.goldS}">MEUS XV ANOS</text>
-        <text x="155" y="286" text-anchor="middle" font-size="13" fill="#3B2F2C">12 . 09 . 2027</text></g>
-      <g transform="rotate(8 300 360)"><rect x="220" y="300" width="150" height="100" fill="${C.rose}"/><path d="M220 300l75 54 75-54" fill="none" stroke="#C48A90" stroke-width="2"/>
-        <circle cx="295" cy="352" r="16" fill="${C.gold}"/><text x="295" y="358" text-anchor="middle" font-size="15" class="scr" fill="${C.cream}">If</text></g>
-      <circle cx="310" cy="160" r="46" fill="${C.blush}"/>${mono(274, 124, 72, C.deep)}
-      <g transform="rotate(-14 120 410)"><rect x="80" y="370" width="64" height="100" rx="4" fill="${C.cream}"/><circle cx="112" cy="384" r="5" fill="#E4CBBF"/>
-        <text x="112" y="430" text-anchor="middle" font-size="18" class="scr" fill="${C.deep}">${N}</text></g>
-      ${[[268, 248], [282, 256], [296, 260], [310, 260], [324, 256], [338, 248]].map(([x, y]) => `<circle cx="${x}" cy="${y}" r="5" fill="#fff"/>`).join("")}
-      ${sparkles([[360, 60], [40, 60, 1.2]])}
-    </svg>`,
-
-    "boas-vindas": () => `<svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Placa de boas-vindas do projeto modelo">${bg("#F5E8E3", "#E6CEC2")}${sparkles([[60, 90], [345, 70, 1.2], [350, 400, .8]])}
-      ${shadow(200, 470, 120)}
-      <path d="M170 400l-40 70M230 400l40 70M200 400v66" stroke="${C.goldS}" stroke-width="5" stroke-linecap="round"/>
-      <path d="M100 404V150a100 100 0 0 1 200 0v254Z" fill="${C.gold}"/>
-      <path d="M108 396V150a92 92 0 0 1 184 0v246Z" fill="${C.cream}"/>
-      <path d="M118 386V152a82 82 0 0 1 164 0v234Z" fill="none" stroke="${C.goldS}" stroke-width=".8"/>
-      ${crest(166, 92, 68)}
-      <text x="200" y="204" text-anchor="middle" font-size="9" class="caps" fill="${C.goldS}">SEJAM</text>
-      <text x="200" y="244" text-anchor="middle" font-size="32" class="scr" fill="${C.deep}">Bem-vindos</text>
-      <text x="200" y="272" text-anchor="middle" font-size="9" class="caps" fill="${C.goldS}">AOS MEUS XV ANOS</text>
-      <rect x="170" y="290" width="60" height="1" fill="${C.goldS}"/>
-      <text x="200" y="330" text-anchor="middle" font-size="30" class="scr" fill="${C.deep}">${N}</text>
-      <text x="200" y="356" text-anchor="middle" font-size="13" fill="#3B2F2C">12 . 09 . 2027</text>
-    </svg>`
-  };
-
   /* parallax leve na foto do topo */
   const heroImg = $("heroImg");
 
   /* ordem por cor: rosa, azuis, turquesa e convites */
-  const ORDEM = ["isadora", "lais", "helena", "leticia", "convites"];
-  PROJETOS.sort((a, b) => (a.id === "todos" ? -1 : b.id === "todos" ? 1 : (ORDEM.indexOf(a.id) + 1 || 99) - (ORDEM.indexOf(b.id) + 1 || 99)));
+  const ORDEM = PROJETOS.map(pr => pr.id);
 
   /* faixa de fotos em movimento: uma fileira rosa e azul, outra turquesa e convites */
   const fotos = ORDEM.flatMap(id => GALERIA.filter(g => g.src && g.p === id));
@@ -1103,44 +793,20 @@ const PASSOS = [
   const rowHtml = arr => { const h = arr.concat(arr).map(g => `<button type="button" data-src="${g.src}" aria-label="Ampliar ${g.nome}"><img src="${g.src}" alt="" loading="lazy" style="aspect-ratio:${g.r}"></button>`).join(""); return h + h; };
   $("marq").innerHTML = `<div class="row">${rowHtml(fotos.slice(0, half))}</div><div class="row rev">${rowHtml(fotos.slice(half))}</div>`;
 
-  /* o que e */
-  $("pieces").innerHTML = ELEMENTOS.map((t, i) => `<div class="piece rv" style="--d:${(i % 2) * .06}s"><i>${String(i + 1).padStart(2, "0")}</i><span>${t}</span></div>`).join("");
-
-  /* galeria com abas */
+  /* galeria: um card por identidade */
   const byP = id => GALERIA.filter(g => g.p === id);
   const LISTS = {};
-  PROJETOS.forEach(pr => {
-    if (pr.id !== "todos") { LISTS[pr.id] = byP(pr.id); return; }
-    LISTS.todos = ORDEM.flatMap(byP);
-  });
-  const media = g => g.scene ? SCENES[g.scene]() : `<img src="${g.src}" alt="${g.nome}, projeto modelo" loading="lazy" style="aspect-ratio:${g.r}">`;
-  let tab = "todos";
-  $("gTabs").innerHTML = PROJETOS.map(pr => `<button type="button" role="tab" data-t="${pr.id}" aria-selected="${pr.id === tab}">${pr.nome}<i>${LISTS[pr.id].length}</i></button>`).join("");
-  function renderTab(first) {
-    const items = LISTS[tab], pr = PROJETOS.find(x => x.id === tab);
-    $("gDesc").textContent = pr.desc;
-    const card = (g, i) => `
-      <button class="gi${g.r > 1.3 && !g.scene && g.nome.startsWith("Logo") ? " fit" : ""}" type="button" data-lb="${tab}" data-i="${i}" style="--r:${g.r};--d:${first ? 0 : Math.min(i % 6, 5) * .06}s" aria-label="Ampliar ${g.nome}">
-        ${media(g)}<span class="tag">${g.scene ? "Ilustração" : "Projeto modelo"}</span>
-        <span class="ov"><small>${PROJETOS.find(x => x.id === g.p).nome}</small><b>${g.nome}</b></span>
-      </button>`;
-    const row = arr => `<div class="jrow">${arr.map(([g, i]) => card(g, i)).join("")}<i class="jfill"></i></div>`;
-    const idx = items.map((g, i) => [g, i]);
-    $("gallery").innerHTML = tab !== "todos" ? row(idx)
-      : ORDEM.map(id => { const pr = PROJETOS.find(x => x.id === id);
-          return `<div class="grp"><div class="grp-h"><b>${pr.nome}</b><span>${pr.desc}</span></div>${row(idx.filter(([g]) => g.p === id))}</div>`; }).join("");
-  }
-  function setTab(t) {
-    if (t === tab) return;
-    tab = t;
-    $("gTabs").querySelectorAll("button").forEach(b => b.setAttribute("aria-selected", b.dataset.t === t));
-    const g = $("gallery"), d = $("gDesc");
-    g.classList.add("out"); d.classList.add("out");
-    setTimeout(() => { renderTab(); g.classList.remove("out"); d.classList.remove("out"); }, reduce ? 0 : 280);
-  }
-  $("gTabs").addEventListener("click", ev => { const b = ev.target.closest("button"); if (b) { setTab(b.dataset.t); b.scrollIntoView({ block: "nearest", inline: "center", behavior: reduce ? "auto" : "smooth" }); } });
-  document.addEventListener("click", ev => { const a = ev.target.closest("[data-tab]"); if (a) setTab(a.dataset.tab); });
-  renderTab(true);
+  PROJETOS.forEach(pr => { LISTS[pr.id] = byP(pr.id); });
+  $("projRow").innerHTML = PROJETOS.map(pr => { const f = LISTS[pr.id]; return `
+    <button class="proj" type="button" data-lb="${pr.id}" data-i="0" aria-label="Ver fotos da identidade ${pr.nome}">
+      <img src="${(f.find(g => g.src === pr.capa) || f[0]).src}" alt="" loading="lazy">
+      <span class="n">${f.length} fotos</span>
+      <span class="pt"><b>${pr.nome}</b><span>Ver galeria <i>→</i></span></span>
+    </button>`; }).join("");
+  const projRow = $("projRow");
+  const step = () => (projRow.querySelector(".proj").offsetWidth + 16);
+  $("projPrev").onclick = () => projRow.scrollBy({ left: -step(), behavior: reduce ? "auto" : "smooth" });
+  $("projNext").onclick = () => projRow.scrollBy({ left: step(), behavior: reduce ? "auto" : "smooth" });
 
   /* lightbox */
   const lb = $("lb");
@@ -1151,7 +817,7 @@ const PASSOS = [
     const box = $("lbMedia");
     const ratio = r => { box.style.aspectRatio = r; box.style.width = r > 1 ? `min(92vw,calc((100dvh - 200px) * ${r}),900px)` : `min(92vw,calc((100dvh - 200px) * ${r}),640px)`; };
     ratio(m.r);
-    box.innerHTML = (m.scene ? SCENES[m.scene]() : `<img src="${m.src}" alt="${m.nome}, projeto modelo">`) + `<span class="tag">${m.scene ? "Ilustração" : "Projeto modelo"}</span>`;
+    box.innerHTML = `<img src="${m.src}" alt="${m.nome}">`;
     $("lbTitle").textContent = m.nome;
     $("lbText").textContent = m.texto + " · " + PROJETOS.find(x => x.id === m.p).nome;
     $("lbCount").textContent = String(cur + 1).padStart(2, "0") + " / " + String(list.length).padStart(2, "0");
@@ -1188,7 +854,7 @@ const PASSOS = [
       <p class="desc">${p.desc}</p>
       ${p.grupos.map(g => `<div class="group"><h4>${g.t}</h4><ul>${g.itens.map(t => `<li>${t}</li>`).join("")}</ul></div>`).join("")}
       ${p.detalhes.length ? `<div class="group">${p.detalhes.map(d => `<details><summary>${d.t}</summary><ul>${d.itens.map(t => `<li>${t}</li>`).join("")}</ul></details>`).join("")}</div>` : ""}
-      ${p.exemplo ? `<a class="see" href="#aplicacoes" data-tab="${p.exemplo}">Ver exemplo na galeria <i>→</i></a>` : ""}
+      ${p.exemplo ? `<button class="see" type="button" data-lb="${p.exemplo}" data-i="0">Ver na galeria <i>→</i></button>` : ""}
       <div class="spacer"></div>
       <a class="btn btn-dark js-wa" href="#" data-msg="Oi! Vi o site e quero o ${p.num}: ${p.nome} (R$ ${p.preco},00) para os meus 15 anos.">Quero este pacote</a>
     </article>`).join("");
