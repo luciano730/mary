@@ -47,3 +47,7 @@ A seção "Convites digitais" usa as fotos de `img/convites/`. As fotos do proje
 ## Telão de LED
 
 A seção "Arte para telão de LED" usa `video/telao-manuela.mp4` (capa `video/telao-manuela.jpg`). O cartão ao lado leva para o reel no Instagram, com a capa `video/reel-capa.jpg`. Para trocar o reel, mude o link `instagram.com/reel/...` no `index.html`.
+
+## Site da debutante
+
+A seção "Site da debutante" mostra dois celulares de exemplo com as fotos de `img/site/`.

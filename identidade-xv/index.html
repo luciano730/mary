@@ -248,6 +248,35 @@ em.it{font-style:italic;color:var(--gold)}
 .reel .snd svg{width:22px;height:22px}
 .reel .snd[hidden]{display:none}
 
+/* site personalizado */
+.site{background:var(--white);overflow:hidden}
+.site .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(40px,7vw,100px);align-items:center}
+.site h2{font-size:clamp(36px,5vw,60px);margin:20px 0 22px}
+.site .lead{color:var(--ink-soft);max-width:540px;font-size:17px}
+.feats{list-style:none;margin:30px 0 34px;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.feats li{display:flex;gap:12px;align-items:flex-start;padding:16px;background:var(--bg);font-size:14.5px;color:var(--ink-soft);line-height:1.45}
+.feats b{display:block;font-family:var(--serif);font-weight:500;font-size:19px;color:var(--ink);margin-bottom:2px}
+.feats svg{flex:none;width:26px;height:26px;color:var(--rose-deep);margin-top:2px}
+.phones{position:relative;aspect-ratio:1/1.05;max-width:540px;width:100%;justify-self:center}
+.ph{position:absolute;width:52%;aspect-ratio:9/19;background:#2a1d18;border-radius:36px;padding:9px;box-shadow:var(--shadow)}
+.ph .scr{position:relative;height:100%;border-radius:28px;overflow:hidden;display:flex;flex-direction:column;background:var(--c-bg)}
+.ph.p1{left:2%;top:0;rotate:-5deg;z-index:2;--c-bg:#FBF3F1;--c-ac:#9E2A2B;animation:bob 8s ease-in-out infinite}
+.ph.p2{right:2%;top:9%;rotate:5deg;--c-bg:#F2F6FC;--c-ac:#4E6FA8;animation:bob 8s ease-in-out infinite -4s}
+.ph .cover{position:relative;height:47%;flex:none}
+.ph .cover img{width:100%;height:100%;object-fit:cover}
+.ph .cover::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 45%,var(--c-bg))}
+.ph .nm{position:relative;z-index:1;margin-top:-34px;text-align:center;font-family:var(--script);font-size:clamp(26px,3vw,36px);line-height:1;color:var(--c-ac)}
+.ph .sub{text-align:center;font-size:8px;letter-spacing:.3em;color:var(--ink-soft);margin:6px 0 10px}
+.ph .menu{display:grid;gap:6px;padding:0 12px}
+.ph .menu span{display:flex;align-items:center;gap:8px;padding:8px 10px;background:#fff;border-radius:10px;font-size:9.5px;letter-spacing:.06em;color:var(--ink);box-shadow:0 4px 10px -8px rgba(0,0,0,.4)}
+.ph .menu i{width:16px;height:16px;border-radius:50%;background:var(--c-ac);opacity:.85;flex:none}
+.ph .menu span.on{background:var(--c-ac);color:#fff}
+.ph .menu span.on i{background:#fff}
+.ph .pics{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;padding:10px 12px 0}
+.ph .pics b{aspect-ratio:1;border-radius:6px;background:var(--c-ac);opacity:.18}
+.ph .pics b:nth-child(2n){opacity:.32}
+.site .tag{position:absolute;z-index:3;left:50%;bottom:-4%;translate:-50% 0;white-space:nowrap}
+
 /* telao */
 .screen{background:var(--blush)}
 .screen-row{display:flex;justify-content:center;align-items:flex-start;gap:clamp(24px,5vw,72px);flex-wrap:wrap}
@@ -379,6 +408,8 @@ svg .caps{font-family:var(--sans);letter-spacing:.3em}
   .jrow{grid-template-columns:repeat(3,1fr)}
   .me .wrap{grid-template-columns:1fr}
   .invites .wrap{grid-template-columns:1fr}
+  .site .wrap{grid-template-columns:1fr}
+  .phones{max-width:420px}
   .inv-stage{max-width:440px}
   .me-photo{max-width:400px}
   .portrait{width:min(400px,80%)}
@@ -394,6 +425,8 @@ svg .caps{font-family:var(--sans);letter-spacing:.3em}
   .piece:nth-child(odd){border-right:0;padding-right:8px}
   .piece:nth-child(even){padding-left:8px}
   .jrow{grid-template-columns:1fr 1fr;gap:8px}
+  .feats{grid-template-columns:1fr}
+  .ph .menu span{font-size:8px;padding:6px 8px}
   .gi .tag{display:none}
   .grp-h span{font-size:13px}
   .gi .tag{left:8px;top:8px;font-size:8px;padding:5px 8px;letter-spacing:.14em}
@@ -425,7 +458,7 @@ svg .caps{font-family:var(--sans);letter-spacing:.3em}
   html{scroll-behavior:auto}
   .marq .row{animation:none}
   .marq{overflow-x:auto}
-  .gi,.portrait .arch img,.float,.final .ff,.ig-play{animation:none}
+  .gi,.portrait .arch img,.float,.final .ff,.ig-play,.ph{animation:none}
   *{transition-duration:.01ms!important}
 }
 </style>
@@ -441,6 +474,7 @@ svg .caps{font-family:var(--sans);letter-spacing:.3em}
     <nav class="nav" aria-label="Seções">
       <a href="#sobre">Sobre</a>
       <a href="#aplicacoes">Galeria</a>
+      <a href="#site">Site</a>
       <a href="#pacotes">Pacotes</a>
       <a href="#como-funciona">Como funciona</a>
     </nav>
@@ -462,7 +496,8 @@ svg .caps{font-family:var(--sans);letter-spacing:.3em}
     <a href="#convites">Convites <span>04</span></a>
     <a href="#festa-real">Festas reais <span>05</span></a>
     <a href="#pacotes">Pacotes <span>06</span></a>
-    <a href="#como-funciona">Como funciona <span>07</span></a>
+    <a href="#site">Site da debutante <span>07</span></a>
+    <a href="#como-funciona">Como funciona <span>08</span></a>
     <a class="btn btn-dark js-wa" href="#" data-msg="Oi! Vi o site e quero solicitar um orçamento de Identidade Visual para os meus 15 anos.">Solicitar orçamento</a>
     <p class="note">Identidade visual personalizada para debutantes, do convite às lembranças da festa.</p>
   </div>
@@ -610,6 +645,39 @@ svg .caps{font-family:var(--sans);letter-spacing:.3em}
     <div class="ctas rv">
       <a class="btn btn-dark" href="#pacotes">Quero meu telão</a>
       <a class="btn btn-line js-ig" href="#" target="_blank" rel="noopener">Ver mais no Instagram</a>
+    </div>
+  </div>
+</section>
+
+<section class="sec site" id="site">
+  <div class="wrap">
+    <div class="rv">
+      <span class="eyebrow">Novo · Site da debutante</span>
+      <h2>Um site só seu para os <em class="it">seus 15 anos</em></h2>
+      <p class="lead">Também crio sites personalizados para debutantes, com a mesma identidade visual da festa. Um endereço único para os convidados acompanharem tudo antes, durante e depois do grande dia.</p>
+      <ul class="feats">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="8" width="17" height="4" rx="1"/><path d="M5 12v8h14v-8M12 8v12M12 8c-1.5-3.5-5.5-3.5-5-1s5 1 5 1Zm0 0c1.5-3.5 5.5-3.5 5-1s-5 1-5 1Z"/></svg><span><b>Lista de presentes</b>Os convidados escolhem o presente pelo site</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M16 5.2a3 3 0 0 1 0 5.6M18 14.5c2 .8 3 2.8 3 5.5"/></svg><span><b>Lista de convidados</b>Controle de quem foi convidado e de quem já confirmou</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8 12.5 2.8 2.8L16.5 9.5"/></svg><span><b>Confirmação de presença</b>O convidado confirma em poucos cliques</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="m21 16-5-5-9 9"/></svg><span><b>Galeria de fotos</b>Ensaio, making of e as fotos da festa</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2.5M9 2h6"/></svg><span><b>Contagem regressiva</b>Para criar expectativa até o dia</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-6-5.6-6-11a6 6 0 0 1 12 0c0 5.4-6 11-6 11Z"/><circle cx="12" cy="10" r="2.3"/></svg><span><b>Local e informações</b>Endereço, mapa, horário e traje</span></li>
+      </ul>
+      <a class="btn btn-dark js-wa" href="#" data-msg="Oi! Vi o site e quero saber sobre o site personalizado para os meus 15 anos.">Quero meu site</a>
+    </div>
+    <div class="phones rv" aria-hidden="true">
+      <div class="ph p1"><div class="scr">
+        <div class="cover"><img src="img/site/debutante-vermelho.jpg" alt="" loading="lazy"></div>
+        <div class="nm">Maria Eloisa</div><div class="sub">XV ANOS · 10 . 07 . 2026</div>
+        <div class="menu"><span class="on"><i></i>Confirmar presença</span><span><i></i>Lista de presentes</span><span><i></i>Galeria de fotos</span><span><i></i>Local da festa</span></div>
+      </div></div>
+      <div class="ph p2"><div class="scr">
+        <div class="cover"><img src="img/site/debutante-azul.jpg" alt="" loading="lazy"></div>
+        <div class="nm">Laís</div><div class="sub">XV ANOS · 17 . 12 . 2026</div>
+        <div class="menu"><span><i></i>Lista de convidados</span><span class="on"><i></i>Galeria de fotos</span></div>
+        <div class="pics"><b></b><b></b><b></b><b></b><b></b><b></b></div>
+      </div></div>
+      <span class="tag">Exemplo de site</span>
     </div>
   </div>
 </section>
@@ -775,15 +843,14 @@ const PACOTES = [
 ];
 
 /* Galeria com abas. Cada projeto tem as suas fotos (pasta img/).
-   r = largura / altura da foto. "ilustracoes" usa os desenhos feitos no próprio site. */
+   r = largura / altura da foto. */
 const PROJETOS = [
   { id: "todos", nome: "Todos", desc: "Projetos modelo criados para mostrar as possibilidades de uma identidade visual de 15 anos." },
   { id: "isadora", nome: "Sakura", desc: "Flores de cerejeira, pink e rosé gold. Projeto modelo aplicado em garrafa, menus, placa de mesa e pulseira." },
   { id: "helena", nome: "Conto de fadas", desc: "Azul e prata, com carruagem, tiara e sapatinho de cristal. Exemplo do Pacote 01: monograma e logotipo, com ideias de aplicação." },
   { id: "lais", nome: "Flores azuis", desc: "Azul, branco e flores, com coroa e laços. Projeto modelo com convite, topo com monograma, leque, chinelos e lembrança." },
   { id: "convites", nome: "Convites", desc: "Convites digitais com save the date, contagem regressiva e botões para confirmar presença e ver a localização." },
-  { id: "leticia", nome: "Pérolas e laços", desc: "Turquesa, preto e pérolas. Exemplo do Pacote 03: brasão e aplicações em mockups." },
-  { id: "ilustracoes", nome: "Ilustrações", desc: "Desenhos de outras aplicações possíveis para a sua identidade: convite digital, papelaria, embalagens e mais." }
+  { id: "leticia", nome: "Pérolas e laços", desc: "Turquesa, preto e pérolas. Exemplo do Pacote 03: brasão e aplicações em mockups." }
 ];
 const GALERIA = [
   { p: "isadora", src: "img/projeto-modelo/garrafa.jpg", r: 1145 / 1374, nome: "Garrafa térmica", texto: "Garrafa com caixa, tag e flores de cerejeira" },
@@ -804,17 +871,7 @@ const GALERIA = [
   { p: "lais", src: "img/projeto-lais/topo-monograma.jpg", r: 1, nome: "Topo com monograma", texto: "Monograma com coroa, flores e laço em acrílico" },
   { p: "lais", src: "img/projeto-lais/kit-lembrancas.jpg", r: 1145 / 1374, nome: "Kit de lembranças", texto: "Leque, chinelos, caixa com prato e tag de agradecimento" },
   { p: "convites", src: "img/convites/convite-lais.jpg", r: 2 / 3, nome: "Convite digital azul", texto: "Save the date, contagem regressiva e confirmação de presença" },
-  { p: "convites", src: "img/convites/convite-maria-eloisa.jpg", r: 2 / 3, nome: "Convite digital vermelho", texto: "Brasão com rosas, save the date e botões interativos" },
-  { p: "ilustracoes", scene: "convite", r: 1.6, nome: "Convite digital", texto: "Convite cinematográfico com botões interativos" },
-  { p: "ilustracoes", scene: "boas-vindas", r: .8, nome: "Placa de boas-vindas", texto: "A primeira peça que os convidados veem" },
-  { p: "ilustracoes", scene: "necessaire", r: .8, nome: "Necessaire", texto: "Brasão aplicado em dourado" },
-  { p: "ilustracoes", scene: "papelaria", r: .8, nome: "Papelaria", texto: "Convite impresso, tags e adesivos" },
-  { p: "ilustracoes", scene: "decoracao", r: 1.6, nome: "Decoração", texto: "Painel e mesa principal com o brasão" },
-  { p: "ilustracoes", scene: "sacola", r: .8, nome: "Sacola", texto: "Para os mimos das convidadas" },
-  { p: "ilustracoes", scene: "lembranca", r: .8, nome: "Lembrança", texto: "Caixinha com laço e tag do monograma" },
-  { p: "ilustracoes", scene: "embalagem", r: .8, nome: "Embalagem", texto: "Latinhas personalizadas para doces" },
-  { p: "ilustracoes", scene: "robe", r: .8, nome: "Robe", texto: "Para o making of da debutante" },
-  { p: "ilustracoes", scene: "chinelo", r: .8, nome: "Chinelo", texto: "Para a pista de dança" }
+  { p: "convites", src: "img/convites/convite-maria-eloisa.jpg", r: 2 / 3, nome: "Convite digital vermelho", texto: "Brasão com rosas, save the date e botões interativos" }
 ];
 
 const ELEMENTOS = ["Brasão", "Monograma", "Logotipo", "Paleta de cores", "Tipografias", "Elementos gráficos", "Padrões e estampas", "Papelaria", "Convites", "Materiais digitais", "Lembranças", "Decoração", "Aplicações personalizadas"];
