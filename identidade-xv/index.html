@@ -240,6 +240,24 @@ em.it{font-style:italic;color:var(--gold)}
 .reel .snd svg{width:22px;height:22px}
 .reel .snd[hidden]{display:none}
 
+/* telao */
+.screen{background:var(--blush)}
+.screen-row{display:flex;justify-content:center;align-items:flex-start;gap:clamp(24px,5vw,72px);flex-wrap:wrap}
+.screen-row figure{margin:0;display:grid;justify-items:center;gap:16px}
+.screen-row figcaption{text-align:center;font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
+.screen .reel{width:min(320px,78vw);aspect-ratio:9/16;background:var(--ink)}
+.ig-card{position:relative;display:block;width:min(320px,78vw);aspect-ratio:9/16;overflow:hidden;border-radius:34px;box-shadow:var(--shadow);text-decoration:none;color:#fff;background:var(--ink)}
+.ig-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:blur(2px) brightness(.62);transform:scale(1.08);transition:transform 1.2s var(--ease),filter .8s}
+.ig-card:hover img{transform:scale(1.14);filter:blur(0) brightness(.55)}
+.ig-play{position:absolute;left:50%;top:44%;translate:-50% -50%;width:78px;height:78px;border-radius:50%;background:rgba(255,255,255,.18);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);display:grid;place-items:center;box-shadow:inset 0 0 0 1px rgba(255,255,255,.5);animation:pulse 2.6s ease-in-out infinite}
+.ig-play svg{width:30px;height:30px;margin-left:4px}
+@keyframes pulse{50%{box-shadow:inset 0 0 0 1px rgba(255,255,255,.5),0 0 0 14px rgba(255,255,255,.08)}}
+.ig-txt{position:absolute;left:0;right:0;top:58%;text-align:center;font-family:var(--serif);font-size:26px;line-height:1.2;padding:0 20px}
+.ig-txt small{display:block;font-family:var(--sans);font-size:10px;letter-spacing:.26em;text-transform:uppercase;opacity:.8;margin-bottom:8px}
+.ig-foot{position:absolute;left:0;right:0;bottom:22px;display:flex;justify-content:center;align-items:center;gap:8px;font-size:12px;letter-spacing:.14em}
+.ig-foot svg{width:18px;height:18px}
+.screen .ctas{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-top:clamp(32px,4vw,48px)}
+
 /* pacotes */
 .packs{background:var(--blush)}
 .pack-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2vw,24px);align-items:stretch}
@@ -395,7 +413,7 @@ svg .caps{font-family:var(--sans);letter-spacing:.3em}
   html{scroll-behavior:auto}
   .marq .row{animation:none}
   .marq{overflow-x:auto}
-  .gi,.portrait .arch img,.float,.final .ff{animation:none}
+  .gi,.portrait .arch img,.float,.final .ff,.ig-play{animation:none}
   *{transition-duration:.01ms!important}
 }
 </style>
@@ -430,7 +448,7 @@ svg .caps{font-family:var(--sans);letter-spacing:.3em}
     <a href="#identidade">Identidade visual <span>02</span></a>
     <a href="#aplicacoes">Galeria <span>03</span></a>
     <a href="#convites">Convites <span>04</span></a>
-    <a href="#festa-real">Festa real <span>05</span></a>
+    <a href="#festa-real">Festas reais <span>05</span></a>
     <a href="#pacotes">Pacotes <span>06</span></a>
     <a href="#como-funciona">Como funciona <span>07</span></a>
     <a class="btn btn-dark js-wa" href="#" data-msg="Oi! Vi o site e quero solicitar um orçamento de Identidade Visual para os meus 15 anos.">Solicitar orçamento</a>
@@ -545,8 +563,41 @@ svg .caps{font-family:var(--sans);letter-spacing:.3em}
     </div>
     <div class="reel rv" style="--d:.1s">
       <span class="tag">Festa real</span>
-      <video id="reel" src="video/xv-alicia.mp4" poster="video/xv-alicia.jpg" muted loop playsinline preload="metadata" aria-label="Vídeo da festa XV da Alícia"></video>
-      <button class="snd" id="snd" type="button" aria-label="Ativar som"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4Z"/><path id="sndX" d="m16 9 5 6m0-6-5 6"/></svg></button>
+      <video src="video/xv-alicia.mp4" poster="video/xv-alicia.jpg" muted loop playsinline preload="metadata" aria-label="Vídeo da festa XV da Alícia"></video>
+      <button class="snd" type="button" aria-label="Ativar som"></button>
+    </div>
+  </div>
+</section>
+
+<section class="sec screen" id="telao">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow both">Festa real · XV da Manuela</span>
+      <h2>Arte para <em class="it">telão de LED</em></h2>
+      <p>A arte animada do telão recebe os convidados com o nome da debutante em movimento. No XV da Manuela, as pétalas em pink deram vida à entrada da festa. Incluso no Pacote 03.</p>
+    </div>
+    <div class="screen-row">
+      <figure class="rv">
+        <div class="reel">
+          <span class="tag">Festa real</span>
+          <video src="video/telao-manuela.mp4" poster="video/telao-manuela.jpg" muted loop playsinline preload="metadata" aria-label="Vídeo da arte do telão de LED do XV da Manuela"></video>
+          <button class="snd" type="button" aria-label="Ativar som"></button>
+        </div>
+        <figcaption>Arte do telão</figcaption>
+      </figure>
+      <figure class="rv" style="--d:.12s">
+        <a class="ig-card" href="https://www.instagram.com/reel/DazEGxWNQfD/" target="_blank" rel="noopener" aria-label="Assistir ao reel da festa no Instagram">
+          <img src="video/reel-capa.jpg" alt="" loading="lazy">
+          <span class="ig-play"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5Z"/></svg></span>
+          <span class="ig-txt"><small>Reel no Instagram</small>Assista à festa completa</span>
+          <span class="ig-foot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg><span class="js-ig-name">@marycriativa0</span></span>
+        </a>
+        <figcaption>Mais dessa festa</figcaption>
+      </figure>
+    </div>
+    <div class="ctas rv">
+      <a class="btn btn-dark" href="#pacotes">Quero meu telão</a>
+      <a class="btn btn-line js-ig" href="#" target="_blank" rel="noopener">Ver mais no Instagram</a>
     </div>
   </div>
 </section>
@@ -685,7 +736,7 @@ const CONFIG = {
   marca: "Mary Criativa",              // nome que aparece no topo e no rodapé
   whatsapp: "5500000000000",           // só números: 55 + DDD + número
   whatsappTexto: "(00) 0 0000-0000",   // como aparece no site
-  instagram: "marycriativa"            // sem o @
+  instagram: "marycriativa0"           // sem o @
 };
 
 /* Projeto modelo (só para demonstração). Mude aqui se trocar o projeto de exemplo. */
@@ -776,6 +827,7 @@ const PASSOS = [
   }
   document.querySelectorAll(".js-brand").forEach(el => el.textContent = CONFIG.marca);
   document.querySelectorAll(".js-ig").forEach(a => a.href = "https://instagram.com/" + CONFIG.instagram);
+  document.querySelectorAll(".js-ig-name").forEach(el => el.textContent = "@" + CONFIG.instagram);
   $("waText").textContent = "WhatsApp " + CONFIG.whatsappTexto;
   $("igText").textContent = "@" + CONFIG.instagram;
   $("year").textContent = new Date().getFullYear();
@@ -1080,19 +1132,25 @@ const PASSOS = [
 
   bindWa(document);
 
-  /* video da festa real: toca quando aparece na tela */
-  const reel = $("reel"), snd = $("snd");
-  if ("IntersectionObserver" in window && !reduce) {
-    new IntersectionObserver(en => en.forEach(x => { if (x.isIntersecting) reel.play().catch(() => {}); else reel.pause(); }), { threshold: .35 }).observe(reel);
-  } else { reel.controls = true; snd.hidden = true; }
-  snd.onclick = () => {
-    reel.muted = !reel.muted;
-    if (!reel.muted) reel.play().catch(() => {});
-    snd.setAttribute("aria-label", reel.muted ? "Ativar som" : "Desativar som");
-    snd.innerHTML = reel.muted ? '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4Z"/><path d="m16 9 5 6m0-6-5 6"/></svg>'
-      : '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4Z"/><path d="M16 9a4 4 0 0 1 0 6M18.5 6.5a8 8 0 0 1 0 11"/></svg>';
-  };
-  reel.addEventListener("click", () => reel.paused ? reel.play() : reel.pause());
+  /* videos das festas reais: tocam quando aparecem na tela */
+  const ICON_MUTE = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4Z"/><path d="m16 9 5 6m0-6-5 6"/></svg>';
+  const ICON_SOUND = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4Z"/><path d="M16 9a4 4 0 0 1 0 6M18.5 6.5a8 8 0 0 1 0 11"/></svg>';
+  const vio = "IntersectionObserver" in window && !reduce
+    ? new IntersectionObserver(en => en.forEach(x => { if (x.isIntersecting) x.target.play().catch(() => {}); else x.target.pause(); }), { threshold: .35 })
+    : null;
+  document.querySelectorAll(".reel").forEach(box => {
+    const v = box.querySelector("video"), snd = box.querySelector(".snd");
+    snd.innerHTML = ICON_MUTE;
+    if (vio) vio.observe(v); else { v.controls = true; snd.hidden = true; }
+    snd.onclick = () => {
+      document.querySelectorAll(".reel video").forEach(o => { if (o !== v) { o.muted = true; o.parentNode.querySelector(".snd").innerHTML = ICON_MUTE; } });
+      v.muted = !v.muted;
+      if (!v.muted) v.play().catch(() => {});
+      snd.setAttribute("aria-label", v.muted ? "Ativar som" : "Desativar som");
+      snd.innerHTML = v.muted ? ICON_MUTE : ICON_SOUND;
+    };
+    v.addEventListener("click", () => v.paused ? v.play() : v.pause());
+  });
 
   /* menu lateral */
   const sheet = $("sheet"), menuBtn = $("menuBtn");
