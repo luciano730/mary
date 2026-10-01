@@ -19,3 +19,7 @@ A identidade da Isadora Freitas aparece só como **projeto modelo**, para mostra
 
 - Arraste a pasta `identidade-xv` no https://app.netlify.com/drop
 - Ou GitHub Pages: Settings > Pages > Branch > salvar (o site fica em `/identidade-xv/`).
+
+## Exemplo do Pacote 01
+
+As fotos do projeto modelo azul (Helena Bacin) ficam em `img/projeto-helena/`. A lista `EXEMPLO_P1` no `index.html` diz quais aparecem (monograma, logotipo e 3 aplicações).

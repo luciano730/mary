@@ -229,6 +229,33 @@ em.it{font-style:italic;color:var(--gold)}
 .pack .spacer{flex:1;min-height:28px}
 .pack .btn{width:100%}
 .packs-note{text-align:center;margin-top:28px;font-size:13.5px;color:var(--ink-soft)}
+.pack .peek{display:grid;grid-template-columns:1fr 1.5fr;gap:8px;margin-top:26px;text-decoration:none}
+.pack .peek img{width:100%;aspect-ratio:1;object-fit:cover;background:#fff}
+.pack .peek img+img{aspect-ratio:1.5;object-fit:contain}
+.pack .peek span{grid-column:1/-1;display:flex;justify-content:space-between;align-items:center;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);padding-top:6px}
+.pack .peek:hover span{color:var(--ink)}
+
+/* exemplo do pacote 01 */
+.example{margin-top:clamp(56px,7vw,88px);background:var(--white);padding:clamp(22px,3.5vw,48px)}
+.ex-head{display:grid;grid-template-columns:1fr auto;gap:18px 40px;align-items:end;margin-bottom:clamp(24px,3vw,36px)}
+.ex-head h3{font-size:clamp(30px,3.6vw,44px);margin-top:12px}
+.ex-head p{grid-column:1;color:var(--ink-soft);font-size:15.5px;max-width:620px}
+.ex-sw{grid-column:2;grid-row:1/3;display:flex;gap:8px;align-self:center}
+.ex-sw i{width:34px;height:52px;border-radius:999px 999px 5px 5px;box-shadow:inset 0 0 0 1px rgba(0,0,0,.06)}
+.ex-row{display:grid;gap:12px;margin-top:12px}
+.ex-row.r1{grid-template-columns:1fr 1.5fr}
+.ex-row.r2{grid-template-columns:1fr 1.5fr 1.5fr}
+.ex-fig{position:relative;margin:0;padding:0;border:0;background:#EEF3FA;cursor:zoom-in;overflow:hidden;display:block;width:100%;text-align:left}
+.ex-fig img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+.ex-fig:hover img{transform:scale(1.04)}
+.ex-fig.contain{background:#fff}
+.ex-fig.contain img{object-fit:contain}
+.ex-fig .tag{position:absolute;left:12px;top:12px;padding:6px 12px;font-size:9.5px}
+.ex-fig .lab{position:absolute;left:0;right:0;bottom:0;padding:26px 14px 12px;background:linear-gradient(transparent,rgba(20,32,60,.55));color:#fff;font-family:var(--serif);font-size:20px;line-height:1.2}
+.ex-fig.contain .lab{background:none;color:var(--ink)}
+.ex-fig .lab small{display:block;font-family:var(--sans);font-size:10px;letter-spacing:.2em;text-transform:uppercase;opacity:.85}
+.ex-sub{margin:30px 0 4px;font-size:10.5px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold)}
+.ex-note{margin-top:16px;font-size:13.5px;color:var(--ink-soft)}
 
 /* comparativo */
 .compare{margin-top:clamp(56px,7vw,88px);background:var(--white);padding:clamp(20px,3.5vw,44px)}
@@ -297,6 +324,10 @@ svg .caps{font-family:var(--sans);letter-spacing:.3em}
   .about .wrap{grid-template-columns:1fr}
   .about .head{position:static}
   .pack-grid{grid-template-columns:1fr;max-width:540px;margin-inline:auto}
+  .ex-head{grid-template-columns:1fr}
+  .ex-sw{grid-column:1;grid-row:auto}
+  .ex-row.r2{grid-template-columns:1fr 1fr}
+  .ex-row.r2 .ex-fig:first-child{grid-column:1/-1;aspect-ratio:1.5!important}
   .steps{grid-template-columns:1fr 1fr}
   .step:nth-child(2){border-right:0}
   .step:nth-child(-n+2){border-bottom:1px solid var(--line);padding-bottom:30px}
@@ -323,6 +354,11 @@ svg .caps{font-family:var(--sans);letter-spacing:.3em}
   .shot .tag{left:8px;top:8px;font-size:8px;padding:5px 8px;letter-spacing:.16em}
   .shot .tag::before{display:none}
   .steps{grid-template-columns:1fr}
+  .ex-row.r1,.ex-row.r2{grid-template-columns:1fr}
+  .ex-row .ex-fig{aspect-ratio:auto!important}
+  .ex-row .ex-fig img{height:auto}
+  .ex-fig.contain .lab{position:static;padding:4px 14px 14px}
+  .ex-row.r2 .ex-fig:first-child img{aspect-ratio:1;object-fit:cover}
   .step{border-right:0;border-bottom:1px solid var(--line);padding:26px 0}
   .step:last-child{border-bottom:0}
   .compare th,.compare td{padding:11px 3px}
@@ -450,6 +486,21 @@ svg .caps{font-family:var(--sans);letter-spacing:.3em}
     <div class="pack-grid" id="packs"></div>
     <p class="packs-note rv">Ficou com dúvida sobre qual escolher? <a class="js-wa" href="#" data-msg="Oi! Vi o site e queria ajuda para escolher o pacote de Identidade Visual ideal para os meus 15 anos.">Me chama no WhatsApp</a> que eu te ajudo.</p>
 
+    <div class="example rv" id="exemplo-pacote-01">
+      <div class="ex-head">
+        <div>
+          <span class="eyebrow">Exemplo do Pacote 01</span>
+          <h3>Um projeto modelo de <em class="it">conto de fadas</em></h3>
+        </div>
+        <p>Brasão, monograma, logotipo do nome, cartela de cores, tipografia e elementos gráficos criados em azul e prata. Com esses elementos em mãos, você pode levar a identidade para os materiais da sua festa.</p>
+        <div class="ex-sw" aria-label="Cartela de cores do exemplo"><i style="background:#13317A"></i><i style="background:#5E8FDB"></i><i style="background:#BCD3F2"></i><i style="background:#F5F8FC"></i><i style="background:#C5CBD4"></i></div>
+      </div>
+      <div class="ex-row r1" id="exR1"></div>
+      <p class="ex-sub">A identidade aplicada em materiais da festa</p>
+      <div class="ex-row r2" id="exR2"></div>
+      <p class="ex-note">Projeto modelo usado só como demonstração. As aplicações em mockups fazem parte do Pacote 03. No Pacote 01 você recebe os elementos da identidade para usar onde quiser.</p>
+    </div>
+
     <div class="compare rv">
       <h3>O que cada pacote inclui</h3>
       <table id="compare"></table>
@@ -516,6 +567,9 @@ svg .caps{font-family:var(--sans);letter-spacing:.3em}
     <linearGradient id="g-shine" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".35"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
     </linearGradient>
+    <pattern id="p-wall" width="36" height="36" patternUnits="userSpaceOnUse"><path d="M18 10l2.2 8-2.2 8-2.2-8Z" fill="#B08D57" opacity=".09"/><circle cx="0" cy="0" r="1.2" fill="#B08D57" opacity=".1"/><circle cx="36" cy="36" r="1.2" fill="#B08D57" opacity=".1"/></pattern>
+    <radialGradient id="g-light" cx=".5" cy=".18" r=".7"><stop offset="0" stop-color="#fff" stop-opacity=".55"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+    <linearGradient id="g-table" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFFFF" stop-opacity=".75"/><stop offset="1" stop-color="#F3E6DF" stop-opacity=".9"/></linearGradient>
     <g id="laurel" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round">
       <path d="M30 44C17 66 20 98 50 126"/>
       <g fill="currentColor" stroke="none">
@@ -613,6 +667,15 @@ const MOCKUPS = [
   { id: "boas-vindas", nome: "Placa de boas-vindas", texto: "A primeira peça que os convidados veem" }
 ];
 
+/* Exemplo do Pacote 01 (fotos em img/projeto-helena/) */
+const EXEMPLO_P1 = [
+  { id: "monograma", nome: "Monograma", texto: "Iniciais entrelaçadas com moldura e XV", r: 1, row: 1 },
+  { id: "logotipo", nome: "Logotipo extenso do nome", texto: "Nome em letra cursiva com tiara, carruagem e sapatinho", r: 1.5, row: 1, contain: true },
+  { id: "necessaire-azul", nome: "Necessaire", texto: "Monograma aplicado em relevo", r: 1, row: 2 },
+  { id: "necessaire", nome: "Necessaire box", texto: "Logotipo, tag e elementos do tema", r: 1.5, row: 2 },
+  { id: "sacola", nome: "Sacola", texto: "Logotipo e tag com o monograma", r: 1.5, row: 2 }
+];
+
 const ELEMENTOS = ["Brasão", "Monograma", "Logotipo", "Paleta de cores", "Tipografias", "Elementos gráficos", "Padrões e estampas", "Papelaria", "Convites", "Materiais digitais", "Lembranças", "Decoração", "Aplicações personalizadas"];
 
 const PASSOS = [
@@ -645,7 +708,11 @@ const PASSOS = [
   const crest = (x, y, w, color) => `<use href="#crest" x="${x}" y="${y}" width="${w}" height="${w * 7 / 6}" style="color:${color || C.goldS}"/>`;
   const mono = (x, y, w, color) => `<use href="#mono" x="${x}" y="${y}" width="${w}" height="${w}" style="color:${color || C.goldS}"/>`;
   const shadow = (cx, cy, rx) => `<ellipse cx="${cx}" cy="${cy}" rx="${rx}" ry="${rx * .09}" fill="#5B3C30" opacity=".12"/>`;
-  const bg = (a, b) => `<defs><linearGradient id="bg-${a.slice(1)}${b.slice(1)}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${a}"/><stop offset="1" stop-color="${b}"/></linearGradient></defs><rect width="400" height="500" fill="url(#bg-${a.slice(1)}${b.slice(1)})"/>`;
+  const bg = (a, b, flat) => `<defs><linearGradient id="bg-${a.slice(1)}${b.slice(1)}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${a}"/><stop offset="1" stop-color="${b}"/></linearGradient></defs>
+    <rect width="400" height="500" fill="url(#bg-${a.slice(1)}${b.slice(1)})"/>
+    <rect width="400" height="500" fill="url(#p-wall)"/><rect width="400" height="500" fill="url(#g-light)"/>
+    ${flat ? "" : `<rect x="34" y="40" width="332" height="300" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="1.2"/><rect x="44" y="50" width="312" height="280" fill="none" stroke="#B08D57" stroke-opacity=".18"/>
+    <rect y="362" width="400" height="138" fill="url(#g-table)"/><rect y="360" width="400" height="3" fill="#fff" opacity=".7"/>`}`;
   const sparkles = pts => pts.map(([x, y, s]) => `<path transform="translate(${x} ${y}) scale(${s || 1})" d="M0-7 1.6-1.6 7 0 1.6 1.6 0 7-1.6 1.6-7 0-1.6-1.6Z" fill="${C.goldS}" opacity=".55"/>`).join("");
   const txt = (x, y, s, t, o) => `<text x="${x}" y="${y}" text-anchor="middle" font-size="${s}" ${o || ""}>${t}</text>`;
 
@@ -770,7 +837,7 @@ const PASSOS = [
         <text x="275" y="366" text-anchor="middle" font-size="7" class="caps" fill="${C.goldS}">XV ANOS</text></g>
     </svg>`,
 
-    robe: () => `<svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Robe do projeto modelo">${bg("#F6E9E4", "#E9D2C7")}${sparkles([[70, 80], [335, 90, 1.2], [340, 420, .8]])}
+    robe: () => `<svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Robe do projeto modelo">${bg("#F6E9E4", "#E9D2C7", true)}${sparkles([[70, 80], [335, 90, 1.2], [340, 420, .8]])}
       ${shadow(200, 444, 120)}
       <path d="M200 52v20" stroke="${C.goldS}" stroke-width="3"/><path d="M160 92q40-34 80 0" fill="none" stroke="${C.goldS}" stroke-width="3"/>
       <path d="M150 92 200 116 250 92l70 40 40 140-46 14-24-90v226H110V196l-24 90-46-14 40-140Z" fill="${C.blush}"/>
@@ -790,11 +857,11 @@ const PASSOS = [
         <path d="M0-90-40 0M0-90l40 90" stroke="${C.gold}" stroke-width="12" stroke-linecap="round"/>
         <circle cx="0" cy="-90" r="8" fill="#8E6E3E"/>
         ${mono(-22, 40, 44, C.deep)}</g>`;
-      return `<svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Chinelos do projeto modelo">${bg("#F4E6E0", "#E7D0C5")}${sparkles([[60, 70], [345, 80, 1.2], [200, 460, .8]])}
+      return `<svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Chinelos do projeto modelo">${bg("#F4E6E0", "#E7D0C5", true)}${sparkles([[60, 70], [345, 80, 1.2], [200, 460, .8]])}
         ${sole(130, -8)}${sole(270, 8)}</svg>`;
     },
 
-    papelaria: () => `<svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Papelaria do projeto modelo">${bg("#EFDDD5", "#E4CBBF")}
+    papelaria: () => `<svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Papelaria do projeto modelo">${bg("#EFDDD5", "#E4CBBF", true)}
       <g transform="rotate(-6 150 230)"><rect x="70" y="90" width="170" height="236" fill="${C.cream}"/><rect x="80" y="100" width="150" height="216" fill="none" stroke="${C.goldS}" stroke-width=".8"/>
         ${crest(122, 120, 66)}<text x="155" y="236" text-anchor="middle" font-size="26" class="scr" fill="${C.deep}">${N}</text>
         <text x="155" y="256" text-anchor="middle" font-size="7" class="caps" fill="${C.goldS}">MEUS XV ANOS</text>
@@ -864,33 +931,40 @@ const PASSOS = [
   /* galeria */
   const photo = m => `<img src="img/projeto-modelo/${m.id}.jpg" alt="${m.nome} com a identidade do projeto modelo" loading="lazy" onerror="this.remove()">`;
   $("gallery").innerHTML = MOCKUPS.map((m, i) => `
-    <button class="shot rv${m.wide ? " wide" : ""}${m.solo ? " solo" : ""}" type="button" data-i="${i}" style="--d:${(i % 3) * .07}s" aria-label="Ampliar ${m.nome}">
+    <button class="shot rv${m.wide ? " wide" : ""}${m.solo ? " solo" : ""}" type="button" data-lb="galeria" data-i="${i}" style="--d:${(i % 3) * .07}s" aria-label="Ampliar ${m.nome}">
       <div class="media">${SCENES[m.id]()}${photo(m)}<span class="tag">Exemplo de aplicação</span></div>
       <div class="cap"><b>${m.nome}</b><span>Projeto modelo</span></div>
     </button>`).join("");
 
   /* lightbox */
   const lb = $("lb");
-  let cur = 0;
+  const LISTS = {
+    galeria: MOCKUPS.map(m => ({ nome: m.nome, texto: m.texto + " · Exemplo de aplicação", scene: SCENES[m.id], src: `img/projeto-modelo/${m.id}.jpg`, r: m.wide ? 1.6 : .8 })),
+    p1: EXEMPLO_P1.map(e => ({ nome: e.nome, texto: e.texto + " · Exemplo do Pacote 01", src: `img/projeto-helena/${e.id}.jpg`, r: e.r }))
+  };
+  let list = LISTS.galeria, cur = 0;
   function show(i) {
-    cur = (i + MOCKUPS.length) % MOCKUPS.length;
-    const m = MOCKUPS[cur];
+    cur = (i + list.length) % list.length;
+    const m = list[cur];
     const box = $("lbMedia");
     const ratio = r => { box.style.aspectRatio = r; box.style.width = r > 1 ? `min(92vw,calc((100dvh - 200px) * ${r}),900px)` : `min(92vw,calc((100dvh - 200px) * ${r}),640px)`; };
-    ratio(m.wide ? 1.6 : .8);
-    box.innerHTML = SCENES[m.id]() + `<img src="img/projeto-modelo/${m.id}.jpg" alt="${m.nome} com a identidade do projeto modelo">` + `<span class="tag">Projeto modelo</span>`;
+    ratio(m.r);
+    box.innerHTML = (m.scene ? m.scene() : "") + `<img src="${m.src}" alt="${m.nome}, projeto modelo">` + `<span class="tag">Projeto modelo</span>`;
     const im = box.querySelector("img");
-    im.onerror = () => im.remove();
-    im.onload = () => { box.querySelector("svg").remove(); ratio(im.naturalWidth / im.naturalHeight); };
+    im.onerror = () => { if (m.scene) im.remove(); };
+    im.onload = () => { const sv = box.querySelector("svg"); if (sv) sv.remove(); ratio(im.naturalWidth / im.naturalHeight); };
     $("lbTitle").textContent = m.nome;
-    $("lbText").textContent = m.texto + " · Exemplo de aplicação";
-    $("lbCount").textContent = String(cur + 1).padStart(2, "0") + " / " + String(MOCKUPS.length).padStart(2, "0");
+    $("lbText").textContent = m.texto;
+    $("lbCount").textContent = String(cur + 1).padStart(2, "0") + " / " + String(list.length).padStart(2, "0");
   }
-  $("gallery").addEventListener("click", ev => {
-    const b = ev.target.closest(".shot"); if (!b) return;
-    show(+b.dataset.i);
+  function openLb(name, i) {
+    list = LISTS[name]; show(i);
     if (lb.showModal) lb.showModal(); else lb.setAttribute("open", "");
     document.body.style.overflow = "hidden";
+  }
+  document.addEventListener("click", ev => {
+    const b = ev.target.closest("[data-lb]"); if (!b) return;
+    openLb(b.dataset.lb, +b.dataset.i);
   });
   const closeLb = () => lb.close ? lb.close() : lb.removeAttribute("open");
   lb.addEventListener("close", () => { document.body.style.overflow = ""; });
@@ -903,6 +977,13 @@ const PASSOS = [
   lb.addEventListener("touchstart", ev => { tx = ev.touches[0].clientX; }, { passive: true });
   lb.addEventListener("touchend", ev => { if (tx === null) return; const dx = ev.changedTouches[0].clientX - tx; if (Math.abs(dx) > 50) show(cur + (dx < 0 ? 1 : -1)); tx = null; });
 
+  /* exemplo do pacote 01 */
+  const exFig = (e, i) => `<button class="ex-fig${e.contain ? " contain" : ""}" type="button" data-lb="p1" data-i="${i}" style="aspect-ratio:${e.r}" aria-label="Ampliar ${e.nome}">
+      <img src="img/projeto-helena/${e.id}.jpg" alt="${e.nome} do projeto modelo" loading="lazy"><span class="tag">Projeto modelo</span>
+      <span class="lab"><small>${e.row === 1 ? "Pacote 01" : "Exemplo de uso"}</small>${e.nome}</span></button>`;
+  $("exR1").innerHTML = EXEMPLO_P1.map((e, i) => e.row === 1 ? exFig(e, i) : "").join("");
+  $("exR2").innerHTML = EXEMPLO_P1.map((e, i) => e.row === 2 ? exFig(e, i) : "").join("");
+
   /* pacotes */
   $("packs").innerHTML = PACOTES.map((p, i) => `
     <article class="pack rv" style="--d:${i * .1}s">
@@ -913,6 +994,7 @@ const PASSOS = [
       <p class="desc">${p.desc}</p>
       ${p.grupos.map(g => `<div class="group"><h4>${g.t}</h4><ul>${g.itens.map(t => `<li>${t}</li>`).join("")}</ul></div>`).join("")}
       ${p.detalhes.length ? `<div class="group">${p.detalhes.map(d => `<details><summary>${d.t}</summary><ul>${d.itens.map(t => `<li>${t}</li>`).join("")}</ul></details>`).join("")}</div>` : ""}
+      ${i === 0 ? `<a class="peek" href="#exemplo-pacote-01"><img src="img/projeto-helena/monograma.jpg" alt="" loading="lazy"><img src="img/projeto-helena/logotipo.jpg" alt="" loading="lazy"><span>Ver exemplo deste pacote <i>→</i></span></a>` : ""}
       <div class="spacer"></div>
       <a class="btn btn-dark js-wa" href="#" data-msg="Oi! Vi o site e quero o ${p.num}: ${p.nome} (R$ ${p.preco},00) para os meus 15 anos.">Quero este pacote</a>
     </article>`).join("");
