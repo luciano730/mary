@@ -102,7 +102,7 @@ em.it{font-style:italic;color:var(--wine-3)}
 .hero .facts b{display:block;font-family:var(--serif);font-weight:500;font-size:28px;color:var(--gold-2);line-height:1.1}
 .portrait{position:relative;justify-self:center;width:min(440px,100%);margin-bottom:30px}
 .portrait .arch{position:relative;aspect-ratio:4/5;border-radius:999px 999px 0 0;overflow:hidden;box-shadow:0 40px 80px -30px rgba(0,0,0,.6);background:var(--wine-2)}
-.portrait .arch img{position:absolute;left:0;top:-6%;width:100%;height:112%;object-fit:cover;object-position:88% 40%;transform:translateY(var(--py,0px)) scale(1.04);animation:kb 16s ease-in-out infinite alternate}
+.portrait .arch img{position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover;object-position:50% 18%;transform:translateY(var(--py,0px)) scale(1.04);animation:kb 16s ease-in-out infinite alternate}
 @keyframes kb{to{transform:translateY(var(--py,0px)) scale(1.12)}}
 .portrait .ring{position:absolute;inset:-14px -14px 14px;border-radius:999px 999px 0 0;border:1px solid var(--gold);opacity:.6;pointer-events:none}
 .float{position:absolute;z-index:2;background:var(--white);padding:5px;box-shadow:0 30px 60px -24px rgba(0,0,0,.7);animation:bob 7s ease-in-out infinite;border:0;cursor:pointer}
@@ -141,7 +141,7 @@ em.it{font-style:italic;color:var(--wine-3)}
 .work{background:var(--cream)}
 .proj-row{display:flex;gap:clamp(14px,1.8vw,24px);overflow-x:auto;scroll-snap-type:x mandatory;padding:6px var(--gutter) 22px;margin-inline:calc(-1 * var(--gutter));scrollbar-width:none;-webkit-overflow-scrolling:touch}
 .proj-row::-webkit-scrollbar{display:none}
-.case{flex:0 0 min(360px,84vw);scroll-snap-align:start;background:var(--white);box-shadow:var(--shadow-sm);display:flex;flex-direction:column;transition:transform .6s var(--ease),box-shadow .6s var(--ease)}
+.case{flex:0 0 min(400px,86vw);scroll-snap-align:start;background:var(--white);box-shadow:var(--shadow-sm);display:flex;flex-direction:column;transition:transform .6s var(--ease),box-shadow .6s var(--ease)}
 .case:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
 .browser{position:relative;background:#2a1118;padding:28px 8px 8px;border-radius:12px 12px 0 0}
 .browser::before{content:"";position:absolute;left:12px;top:10px;width:8px;height:8px;border-radius:50%;background:#E25C5C;box-shadow:14px 0 0 #E8B64A,28px 0 0 #5CC46A}
@@ -149,30 +149,17 @@ em.it{font-style:italic;color:var(--wine-3)}
 .screen{position:relative;aspect-ratio:16/10;overflow:hidden;background:var(--bg);border-radius:4px 4px 0 0}
 .screen img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;transition:transform 1.4s var(--ease)}
 .case:hover .screen img{transform:scale(1.04)}
-.case .cb{padding:20px 22px 24px}
+.case .phone{position:absolute;right:14px;bottom:-26px;width:26%;aspect-ratio:9/19;padding:4px;border-radius:14px;background:#2a1118;box-shadow:0 20px 40px -20px rgba(0,0,0,.7);z-index:2}
+.case .phone img{width:100%;height:100%;object-fit:cover;object-position:top;border-radius:10px;display:block}
+.case .pal{display:flex;gap:6px;margin-top:12px}
+.case .pal i{width:18px;height:18px;border-radius:50%;box-shadow:inset 0 0 0 1px rgba(0,0,0,.08)}
+.case .cb{padding:36px 22px 24px}
+.case .links{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.case .links a{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;color:var(--wine);box-shadow:inset 0 0 0 1px var(--wine);transition:.3s}
+.case .links a:hover{background:var(--wine);color:var(--bg)}
 .case .cb small{display:block;font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
 .case .cb b{display:block;font-family:var(--serif);font-weight:500;font-size:23px;color:var(--wine);line-height:1.2}
 .case .cb p{margin-top:8px;font-size:14.5px;color:var(--ink-soft);line-height:1.5}
-.case .cb a{display:inline-flex;align-items:center;gap:8px;margin-top:14px;font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--wine-3);text-decoration:none}
-.case .cb a:hover{color:var(--gold)}
-/* layouts desenhados em CSS */
-.mock{position:absolute;inset:0;display:flex;flex-direction:column;font-size:6px;--a:#333;--b:#ddd;--c:#fff}
-.mock .bar{height:9%;display:flex;align-items:center;justify-content:space-between;padding:0 6%;background:var(--c)}
-.mock .bar i{display:block;width:16%;height:30%;background:var(--a);border-radius:2px}
-.mock .bar u{display:flex;gap:4px}.mock .bar u i{width:9px;height:3px;background:var(--b)}
-.mock .hd{flex:1;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:0 6%;gap:6%;background:var(--b)}
-.mock .hd .t{display:grid;gap:4px}
-.mock .hd .t b{display:block;height:7px;width:90%;background:var(--a);border-radius:2px}
-.mock .hd .t b+b{width:70%}
-.mock .hd .t s{display:block;height:3px;width:95%;background:var(--a);opacity:.45;border-radius:2px;text-decoration:none}
-.mock .hd .t em{display:block;width:40%;height:9px;background:var(--a);border-radius:1px;margin-top:3px}
-.mock .hd .pic{aspect-ratio:1/1.05;border-radius:50% 50% 4px 4px;background:var(--c);box-shadow:inset 0 0 0 1px rgba(0,0,0,.08);justify-self:end;width:70%;background-image:var(--img);background-size:cover}
-.mock .row{height:22%;display:flex;gap:4%;padding:4% 6%;background:var(--c)}
-.mock .row i{flex:1;background:var(--b);border-radius:2px}
-.mock.m-est{--a:#4A1120;--b:#F3E4E6;--c:#FFFCFB}
-.mock.m-adv{--a:#1F2A3A;--b:#E6E2D6;--c:#F8F6F1}
-.mock.m-arq{--a:#2E2B27;--b:#D9D2C7;--c:#F5F2EC}
-.mock.m-doc{--a:#1F6B5A;--b:#DDEFE8;--c:#FAFDFC}
 .proj-nav{display:flex;justify-content:center;gap:10px;margin-top:6px}
 .proj-nav button{width:46px;height:46px;border:0;border-radius:50%;background:var(--white);color:var(--wine);cursor:pointer;display:grid;place-items:center;box-shadow:inset 0 0 0 1px var(--line);transition:background .3s,color .3s}
 .proj-nav button:hover{background:var(--wine);color:var(--bg)}
@@ -335,9 +322,9 @@ em.it{font-style:italic;color:var(--wine-3)}
     </div>
     <div class="portrait">
       <span class="ring" aria-hidden="true"></span>
-      <div class="arch"><img id="heroImg" src="img/designer.jpg" alt="Designer de landing pages no estúdio" fetchpriority="high"></div>
-      <a class="float f1" href="#projetos" aria-label="Ver projetos"><img src="img/case-xv-desktop.jpg" alt=""></a>
-      <a class="float f2" href="#projetos" aria-label="Ver projetos"><img src="img/case-xv-mobile.jpg" alt=""></a>
+      <div class="arch"><img id="heroImg" src="img/designer.jpg" alt="Designer de landing pages" fetchpriority="high"></div>
+      <a class="float f1" href="#projetos" aria-label="Ver projetos"><img src="img/arquitetura-desktop.jpg" alt=""></a>
+      <a class="float f2" href="#projetos" aria-label="Ver projetos"><img src="img/nutricionista-mobile.jpg" alt=""></a>
       <div class="hello"><b>Prazer!</b><span>Designer de landing pages</span></div>
     </div>
   </div>
@@ -366,31 +353,10 @@ em.it{font-style:italic;color:var(--wine-3)}
   <div class="wrap">
     <div class="head rv">
       <span class="eyebrow both">Projetos</span>
-      <h2>Páginas que já criei e <em class="it">layouts para o seu segmento</em></h2>
-      <p>Cada página nasce da identidade do negócio. Passe para o lado para ver.</p>
+      <h2>Veja páginas que <em class="it">já criei</em></h2>
+      <p>Cada uma com layout, cores e tipografia próprios. Passe para o lado e abra a que quiser ver no celular ou no computador.</p>
     </div>
-    <div class="proj-row rv" id="projRow">
-      <article class="case">
-        <div class="browser"><span class="url"></span><div class="screen"><img src="img/case-xv-desktop.jpg" alt="Site Mary Criativa XV anos"></div></div>
-        <div class="cb"><small>Projeto entregue</small><b>Mary Criativa · Identidade Visual XV</b><p>Catálogo de pacotes com galeria, vídeos e botões para o WhatsApp. Feito para converter pelo celular.</p><a href="../identidade-xv/" target="_blank" rel="noopener">Ver página <i>→</i></a></div>
-      </article>
-      <article class="case">
-        <div class="browser"><span class="url"></span><div class="screen"><div class="mock m-est"><div class="bar"><i></i><u><i></i><i></i><i></i></u></div><div class="hd"><div class="t"><b></b><b></b><s></s><s></s><em></em></div><div class="pic" style="--img:linear-gradient(135deg,#E8C7CC,#B86B7A)"></div></div><div class="row"><i></i><i></i><i></i></div></div></div></div>
-        <div class="cb"><small>Layout</small><b>Clínica de estética</b><p>Apresentação dos procedimentos, antes e depois, equipe e agendamento direto pelo WhatsApp.</p></div>
-      </article>
-      <article class="case">
-        <div class="browser"><span class="url"></span><div class="screen"><div class="mock m-adv"><div class="bar"><i></i><u><i></i><i></i><i></i></u></div><div class="hd"><div class="t"><b></b><b></b><s></s><s></s><em></em></div><div class="pic" style="--img:linear-gradient(135deg,#C9BFA8,#4A4A4A)"></div></div><div class="row"><i></i><i></i><i></i></div></div></div></div>
-        <div class="cb"><small>Layout</small><b>Escritório de advocacia</b><p>Áreas de atuação, credibilidade e um canal rápido para a primeira consulta.</p></div>
-      </article>
-      <article class="case">
-        <div class="browser"><span class="url"></span><div class="screen"><div class="mock m-arq"><div class="bar"><i></i><u><i></i><i></i><i></i></u></div><div class="hd"><div class="t"><b></b><b></b><s></s><s></s><em></em></div><div class="pic" style="--img:linear-gradient(135deg,#D8CBB8,#7A6A58)"></div></div><div class="row"><i></i><i></i><i></i></div></div></div></div>
-        <div class="cb"><small>Layout</small><b>Arquitetura e interiores</b><p>Portfólio em destaque, processo de trabalho e pedido de orçamento.</p></div>
-      </article>
-      <article class="case">
-        <div class="browser"><span class="url"></span><div class="screen"><div class="mock m-doc"><div class="bar"><i></i><u><i></i><i></i><i></i></u></div><div class="hd"><div class="t"><b></b><b></b><s></s><s></s><em></em></div><div class="pic" style="--img:linear-gradient(135deg,#BFE3D6,#2E7D6B)"></div></div><div class="row"><i></i><i></i><i></i></div></div></div></div>
-        <div class="cb"><small>Layout</small><b>Consultório e saúde</b><p>Especialidades, convênios, localização e agendamento em um clique.</p></div>
-      </article>
-    </div>
+    <div class="proj-row rv" id="projRow"></div>
     <div class="proj-nav rv" aria-hidden="true">
       <button type="button" id="projPrev" aria-label="Anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M15 5l-7 7 7 7"/></svg></button>
       <button type="button" id="projNext" aria-label="Próximo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M9 5l7 7-7 7"/></svg></button>
@@ -448,8 +414,8 @@ em.it{font-style:italic;color:var(--wine-3)}
 
 <footer class="footer">
   <div class="wrap">
-    <span>© <span id="year"></span> <span class="js-brand">Mary Criativa</span>. Landing pages e identidade visual.</span>
-    <a href="../identidade-xv/">Identidade visual para debutantes →</a>
+    <span>© <span id="year"></span> <span class="js-brand">Mary Criativa</span>. Landing pages e sites para negócios.</span>
+    <a class="js-ig" href="#" target="_blank" rel="noopener">@marycriativa0</a>
   </div>
 </footer>
 
@@ -477,9 +443,17 @@ const CONFIG = {
 /* Segmentos que aparecem na faixa dourada */
 const SEGMENTOS = ["Clínicas e estética", "Advocacia", "Arquitetura", "Consultórios", "Restaurantes e confeitarias", "Lojas e boutiques", "Profissionais liberais", "Eventos e festas", "Educação e cursos"];
 
+/* Páginas criadas (pasta amostras/). Para adicionar outra: copie uma linha e coloque os prints em img/. */
+const PROJETOS = [
+  { id: "clinica-estetica", seg: "Clínica de estética", nome: "Lumière Estética Avançada", desc: "Rosé e nude, com cards de procedimentos, antes e depois, equipe e agendamento pelo WhatsApp.", cores: ["#C98B8E", "#F7E6E4", "#3A2A2C"] },
+  { id: "advocacia", seg: "Escritório de advocacia", nome: "Ribeiro & Castro Advogados", desc: "Azul-marinho e dourado, com áreas de atuação, dúvidas frequentes e formulário de contato.", cores: ["#0F1C2E", "#B89A5A", "#F5F2EC"] },
+  { id: "arquitetura", seg: "Arquitetura e interiores", nome: "Atelier Vale", desc: "Tons de areia e terracota, tipografia grande, portfólio em grade e processo de trabalho.", cores: ["#EEE8DF", "#A7714F", "#232220"] },
+  { id: "nutricionista", seg: "Consultório e saúde", nome: "Dra. Ana Beatriz, nutricionista", desc: "Verde e lima, formas orgânicas, planos de consulta, depoimentos e perguntas frequentes.", cores: ["#2F6B57", "#C9E265", "#DDEFE5"] }
+];
+
 /* O que inclui em toda página */
 const INCLUSO = [
-  ["pincel", "Design exclusivo", "Criado do zero para o seu negócio, nas suas cores e com a sua identidade."],
+  ["pincel", "Design exclusivo", "Criado do zero para o seu negócio, nas suas cores e com o seu estilo."],
   ["celular", "Pronta para celular", "Layout pensado primeiro para a tela do celular, onde o seu cliente está."],
   ["wa", "Botões para o WhatsApp", "Em todos os pontos certos, com a mensagem pronta para o cliente enviar."],
   ["raio", "Carregamento rápido", "Página leve, que abre rápido mesmo no 4G."],
@@ -495,9 +469,9 @@ const PLANOS = [
   { num: "Plano 02", nome: "Página Completa", para: "Para apresentar tudo", preco: "",
     desc: "Uma landing page completa, com mais blocos para mostrar seus serviços, resultados e depoimentos.",
     itens: ["Até 8 blocos", "Galeria de fotos ou portfólio", "Depoimentos de clientes", "Perguntas frequentes", "Mapa e redes sociais", "Botões para o WhatsApp", "Publicação inclusa"] },
-  { num: "Plano 03", nome: "Página + Identidade", para: "Para quem está começando do zero", preco: "",
-    desc: "A página completa mais a identidade visual do seu negócio, para tudo nascer combinando.",
-    itens: ["Tudo do Plano 02", "Logotipo e paleta de cores", "Tipografia e elementos gráficos", "Artes para o Instagram (destaques e perfil)", "Cartão de visita digital", "Publicação inclusa"] }
+  { num: "Plano 03", nome: "Página Premium", para: "Para quem quer o máximo", preco: "",
+    desc: "A página completa com animações, formulário de contato e tudo pronto para anúncios e para o Google.",
+    itens: ["Tudo do Plano 02", "Animações e efeitos ao rolar", "Formulário de contato ou agendamento", "Domínio próprio configurado (.com.br)", "Perfil no Google Negócios", "Pixel do Instagram e Google Ads", "Publicação inclusa"] }
 ];
 
 const PASSOS = [
@@ -552,6 +526,14 @@ const PASSOS = [
   $("steps").innerHTML = PASSOS.map(([t, p], i) => `<div class="step rv" style="--d:${i * .08}s"><span class="n">${String(i + 1).padStart(2, "0")}</span><h3>${t}</h3><p>${p}</p></div>`).join("");
 
   /* carrossel de projetos */
+  $("projRow").innerHTML = PROJETOS.map(p => `
+    <article class="case">
+      <div class="browser"><span class="url"></span><div class="screen"><img src="img/${p.id}-desktop.jpg" alt="${p.nome} no computador" loading="lazy"></div>
+        <div class="phone"><img src="img/${p.id}-mobile.jpg" alt="" loading="lazy"></div></div>
+      <div class="cb"><small>${p.seg}</small><b>${p.nome}</b><p>${p.desc}</p>
+        <div class="pal" aria-hidden="true">${p.cores.map(c => `<i style="background:${c}"></i>`).join("")}</div>
+        <div class="links"><a href="amostras/${p.id}.html" target="_blank" rel="noopener">Abrir página <i>→</i></a></div></div>
+    </article>`).join("");
   const row = $("projRow");
   const step = () => (row.querySelector(".case").offsetWidth + 20);
   $("projPrev").onclick = () => row.scrollBy({ left: -step(), behavior: reduce ? "auto" : "smooth" });
