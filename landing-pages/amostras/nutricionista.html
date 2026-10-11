@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dra. Ana Beatriz | Nutricionista</title>
+<meta name="description" content="Nutrição clínica e emagrecimento sem dieta restritiva. Consultas presenciais e online. Agende pelo WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Nunito:wght@300;400;600;700&display=swap">
+<style>
+:root{--green:#2F6B57;--green-d:#1F4A3C;--mint:#DDEFE5;--lime:#C9E265;--cream:#FAF9F4;--ink:#1E2B26;--soft:#5F6F68;--serif:"Fraunces",Georgia,serif;--sans:"Nunito",system-ui,sans-serif;--ease:cubic-bezier(.2,.75,.2,1)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--sans);font-size:16.5px;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}a{color:inherit}h1,h2,h3{margin:0;font-family:var(--serif);font-weight:500;line-height:1.1}p{margin:0}
+.wrap{max-width:1140px;margin-inline:auto;padding-inline:clamp(16px,5vw,56px)}
+.eyebrow{display:inline-block;padding:6px 14px;border-radius:999px;background:var(--mint);color:var(--green-d);font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 28px;border-radius:14px;font-size:14px;font-weight:700;text-decoration:none;transition:.35s var(--ease)}
+.btn-green{background:var(--green);color:#fff}.btn-green:hover{background:var(--green-d);transform:translateY(-2px)}
+.btn-lime{background:var(--lime);color:var(--green-d)}.btn-lime:hover{background:#fff}
+.btn-soft{background:var(--mint);color:var(--green-d)}.btn-soft:hover{background:var(--green);color:#fff}
+.sec{padding-block:clamp(56px,7vw,96px)}
+.head{text-align:center;display:grid;gap:14px;justify-items:center;margin-bottom:clamp(30px,4vw,48px)}
+.head h2{font-size:clamp(32px,4.4vw,50px)}.head p{color:var(--soft);max-width:560px}
+/* topo */
+.header{position:sticky;top:0;z-index:50;background:rgba(250,249,244,.9);backdrop-filter:blur(12px)}
+.header .wrap{display:flex;align-items:center;gap:20px;height:74px}
+.logo{margin-right:auto;text-decoration:none;font-family:var(--serif);font-size:22px;display:flex;align-items:center;gap:10px}
+.logo i{width:34px;height:34px;border-radius:50%;background:var(--green);display:grid;place-items:center}
+.logo i::before{content:"";width:14px;height:14px;border-radius:50% 0;background:var(--lime);rotate:-45deg}
+.nav{display:flex;gap:24px}.nav a{text-decoration:none;font-size:14px;font-weight:600;color:var(--soft)}.nav a:hover{color:var(--green)}
+.menu-btn{display:none;width:44px;height:44px;border:0;background:none;cursor:pointer}
+.menu-btn i{display:block;width:24px;height:2px;border-radius:2px;background:var(--ink);margin:5px auto}
+/* hero */
+.hero{padding-block:clamp(36px,5vw,70px) clamp(60px,8vw,100px)}
+.hero .wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,6vw,80px);align-items:center}
+.hero h1{font-size:clamp(42px,6vw,72px);margin:18px 0 20px}.hero h1 em{font-style:italic;color:var(--green)}
+.hero p{color:var(--soft);max-width:480px;font-size:18px}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.hero .pill{display:inline-flex;align-items:center;gap:10px;margin-top:28px;padding:10px 16px;border-radius:999px;background:#fff;box-shadow:0 10px 30px -18px rgba(30,43,38,.4);font-size:13.5px;font-weight:600}
+.hero .pill i{display:flex}.hero .pill i b{width:26px;height:26px;border-radius:50%;background:var(--mint);border:2px solid #fff;margin-left:-8px}.hero .pill i b:first-child{margin:0}
+.blob{position:relative;aspect-ratio:1;max-width:480px;width:100%;justify-self:center}
+.blob .bg{position:absolute;inset:0;background:linear-gradient(150deg,#DDEFE5,#9FCDB5);border-radius:62% 38% 55% 45%/48% 58% 42% 52%;animation:morph 14s ease-in-out infinite alternate}
+@keyframes morph{to{border-radius:40% 60% 45% 55%/55% 42% 58% 45%}}
+.blob .tag{position:absolute;background:#fff;border-radius:16px;padding:14px 18px;box-shadow:0 20px 40px -24px rgba(30,43,38,.5);font-size:13px;font-weight:600}
+.blob .tag b{display:block;font-family:var(--serif);font-size:24px;font-weight:500;color:var(--green)}
+.blob .t1{left:-6%;top:18%}.blob .t2{right:-6%;bottom:16%}
+/* para quem */
+.who{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.who div{padding:30px 26px;border-radius:22px;background:#fff;box-shadow:0 20px 40px -32px rgba(30,43,38,.35)}
+.who svg{width:40px;height:40px;color:var(--green);margin-bottom:14px}
+.who h3{font-size:23px;margin-bottom:8px}.who p{font-size:15px;color:var(--soft)}
+/* metodo */
+.method{background:var(--green);color:#fff;border-radius:40px;margin-inline:clamp(8px,2vw,24px)}
+.method .wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,6vw,80px);align-items:center}
+.method .eyebrow{background:rgba(255,255,255,.14);color:#fff}
+.method h2{font-size:clamp(32px,4.4vw,50px);margin:16px 0 18px}.method p{opacity:.85}
+.method ol{list-style:none;counter-reset:s;padding:0;margin:0;display:grid;gap:12px}
+.method li{counter-increment:s;display:grid;grid-template-columns:44px 1fr;gap:16px;align-items:start;padding:18px;border-radius:18px;background:rgba(255,255,255,.08)}
+.method li::before{content:counter(s,decimal-leading-zero);font-family:var(--serif);font-size:22px;color:var(--lime)}
+.method li b{display:block;font-size:17px;font-weight:700}.method li span{grid-column:2;font-size:14px;opacity:.8}
+/* consultas */
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.plan{padding:30px;border-radius:22px;background:#fff;border:1px solid rgba(30,43,38,.08);display:flex;flex-direction:column}
+.plan.hi{background:var(--mint);border-color:transparent}
+.plan small{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--green)}
+.plan h3{font-size:26px;margin:8px 0 12px}.plan p{font-size:15px;color:var(--soft);flex:1}
+.plan ul{list-style:none;padding:0;margin:16px 0 22px;display:grid;gap:8px;font-size:15px}
+.plan li::before{content:"✓ ";color:var(--green);font-weight:700}
+/* depoimentos */
+.quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.q{padding:26px;border-radius:22px;background:#fff;box-shadow:0 20px 40px -32px rgba(30,43,38,.35)}
+.q .stars{color:#F2B84B;letter-spacing:2px}
+.q p{font-size:15.5px;margin:12px 0 14px}.q b{font-size:13px;color:var(--green-d)}
+/* faq */
+.faq{max-width:760px;margin-inline:auto}
+details{border-radius:16px;background:#fff;padding:4px 22px;margin-bottom:10px}
+summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:14px 0;font-weight:700;font-size:16.5px}
+summary::-webkit-details-marker{display:none}summary::after{content:"+";font-size:24px;color:var(--green);transition:.3s}
+details[open] summary::after{transform:rotate(45deg)}details p{padding:0 0 16px;color:var(--soft);font-size:15px}
+/* cta */
+.cta{text-align:center}
+.cta .box{background:var(--ink);color:#fff;border-radius:32px;padding:clamp(40px,6vw,80px) clamp(20px,5vw,60px)}
+.cta h2{font-size:clamp(32px,4.8vw,56px);max-width:700px;margin:12px auto 16px}.cta p{opacity:.8;max-width:500px;margin:0 auto 26px}
+.cta .info{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 30px;margin-top:26px;font-size:13.5px;opacity:.85}
+.footer{padding:26px 0;text-align:center;font-size:12.5px;color:var(--soft)}
+.wa{position:fixed;right:16px;bottom:16px;z-index:40;width:56px;height:56px;border-radius:50%;background:#25D366;color:#fff;display:grid;place-items:center;box-shadow:0 12px 24px -10px rgba(0,0,0,.4)}
+.wa svg{width:28px;height:28px}
+.anim .rv{opacity:0;transform:translateY(24px);transition:.9s var(--ease)}.anim .rv.in{opacity:1;transform:none}
+@media(max-width:900px){.nav{display:none;position:absolute;left:0;right:0;top:74px;background:var(--cream);flex-direction:column;padding:20px clamp(16px,5vw,56px) 26px;gap:14px;box-shadow:0 20px 30px -20px rgba(0,0,0,.2)}.nav.open{display:flex}.menu-btn{display:block}
+.hero .wrap,.method .wrap{grid-template-columns:1fr}.blob{max-width:360px}.who,.plans,.quotes{grid-template-columns:1fr}}
+@media(max-width:560px){.hero .ctas .btn{flex:1 1 100%}.blob .t1{left:0}.blob .t2{right:0}.method{border-radius:24px}}
+</style>
+</head>
+<body data-wa="5500000000000">
+<header class="header"><div class="wrap">
+  <a class="logo" href="#"><i></i>Dra. Ana Beatriz</a>
+  <nav class="nav" id="nav"><a href="#para-quem">Para quem</a><a href="#metodo">Método</a><a href="#consultas">Consultas</a><a href="#depoimentos">Depoimentos</a><a href="#faq">Dúvidas</a></nav>
+  <a class="btn btn-green" href="#" data-msg="Olá, Dra. Ana! Quero agendar uma consulta." style="min-height:42px;padding:0 20px;font-size:13px">Agendar consulta</a>
+  <button class="menu-btn" id="menuBtn" aria-label="Menu" aria-expanded="false"><i></i><i></i><i></i></button>
+</div></header>
+
+<section class="hero"><div class="wrap">
+  <div>
+    <span class="eyebrow">Nutricionista · CRN 00000</span>
+    <h1>Emagrecer sem <em>dieta restritiva</em> é possível</h1>
+    <p>Um plano alimentar feito para a sua rotina, o seu paladar e o seu objetivo. Sem terrorismo nutricional, com acompanhamento de verdade.</p>
+    <div class="ctas"><a class="btn btn-green" href="#" data-msg="Olá, Dra. Ana! Quero agendar uma consulta.">Agendar consulta</a><a class="btn btn-soft" href="#metodo">Conhecer o método</a></div>
+    <div class="pill"><i><b></b><b></b><b></b></i>+500 pacientes acompanhadas</div>
+  </div>
+  <div class="blob"><div class="bg"></div><div class="tag t1"><b>-8 kg</b>média em 3 meses</div><div class="tag t2"><b>Online</b>ou presencial</div></div>
+</div></section>
+
+<section class="sec" id="para-quem"><div class="wrap">
+  <div class="head rv"><span class="eyebrow">Para quem é</span><h2>Eu posso te ajudar se você...</h2></div>
+  <div class="who">
+    <div class="rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M4 18c3-8 13-8 16 0M12 3v4M8 5l1 2M16 5l-1 2"/></svg><h3>Já tentou de tudo</h3><p>Dietas da moda, jejum, cortar carboidrato. Funciona um tempo e depois volta tudo.</p></div>
+    <div class="rv" style="transition-delay:.08s"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><h3>Tem a rotina corrida</h3><p>Precisa de um plano que caiba no seu dia, não de receitas impossíveis.</p></div>
+    <div class="rv" style="transition-delay:.16s"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 21s-7-4.6-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.4-7 10-7 10Z"/></svg><h3>Quer saúde, não só peso</h3><p>Mais energia, melhor digestão, exames em dia e uma relação leve com a comida.</p></div>
+  </div>
+</div></section>
+
+<section class="sec method" id="metodo"><div class="wrap">
+  <div class="rv"><span class="eyebrow">O método</span><h2>Nutrição que respeita a sua vida</h2><p>Nada de lista proibida. A gente constrói juntas um jeito de comer que você consegue manter para sempre.</p></div>
+  <ol class="rv">
+    <li><b>Avaliação completa</b><span>Histórico, exames, rotina e preferências alimentares.</span></li>
+    <li><b>Plano personalizado</b><span>Cardápio flexível com substituições e opções para comer fora.</span></li>
+    <li><b>Acompanhamento semanal</b><span>Ajustes pelo WhatsApp e retornos para manter o ritmo.</span></li>
+    <li><b>Manutenção</b><span>Estratégias para não voltar ao peso de antes.</span></li>
+  </ol>
+</div></section>
+
+<section class="sec" id="consultas"><div class="wrap">
+  <div class="head rv"><span class="eyebrow">Consultas</span><h2>Escolha como quer ser acompanhada</h2></div>
+  <div class="plans">
+    <div class="plan rv"><small>Avulsa</small><h3>Consulta única</h3><p>Avaliação completa e plano alimentar personalizado.</p><ul><li>60 minutos</li><li>Plano alimentar</li><li>Lista de compras</li></ul><a class="btn btn-soft" href="#" data-msg="Olá, Dra. Ana! Quero agendar uma consulta avulsa.">Agendar</a></div>
+    <div class="plan hi rv" style="transition-delay:.08s"><small>Mais escolhido</small><h3>Acompanhamento 3 meses</h3><p>Para quem quer resultado com suporte de verdade.</p><ul><li>Consulta + 2 retornos</li><li>Ajustes semanais pelo WhatsApp</li><li>Receitas e cardápios</li><li>Suporte em viagens e festas</li></ul><a class="btn btn-green" href="#" data-msg="Olá, Dra. Ana! Quero o acompanhamento de 3 meses.">Quero este</a></div>
+    <div class="plan rv" style="transition-delay:.16s"><small>Online</small><h3>Consulta online</h3><p>Mesmo cuidado, de onde você estiver.</p><ul><li>Videochamada de 60 min</li><li>Plano alimentar</li><li>Material em PDF</li></ul><a class="btn btn-soft" href="#" data-msg="Olá, Dra. Ana! Quero agendar uma consulta online.">Agendar</a></div>
+  </div>
+</div></section>
+
+<section class="sec" id="depoimentos" style="padding-top:0"><div class="wrap">
+  <div class="head rv"><span class="eyebrow">Depoimentos</span><h2>Quem já passou por aqui</h2></div>
+  <div class="quotes">
+    <div class="q rv"><span class="stars">★★★★★</span><p>"Perdi 9 kg em 4 meses comendo pão no café da manhã. Nunca achei que fosse possível."</p><b>Carla, 34 anos</b></div>
+    <div class="q rv" style="transition-delay:.08s"><span class="stars">★★★★★</span><p>"Minha glicose normalizou e eu parei de ter compulsão à noite. Mudou minha relação com a comida."</p><b>Daniela, 41 anos</b></div>
+    <div class="q rv" style="transition-delay:.16s"><span class="stars">★★★★★</span><p>"O suporte no WhatsApp faz toda a diferença. Ela responde e ajusta na hora."</p><b>Priscila, 28 anos</b></div>
+  </div>
+</div></section>
+
+<section class="sec" id="faq" style="padding-top:0"><div class="wrap">
+  <div class="head rv"><span class="eyebrow">Dúvidas</span><h2>Perguntas frequentes</h2></div>
+  <div class="faq rv">
+    <details open><summary>Aceita convênio?</summary><p>Atendo particular e emito recibo para reembolso pelo seu plano de saúde.</p></details>
+    <details><summary>Vou precisar cortar o que eu gosto?</summary><p>Não. O plano é construído com os alimentos que você gosta, em quantidades e combinações que fazem sentido.</p></details>
+    <details><summary>Como funciona a consulta online?</summary><p>Por videochamada, com o mesmo tempo e o mesmo cuidado da presencial. O material chega em PDF no seu WhatsApp.</p></details>
+  </div>
+</div></section>
+
+<section class="sec cta" style="padding-top:0"><div class="wrap"><div class="box rv">
+  <span class="eyebrow" style="background:rgba(255,255,255,.14);color:#fff">Vamos começar?</span>
+  <h2>O seu novo jeito de comer começa com uma conversa</h2>
+  <p>Me chama no WhatsApp para tirar dúvidas e agendar a sua primeira consulta.</p>
+  <a class="btn btn-lime" href="#" data-msg="Olá, Dra. Ana! Quero agendar uma consulta.">Agendar pelo WhatsApp</a>
+  <div class="info"><span>Rua das Palmeiras, 300, sala 4</span><span>Seg a sex, 8h às 18h</span><span>@dra.anabeatriz.nutri</span></div>
+</div></div></section>
+<footer class="footer">© <span id="year"></span> Dra. Ana Beatriz · Nutricionista CRN 00000</footer>
+<a class="wa" href="#" data-msg="Olá, Dra. Ana! Vim pelo site." aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2Zm0 18.15a8.2 8.2 0 0 1-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.21 8.21 0 0 1 6.99-12.53c4.54 0 8.23 3.7 8.23 8.24s-3.69 8.15-8.23 8.15Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.16.04-.31-.02-.43-.06-.13-.56-1.35-.77-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28Z"/></svg></a>
+<script src="_base.js"></script>
+</body>
+</html>

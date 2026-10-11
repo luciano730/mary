@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Atelier Vale | Arquitetura e Interiores</title>
+<meta name="description" content="Projetos de arquitetura e interiores residenciais e comerciais. Do conceito à obra entregue.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap">
+<style>
+:root{--sand:#EEE8DF;--sand-2:#E2D9CC;--char:#232220;--clay:#A7714F;--ink:#232220;--soft:#75706A;--line:rgba(35,34,32,.12);--serif:"DM Serif Display",Georgia,serif;--sans:"DM Sans",system-ui,sans-serif;--ease:cubic-bezier(.2,.75,.2,1)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--sand);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.7;font-weight:300;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}a{color:inherit}h1,h2,h3{margin:0;font-family:var(--serif);font-weight:400;line-height:1.05;letter-spacing:-.01em}p{margin:0}
+.wrap{max-width:1240px;margin-inline:auto;padding-inline:clamp(16px,5vw,56px)}
+.eyebrow{font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--clay);font-weight:500}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:50px;padding:0 26px;font-size:12.5px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;transition:.35s var(--ease)}
+.btn-dark{background:var(--char);color:var(--sand)}.btn-dark:hover{background:var(--clay)}
+.btn-line{box-shadow:inset 0 0 0 1px var(--char)}.btn-line:hover{background:var(--char);color:var(--sand)}
+.sec{padding-block:clamp(56px,7vw,100px)}
+/* topo */
+.header{position:sticky;top:0;z-index:50;background:rgba(238,232,223,.88);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.header .wrap{display:flex;align-items:center;gap:20px;height:72px}
+.logo{margin-right:auto;text-decoration:none;font-family:var(--serif);font-size:22px;letter-spacing:.08em;text-transform:uppercase}
+.nav{display:flex;gap:28px}.nav a{text-decoration:none;font-size:13px;letter-spacing:.08em;color:var(--soft);font-weight:400}
+.nav a:hover{color:var(--ink)}
+.menu-btn{display:none;width:44px;height:44px;border:0;background:none;cursor:pointer}
+.menu-btn i{display:block;width:24px;height:1.5px;background:var(--ink);margin:5px auto}
+/* hero */
+.hero{padding-block:clamp(40px,6vw,80px) 0}
+.hero .top{display:grid;grid-template-columns:1.2fr .8fr;gap:30px;align-items:end;margin-bottom:34px}
+.hero h1{font-size:clamp(48px,8vw,112px)}
+.hero h1 em{font-style:italic;color:var(--clay)}
+.hero .side{display:grid;gap:18px;max-width:420px;justify-self:end}
+.hero .side p{color:var(--soft);font-size:17px}
+.hero .side .ctas{display:flex;flex-wrap:wrap;gap:10px}
+.strip{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:12px;height:clamp(260px,42vw,520px)}
+.strip div{position:relative;overflow:hidden}
+.strip div span{position:absolute;left:16px;bottom:14px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#fff;mix-blend-mode:difference}
+.strip .p1{background:linear-gradient(160deg,#CDBFAD,#8E7B66);grid-row:span 2}
+.strip .p2{background:linear-gradient(160deg,#E3D9CB,#B6A58F)}
+.strip .p3{background:linear-gradient(160deg,#B99C84,#6D5744)}
+.strip .p4{background:linear-gradient(160deg,#DCD2C3,#9E8B74);grid-column:span 2}
+.marq{overflow:hidden;border-block:1px solid var(--line);margin-top:clamp(40px,6vw,80px)}
+.marq div{display:flex;gap:48px;width:max-content;padding:16px 0;animation:slide 40s linear infinite;font-family:var(--serif);font-size:22px;white-space:nowrap}
+.marq span::after{content:"·";margin-left:48px;color:var(--clay)}
+@keyframes slide{to{transform:translateX(-50%)}}
+/* servicos */
+.serv{display:grid;grid-template-columns:1fr 2fr;gap:clamp(30px,6vw,90px)}
+.serv h2{font-size:clamp(34px,4.6vw,56px);margin-top:12px}
+.serv .list{display:grid}
+.serv .item{display:grid;grid-template-columns:60px 1fr auto;gap:20px;align-items:baseline;padding:26px 0;border-top:1px solid var(--line)}
+.serv .item:last-child{border-bottom:1px solid var(--line)}
+.serv .item i{font-style:normal;font-family:var(--serif);font-size:16px;color:var(--clay)}
+.serv .item b{display:block;font-family:var(--serif);font-weight:400;font-size:26px;margin-bottom:6px}.serv .item p{color:var(--soft);font-size:15px;max-width:520px}
+.serv .item a{font-size:12px;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;color:var(--ink);border-bottom:1px solid var(--clay)}
+/* portfolio */
+.port{background:var(--char);color:var(--sand)}
+.port .head{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-bottom:34px}
+.port h2{font-size:clamp(34px,4.6vw,56px);margin-top:12px}
+.port .eyebrow{color:#D8B49A}
+.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.pgrid div{aspect-ratio:4/5;position:relative;overflow:hidden}
+.pgrid div::after{content:attr(data-t);position:absolute;left:0;right:0;bottom:0;padding:40px 18px 16px;background:linear-gradient(transparent,rgba(0,0,0,.6));font-family:var(--serif);font-size:20px;color:#fff}
+.pgrid div span{position:absolute;left:18px;top:16px;font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.8)}
+.pgrid .a{background:linear-gradient(160deg,#B8A48C,#5B4A3A)}.pgrid .b{background:linear-gradient(160deg,#D7CDBE,#8E7F6B)}.pgrid .c{background:linear-gradient(160deg,#9C7B61,#3E2E22)}
+.pgrid .d{background:linear-gradient(160deg,#C9B8A3,#6E5B48)}.pgrid .e{background:linear-gradient(160deg,#E0D6C7,#A08E78)}.pgrid .f{background:linear-gradient(160deg,#A68C72,#4C3B2C)}
+/* processo */
+.proc{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.proc div{padding:26px;background:#fff}
+.proc i{font-style:normal;font-family:var(--serif);font-size:40px;line-height:1;color:var(--sand-2)}
+.proc b{display:block;font-family:var(--serif);font-weight:400;font-size:22px;margin:14px 0 8px}.proc p{font-size:14.5px;color:var(--soft)}
+/* sobre */
+.about .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(30px,6vw,90px);align-items:center}
+.about .pic{aspect-ratio:3/4;background:linear-gradient(160deg,#D9CDBB,#8A7760);max-width:420px;width:100%}
+.about h2{font-size:clamp(34px,4.6vw,56px);margin:12px 0 18px}.about p{color:var(--soft);font-size:17px}
+.about p+p{margin-top:12px}
+.about .sig{margin-top:24px;font-family:var(--serif);font-style:italic;font-size:26px}
+/* cta */
+.cta{background:var(--clay);color:#fff}
+.cta .wrap{display:grid;grid-template-columns:1fr auto;gap:30px;align-items:center}
+.cta h2{font-size:clamp(34px,5vw,64px)}.cta p{opacity:.9;margin-top:12px;max-width:520px}
+.cta .btn{background:#fff;color:var(--clay)}.cta .btn:hover{background:var(--char);color:#fff}
+.footer{padding:28px 0;font-size:12.5px;color:var(--soft)}
+.footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
+.wa{position:fixed;right:16px;bottom:16px;z-index:40;width:56px;height:56px;border-radius:50%;background:#25D366;color:#fff;display:grid;place-items:center;box-shadow:0 12px 24px -10px rgba(0,0,0,.4)}
+.wa svg{width:28px;height:28px}
+.anim .rv{opacity:0;transform:translateY(24px);transition:.9s var(--ease)}.anim .rv.in{opacity:1;transform:none}
+@media(max-width:900px){.nav{display:none;position:absolute;left:0;right:0;top:72px;background:var(--sand);flex-direction:column;padding:20px clamp(16px,5vw,56px) 26px;gap:16px;border-bottom:1px solid var(--line)}.nav.open{display:flex}.menu-btn{display:block}
+.hero .top{grid-template-columns:1fr}.hero .side{justify-self:start}.strip{grid-template-columns:1fr 1fr;height:auto}.strip div{aspect-ratio:1}.strip .p1{grid-row:auto}.strip .p4{grid-column:span 2;aspect-ratio:2}
+.serv{grid-template-columns:1fr}.pgrid{grid-template-columns:1fr 1fr}.proc{grid-template-columns:1fr 1fr}.about .wrap,.cta .wrap{grid-template-columns:1fr}}
+@media(max-width:560px){.pgrid,.proc{grid-template-columns:1fr}.serv .item{grid-template-columns:1fr;gap:6px}.hero .side .ctas .btn{flex:1 1 100%}}
+</style>
+</head>
+<body data-wa="5500000000000">
+<header class="header"><div class="wrap">
+  <a class="logo" href="#">Atelier Vale</a>
+  <nav class="nav" id="nav"><a href="#servicos">Serviços</a><a href="#projetos">Projetos</a><a href="#processo">Processo</a><a href="#sobre">Sobre</a><a href="#contato">Contato</a></nav>
+  <a class="btn btn-dark" href="#" data-msg="Olá! Quero conversar sobre um projeto com o Atelier Vale." style="min-height:42px;padding:0 20px;font-size:11px">Pedir orçamento</a>
+  <button class="menu-btn" id="menuBtn" aria-label="Menu" aria-expanded="false"><i></i><i></i><i></i></button>
+</div></header>
+
+<section class="hero"><div class="wrap">
+  <div class="top">
+    <h1>Espaços que contam a <em>sua história</em></h1>
+    <div class="side"><span class="eyebrow">Arquitetura e interiores</span><p>Projetos residenciais e comerciais, do conceito à obra entregue, com atenção a cada detalhe.</p>
+      <div class="ctas"><a class="btn btn-dark" href="#" data-msg="Olá! Quero conversar sobre um projeto com o Atelier Vale.">Pedir orçamento</a><a class="btn btn-line" href="#projetos">Ver projetos</a></div></div>
+  </div>
+  <div class="strip rv"><div class="p1"><span>Casa Jardim · 2025</span></div><div class="p2"><span>Loft Pinheiros</span></div><div class="p3"><span>Café Origem</span></div><div class="p4"><span>Apto Vila Nova</span></div></div>
+</div>
+<div class="marq" aria-hidden="true"><div><span>Residencial</span><span>Comercial</span><span>Interiores</span><span>Reforma</span><span>Acompanhamento de obra</span><span>Residencial</span><span>Comercial</span><span>Interiores</span><span>Reforma</span><span>Acompanhamento de obra</span></div></div>
+</section>
+
+<section class="sec" id="servicos"><div class="wrap serv">
+  <div class="rv"><span class="eyebrow">Serviços</span><h2>O que fazemos</h2></div>
+  <div class="list rv">
+    <div class="item"><i>01</i><div><b>Projeto arquitetônico</b><p>Casas, reformas e ampliações, com projeto executivo completo para a obra.</p></div><a href="#" data-msg="Olá! Tenho interesse em projeto arquitetônico.">Saber mais</a></div>
+    <div class="item"><i>02</i><div><b>Design de interiores</b><p>Layout, iluminação, marcenaria e acabamentos para apartamentos e casas.</p></div><a href="#" data-msg="Olá! Tenho interesse em design de interiores.">Saber mais</a></div>
+    <div class="item"><i>03</i><div><b>Projetos comerciais</b><p>Lojas, consultórios, cafés e escritórios pensados para a experiência do cliente.</p></div><a href="#" data-msg="Olá! Tenho interesse em projeto comercial.">Saber mais</a></div>
+    <div class="item"><i>04</i><div><b>Acompanhamento de obra</b><p>Visitas técnicas e gestão de fornecedores para a obra sair como o projeto.</p></div><a href="#" data-msg="Olá! Tenho interesse em acompanhamento de obra.">Saber mais</a></div>
+  </div>
+</div></section>
+
+<section class="sec port" id="projetos"><div class="wrap">
+  <div class="head rv"><div><span class="eyebrow">Portfólio</span><h2>Projetos selecionados</h2></div><a class="btn btn-line" href="#" data-msg="Olá! Quero ver o portfólio completo do Atelier Vale." style="box-shadow:inset 0 0 0 1px rgba(238,232,223,.6);color:var(--sand)">Portfólio completo</a></div>
+  <div class="pgrid">
+    <div class="a rv" data-t="Casa Jardim"><span>Residencial</span></div><div class="b rv" data-t="Loft Pinheiros" style="transition-delay:.08s"><span>Interiores</span></div><div class="c rv" data-t="Café Origem" style="transition-delay:.16s"><span>Comercial</span></div>
+    <div class="d rv" data-t="Apto Vila Nova"><span>Reforma</span></div><div class="e rv" data-t="Consultório Lume" style="transition-delay:.08s"><span>Comercial</span></div><div class="f rv" data-t="Casa de Campo" style="transition-delay:.16s"><span>Residencial</span></div>
+  </div>
+</div></section>
+
+<section class="sec" id="processo"><div class="wrap">
+  <div class="rv" style="margin-bottom:34px"><span class="eyebrow">Processo</span><h2 style="font-size:clamp(34px,4.6vw,56px);margin-top:12px">Como trabalhamos</h2></div>
+  <div class="proc">
+    <div class="rv"><i>01</i><b>Briefing</b><p>Entendemos como você vive, o que precisa e quanto quer investir.</p></div>
+    <div class="rv" style="transition-delay:.08s"><i>02</i><b>Estudo preliminar</b><p>Primeiras plantas e imagens 3D para validar o conceito.</p></div>
+    <div class="rv" style="transition-delay:.16s"><i>03</i><b>Projeto executivo</b><p>Detalhamento completo para orçar e executar sem surpresas.</p></div>
+    <div class="rv" style="transition-delay:.24s"><i>04</i><b>Obra</b><p>Acompanhamos a execução até a entrega das chaves.</p></div>
+  </div>
+</div></section>
+
+<section class="sec about" id="sobre"><div class="wrap">
+  <div class="pic rv"></div>
+  <div class="rv"><span class="eyebrow">Sobre</span><h2>Um atelier, muitas histórias</h2><p>Fundado pela arquiteta Beatriz Vale, o atelier acredita que um bom projeto nasce de ouvir. Cada espaço é desenhado a partir da rotina de quem vai habitá-lo, com materiais honestos e luz natural.</p><p>Mais de 80 projetos entregues em São Paulo e interior.</p><p class="sig">Beatriz Vale</p></div>
+</div></section>
+
+<section class="sec cta" id="contato"><div class="wrap">
+  <div><h2>Vamos desenhar o seu próximo espaço?</h2><p>Conte sobre o seu projeto pelo WhatsApp e agende uma conversa inicial sem compromisso.</p></div>
+  <a class="btn" href="#" data-msg="Olá! Quero conversar sobre um projeto com o Atelier Vale.">Falar no WhatsApp</a>
+</div></section>
+<footer class="footer"><div class="wrap"><span>© <span id="year"></span> Atelier Vale Arquitetura · CAU 000000-0</span><span>Rua Harmonia, 45 · São Paulo/SP · @ateliervale</span></div></footer>
+<a class="wa" href="#" data-msg="Olá! Vim pelo site do Atelier Vale." aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2Zm0 18.15a8.2 8.2 0 0 1-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.21 8.21 0 0 1 6.99-12.53c4.54 0 8.23 3.7 8.23 8.24s-3.69 8.15-8.23 8.15Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.16.04-.31-.02-.43-.06-.13-.56-1.35-.77-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28Z"/></svg></a>
+<script src="_base.js"></script>
+</body>
+</html>
