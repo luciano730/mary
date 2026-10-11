@@ -4,262 +4,330 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Mary Criativa</title>
-<meta name="description" content="Mary Criativa: convites digitais, identidade visual para eventos, cardápios, placas e projeto da decoração.">
-<meta name="theme-color" content="#FBF8FE">
+<meta name="description" content="Mary Criativa: convites digitais, identidade visual, cardápios, placas e projeto da decoração para a sua festa.">
+<meta name="theme-color" content="#FFFFFF">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;500;600;700;800;900&display=swap">
 <style>
-/* Layout: catálogo centralizado estilo app, com cartões pastel por ocasião e uma página por ocasião */
+/* Layout: loja em estilo app, menu sanfona, vitrine por tema, evento e tipo, carrinho de orçamento pelo WhatsApp */
 :root{
   color-scheme: light;
-  --bg:#FBF8FE;
-  --white:#FFFFFF;
-  --ink:#2D2547;
-  --ink-soft:#6B6385;
-  --purple:#8B5CD6;
-  --purple-deep:#6A3FB5;
-  --lilac:#E4D8F5;
-  --lilac-2:#D3C1EE;
-  --pink:#F48FBE;
-  --pink-soft:#FCE3EF;
-  --mint:#D8F0EA;
-  --peach:#FDE6DC;
-  --line:rgba(45,37,71,.09);
-  --grad:linear-gradient(100deg,#8B5CD6 0%,#C06BCB 50%,#F48FBE 100%);
-  --grad-soft:linear-gradient(135deg,#F1E8FC 0%,#FCE6F1 100%);
+  --bg:#FFFFFF;
+  --blush:#FFF5F8;
+  --ink:#3A2B44;
+  --ink-soft:#7A6A82;
+  --pink:#E8789F;
+  --pink-deep:#D2597F;
+  --pink-soft:#FDE4EC;
+  --lilac:#B58BD9;
+  --lilac-deep:#8D63B8;
+  --lilac-soft:#F1E8FA;
+  --gold:#C9A04E;
+  --gold-deep:#A87F2E;
+  --gold-grad:linear-gradient(100deg,#B8893A 0%,#E7C77E 40%,#C9A04E 60%,#F0D898 80%,#B8893A 100%);
+  --pl-grad:linear-gradient(100deg,#E8789F 0%,#C77FC4 55%,#B58BD9 100%);
+  --line:rgba(58,43,68,.08);
   --sans:"Montserrat", "Avenir Next", "Segoe UI", system-ui, sans-serif;
   --script:"Great Vibes", "Snell Roundhand", "Apple Chancery", cursive;
-  --gutter:clamp(16px,5vw,56px);
+  --gutter:clamp(16px,4.5vw,48px);
   --ease:cubic-bezier(.2,.8,.2,1);
-  --shadow:0 20px 50px -24px rgba(106,63,181,.35);
-  --shadow-sm:0 8px 24px -12px rgba(106,63,181,.3);
+  --shadow:0 18px 44px -22px rgba(141,99,184,.45);
+  --shadow-sm:0 6px 18px -10px rgba(141,99,184,.45);
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16.5px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 img{max-width:100%;display:block}
 a{color:inherit}
-button{font:inherit;color:inherit}
-h1,h2,h3{margin:0;line-height:1.12;text-wrap:balance;font-weight:500;letter-spacing:-.01em}
+button,input,select{font:inherit;color:inherit}
+h1,h2,h3,h4{margin:0;line-height:1.15;text-wrap:balance}
 p{margin:0}
-:focus-visible{outline:2.5px solid var(--purple);outline-offset:3px;border-radius:8px}
-.wrap{max-width:1180px;margin-inline:auto;padding-inline:var(--gutter)}
-.sc{font-family:var(--script);font-weight:400;letter-spacing:0;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;padding-inline:.06em .12em;line-height:1}
-.eyebrow{font-size:12.5px;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--ink-soft)}
-.sec{padding-block:clamp(64px,9vw,112px)}
-.head{display:grid;justify-items:center;text-align:center;gap:14px;margin-bottom:clamp(32px,5vw,56px)}
-.head h2{font-size:clamp(32px,5.2vw,54px)}
-.head h2 .sc{font-size:1.3em}
-.head p{color:var(--ink-soft);max-width:560px}
-.star{position:absolute;width:22px;height:22px;color:#E9B9D6;animation:twinkle 3.4s ease-in-out infinite;pointer-events:none}
-@keyframes twinkle{0%,100%{opacity:.35;transform:scale(.8) rotate(0)}50%{opacity:1;transform:scale(1.1) rotate(20deg)}}
+:focus-visible{outline:2.5px solid var(--lilac);outline-offset:3px;border-radius:8px}
+.wrap{max-width:1200px;margin-inline:auto;padding-inline:var(--gutter)}
+.sc{font-family:var(--script);font-weight:400}
+.gold{background:var(--gold-grad);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 8s linear infinite}
+@keyframes shine{to{background-position:-200% 0}}
+.kicker{font-size:11.5px;font-weight:800;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-deep)}
+.sec{padding-block:clamp(48px,7vw,88px)}
+.sec-title{display:grid;justify-items:center;text-align:center;gap:10px;margin-bottom:clamp(26px,4vw,40px)}
+.sec-title h2{font-size:clamp(26px,3.6vw,38px);font-weight:800;color:var(--lilac-deep);display:flex;align-items:center;gap:10px}
+.sec-title h2 svg{width:26px;height:26px;color:var(--pink)}
+.sec-title .rule{width:70px;height:3px;border-radius:3px;background:var(--gold-grad)}
+.sec-title p{color:var(--ink-soft);max-width:520px}
 
 /* botoes */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:16px 32px;border-radius:999px;font-weight:700;font-size:16px;text-decoration:none;border:0;cursor:pointer;transition:transform .35s var(--ease),box-shadow .35s var(--ease),background-position .6s;white-space:nowrap}
-.btn svg{width:20px;height:20px;flex:none}
-.btn-grad{background:var(--grad);background-size:160% 100%;color:#fff;box-shadow:0 14px 30px -12px rgba(192,107,203,.75)}
-.btn-grad:hover{transform:translateY(-2px);background-position:100% 0}
-.btn-line{background:var(--white);color:var(--purple-deep);box-shadow:inset 0 0 0 2px var(--lilac-2)}
-.btn-line:hover{transform:translateY(-2px);box-shadow:inset 0 0 0 2px var(--purple)}
-.btn-sm{padding:12px 22px;font-size:14.5px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:15px 28px;border-radius:999px;border:0;cursor:pointer;font-weight:700;font-size:15px;text-decoration:none;transition:transform .3s var(--ease),box-shadow .3s var(--ease),background .3s,color .3s;white-space:nowrap}
+.btn svg{width:19px;height:19px;flex:none}
+.btn-pink{background:var(--pink);color:#fff;box-shadow:0 12px 26px -12px rgba(210,89,127,.8)}
+.btn-pink:hover{background:var(--pink-deep);transform:translateY(-2px)}
+.btn-gold{background:var(--gold-grad);background-size:160% 100%;color:#fff;box-shadow:0 12px 26px -12px rgba(168,127,46,.8);text-shadow:0 1px 1px rgba(120,80,20,.25)}
+.btn-gold:hover{transform:translateY(-2px);background-position:100% 0}
+.btn-line{background:#fff;color:var(--lilac-deep);box-shadow:inset 0 0 0 2px var(--lilac)}
+.btn-line:hover{background:var(--lilac-soft)}
+.btn-sm{padding:11px 18px;font-size:13.5px}
+.btn-block{width:100%}
+
+/* faixa de promocao */
+.promo{background:var(--pl-grad);color:#fff;font-size:12.5px;font-weight:600;text-align:center;padding:9px 12px;display:flex;justify-content:center;align-items:center;gap:8px;flex-wrap:wrap}
+.promo svg{width:15px;height:15px}
+.promo b{border:1.5px dashed rgba(255,255,255,.85);border-radius:99px;padding:1px 10px;font-weight:800;letter-spacing:.04em}
 
 /* topo */
-.header{position:sticky;top:0;z-index:50;padding-top:env(safe-area-inset-top,0px);background:rgba(251,248,254,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);transition:box-shadow .3s}
-.header.scrolled{box-shadow:0 1px 0 var(--line),0 10px 30px -20px rgba(106,63,181,.3)}
-.header .wrap{display:flex;align-items:center;gap:18px;height:76px}
-.logo{display:flex;flex-direction:column;align-items:flex-start;text-decoration:none;line-height:1;margin-right:auto}
-.logo .sc{font-size:40px;padding-top:4px}
-.logo small{font-size:8.5px;letter-spacing:.5em;font-weight:700;color:var(--ink-soft);margin:-6px 0 0 30px}
-.nav{display:flex;gap:26px}
-.nav a{text-decoration:none;font-size:14.5px;font-weight:600;color:var(--ink-soft);transition:color .3s}
-.nav a:hover{color:var(--purple)}
-.menu-btn{width:46px;height:46px;border:0;background:none;cursor:pointer;display:none;place-items:center;border-radius:12px}
-.menu-btn svg{width:28px;height:28px}
-.sheet{position:fixed;inset:0;z-index:70;background:rgba(45,37,71,.35);opacity:0;visibility:hidden;transition:opacity .35s,visibility .35s}
-.sheet.open{opacity:1;visibility:visible}
-.sheet-panel{position:absolute;top:0;right:0;bottom:0;width:min(360px,88vw);background:var(--white);padding:calc(24px + env(safe-area-inset-top,0px)) 26px 30px;display:flex;flex-direction:column;gap:6px;transform:translateX(100%);transition:transform .45s var(--ease);overflow:auto}
-.sheet.open .sheet-panel{transform:none}
-.sheet-close{align-self:flex-end;width:44px;height:44px;border:0;border-radius:50%;background:var(--bg);cursor:pointer;display:grid;place-items:center;margin-bottom:10px}
-.sheet-close svg{width:20px;height:20px}
-.sheet a:not(.btn){text-decoration:none;font-weight:600;font-size:17px;padding:13px 4px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}
-.sheet a span{color:var(--purple)}
-.sheet .label{font-size:11px;letter-spacing:.24em;text-transform:uppercase;font-weight:700;color:var(--ink-soft);margin-top:18px}
-.sheet .btn{margin-top:24px}
+.header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top,0px)}
+.header>.wrap{display:flex;align-items:center;gap:12px;height:68px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;margin-right:auto;line-height:1}
+.logo-mark{width:40px;height:40px;border-radius:12px;background:var(--pl-grad);display:grid;place-items:center;color:#fff;font-family:var(--script);font-size:30px;padding-top:4px;box-shadow:var(--shadow-sm)}
+.logo-text{display:grid}
+.logo-text .sc{font-size:30px;color:var(--gold-deep)}
+.logo-text small{font-size:7.5px;font-weight:800;letter-spacing:.5em;color:var(--lilac-deep);margin-top:-3px;padding-left:2px}
+.hnav{display:flex;gap:4px}
+.hnav button{border:0;background:none;cursor:pointer;padding:10px 14px;border-radius:99px;font-size:12.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--lilac-deep);display:flex;align-items:center;gap:6px}
+.hnav button svg{width:14px;height:14px;color:var(--gold)}
+.hnav button:hover,.hnav button[aria-expanded="true"]{background:var(--lilac-soft)}
+.icon-btn{position:relative;width:44px;height:44px;border-radius:50%;border:0;cursor:pointer;display:grid;place-items:center;background:none;color:var(--lilac-deep)}
+.icon-btn svg{width:24px;height:24px}
+.icon-btn.search{background:var(--lilac);color:#fff;width:40px;height:40px;box-shadow:var(--shadow-sm)}
+.icon-btn.search svg{width:19px;height:19px}
+.badge{position:absolute;top:2px;right:0;min-width:19px;height:19px;padding-inline:5px;border-radius:99px;background:var(--gold);color:#fff;font-size:11px;font-weight:800;display:grid;place-items:center;font-variant-numeric:tabular-nums;transition:transform .3s var(--ease)}
+.badge.bump{transform:scale(1.35)}
+.menu-toggle{display:none}
 
-/* hero */
-.hero{position:relative;overflow:hidden;padding-block:clamp(36px,6vw,72px) clamp(56px,8vw,96px);text-align:center}
-.hero::before{content:"";position:absolute;inset:-20% -10% auto;height:90%;background:radial-gradient(40% 50% at 20% 30%,#F3E9FD 0%,transparent 70%),radial-gradient(40% 50% at 80% 20%,#FDE7F2 0%,transparent 70%);z-index:-1}
-.hero .wrap{display:grid;justify-items:center;gap:22px;position:relative}
-.chip{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border-radius:99px;background:var(--white);box-shadow:var(--shadow-sm);font-size:13px;font-weight:600;color:var(--purple-deep)}
-.chip svg{width:14px;height:14px;color:var(--pink)}
-.hero h1{font-size:clamp(38px,6.4vw,76px);max-width:15ch}
-.hero h1 .sc{font-size:1.32em;display:inline-block;transform:translateY(.04em)}
-.hero-lead{font-size:clamp(17px,1.8vw,20px);color:var(--ink-soft);max-width:600px}
-.ctas{display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
-.showcase{position:relative;display:flex;justify-content:center;align-items:flex-end;width:100%;max-width:820px;margin-block:18px 10px}
-.showcase>.card{flex:0 1 30%;margin-inline:-2%;padding:3.5%;background:var(--white);border-radius:30px;box-shadow:var(--shadow);transition:transform .6s var(--ease)}
-.showcase>.card:nth-child(1){transform:rotate(-5deg) translateY(4%)}
-.showcase>.card:nth-child(2){z-index:2;flex-basis:43%}
-.showcase>.card:nth-child(3){transform:rotate(5deg) translateY(4%)}
-.showcase>.card:hover{transform:rotate(0) translateY(-3%)}
-.hint{font-size:13px;color:var(--ink-soft);display:flex;gap:8px;align-items:center}
-.hint svg{width:16px;height:16px;color:var(--pink)}
+/* menu suspenso (computador) e menu sanfona (celular) */
+.drop{position:absolute;left:0;right:0;top:100%;background:#fff;border-bottom:1px solid var(--line);box-shadow:0 30px 50px -30px rgba(141,99,184,.4);padding-block:26px 30px;display:none}
+.drop.open{display:block;animation:dropIn .35s var(--ease)}
+@keyframes dropIn{from{opacity:0;transform:translateY(-8px)}}
+.drop-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:4px 18px}
+.drop-grid a{display:flex;align-items:center;gap:12px;padding:10px 12px;border-radius:12px;text-decoration:none;font-size:14.5px;color:var(--ink)}
+.drop-grid a:hover{background:var(--blush);color:var(--pink-deep)}
+.drop-grid a svg{width:22px;height:22px;color:var(--gold);flex:none}
+.drop-grid a.all{color:var(--pink-deep);font-weight:700}
+.dot{width:16px;height:16px;border-radius:50%;flex:none;box-shadow:inset 0 0 0 2px rgba(255,255,255,.7),0 0 0 1px var(--line)}
 
-/* entrada da pagina */
-.anim .intro{opacity:0;transform:translateY(24px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
-.anim .ready .intro{opacity:1;transform:none}
-.anim .ready .intro.d1{transition-delay:.1s}.anim .ready .intro.d2{transition-delay:.2s}.anim .ready .intro.d3{transition-delay:.3s}.anim .ready .intro.d4{transition-delay:.45s}
-.anim .showcase>.card{opacity:0}
-.anim .ready .showcase>.card{opacity:1;transition:opacity .8s var(--ease),transform .9s var(--ease)}
-.anim .ready .showcase>.card:nth-child(1){transition-delay:.35s}
-.anim .ready .showcase>.card:nth-child(2){transition-delay:.45s}
-.anim .ready .showcase>.card:nth-child(3){transition-delay:.55s}
+.acc-panel{position:fixed;left:0;right:0;bottom:0;top:var(--top,0px);z-index:45;background:#fff;overflow:auto;padding-bottom:calc(30px + env(safe-area-inset-bottom,0px));transform:translateY(-12px);opacity:0;visibility:hidden;transition:opacity .3s,transform .4s var(--ease),visibility .3s}
+.acc-panel.open{opacity:1;visibility:visible;transform:none}
+.acc{border-bottom:1px solid var(--line)}
+.acc>button{width:100%;display:flex;align-items:center;gap:12px;padding:20px var(--gutter);border:0;background:none;cursor:pointer;font-size:13px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--lilac-deep);text-align:left;transition:background .3s}
+.acc>button .ic{width:22px;height:22px;color:var(--pink)}
+.acc>button .chev{margin-left:auto;width:20px;height:20px;color:var(--gold);transition:transform .35s var(--ease)}
+.acc>button[aria-expanded="true"]{background:var(--lilac-soft)}
+.acc>button[aria-expanded="true"] .chev{transform:rotate(180deg)}
+.acc-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .4s var(--ease)}
+.acc-body>div{overflow:hidden}
+.acc>button[aria-expanded="true"]+.acc-body{grid-template-rows:1fr}
+.acc-body a{display:flex;align-items:center;gap:14px;padding:15px var(--gutter) 15px calc(var(--gutter) + 4px);text-decoration:none;font-size:15px;color:var(--ink)}
+.acc-body a:active,.acc-body a:hover{background:var(--blush)}
+.acc-body a svg{width:22px;height:22px;color:var(--gold);flex:none}
+.acc-body a.all{color:var(--pink-deep);font-weight:700}
+.acc-extra{padding:24px var(--gutter);display:grid;gap:12px}
 
-/* faixa */
-.ticker{background:var(--grad);color:#fff;padding-block:14px;overflow:hidden}
-.ticker-track{display:flex;width:max-content;animation:tick 40s linear infinite}
-.ticker span{display:flex;align-items:center;gap:26px;padding-right:26px;font-weight:600;font-size:15px;letter-spacing:.06em;white-space:nowrap}
-.ticker span::after{content:"✦";opacity:.8}
-@keyframes tick{to{transform:translateX(-50%)}}
+/* busca */
+.search-panel{position:fixed;inset:0;z-index:80;background:rgba(58,43,68,.35);opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s}
+.search-panel.open{opacity:1;visibility:visible}
+.search-box{background:#fff;padding:calc(16px + env(safe-area-inset-top,0px)) var(--gutter) 22px;transform:translateY(-20px);transition:transform .4s var(--ease);max-height:85svh;overflow:auto}
+.search-panel.open .search-box{transform:none}
+.search-row{display:flex;gap:10px;align-items:center;max-width:760px;margin-inline:auto}
+.search-row input{flex:1;min-width:0;border:2px solid var(--lilac-soft);border-radius:99px;padding:13px 20px;font-size:16px;outline:none;transition:border-color .3s}
+.search-row input:focus{border-color:var(--lilac)}
+.results{max-width:760px;margin:14px auto 0;display:grid;gap:4px}
+.results a{display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:14px;text-decoration:none}
+.results a:hover,.results a:focus{background:var(--blush)}
+.results small{margin-left:auto;font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-deep)}
+.results svg{width:20px;height:20px;color:var(--gold)}
+.results .empty{color:var(--ink-soft);padding:12px 14px}
 
-/* ocasioes */
-.occ-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
-.occ{position:relative;display:grid;grid-template-columns:1fr auto;gap:18px;align-items:center;padding:34px 30px 32px;border-radius:28px;text-decoration:none;background:var(--c,var(--lilac));overflow:hidden;transition:transform .5s var(--ease),box-shadow .5s var(--ease);min-height:250px}
-.occ:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
-.occ-text{display:grid;gap:10px;justify-items:start;min-width:0;position:relative;z-index:1}
-.ico{width:64px;height:64px;border-radius:18px;background:rgba(255,255,255,.75);box-shadow:0 6px 18px -8px rgba(45,37,71,.25);display:grid;place-items:center;color:var(--purple-deep);margin-bottom:10px}
-.ico svg{width:30px;height:30px}
-.occ .eyebrow{color:var(--ink-soft)}
-.occ h3{font-size:clamp(24px,2.6vw,30px);font-weight:800}
-.occ p{color:var(--ink-soft)}
-.occ .go{font-weight:700;color:var(--purple-deep);display:inline-flex;gap:8px;margin-top:4px}
-.occ .go i{font-style:normal;transition:transform .4s var(--ease)}
-.occ:hover .go i{transform:translateX(6px)}
-.occ-peek{width:clamp(96px,13vw,150px);transform:rotate(8deg) translateY(10%);transition:transform .6s var(--ease)}
-.occ:hover .occ-peek{transform:rotate(3deg) translateY(2%)}
+/* banner */
+.banner{position:relative;overflow:hidden;background:linear-gradient(180deg,#FFF7FA 0%,#FBF3FF 100%)}
+.ribbon{position:absolute;opacity:.9;pointer-events:none;border-radius:60px}
+.ribbon.r1{width:420px;height:120px;left:-140px;top:60px;background:linear-gradient(90deg,#D9BFF2,#F5C8DA);transform:rotate(-28deg)}
+.ribbon.r2{width:380px;height:100px;right:-150px;bottom:120px;background:linear-gradient(90deg,#F5C8DA,#D9BFF2);transform:rotate(-24deg)}
+.ribbon.r3{width:220px;height:60px;right:8%;top:30px;background:linear-gradient(90deg,#F1E8FA,#E7D4F7);transform:rotate(18deg);opacity:.7}
+.heart{position:absolute;width:18px;height:18px;color:var(--gold);animation:floaty 5s ease-in-out infinite;pointer-events:none}
+@keyframes floaty{50%{transform:translateY(-8px) rotate(8deg)}}
+.banner .wrap{position:relative;display:grid;justify-items:center;text-align:center;padding-block:clamp(36px,6vw,64px) 0}
+.b-title{display:grid;justify-items:center;line-height:.9}
+.b-title .big{font-size:clamp(46px,9vw,92px);font-weight:900;letter-spacing:-.02em}
+.b-title .sc{font-size:clamp(50px,9.4vw,100px);color:var(--lilac-deep);margin-top:-.12em;line-height:1}
+.b-title small{font-size:clamp(12px,1.4vw,15px);font-weight:600;letter-spacing:.42em;color:var(--lilac-deep);margin-top:6px;padding-left:.42em}
+.b-lead{color:var(--pink-deep);font-size:clamp(14px,1.6vw,16.5px);max-width:440px;margin-top:16px;font-weight:500}
+.b-art{position:relative;width:min(100%,640px);aspect-ratio:1/0.82;margin-top:18px}
+.b-photo{position:absolute;left:24%;right:24%;bottom:0;top:8%;border-radius:999px 999px 0 0;background:radial-gradient(circle at 50% 30%,#fff 0%,#F7E3F0 55%,#E9D6F7 100%);overflow:hidden;display:grid;place-items:center}
+.b-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top}
+.b-photo .sc{font-size:clamp(100px,18vw,180px);color:#fff;text-shadow:0 10px 30px rgba(141,99,184,.35)}
+.b-art .fl{position:absolute;filter:drop-shadow(0 18px 24px rgba(58,43,68,.22))}
+.b-art .fl>.m{animation:bob 6s ease-in-out infinite}
+.fl1{left:4%;top:34%;width:22%;rotate:-8deg}
+.fl2{right:5%;top:40%;width:20%;rotate:9deg}
+.fl2>.m{animation-delay:-2s!important}
+.fl3{left:22%;top:4%;width:14%;rotate:-6deg}
+.fl3>.m{animation-delay:-1s!important}
+.fl4{right:21%;top:2%;width:15%;rotate:7deg}
+.fl4>.m{animation-delay:-3s!important}
+@keyframes bob{50%{transform:translateY(-10px)}}
+.b-cta{position:relative;z-index:2;display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:-28px;padding-bottom:40px}
 
-/* servicos */
-.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.svc{padding:28px 26px;border-radius:24px;background:var(--white);box-shadow:0 1px 0 var(--line);border:1px solid var(--line);display:grid;gap:10px;align-content:start;transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
-.svc:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
-.svc .ico{background:var(--c);box-shadow:none;margin-bottom:6px;width:56px;height:56px;border-radius:16px}
-.svc .ico svg{width:26px;height:26px}
-.svc h3{font-size:19px;font-weight:700}
-.svc p{font-size:15px;color:var(--ink-soft)}
+/* atalhos de evento */
+.quick{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.quick a{display:grid;justify-items:center;gap:10px;padding:22px 12px;border-radius:22px;background:var(--blush);text-decoration:none;text-align:center;font-weight:700;font-size:14px;color:var(--ink);transition:transform .4s var(--ease),background .3s}
+.quick a:hover{transform:translateY(-4px);background:var(--pink-soft)}
+.quick span{width:56px;height:56px;border-radius:18px;background:#fff;display:grid;place-items:center;color:var(--gold);box-shadow:var(--shadow-sm)}
+.quick svg{width:28px;height:28px}
 
-/* como funciona */
-.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;counter-reset:s}
-.step{background:var(--white);border-radius:24px;padding:28px 24px;border:1px solid var(--line);display:grid;gap:10px;align-content:start;position:relative}
-.step b{width:44px;height:44px;border-radius:50%;background:var(--grad);color:#fff;display:grid;place-items:center;font-size:17px;font-weight:800}
-.step h3{font-size:19px;font-weight:700}
-.step p{font-size:15px;color:var(--ink-soft)}
+/* cartoes de tema */
+.themes{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.theme-card{position:relative;display:grid;grid-template-columns:1fr 42%;align-items:center;min-height:200px;padding:22px 0 22px 24px;border-radius:24px;overflow:hidden;text-decoration:none;background:linear-gradient(120deg,var(--t1),var(--t2));box-shadow:0 1px 0 var(--line);transition:transform .45s var(--ease),box-shadow .45s var(--ease)}
+.theme-card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+.theme-card .txt{display:grid;gap:6px;justify-items:start;position:relative;z-index:1;min-width:0}
+.theme-card .kicker{color:var(--tx)}
+.theme-card h3{font-size:26px;font-weight:800;color:var(--tx);line-height:1.05}
+.theme-card p{font-size:13.5px;color:var(--ink-soft);line-height:1.4}
+.theme-card.dark p{color:rgba(255,255,255,.8)}
+.theme-card .go{margin-top:6px;font-size:12px;font-weight:800;letter-spacing:.18em;color:var(--gold-deep);border-bottom:2px solid var(--gold);padding-bottom:2px}
+.theme-card.dark .go{color:#F2D58E;border-color:#F2D58E}
+.theme-card .peek{justify-self:end;width:78%;margin-right:-6%;transform:rotate(8deg) translateY(12%);transition:transform .6s var(--ease)}
+.theme-card:hover .peek{transform:rotate(3deg) translateY(4%)}
+.more-row{display:flex;justify-content:center;margin-top:26px}
 
-/* sobre */
-.about{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(28px,6vw,80px);align-items:center}
-.about-pic{position:relative;aspect-ratio:1/1;max-width:100%;border-radius:40px;background:var(--grad-soft);display:grid;place-items:center;overflow:hidden;box-shadow:var(--shadow)}
-.about-pic .sc{font-size:clamp(120px,18vw,210px)}
-.about-pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.about-text{display:grid;gap:18px;justify-items:start}
-.about-text h2{font-size:clamp(30px,4.4vw,46px)}
-.about-text h2 .sc{font-size:1.3em}
-.about-text p{color:var(--ink-soft)}
-.pills{display:flex;flex-wrap:wrap;gap:8px}
-.pills span{padding:8px 15px;border-radius:99px;background:var(--lilac);color:var(--purple-deep);font-weight:600;font-size:13.5px}
-
-/* chamada final */
-.cta-box{position:relative;overflow:hidden;border-radius:36px;background:var(--grad);color:#fff;text-align:center;padding:clamp(44px,7vw,80px) clamp(20px,5vw,60px);display:grid;justify-items:center;gap:18px}
-.cta-box h2{font-size:clamp(32px,5vw,54px)}
-.cta-box h2 .sc{background:none;color:#fff;font-size:1.3em;-webkit-text-fill-color:#fff}
-.cta-box p{max-width:520px;opacity:.92}
-.cta-box .btn-grad{background:#fff;color:var(--purple-deep);box-shadow:0 14px 30px -12px rgba(45,37,71,.45)}
-.cta-box .btn-line{background:transparent;color:#fff;box-shadow:inset 0 0 0 2px rgba(255,255,255,.6)}
-.cta-box .star{color:#fff}
-.contact-lines{display:flex;flex-wrap:wrap;gap:8px 22px;justify-content:center;font-size:14.5px;opacity:.95}
-.contact-lines span{user-select:all}
-
-.footer{padding-block:34px 90px;text-align:center;color:var(--ink-soft);font-size:14px;display:grid;justify-items:center;gap:6px}
-.footer .sc{font-size:34px}
-
-/* pagina da ocasiao */
-.view[hidden]{display:none!important}
-.o-hero{position:relative;text-align:center;padding-block:clamp(28px,5vw,60px) 30px;overflow:hidden}
-.o-hero .wrap{display:grid;justify-items:center;gap:18px}
-.back{justify-self:start;display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:14.5px;color:var(--purple-deep);text-decoration:none;padding:8px 14px 8px 10px;border-radius:99px;background:var(--white);box-shadow:var(--shadow-sm)}
-.back svg{width:18px;height:18px}
-.o-hero h1{font-size:clamp(38px,6.4vw,72px);max-width:14ch}
-.o-hero h1 .sc{font-size:1.35em;display:inline-block}
-.o-hero p{color:var(--ink-soft);max-width:600px;font-size:clamp(16.5px,1.7vw,19px)}
-.podium{position:relative;width:100%;max-width:880px;aspect-ratio:16/10;margin-top:12px;background:var(--white);border-radius:32px;box-shadow:var(--shadow);overflow:hidden}
-.podium::before{content:"";position:absolute;left:6%;right:6%;bottom:7%;height:16%;border-radius:50%;background:linear-gradient(180deg,#EADDFB,#D3BFF0);box-shadow:0 8px 0 #B99BE3,0 22px 40px -10px rgba(106,63,181,.45)}
-.podium>.pz{position:absolute;bottom:14%}
-.pz1{left:9%;width:23%;z-index:3}
-.pz2{left:30%;width:24%;z-index:2;bottom:16%!important}
-.pz3{left:53%;width:15%;z-index:3}
-.pz4{right:9%;width:19%;z-index:2}
-.pz5{left:66%;width:13%;z-index:4;bottom:12%!important}
-.tabs-bar{position:sticky;top:calc(env(safe-area-inset-top,0px) + 76px);z-index:40;padding-block:12px;background:linear-gradient(var(--bg) 70%,rgba(251,248,254,0))}
-.tabs{display:flex;gap:10px;overflow-x:auto;padding:8px;border-radius:99px;background:var(--white);box-shadow:0 1px 0 var(--line),var(--shadow-sm);scrollbar-width:none;max-width:max-content;margin-inline:auto}
-.tabs::-webkit-scrollbar{display:none}
-.tabs button{flex:none;border:0;cursor:pointer;padding:12px 22px;border-radius:99px;background:var(--lilac);color:var(--purple-deep);font-weight:700;font-size:15px;transition:background .3s,color .3s}
-.tabs button[aria-current="true"]{background:var(--grad);color:#fff}
-.cat-sec{padding-block:36px 20px;scroll-margin-top:170px}
-.cat-sec>h2{font-size:clamp(26px,3.6vw,36px);font-weight:700;margin-bottom:6px}
-.cat-sec>p{color:var(--ink-soft);margin-bottom:26px}
-.prod-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.prod{background:var(--white);border-radius:28px;border:1px solid var(--line);overflow:hidden;display:flex;flex-direction:column;transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
+/* produtos */
+.grid-prod{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+#homeOutras{grid-template-columns:repeat(3,1fr);max-width:960px;margin-inline:auto}
+.prod{background:#fff;border-radius:22px;border:1px solid var(--line);overflow:hidden;display:flex;flex-direction:column;transition:transform .45s var(--ease),box-shadow .45s var(--ease)}
 .prod:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
-.prod-media{position:relative;aspect-ratio:1/1;max-width:100%;background:var(--grad-soft);display:grid;place-items:center;padding:9%;overflow:hidden}
-.prod-media>.m{max-height:100%}
+.prod-media{all:unset;cursor:pointer;position:relative;aspect-ratio:1/1;display:grid;place-items:center;padding:10%;background:linear-gradient(140deg,var(--t1),var(--t2));overflow:hidden}
+.prod-media:focus-visible{outline:2.5px solid var(--lilac);outline-offset:-4px}
 .prod-media img.photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.prod-media .badge{position:absolute;top:14px;left:14px;padding:6px 12px;border-radius:99px;background:var(--white);font-size:11.5px;font-weight:700;color:var(--purple-deep);box-shadow:var(--shadow-sm);z-index:2}
-.prod-body{padding:22px 24px 24px;display:grid;gap:12px;flex:1;align-content:start}
-.prod h3{font-size:22px;font-weight:700}
-.prod ul{margin:0;padding:0;list-style:none;display:grid;gap:4px;color:var(--ink-soft);font-size:15.5px}
-.prod li{display:flex;gap:10px}
-.prod li::before{content:"–";color:var(--pink);font-weight:700}
-.prices{display:flex;flex-wrap:wrap;gap:10px;margin-top:auto;padding-top:6px}
-.price{display:inline-flex;align-items:center;gap:6px;padding:11px 18px;border-radius:99px;background:var(--lilac);color:var(--purple-deep);font-weight:700;font-size:14.5px;text-decoration:none;box-shadow:inset 0 0 0 1.5px var(--lilac-2);transition:background .3s,color .3s,transform .3s var(--ease)}
-.price:hover{background:var(--purple);color:#fff;transform:translateY(-2px)}
-.others{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-.others a{display:flex;align-items:center;gap:14px;padding:16px 18px;border-radius:20px;background:var(--c);text-decoration:none;font-weight:700;transition:transform .4s var(--ease)}
-.others a:hover{transform:translateY(-3px)}
-.others .ico{width:46px;height:46px;border-radius:14px;margin:0}
-.others .ico svg{width:22px;height:22px}
+.prod-media .tag{position:absolute;top:12px;left:12px;z-index:2;background:#fff;color:var(--pink-deep);font-size:10.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:5px 10px;border-radius:99px;box-shadow:var(--shadow-sm)}
+.prod-body{padding:16px 16px 18px;display:grid;gap:6px;flex:1;align-content:start}
+.prod-body .kicker{font-size:10px}
+.prod h3{font-size:16.5px;font-weight:700}
+.prod .price{font-size:14px;color:var(--ink-soft)}
+.prod .price b{color:var(--pink-deep);font-size:17px;font-weight:800}
+.prod .actions{display:flex;gap:8px;margin-top:auto;padding-top:8px}
+.prod .actions .btn{flex:1;padding:11px 12px;font-size:13px}
 
-/* whatsapp */
-.wa{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:45;width:62px;height:62px;border-radius:50%;background:#34C76B;color:#fff;display:grid;place-items:center;box-shadow:0 14px 30px -8px rgba(52,199,107,.7);transition:transform .35s var(--ease)}
+/* paginas de lista */
+.view[hidden]{display:none!important}
+.list-head{position:relative;overflow:hidden;background:linear-gradient(120deg,var(--t1),var(--t2));padding-block:clamp(26px,5vw,48px)}
+.list-head .wrap{display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center}
+.list-head .crumbs{font-size:13px;color:var(--ink-soft);display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px}
+.list-head .crumbs a{color:var(--lilac-deep);font-weight:600;text-decoration:none}
+.list-head.dark .crumbs,.list-head.dark .crumbs a{color:rgba(255,255,255,.85)}
+.list-head h1{font-size:clamp(34px,6vw,60px);font-weight:900;color:var(--tx)}
+.list-head h1 .sc{font-weight:400;font-size:1.2em}
+.list-head p{color:var(--ink-soft);max-width:520px;margin-top:8px}
+.list-head.dark p{color:rgba(255,255,255,.85)}
+.list-head .peeks{display:flex;align-items:flex-end;width:clamp(150px,26vw,300px)}
+.list-head .peeks>div{flex:1;margin-inline:-4%}
+.list-head .peeks>div:nth-child(1){transform:rotate(-7deg)}
+.list-head .peeks>div:nth-child(3){transform:rotate(7deg)}
+.list-head .peeks>div:nth-child(2){z-index:1;flex:1.2}
+.chips{display:flex;gap:8px;overflow-x:auto;padding:16px var(--gutter);margin-inline:calc(var(--gutter)*-1);scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chips button{flex:none;border:0;cursor:pointer;padding:10px 18px;border-radius:99px;background:var(--lilac-soft);color:var(--lilac-deep);font-weight:700;font-size:13.5px}
+.chips button[aria-pressed="true"]{background:var(--lilac);color:#fff}
+
+/* modal do produto */
+.modal{position:fixed;inset:0;z-index:90;background:rgba(58,43,68,.45);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);display:grid;place-items:center;padding:16px;opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s}
+.modal.open{opacity:1;visibility:visible}
+.modal-box{position:relative;background:#fff;border-radius:28px;width:100%;max-width:940px;max-height:calc(100svh - 32px);overflow:auto;display:grid;grid-template-columns:1fr 1fr;transform:translateY(16px) scale(.98);transition:transform .45s var(--ease)}
+.modal.open .modal-box{transform:none}
+.modal-media{position:relative;display:grid;place-items:center;padding:9%;background:linear-gradient(140deg,var(--t1),var(--t2));min-height:380px}
+.modal-media img.photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.modal-info{padding:34px 30px 30px;display:grid;gap:16px;align-content:start}
+.modal-info h3{font-size:28px;font-weight:800}
+.modal-info p{color:var(--ink-soft)}
+.modal-info ul{margin:0;padding:0;list-style:none;display:grid;gap:6px;font-size:15px}
+.modal-info li{display:flex;gap:10px}
+.modal-info li::before{content:"✦";color:var(--gold);font-size:11px;line-height:2}
+.field{display:grid;gap:6px;min-width:0}
+.field label,.field .lbl{font-size:11.5px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--lilac-deep)}
+.field select,.field input{width:100%;border:2px solid var(--lilac-soft);border-radius:14px;padding:12px 14px;background:#fff;font-size:15px;outline:none}
+.field select:focus,.field input:focus{border-color:var(--lilac)}
+.seg{display:flex;gap:8px;flex-wrap:wrap}
+.seg button{flex:1;min-width:120px;border:2px solid var(--lilac-soft);background:#fff;border-radius:14px;padding:11px 12px;cursor:pointer;font-weight:700;font-size:14px;display:grid;gap:2px;text-align:center}
+.seg button small{font-weight:600;color:var(--ink-soft);font-size:12px}
+.seg button[aria-pressed="true"]{border-color:var(--pink);background:var(--pink-soft);color:var(--pink-deep)}
+.x{position:absolute;top:12px;right:12px;z-index:3;width:42px;height:42px;border-radius:50%;border:0;background:#fff;cursor:pointer;display:grid;place-items:center;box-shadow:var(--shadow-sm);flex:none}
+.x svg{width:18px;height:18px}
+
+/* carrinho */
+.cart{position:fixed;inset:0;z-index:85;background:rgba(58,43,68,.4);opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s}
+.cart.open{opacity:1;visibility:visible}
+.cart-panel{position:absolute;top:0;right:0;bottom:0;width:min(420px,100%);background:#fff;display:flex;flex-direction:column;transform:translateX(100%);transition:transform .45s var(--ease);padding-top:env(safe-area-inset-top,0px)}
+.cart.open .cart-panel{transform:none}
+.cart-head{display:flex;align-items:center;justify-content:space-between;padding:20px 22px;border-bottom:1px solid var(--line)}
+.cart-head h3{font-size:20px;font-weight:800;color:var(--lilac-deep)}
+.cart-head .x{position:static;box-shadow:none;background:var(--blush)}
+.cart-items{flex:1;overflow:auto;padding:12px 22px;display:grid;gap:12px;align-content:start}
+.ci{display:grid;grid-template-columns:64px 1fr auto;gap:12px;align-items:center;padding:10px;border-radius:16px;background:var(--blush)}
+.ci .th{width:64px;height:64px;border-radius:12px;display:grid;place-items:center;padding:8px;background:linear-gradient(140deg,var(--t1),var(--t2));overflow:hidden}
+.ci b{display:block;font-size:14.5px}
+.ci small{color:var(--ink-soft);font-size:12.5px;line-height:1.35;display:block}
+.ci button{border:0;background:none;cursor:pointer;width:36px;height:36px;border-radius:50%;color:var(--ink-soft);display:grid;place-items:center}
+.ci button:hover{background:#fff;color:var(--pink-deep)}
+.ci button svg{width:18px;height:18px}
+.cart-empty{text-align:center;color:var(--ink-soft);padding:40px 10px;display:grid;gap:14px;justify-items:center}
+.cart-empty svg{width:48px;height:48px;color:var(--lilac)}
+.cart-foot{border-top:1px solid var(--line);padding:18px 22px calc(18px + env(safe-area-inset-bottom,0px));display:grid;gap:12px}
+.cart-foot .row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.note{font-size:12.5px;color:var(--ink-soft);text-align:center}
+
+/* aviso */
+.toast{position:fixed;left:50%;bottom:calc(96px + env(safe-area-inset-bottom,0px));z-index:95;translate:-50% 20px;opacity:0;background:var(--ink);color:#fff;padding:12px 20px;border-radius:99px;font-size:14px;font-weight:600;display:flex;gap:10px;align-items:center;transition:opacity .3s,translate .4s var(--ease);pointer-events:none;width:max-content;max-width:calc(100vw - 32px)}
+.toast.show{opacity:1;translate:-50% 0}
+.toast svg{width:18px;height:18px;color:#F2D58E;flex:none}
+
+/* como funciona + sobre + rodape */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.step{padding:24px 20px;border-radius:22px;background:#fff;border:1px solid var(--line);display:grid;gap:8px;align-content:start}
+.step b{width:40px;height:40px;border-radius:50%;background:var(--gold-grad);color:#fff;display:grid;place-items:center;font-weight:800}
+.step h3{font-size:17px;font-weight:800}
+.step p{font-size:14.5px;color:var(--ink-soft)}
+.about{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(24px,5vw,64px);align-items:center}
+.about-pic{position:relative;aspect-ratio:4/5;max-width:100%;border-radius:200px 200px 28px 28px;background:linear-gradient(180deg,var(--pink-soft),var(--lilac-soft));display:grid;place-items:center;overflow:hidden;box-shadow:var(--shadow)}
+.about-pic .sc{font-size:clamp(110px,16vw,190px);color:#fff}
+.about-pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.about-text{display:grid;gap:14px;justify-items:start}
+.about-text h2{font-size:clamp(28px,4vw,42px);font-weight:800}
+.about-text h2 .sc{font-weight:400;font-size:1.3em;color:var(--pink-deep)}
+.about-text p{color:var(--ink-soft)}
+.footer{background:linear-gradient(180deg,#FBF3FF,#FFF5F8);padding-block:44px calc(96px + env(safe-area-inset-bottom,0px));border-top:1px solid var(--line)}
+.footer .wrap{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:28px}
+.footer h4{font-size:12px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--lilac-deep);margin-bottom:12px}
+.footer a{display:block;text-decoration:none;color:var(--ink-soft);font-size:14.5px;padding-block:4px}
+.footer a.logo{display:flex}
+.footer a:hover{color:var(--pink-deep)}
+.footer p{color:var(--ink-soft);font-size:14.5px;margin-top:10px;max-width:300px}
+.footer .copy{grid-column:1/-1;border-top:1px solid var(--line);padding-top:18px;font-size:13px;color:var(--ink-soft);text-align:center}
+
+.wa{position:fixed;right:16px;bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:40;width:60px;height:60px;border-radius:50%;background:#2FCB6B;color:#fff;display:grid;place-items:center;box-shadow:0 12px 28px -8px rgba(47,203,107,.7);transition:transform .3s var(--ease)}
 .wa:hover{transform:scale(1.08)}
 .wa svg{width:32px;height:32px}
 
 /* ===== pecas desenhadas (aparecem enquanto nao tem foto) ===== */
-.m{--t1:#FFE3EF;--t2:#F9B9D4;--tx:#B73A77;--tx2:#7E4A9E;--paper:#FFF9FC;position:relative;container-type:inline-size;width:100%;border-radius:8px;overflow:hidden;background:linear-gradient(165deg,var(--t1),var(--t2));color:var(--tx);box-shadow:0 16px 36px -16px rgba(45,37,71,.45);text-align:center}
-.m[data-t="lavanda"]{--t1:#F3ECFC;--t2:#CDB5EE;--tx:#6C45A8;--tx2:#B04A86}
-.m[data-t="noite"]{--t1:#5A3E9C;--t2:#241A48;--tx:#FBD3E6;--tx2:#E4D2FF;--paper:#FFF7FB}
-.m[data-t="menta"]{--t1:#E2F5EE;--t2:#F8D6E6;--tx:#7B55B8;--tx2:#C0508C}
+.m{position:relative;container-type:inline-size;width:100%;overflow:hidden;background:linear-gradient(165deg,var(--t1),var(--t2));color:var(--tx);box-shadow:0 14px 30px -14px rgba(58,43,68,.45);text-align:center;border-radius:8px}
 .m .nm{font-family:var(--script);line-height:.95;display:block}
-.m .up{font-weight:700;letter-spacing:.24em;text-transform:uppercase;display:block}
-.m .sp{position:absolute;color:var(--tx2);opacity:.7;font-size:7cqw;line-height:1;animation:twinkle 3s ease-in-out infinite}
-.m .sp:nth-of-type(2){animation-delay:-1s}.m .sp:nth-of-type(3){animation-delay:-2s}
+.m .up{font-weight:700;letter-spacing:.22em;text-transform:uppercase;display:block}
+.m .sp{position:absolute;color:var(--tx2);opacity:.75;font-size:7cqw;line-height:1}
 .m .bar{display:block;height:1.6cqw;border-radius:2px;background:currentColor;opacity:.25;margin-inline:auto}
-
-/* celular */
-.m-phone{aspect-ratio:9/18.6;border-radius:15%/7.3%;padding:3.6%;background:#241C38;box-shadow:0 22px 40px -18px rgba(45,37,71,.6)}
-.m-phone .notch{position:absolute;top:4.2%;left:50%;translate:-50% 0;width:30%;height:2.6%;border-radius:99px;background:#241C38;z-index:3}
-.m-phone .scr{position:relative;height:100%;border-radius:12cqw;background:linear-gradient(170deg,var(--t1),var(--t2));overflow:hidden;display:grid;align-content:center;justify-items:center;gap:3.2cqw;padding:16cqw 8cqw 10cqw}
+.m-phone{aspect-ratio:9/18.6;border-radius:15%/7.3%;padding:3.6%;background:#2A2131}
+.m-phone .notch{position:absolute;top:4.2%;left:50%;translate:-50% 0;width:30%;height:2.6%;border-radius:99px;background:#2A2131;z-index:3}
+.m-phone .scr{position:relative;height:100%;border-radius:12cqw;background:linear-gradient(170deg,var(--t1),var(--t2));overflow:hidden;display:grid;align-content:center;justify-items:center;gap:3cqw;padding:16cqw 7cqw 10cqw}
 .m-phone .up{font-size:5cqw}
-.m-phone .nm{font-size:26cqw}
-.m-phone .msg{font-size:5.4cqw;font-weight:500;color:var(--tx2);line-height:1.35;max-width:80%}
-.m-phone .when{display:flex;align-items:center;gap:4cqw;font-weight:800;font-size:11cqw;line-height:1}
-.m-phone .when i{font-style:normal;font-size:5cqw;opacity:.7}
-.m-phone .when small{display:block;font-size:4.2cqw;font-weight:600;letter-spacing:.1em;opacity:.8;margin-top:1cqw}
+.m-phone .nm{font-size:25cqw}
+.m-phone .msg{font-size:5.2cqw;font-weight:500;color:var(--tx2);line-height:1.35;max-width:84%}
+.m-phone .when{display:flex;align-items:center;gap:6cqw;font-weight:800;font-size:11cqw;line-height:1}
+.m-phone .when small{display:block;font-size:4cqw;font-weight:600;letter-spacing:.1em;opacity:.8;margin-top:1cqw}
 .m-phone .btns{display:flex;gap:4cqw;margin-top:3cqw}
-.m-phone .btns span{display:grid;justify-items:center;gap:1.5cqw;font-size:4.2cqw;font-weight:600;color:var(--tx2)}
-.m-phone .btns i{width:15cqw;height:15cqw;border-radius:50%;background:var(--paper);display:grid;place-items:center;box-shadow:0 2cqw 4cqw rgba(0,0,0,.08)}
-.m-phone .btns svg{width:7.5cqw;height:7.5cqw;color:var(--tx)}
-[data-t="noite"] .btns svg{color:#5A3E9C}
-
-/* envelope */
+.m-phone .btns span{display:grid;justify-items:center;gap:1.5cqw;font-size:4cqw;font-weight:600;color:var(--tx2)}
+.m-phone .btns i{width:14cqw;height:14cqw;border-radius:50%;background:#fff;display:grid;place-items:center;box-shadow:0 2cqw 4cqw rgba(0,0,0,.08);color:var(--tp)}
+.m-phone .btns svg{width:7cqw;height:7cqw}
+.m-art{aspect-ratio:9/16;border-radius:5%/3%;display:grid;align-content:center;justify-items:center;gap:3cqw;padding:12% 9%}
+.m-art .frame{position:absolute;inset:4.5%;border:1.5px solid currentColor;opacity:.3;border-radius:4cqw}
+.m-art .nm{font-size:30cqw}
+.m-art .up{font-size:5.5cqw}
+.m-art .dt{font-weight:800;font-size:13cqw;line-height:1}
+.m-art .msg{font-size:5.6cqw;color:var(--tx2);font-weight:500;line-height:1.35}
 .m-env{aspect-ratio:3/4.3;border-radius:6%/4.2%;display:flex;flex-direction:column;align-items:center;padding:9% 7% 8%;cursor:pointer}
 .m-env .ttl{position:relative;z-index:1;transition:opacity .5s,transform .6s var(--ease)}
 .m-env .ttl .nm{font-size:25cqw}
@@ -267,95 +335,86 @@ p{margin:0}
 .env{position:relative;margin-top:auto;width:100%;aspect-ratio:1.45/1;perspective:500px}
 .env>*{position:absolute;inset:0}
 .env-back{background:#EFE3EA;border-radius:2cqw}
-.env-letter{z-index:1;inset:6% 6% 10%;background:var(--paper);border-radius:1.5cqw;display:grid;align-content:center;justify-items:center;gap:1cqw;color:var(--tx);transition:transform .8s var(--ease) .15s;box-shadow:0 1cqw 3cqw rgba(0,0,0,.08)}
-[data-t="noite"] .env-letter{color:#5A3E9C}
+.env-letter{z-index:1;inset:6% 6% 10%;background:#FFFBFD;border-radius:1.5cqw;display:grid;align-content:center;justify-items:center;gap:1cqw;color:var(--tp);transition:transform .8s var(--ease) .15s;box-shadow:0 1cqw 3cqw rgba(0,0,0,.08)}
 .env-letter .nm{font-size:15cqw}
 .env-letter .up{font-size:3.6cqw}
 .env-front{background:#FBF4F7;border-radius:2cqw;clip-path:polygon(0 0,50% 52%,100% 0,100% 100%,0 100%);z-index:2;display:flex;align-items:flex-end;justify-content:center;padding-bottom:9%}
 .env-front span{font-family:Georgia,serif;font-size:4.4cqw;color:#8C7A86}
-.env-flap{height:62%;background:#F6EBF1;clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:top;transition:transform .6s var(--ease),z-index 0s .3s;z-index:3;filter:drop-shadow(0 1cqw 1cqw rgba(0,0,0,.1))}
-.seal{inset:auto!important;left:50%!important;top:46%;translate:-50% -50%;width:17cqw;height:17cqw;border-radius:50%;background:radial-gradient(circle at 35% 30%,#D46AA0,#9B2F6C 70%);color:#FFE0EE;display:grid;place-items:center;font-family:Georgia,serif;font-weight:700;font-size:6.5cqw;z-index:4;box-shadow:0 1cqw 2cqw rgba(0,0,0,.25),inset 0 0 0 1.4cqw rgba(255,255,255,.12);transition:opacity .3s,transform .4s var(--ease)}
+.env-flap{height:62%;background:#F6EBF1;clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:top;transition:transform .6s var(--ease),z-index 0s .3s;z-index:3}
+.seal{inset:auto!important;left:50%!important;top:46%;translate:-50% -50%;width:17cqw;height:17cqw;border-radius:50%;background:radial-gradient(circle at 35% 30%,#E7C77E,#A87F2E 70%);color:#fff;display:grid;place-items:center;font-family:Georgia,serif;font-weight:700;font-size:6.5cqw;z-index:4;box-shadow:0 1cqw 2cqw rgba(0,0,0,.25),inset 0 0 0 1.4cqw rgba(255,255,255,.15);transition:opacity .3s,transform .4s var(--ease)}
 .m-env.open .seal{opacity:0;transform:scale(.6)}
 .m-env.open .env-flap{transform:rotateX(180deg);z-index:0;transition:transform .6s var(--ease),z-index 0s .25s}
 .m-env.open .env-letter{transform:translateY(-64%)}
 .m-env.open .ttl{opacity:0;transform:translateY(-10%)}
-
-/* cartao / save the date */
-.m-card{aspect-ratio:3/4.2;display:grid;align-content:center;justify-items:center;gap:3cqw;padding:10% 8%}
-.m-card .big{font-weight:800;font-size:15cqw;line-height:.9;letter-spacing:-.01em;color:var(--tx)}
-.m-card .big em{font-family:var(--script);font-style:normal;font-weight:400;font-size:.8em;color:var(--tx2);display:block;margin-block:-2cqw}
-.m-card .nm{font-size:22cqw}
-.m-card .dt{font-weight:700;font-size:7cqw;letter-spacing:.1em}
-.m-card .frame{position:absolute;inset:4.5%;border:1.5px solid currentColor;opacity:.3;border-radius:5cqw}
-
-/* identidade */
-.m-id{aspect-ratio:1/1;border-radius:10%;display:grid;align-content:center;justify-items:center;gap:5cqw;padding:10%;background:var(--paper)}
+.m-std{aspect-ratio:3/4.2;display:grid;align-content:center;justify-items:center;gap:3cqw;padding:10% 8%}
+.m-std .big{font-weight:900;font-size:15cqw;line-height:.9}
+.m-std .big em{font-family:var(--script);font-style:normal;font-weight:400;font-size:.85em;color:var(--tx2);display:block;margin-block:-2cqw}
+.m-std .nm{font-size:22cqw}
+.m-std .dt{font-weight:700;font-size:7cqw;letter-spacing:.1em}
+.m-std .frame{position:absolute;inset:4.5%;border:1.5px solid currentColor;opacity:.3;border-radius:5cqw}
+.m-id{aspect-ratio:1/1;border-radius:10%;display:grid;align-content:center;justify-items:center;gap:5cqw;padding:10%;background:#FFFBFD;color:var(--tp)}
 .m-id .mono{width:50cqw;height:50cqw;border-radius:50%;display:grid;place-items:center;background:linear-gradient(165deg,var(--t1),var(--t2));color:var(--tx);font-family:var(--script);font-size:24cqw;position:relative}
 .m-id .mono::after{content:"";position:absolute;inset:3cqw;border:1px solid currentColor;opacity:.35;border-radius:50%}
-.m-id[data-t="noite"]{color:#5A3E9C}
 .m-id .nm{font-size:14cqw}
 .m-id .sw{display:flex;gap:3cqw}
-.m-id .sw i{width:9cqw;height:9cqw;border-radius:50%;box-shadow:0 0 0 1px rgba(0,0,0,.06)}
-
-/* cardapio */
-.m-menu{aspect-ratio:1/2;padding:12% 10%;display:grid;align-content:start;justify-items:center;gap:6cqw;background:var(--paper)}
-.m-menu[data-t="noite"]{color:#5A3E9C;--tx2:#B04A86}
-.m-menu::before{content:"";position:absolute;inset:0 0 auto;height:18%;background:linear-gradient(180deg,var(--t2),transparent);opacity:.5}
+.m-id .sw i{width:9cqw;height:9cqw;border-radius:50%;box-shadow:0 0 0 1px rgba(0,0,0,.08)}
+.m-menu{aspect-ratio:1/2;padding:12% 10%;display:grid;align-content:start;justify-items:center;gap:6cqw;background:#FFFBFD;color:var(--tp)}
+.m-menu::before{content:"";position:absolute;inset:0 0 auto;height:18%;background:linear-gradient(180deg,var(--t2),transparent);opacity:.6}
 .m-menu .nm{font-size:30cqw;position:relative}
 .m-menu .it{display:grid;gap:2.4cqw;width:100%}
 .m-menu .it b{font-family:var(--script);font-weight:400;font-size:17cqw;line-height:1;color:var(--tx2)}
-
-/* placa de mesa */
 .m-table{aspect-ratio:1/1.1;display:grid;align-content:center;justify-items:center;padding:8%;border-radius:6%/5%}
 .m-table .up{font-size:8cqw}
-.m-table .num{font-weight:800;font-size:52cqw;line-height:1}
+.m-table .num{font-weight:900;font-size:50cqw;line-height:1}
 .m-table .nm{font-size:16cqw;color:var(--tx2)}
-
-/* boas-vindas */
 .m-welcome{aspect-ratio:3/4;border-radius:50% 50% 5% 5%/37% 37% 4% 4%;display:grid;align-content:center;justify-items:center;gap:3cqw;padding:12%}
 .m-welcome .arc{position:absolute;inset:4.5%;border:1.5px solid currentColor;opacity:.35;border-radius:inherit}
-.m-welcome .nm{font-size:25cqw}
+.m-welcome .nm{font-size:24cqw}
 .m-welcome .up{font-size:5.4cqw}
-
-/* projeto decoracao */
 .m-deco{aspect-ratio:4/3;background:#fff}
-.m-deco .grid{position:absolute;inset:0;background-image:linear-gradient(#F1E8FC 1px,transparent 1px),linear-gradient(90deg,#F1E8FC 1px,transparent 1px);background-size:6cqw 6cqw}
+.m-deco .grid{position:absolute;inset:0;background-image:linear-gradient(#F1E8FA 1px,transparent 1px),linear-gradient(90deg,#F1E8FA 1px,transparent 1px);background-size:6cqw 6cqw}
 .m-deco svg{position:relative;width:100%;height:100%;display:block}
-.m-deco .lbl{position:absolute;left:4cqw;top:4cqw;z-index:1;background:#fff;padding:1cqw 2.5cqw;border-radius:99px;font-size:4.6cqw;font-weight:700;color:var(--purple-deep);letter-spacing:.06em;box-shadow:0 0 0 1px #E4D8F5}
+.m-deco .lbl{position:absolute;left:4cqw;top:4cqw;z-index:1;background:#fff;padding:1cqw 2.5cqw;border-radius:99px;font-size:4.6cqw;font-weight:700;color:var(--lilac-deep);box-shadow:0 0 0 1px #F1E8FA}
+.combo{position:relative;width:100%;aspect-ratio:1/1}
+.combo>div{position:absolute}
 
 /* aparecer ao rolar */
-.anim .rv{opacity:0;transform:translateY(34px);transition:opacity .9s var(--ease),transform .9s var(--ease);transition-delay:var(--d,0s)}
+.anim .rv{opacity:0;transform:translateY(28px);transition:opacity .8s var(--ease),transform .8s var(--ease);transition-delay:var(--d,0s)}
 .anim .rv.in{opacity:1;transform:none}
 
-@media (max-width:1000px){
-  .nav{display:none}
-  .menu-btn{display:grid}
-  .prod-grid{grid-template-columns:1fr 1fr}
+@media (max-width:1060px){
+  .hnav{display:none}
+  .menu-toggle{display:grid}
+  .grid-prod{grid-template-columns:repeat(3,1fr)}
+  #homeOutras{max-width:none}
+  .themes{grid-template-columns:1fr 1fr}
   .steps{grid-template-columns:1fr 1fr}
-  .svc-grid{grid-template-columns:1fr 1fr}
+  .footer .wrap{grid-template-columns:1fr 1fr}
 }
 @media (max-width:720px){
-  body{font-size:16px}
-  .header .wrap{height:68px;gap:10px}
-  .tabs-bar{top:calc(env(safe-area-inset-top,0px) + 68px)}
-  .logo .sc{font-size:34px}
-  .header .btn{padding:11px 18px;font-size:14px}
-  .occ-grid,.svc-grid,.steps,.prod-grid,.about,.others{grid-template-columns:1fr}
-  .occ{min-height:0;padding:28px 24px}
-  .occ-peek{width:92px;align-self:end;margin-bottom:-40px}
-  .showcase>.card{border-radius:20px;flex-basis:33%}
-  .showcase>.card:nth-child(2){flex-basis:44%}
-  .about-pic{max-width:380px;justify-self:center;width:100%}
-  .btn{padding:15px 26px}
-  .ctas{flex-direction:column;align-items:center}
-  .tabs{max-width:100%;margin-inline:0}
-  .tabs button{padding:11px 18px;font-size:14px}
-  .podium{border-radius:24px;aspect-ratio:1/0.82}
-  .pz1{left:3%;width:30%}.pz2{left:26%;width:31%}.pz3{left:54%;width:19%}.pz4{right:3%;width:24%}.pz5{left:64%;width:17%}
+  .grid-prod,#homeOutras{grid-template-columns:1fr 1fr;gap:12px}
+  .prod-body{padding:12px 12px 14px}
+  .prod h3{font-size:15px}
+  .prod .price b{font-size:14.5px}
+  .prod .actions{flex-direction:column}
+  .themes,.steps,.about{grid-template-columns:1fr}
+  .theme-card{min-height:170px}
+  .quick{grid-template-columns:1fr 1fr}
+  .modal{padding:0;align-items:end}
+  .modal-box{display:block;border-radius:26px 26px 0 0;max-height:94svh}
+  .modal-media{min-height:0;aspect-ratio:1/0.9;padding:8% 20%}
+  .modal-info{padding:24px 20px calc(26px + env(safe-area-inset-bottom,0px))}
+  .list-head .wrap{grid-template-columns:1fr}
+  .list-head .peeks{display:none}
+  .about-pic{max-width:340px;justify-self:center;width:100%}
+  .b-cta{flex-direction:column;align-items:center;margin-top:-20px}
+  .b-art{aspect-ratio:1/0.95}
+  .b-photo{left:20%;right:20%}
+  .fl1{left:0;width:26%}.fl2{right:0;width:24%}.fl3{left:17%;width:17%}.fl4{right:15%;width:18%}
 }
-@media (max-width:400px){
-  .header .btn{padding:10px 14px;font-size:13px}
-  .logo small{display:none}
+@media (max-width:380px){
+  .logo-text small{display:none}
+  .header>.wrap{gap:6px}
 }
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important}
@@ -365,170 +424,211 @@ p{margin:0}
 </head>
 <body>
 
+<div class="promo" id="promo">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="3.5" y="8" width="17" height="4" rx="1"/><path d="M5 12v8h14v-8M12 8v12M12 8c-1.5-3.5-5.5-3.5-5-1s5 1 5 1Zm0 0c1.5-3.5 5.5-3.5 5-1s-5 1-5 1Z"/></svg>
+  <span id="promoText"></span>
+</div>
+
 <header class="header" id="header">
   <div class="wrap">
     <a class="logo" href="#inicio" aria-label="Mary Criativa, início">
-      <span class="sc">Mary</span>
-      <small>CRIATIVA</small>
+      <span class="logo-mark">M</span>
+      <span class="logo-text"><span class="sc">Mary</span><small>CRIATIVA</small></span>
     </a>
-    <nav class="nav" aria-label="Menu principal">
-      <a href="#catalogos">Catálogos</a>
-      <a href="#servicos">Serviços</a>
-      <a href="#como-funciona">Como funciona</a>
-      <a href="#sobre">Sobre</a>
-    </nav>
-    <a class="btn btn-grad btn-sm js-wa" href="#" data-msg="Oi Mary! Vim pelo site e quero fazer um orçamento.">Fazer orçamento</a>
-    <button class="menu-btn" id="menuBtn" aria-label="Abrir menu" aria-expanded="false" aria-controls="sheet">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    <nav class="hnav" id="hnav" aria-label="Menu principal"></nav>
+    <button class="icon-btn search" id="openSearch" aria-label="Buscar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></svg></button>
+    <button class="icon-btn" id="openCart" aria-label="Abrir orçamento">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 7V6a5 5 0 0 1 10 0v1h2.2a1 1 0 0 1 1 .9l1 12.6A2.3 2.3 0 0 1 19 23H5a2.3 2.3 0 0 1-2.2-2.5l1-12.6a1 1 0 0 1 1-.9Zm2 0h6V6a3 3 0 0 0-6 0Z"/></svg>
+      <span class="badge" id="cartCount">0</span>
+    </button>
+    <button class="icon-btn menu-toggle" id="menuBtn" aria-label="Abrir menu" aria-expanded="false" aria-controls="accPanel">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" id="menuIcon"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
     </button>
   </div>
+  <div class="drop" id="drop"><div class="wrap"><div class="drop-grid" id="dropGrid"></div></div></div>
 </header>
 
-<div class="sheet" id="sheet" aria-hidden="true">
-  <div class="sheet-panel" role="dialog" aria-label="Menu">
-    <button class="sheet-close" id="sheetClose" aria-label="Fechar menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
-    <a href="#inicio">Início <span>→</span></a>
-    <span class="label">Catálogos</span>
-    <div id="sheetOcc"></div>
-    <span class="label">Mais</span>
-    <a href="#servicos">Serviços <span>→</span></a>
-    <a href="#como-funciona">Como funciona <span>→</span></a>
-    <a href="#sobre">Sobre a Mary <span>→</span></a>
-    <a href="#contato">Contato <span>→</span></a>
-    <a class="btn btn-grad js-wa" href="#" data-msg="Oi Mary! Vim pelo site e quero fazer um orçamento.">Fazer orçamento</a>
-  </div>
-</div>
+<div class="acc-panel" id="accPanel" aria-hidden="true"></div>
 
 <main>
-<!-- ================= INICIO ================= -->
+<!-- ============ INICIO ============ -->
 <div class="view" id="home">
-  <section class="hero" id="inicio">
-    <svg class="star" style="left:8%;top:18%" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-star"/></svg>
-    <svg class="star" style="right:10%;top:34%;animation-delay:-1.2s" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-star"/></svg>
-    <svg class="star" style="left:14%;top:62%;animation-delay:-2.2s;width:16px" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-star"/></svg>
+  <section class="banner" id="inicio">
+    <span class="ribbon r1"></span><span class="ribbon r2"></span><span class="ribbon r3"></span>
+    <svg class="heart" style="left:6%;top:42%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10Z"/></svg>
+    <svg class="heart" style="right:8%;top:22%;animation-delay:-2s" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10Z"/></svg>
     <div class="wrap">
-      <span class="chip intro"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-star"/></svg>Convites e identidade para eventos</span>
-      <h1 class="intro d1">Deixando seu evento <span class="sc">encantador</span> do jeitinho que você sonhou</h1>
-      <p class="hero-lead intro d2">Convites digitais, identidade visual, cardápios, placas e o projeto da decoração, tudo criado com carinho e sob medida para a sua festa.</p>
-      <div class="showcase" id="showcase"></div>
-      <span class="hint intro d3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M9 11V6a2 2 0 1 1 4 0v5m0-1a2 2 0 1 1 4 0v3a6 6 0 0 1-6 6h-.5a6 6 0 0 1-5-2.7L3.8 14a1.7 1.7 0 0 1 2.8-2L9 14"/></svg>Toque no envelope para abrir o convite</span>
-      <div class="ctas intro d4">
-        <a class="btn btn-grad js-wa" href="#" data-msg="Oi Mary! Vim pelo site e quero fazer um orçamento.">Solicitar orçamento</a>
-        <a class="btn btn-line" href="#catalogos">Ver catálogos</a>
+      <h1 class="b-title">
+        <span class="big gold">OS CONVITES</span>
+        <span class="sc">mais encantadores</span>
+        <small>VOCÊ ENCONTRA AQUI!</small>
+      </h1>
+      <p class="b-lead">Escolha o seu tema favorito e surpreenda seus convidados antes mesmo da festa começar.</p>
+      <div class="b-art" id="bArt" aria-hidden="true">
+        <div class="b-photo"><span class="sc">M</span><img src="img/mary-banner.png" alt="" onerror="this.remove()"></div>
+      </div>
+      <div class="b-cta">
+        <a class="btn btn-pink" href="#temas">Escolher meu tema</a>
+        <a class="btn btn-line js-wa" href="#" data-msg="Oi Mary! Vim pelo site e quero fazer um orçamento.">Falar com a Mary</a>
       </div>
     </div>
   </section>
 
-  <div class="ticker" aria-hidden="true"><div class="ticker-track" id="ticker"></div></div>
-
-  <section class="sec" id="catalogos">
+  <section class="sec" id="eventos">
     <div class="wrap">
-      <div class="head rv">
-        <span class="eyebrow">Catálogos por ocasião</span>
-        <h2>Encontre o convite <span class="sc">perfeito</span> para o seu momento</h2>
-      </div>
-      <div class="occ-grid" id="occGrid"></div>
+      <div class="sec-title rv"><h2><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg>Escolha o evento</h2><span class="rule"></span></div>
+      <div class="quick" id="quickEvents"></div>
     </div>
   </section>
 
-  <section class="sec" id="servicos" style="padding-top:0">
+  <section class="sec" id="temas" style="background:var(--blush)">
     <div class="wrap">
-      <div class="head rv">
-        <span class="eyebrow">O que a Mary cria</span>
-        <h2>Tudo combinando, do convite à <span class="sc">decoração</span></h2>
-        <p>Você pode escolher uma peça só ou montar o kit completo com a mesma identidade.</p>
+      <div class="sec-title rv">
+        <h2><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a6 6 0 0 0-6 6c0 3.8 4.2 7.3 5.4 8.2a1 1 0 0 0 1.2 0C13.8 15.3 18 11.8 18 8a6 6 0 0 0-6-6Zm-1 15.5h2l-.5 4.5h-1Z"/></svg>Navegue por tema</h2>
+        <span class="rule"></span>
+        <p>Temas para aniversário, 15 anos, casamento, chá de bebê e muito mais.</p>
       </div>
-      <div class="svc-grid" id="svcGrid"></div>
+      <div class="themes" id="themeGrid"></div>
+      <div class="more-row"><button class="btn btn-line" id="moreThemes">Ver todos os temas</button></div>
     </div>
   </section>
 
-  <section class="sec" id="como-funciona" style="background:var(--grad-soft)">
+  <section class="sec" id="tipos">
     <div class="wrap">
-      <div class="head rv">
-        <span class="eyebrow">Como funciona</span>
-        <h2>Do primeiro oi até o <span class="sc">grande dia</span></h2>
-      </div>
+      <div class="sec-title rv"><h2><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="m3.5 7 8.5 6 8.5-6"/></svg>Tipos de convite</h2><span class="rule"></span>
+        <p>Toque em um convite para ver os detalhes e montar o seu orçamento.</p></div>
+      <div class="grid-prod" id="homeConvites"></div>
+    </div>
+  </section>
+
+  <section class="sec" id="outras" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-title rv"><h2><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3a9 9 0 1 0 0 18c1 0 1.5-.8 1.5-1.5 0-1.3-1-1.5-1-2.5 0-.8.7-1.5 1.5-1.5H16a5 5 0 0 0 5-5c0-4.1-4-7.5-9-7.5Z"/><circle cx="7.5" cy="11" r="1.2"/><circle cx="10.5" cy="7" r="1.2"/><circle cx="15" cy="7.5" r="1.2"/></svg>Outras artes</h2><span class="rule"></span>
+        <p>Tudo combinando com o seu convite, do cardápio ao projeto da decoração.</p></div>
+      <div class="grid-prod" id="homeOutras"></div>
+    </div>
+  </section>
+
+  <section class="sec" id="como-funciona" style="background:linear-gradient(180deg,#FBF3FF,#FFF5F8)">
+    <div class="wrap">
+      <div class="sec-title rv"><h2>Como funciona</h2><span class="rule"></span></div>
       <div class="steps">
-        <div class="step rv"><b>1</b><h3>Me chama</h3><p>Conta no WhatsApp a data, o tema e o que você precisa.</p></div>
-        <div class="step rv" style="--d:.1s"><b>2</b><h3>Orçamento</h3><p>Você recebe os valores e escolhe modelo do catálogo ou personalizado.</p></div>
-        <div class="step rv" style="--d:.2s"><b>3</b><h3>Criação</h3><p>Eu crio as peças e você acompanha e pede os ajustes.</p></div>
-        <div class="step rv" style="--d:.3s"><b>4</b><h3>Entrega</h3><p>Tudo pronto para enviar aos convidados ou imprimir.</p></div>
+        <div class="step rv"><b>1</b><h3>Escolha</h3><p>Navegue pelos temas e adicione as peças que quiser ao seu orçamento.</p></div>
+        <div class="step rv" style="--d:.08s"><b>2</b><h3>Envie</h3><p>Seu pedido vai pronto para o WhatsApp da Mary, com tudo listado.</p></div>
+        <div class="step rv" style="--d:.16s"><b>3</b><h3>Criação</h3><p>A Mary cria as artes com os seus dados e você pede os ajustes.</p></div>
+        <div class="step rv" style="--d:.24s"><b>4</b><h3>Pronto!</h3><p>Você recebe os arquivos para enviar aos convidados ou imprimir.</p></div>
       </div>
     </div>
   </section>
 
   <section class="sec" id="sobre">
     <div class="wrap about">
-      <div class="about-pic rv">
-        <span class="sc">M</span>
-        <img src="img/mary.jpg" alt="Mary, criadora da Mary Criativa" onerror="this.remove()">
-      </div>
+      <div class="about-pic rv"><span class="sc">M</span><img src="img/mary.jpg" alt="Mary, criadora da Mary Criativa" onerror="this.remove()"></div>
       <div class="about-text rv" style="--d:.1s">
-        <span class="eyebrow">Muito prazer</span>
+        <span class="kicker">Muito prazer</span>
         <h2>Eu sou a <span class="sc">Mary</span></h2>
         <p>A Mary Criativa nasceu da vontade de deixar cada festa com uma identidade só dela. Do convite que chega no celular dos convidados até a placa que recebe todo mundo na entrada, cada peça conta um pedacinho da sua história.</p>
-        <p>Eu acompanho você em cada etapa, com calma e atenção, até ficar do jeitinho que você imaginou.</p>
-        <div class="pills"><span>Convite digital</span><span>Identidade visual</span><span>Cardápios</span><span>Placas</span><span>Projeto da decoração</span></div>
+        <p>Eu acompanho você em cada etapa, com calma e carinho, até ficar do jeitinho que você sonhou.</p>
+        <a class="btn btn-gold js-wa" href="#" data-msg="Oi Mary! Vim pelo site e quero conversar sobre a minha festa.">Conversar com a Mary</a>
       </div>
     </div>
   </section>
 </div>
 
-<!-- ================= OCASIAO ================= -->
-<div class="view" id="occView" hidden>
-  <section class="o-hero">
-    <svg class="star" style="left:6%;top:24%" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-star"/></svg>
-    <svg class="star" style="right:8%;top:40%;animation-delay:-1.5s" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-star"/></svg>
+<!-- ============ LISTA (tema, evento ou produto) ============ -->
+<div class="view" id="listView" hidden>
+  <section class="list-head" id="listHead">
     <div class="wrap">
-      <a class="back" href="#catalogos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M15 5l-7 7 7 7"/></svg>Catálogos</a>
-      <h1 id="oTitle"></h1>
-      <p id="oLead"></p>
-      <div class="podium" id="podium" aria-hidden="true"></div>
+      <div>
+        <nav class="crumbs" id="crumbs" aria-label="Você está em"></nav>
+        <span class="kicker" id="listKicker"></span>
+        <h1 id="listTitle"></h1>
+        <p id="listLead"></p>
+      </div>
+      <div class="peeks" id="listPeeks" aria-hidden="true"></div>
     </div>
   </section>
-  <div class="tabs-bar"><div class="wrap"><div class="tabs" id="tabs" aria-label="Categorias"></div></div></div>
-  <div class="wrap" id="oCats"></div>
-  <section class="sec" style="padding-bottom:0">
+  <section class="sec" style="padding-top:8px">
     <div class="wrap">
-      <div class="head" style="margin-bottom:24px"><span class="eyebrow">Outras ocasiões</span></div>
-      <div class="others" id="others"></div>
+      <div class="chips" id="listChips" role="group" aria-label="Filtrar"></div>
+      <div class="grid-prod" id="listGrid"></div>
     </div>
   </section>
 </div>
-
-<section class="sec" id="contato">
-  <div class="wrap">
-    <div class="cta-box rv">
-      <svg class="star" style="left:7%;top:20%" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-star"/></svg>
-      <svg class="star" style="right:9%;bottom:22%;animation-delay:-1.6s" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-star"/></svg>
-      <span class="eyebrow" style="color:#fff;opacity:.85">Vamos conversar</span>
-      <h2>Bora criar juntas a sua <span class="sc">festa?</span></h2>
-      <p>Me conta a data e o tema que eu te ajudo a escolher as peças ideais. O orçamento é pelo WhatsApp, rapidinho.</p>
-      <div class="ctas">
-        <a class="btn btn-grad js-wa" href="#" data-msg="Oi Mary! Vim pelo site e quero fazer um orçamento.">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#i-wa"/></svg>Chamar no WhatsApp</a>
-        <a class="btn btn-line js-ig" href="#" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>Instagram</a>
-      </div>
-      <div class="contact-lines"><span id="waText"></span><span id="igText"></span></div>
-    </div>
-  </div>
-</section>
 </main>
 
-<footer class="footer">
-  <span class="sc">Mary Criativa</span>
-  <span>© <span id="year"></span> Mary Criativa. Feito com carinho.</span>
+<footer class="footer" id="contato">
+  <div class="wrap">
+    <div>
+      <a class="logo" href="#inicio"><span class="logo-mark">M</span><span class="logo-text"><span class="sc">Mary</span><small>CRIATIVA</small></span></a>
+      <p>Convites digitais, identidade visual e artes para festas, feitos com carinho.</p>
+    </div>
+    <div><h4>Eventos</h4><div id="footEvents"></div></div>
+    <div><h4>Artes</h4><div id="footArts"></div></div>
+    <div><h4>Contato</h4>
+      <a class="js-wa" href="#" data-msg="Oi Mary! Vim pelo site."><span id="waText"></span></a>
+      <a class="js-ig" href="#" target="_blank" rel="noopener"><span id="igText"></span></a>
+    </div>
+    <div class="copy">© <span id="year"></span> Mary Criativa. Feito com carinho.</div>
+  </div>
 </footer>
 
 <a class="wa js-wa" href="#" data-msg="Oi Mary! Vim pelo site e quero fazer um orçamento." aria-label="Falar no WhatsApp">
   <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#i-wa"/></svg>
 </a>
 
+<!-- busca -->
+<div class="search-panel" id="searchPanel" aria-hidden="true">
+  <div class="search-box" role="dialog" aria-label="Buscar">
+    <div class="search-row">
+      <input id="q" type="search" placeholder="Busque por tema, evento ou convite" autocomplete="off" aria-label="Buscar">
+      <button class="x" id="closeSearch" style="position:static;box-shadow:none;background:var(--blush)" aria-label="Fechar busca"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    </div>
+    <div class="results" id="results"></div>
+  </div>
+</div>
+
+<!-- produto -->
+<div class="modal" id="modal" aria-hidden="true">
+  <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="mTitle">
+    <button class="x" id="closeModal" aria-label="Fechar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    <div class="modal-media" id="mMedia"></div>
+    <div class="modal-info">
+      <span class="kicker" id="mKicker"></span>
+      <h3 id="mTitle"></h3>
+      <p id="mDesc"></p>
+      <ul id="mList"></ul>
+      <div class="field"><label for="mTema">Tema</label><select id="mTema"></select></div>
+      <div class="field"><label for="mEvento">Evento</label><select id="mEvento"></select></div>
+      <div class="field"><span class="lbl">Versão</span><div class="seg" id="mVersao"></div></div>
+      <button class="btn btn-pink btn-block" id="mAdd">Adicionar ao orçamento</button>
+      <a class="btn btn-line btn-block" id="mWa" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#i-wa"/></svg>Pedir só este pelo WhatsApp</a>
+    </div>
+  </div>
+</div>
+
+<!-- carrinho de orcamento -->
+<div class="cart" id="cart" aria-hidden="true">
+  <div class="cart-panel" role="dialog" aria-label="Meu orçamento">
+    <div class="cart-head"><h3>Meu orçamento</h3><button class="x" id="closeCart" aria-label="Fechar orçamento"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-foot" id="cartFoot">
+      <div class="row">
+        <div class="field"><label for="cNome">Seu nome</label><input id="cNome" autocomplete="name"></div>
+        <div class="field"><label for="cData">Data da festa</label><input id="cData" type="date"></div>
+      </div>
+      <a class="btn btn-pink btn-block" id="cSend" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#i-wa"/></svg>Enviar pelo WhatsApp</a>
+      <p class="note">A Mary responde com os valores e prazos.</p>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"><svg viewBox="0 0 24 24" fill="currentColor"><use href="#i-star"/></svg><span id="toastText"></span></div>
+
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
-    <symbol id="i-star" viewBox="0 0 24 24"><path fill="currentColor" d="M12 1.5c.6 5.4 3.9 9.2 10.5 10.5-6.6 1.3-9.9 5.1-10.5 10.5C11.4 17.1 8.1 13.3 1.5 12 8.1 10.7 11.4 6.9 12 1.5Z"/></symbol>
-    <symbol id="i-wa" viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.130 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21c5.46 0 9.91-4.45 9.910-9.91S17.5 2 12.04 2Zm0 18.15a8.2 8.2 0 0 1-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.21 8.21 0 0 1 6.99-12.53c4.54 0 8.23 3.7 8.23 8.24s-3.69 8.15-8.23 8.15Zm4.52-6.16c-.25-.12-1.470-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.16.04-.31-.02-.43-.06-.13-.56-1.35-.77-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28Z"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 1.5c.6 5.4 3.9 9.2 10.5 10.5-6.6 1.3-9.9 5.1-10.5 10.5C11.4 17.1 8.1 13.3 1.5 12 8.1 10.7 11.4 6.9 12 1.5Z"/></symbol>
+    <symbol id="i-wa" viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2Zm0 18.15a8.2 8.2 0 0 1-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.21 8.21 0 0 1 6.99-12.53c4.54 0 8.23 3.7 8.23 8.24s-3.69 8.15-8.23 8.15Zm4.52-6.16c-.25-.12-1.47-.72-1.690-.81-.23-.08-.39-.12-.56.13-.16.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.16.04-.31-.02-.43-.06-.13-.56-1.35-.77-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28Z"/></symbol>
   </defs>
 </svg>
 
@@ -539,268 +639,453 @@ p{margin:0}
 const CONFIG = {
   whatsapp: "5500000000000",           // só números: 55 + DDD + número
   whatsappTexto: "(00) 0 0000-0000",   // como aparece no site
-  instagram: "marycriativa"            // sem o @
+  instagram: "marycriativa",           // sem o @
+  // Faixa do topo. Para um cupom, use por exemplo: '1ª compra? Use <b>PRIMEIRAMARY</b> e ganhe 5% OFF'
+  faixa: 'Orçamento rapidinho pelo <b>WHATSAPP</b> ✦ artes sob medida para a sua festa'
 };
 
-/* Ocasiões (cada uma vira um catálogo). "exemplo" é o que aparece desenhado nas peças. */
-const OCASIOES = [
-  { id: "aniversario", nome: "Aniversário", cartao: "Convites de Festa", texto: "Confira todas as artes para aniversários",
-    titulo: ["Convites de", "Aniversário", "pra encantar"], lead: "De temas fofos para os pequenos a festas sofisticadas para adultos, com convite, cardápio e placas combinando.",
-    cor: "var(--pink-soft)", icone: "bolo",
-    exemplo: { tema: "rosa", nome: "Alice", topo: "Convite especial", sub: "faz 1 aninho", data: "22/02", hora: "15:00", ini: "A", num: "3", msg: "Venha comemorar esse dia tão especial!" } },
-  { id: "casamento", nome: "Casamento", cartao: "Convites de Casamento", texto: "Confira todas as artes para casamentos",
-    titulo: ["Convites de", "Casamento", "inesquecíveis"], lead: "Do save the date à placa de boas-vindas, tudo com a identidade de vocês dois.",
-    cor: "var(--lilac)", icone: "aliancas",
-    exemplo: { tema: "lavanda", nome: "Ana & Leo", topo: "Vamos casar", sub: "vamos casar", data: "12/12", hora: "19:00", ini: "A&L", num: "8", msg: "Celebre esse dia com a gente!" } },
-  { id: "15-anos", nome: "15 anos", cartao: "Convites de 15 Anos", texto: "Confira todas as artes para debutantes",
-    titulo: ["Convites de", "15 Anos", "de princesa"], lead: "Artes luxuosas e cheias de brilho para uma noite que ela nunca vai esquecer.",
-    cor: "#EADFFB", icone: "coroa",
-    exemplo: { tema: "noite", nome: "Júlia", topo: "Meus 15 anos", sub: "meus 15 anos", data: "20/03", hora: "21:00", ini: "15", num: "5", msg: "Uma noite mágica te espera!" } },
-  { id: "cha-de-bebe", nome: "Chá e batizado", cartao: "Chá de Bebê e Batizado", texto: "Confira todas as artes para os pequenos",
-    titulo: ["Convites de", "Chá de Bebê", "tão fofinhos"], lead: "Chá de bebê, chá revelação e batizado com artes delicadas e cheias de carinho.",
-    cor: "var(--mint)", icone: "bebe",
-    exemplo: { tema: "menta", nome: "Helena", topo: "Chá de bebê", sub: "chá de bebê", data: "08/11", hora: "16:00", ini: "H", num: "2", msg: "Estamos esperando você!" } }
+/* Temas. t1/t2 = fundo, tx = cor principal, tx2 = detalhe, tp = cor do texto no papel claro, ex/sub = exemplo nos desenhos */
+const TEMAS = [
+  { id: "jardim", nome: "Jardim", desc: "Flores, folhagens e muita delicadeza.", t1: "#FDF0F4", t2: "#F6C6D6", tx: "#B5487A", tx2: "#6F9455", tp: "#B5487A", ex: "Alice", sub: "faz 1 aninho" },
+  { id: "borboletas", nome: "Borboletas", desc: "Leve, colorido e cheio de encanto.", t1: "#F4ECFD", t2: "#D9C2F2", tx: "#7B4FB8", tx2: "#D46A9E", tp: "#7B4FB8", ex: "Sofia", sub: "faz 4 anos" },
+  { id: "princesas", nome: "Princesas", desc: "Coroas, brilho e um toque de magia.", t1: "#FFE6F1", t2: "#F7B3D1", tx: "#C23D7E", tx2: "#B8893A", tp: "#C23D7E", ex: "Laura", sub: "faz 5 anos" },
+  { id: "realeza", nome: "Realeza", desc: "Luxo e elegância em roxo e dourado.", t1: "#4A3380", t2: "#21173F", tx: "#F2D58E", tx2: "#E7C6F0", tp: "#5A3E9C", ex: "Júlia", sub: "meus 15 anos", dark: true },
+  { id: "safari", nome: "Safari", desc: "Bichinhos da selva para os aventureiros.", t1: "#F7EEDD", t2: "#E5CB9F", tx: "#7A5530", tx2: "#5E7A3A", tp: "#7A5530", ex: "Theo", sub: "faz 2 anos" },
+  { id: "fazendinha", nome: "Fazendinha", desc: "Vaquinha, cavalinho e muita fofura.", t1: "#FFF3E6", t2: "#F9D3C4", tx: "#B8573A", tx2: "#6D9A4F", tp: "#B8573A", ex: "Maria", sub: "faz 1 aninho" },
+  { id: "fundo-do-mar", nome: "Fundo do Mar", desc: "Conchas, peixinhos e ondas azuis.", t1: "#E3F4F8", t2: "#B8DCEB", tx: "#2F6F94", tx2: "#E07A9A", tp: "#2F6F94", ex: "Davi", sub: "faz 3 anos" },
+  { id: "unicornio", nome: "Unicórnio", desc: "Arco-íris, estrelas e tons pastel.", t1: "#FDEBFA", t2: "#D8C6F5", tx: "#A64CA6", tx2: "#3FA3BC", tp: "#A64CA6", ex: "Lara", sub: "faz 6 anos" },
+  { id: "confeitaria", nome: "Confeitaria", desc: "Docinhos, cupcakes e cores de bala.", t1: "#FFF0F3", t2: "#FAD1DC", tx: "#B9466E", tx2: "#8C5A3C", tp: "#B9466E", ex: "Bia", sub: "faz 7 anos" },
+  { id: "circo", nome: "Circo", desc: "Lona listrada, pipoca e alegria.", t1: "#FFF0E6", t2: "#F8C7C0", tx: "#C2393F", tx2: "#C9962A", tp: "#C2393F", ex: "Lucas", sub: "faz 1 aninho" },
+  { id: "dinossauros", nome: "Dinossauros", desc: "Uma aventura pré-histórica.", t1: "#E9F5E4", t2: "#C3E1B4", tx: "#3F7A3A", tx2: "#D98A2B", tp: "#3F7A3A", ex: "Pedro", sub: "faz 4 anos" },
+  { id: "arca-de-noe", nome: "Arca de Noé", desc: "Bichinhos aos pares, tons suaves.", t1: "#EEF6FA", t2: "#F6E7C8", tx: "#3C6E8F", tx2: "#B07A3A", tp: "#3C6E8F", ex: "Helena", sub: "chá de bebê" },
+  { id: "floral-boho", nome: "Floral Boho", desc: "Terracota, folhas secas e charme.", t1: "#F8EDE6", t2: "#E7C9B8", tx: "#9A5A44", tx2: "#7F8F5A", tp: "#9A5A44", ex: "Ana & Leo", sub: "vamos casar" },
+  { id: "classico", nome: "Clássico", desc: "Branco, dourado e muita elegância.", t1: "#FFFFFF", t2: "#F1E6D4", tx: "#9C7A3C", tx2: "#7B5FA0", tp: "#9C7A3C", ex: "Carla", sub: "40 anos" },
+  { id: "super-herois", nome: "Super-heróis", desc: "Poderes, raios e cores fortes.", t1: "#E8EEFB", t2: "#F5C9C9", tx: "#2A4F9E", tx2: "#D23A3A", tp: "#2A4F9E", ex: "Miguel", sub: "faz 5 anos" }
 ];
 
-/* Categorias (abas dentro de cada catálogo) */
-const CATEGORIAS = [
-  { id: "convites", nome: "Convites", texto: "Para enviar no WhatsApp e nas redes sociais." },
-  { id: "identidade", nome: "Identidade visual", texto: "A marca do seu evento, para usar em todas as peças." },
-  { id: "papelaria", nome: "Cardápios e placas", texto: "Tudo que vai para as mesas e para a entrada da festa." },
-  { id: "decoracao", nome: "Decoração", texto: "Veja a sua festa antes dela acontecer." }
+/* Eventos. "temas" = temas mostrados na página do evento */
+const EVENTOS = [
+  { id: "aniversario-infantil", nome: "Aniversário Infantil", icone: "bolo", temas: ["princesas", "safari", "unicornio", "super-herois"] },
+  { id: "aniversario-adulto", nome: "Aniversário Adulto", icone: "taca", temas: ["classico", "floral-boho", "borboletas", "realeza"] },
+  { id: "15-anos", nome: "15 Anos", icone: "coroa", temas: ["realeza", "borboletas", "jardim", "classico"] },
+  { id: "casamento", nome: "Casamento", icone: "aliancas", temas: ["floral-boho", "classico", "jardim", "realeza"] },
+  { id: "cha-de-bebe", nome: "Chá de Bebê e Revelação", icone: "bebe", temas: ["arca-de-noe", "fundo-do-mar", "jardim", "unicornio"] },
+  { id: "batizado", nome: "Batizado", icone: "pomba", temas: ["jardim", "classico", "arca-de-noe", "borboletas"] },
+  { id: "formatura", nome: "Formatura", icone: "capelo", temas: ["classico", "realeza", "floral-boho", "jardim"] },
+  { id: "corporativo", nome: "Evento Corporativo", icone: "maleta", temas: ["classico", "realeza", "floral-boho", "jardim"] }
 ];
 
-/* Produtos. Preço vazio mostra só o nome do botão. Ex.: pronto: "80", personalizado: "90"
-   Para usar foto no lugar do desenho: img/catalogo/<ocasiao>-<id>.jpg (ex.: aniversario-convite-interativo.jpg) */
+/* Produtos. grupo: "convite" (Tipos de convite) ou "arte" (Outras artes).
+   Preço vazio mostra "Consultar valor". Ex.: preco: "80"
+   Foto no lugar do desenho: img/catalogo/<produto>-<tema>.jpg ou img/catalogo/<produto>.jpg */
 const PRODUTOS = [
-  { id: "convite-interativo", cat: "convites", nome: "Convite Interativo", desenho: "phone", selo: "Mais pedido",
-    itens: ["Convite digital com botões clicáveis", "Localização, confirmar presença e presentes", "Arquivo em PDF e link"], precos: { pronto: "", personalizado: "" } },
-  { id: "convite-envelope", cat: "convites", nome: "Convite Envelope", desenho: "env",
-    itens: ["Abertura com envelope e selo", "Nome, data, horário e local", "Pronto para enviar no WhatsApp"], precos: { pronto: "", personalizado: "" } },
-  { id: "save-the-date", cat: "convites", nome: "Save the Date", desenho: "card",
-    itens: ["Arte para avisar a data com antecedência", "Formato para celular e stories", "Nas cores do seu tema"], precos: { pronto: "", personalizado: "" } },
-  { id: "identidade-visual", cat: "identidade", nome: "Identidade do Evento", desenho: "id",
-    itens: ["Monograma ou logo da festa", "Paleta de cores e letras", "Elementos para todas as peças"], precos: { personalizado: "" } },
-  { id: "kit-completo", cat: "identidade", nome: "Kit Completo", desenho: "kit", selo: "Tudo combinando",
-    itens: ["Identidade visual do evento", "Convite, cardápio e placas", "Tudo no mesmo estilo"], precos: { personalizado: "" } },
-  { id: "cardapio", cat: "papelaria", nome: "Cardápio", desenho: "menu",
-    itens: ["Comidas, doces e bebidas", "Formato para mesa ou bar", "Arquivo pronto para imprimir"], precos: { pronto: "", personalizado: "" } },
-  { id: "placas-de-mesa", cat: "papelaria", nome: "Placas de Mesa", desenho: "table",
-    itens: ["Números ou nomes das mesas", "Todas as mesas do evento", "Arquivo pronto para imprimir"], precos: { pronto: "", personalizado: "" } },
-  { id: "boas-vindas", cat: "papelaria", nome: "Placa de Boas-vindas", desenho: "welcome",
-    itens: ["A primeira coisa que os convidados veem", "Nome e data do evento", "Tamanho grande para cavalete"], precos: { pronto: "", personalizado: "" } },
-  { id: "projeto-decoracao", cat: "decoracao", nome: "Projeto da Decoração", desenho: "deco",
-    itens: ["Planta do espaço e das mesas", "Montagem da mesa principal", "Cores, flores e referências"], precos: { personalizado: "" } }
-];
-
-/* Serviços (seção "O que a Mary cria") */
-const SERVICOS = [
-  { nome: "Convite digital", texto: "Lindo no celular, com todas as informações e botões para os convidados.", icone: "celular", cor: "var(--pink-soft)" },
-  { nome: "Identidade visual", texto: "Monograma, cores e elementos que viram a marca da sua festa.", icone: "pincel", cor: "var(--lilac)" },
-  { nome: "Cardápios", texto: "Comidas, doces e drinks apresentados com charme.", icone: "cardapio", cor: "var(--mint)" },
-  { nome: "Placas de mesa", texto: "Números ou nomes para organizar os convidados com estilo.", icone: "mesa", cor: "var(--peach)" },
-  { nome: "Placa de boas-vindas", texto: "Recebe todo mundo na entrada e já mostra o tema da festa.", icone: "placa", cor: "var(--lilac)" },
-  { nome: "Projeto da decoração", texto: "Planejamento visual do espaço para você ver tudo antes.", icone: "planta", cor: "var(--pink-soft)" }
+  { id: "convite-interativo", grupo: "convite", nome: "Convite Interativo", icone: "celular", desenho: "phone", selo: "Mais pedido",
+    desc: "Convite digital com botões que os convidados tocam para ver o local, confirmar presença e ver a lista de presentes.",
+    itens: ["Botões clicáveis", "Localização, confirmação e presentes", "Arquivo em PDF e link"], preco: "" },
+  { id: "convite-envelope", grupo: "convite", nome: "Convite Envelope", icone: "envelope", desenho: "env",
+    desc: "O convidado toca no envelope, o selo abre e o convite aparece. Uma surpresa logo no primeiro clique.",
+    itens: ["Abertura com envelope e selo", "Nome, data, horário e local", "Pronto para enviar no WhatsApp"], preco: "" },
+  { id: "convite-simples", grupo: "convite", nome: "Convite Simples", icone: "imagem", desenho: "art",
+    desc: "Arte única em formato de celular, linda e prática para mandar no WhatsApp e postar nos stories.",
+    itens: ["Arte em alta qualidade", "Formato para celular e stories", "Todas as informações da festa"], preco: "" },
+  { id: "save-the-date", grupo: "convite", nome: "Save the Date", icone: "calendario", desenho: "std",
+    desc: "Para avisar a data com antecedência e deixar todo mundo ansioso pela festa.",
+    itens: ["Arte para enviar antes do convite", "Formato para celular e stories", "Nas cores do seu tema"], preco: "" },
+  { id: "identidade-visual", grupo: "arte", nome: "Identidade Visual", icone: "pincel", desenho: "id",
+    desc: "A marca da sua festa: monograma, cores e elementos que aparecem em todas as peças.",
+    itens: ["Monograma ou logo da festa", "Paleta de cores e letras", "Elementos para todas as peças"], preco: "" },
+  { id: "cardapio", grupo: "arte", nome: "Cardápio", icone: "cardapio", desenho: "menu",
+    desc: "Comidas, doces e bebidas apresentados com charme, combinando com o convite.",
+    itens: ["Salgados, doces e bebidas", "Formato para mesa ou bar", "Arquivo pronto para imprimir"], preco: "" },
+  { id: "placas-de-mesa", grupo: "arte", nome: "Placas de Mesa", icone: "mesa", desenho: "table",
+    desc: "Números ou nomes das mesas para organizar os convidados com estilo.",
+    itens: ["Todas as mesas do evento", "Números ou nomes", "Arquivo pronto para imprimir"], preco: "" },
+  { id: "boas-vindas", grupo: "arte", nome: "Placa de Boas-vindas", icone: "placa", desenho: "welcome",
+    desc: "A primeira coisa que os convidados veem na entrada, já no clima da festa.",
+    itens: ["Nome e data do evento", "Formato arco ou retangular", "Tamanho grande para cavalete"], preco: "" },
+  { id: "projeto-decoracao", grupo: "arte", nome: "Projeto da Decoração", icone: "planta", desenho: "deco",
+    desc: "O planejamento visual do espaço para você enxergar a festa antes dela acontecer.",
+    itens: ["Planta do espaço e das mesas", "Montagem da mesa principal", "Cores, flores e referências"], preco: "" },
+  { id: "combo-festa", grupo: "arte", nome: "Combo Festa Completa", icone: "presente", desenho: "combo", selo: "Combo",
+    desc: "Convite, identidade, cardápio e placas, tudo com a mesma cara e num pacote só.",
+    itens: ["Identidade visual", "Convite interativo", "Cardápio e placas de mesa", "Placa de boas-vindas"], preco: "" }
 ];
 
 /* ============================================================ */
 (function () {
+  const $ = id => document.getElementById(id);
   const root = document.documentElement;
   const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
   if (!reduce && "IntersectionObserver" in window) root.classList.add("anim");
 
+  const tema = id => TEMAS.find(t => t.id === id) || TEMAS[0];
+  const evento = id => EVENTOS.find(e => e.id === id);
+  const produto = id => PRODUTOS.find(p => p.id === id);
+  const vars = t => `--t1:${t.t1};--t2:${t.t2};--tx:${t.tx};--tx2:${t.tx2};--tp:${t.tp}`;
   const wa = msg => "https://wa.me/" + CONFIG.whatsapp + (msg ? "?text=" + encodeURIComponent(msg) : "");
-  document.querySelectorAll(".js-wa").forEach(a => { a.href = wa(a.dataset.msg); a.target = "_blank"; a.rel = "noopener"; });
-  document.querySelectorAll(".js-ig").forEach(a => a.href = "https://instagram.com/" + CONFIG.instagram);
-  document.getElementById("waText").textContent = "WhatsApp " + CONFIG.whatsappTexto;
-  document.getElementById("igText").textContent = "@" + CONFIG.instagram;
-  document.getElementById("year").textContent = new Date().getFullYear();
+  const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+
+  function wireLinks(scope) {
+    scope.querySelectorAll(".js-wa").forEach(a => { a.href = wa(a.dataset.msg); a.target = "_blank"; a.rel = "noopener"; });
+    scope.querySelectorAll(".js-ig").forEach(a => a.href = "https://instagram.com/" + CONFIG.instagram);
+  }
+  wireLinks(document);
+  $("promoText").innerHTML = CONFIG.faixa;
+  $("waText").textContent = "WhatsApp " + CONFIG.whatsappTexto;
+  $("igText").textContent = "@" + CONFIG.instagram;
+  $("year").textContent = new Date().getFullYear();
 
   /* icones */
   const I = {
-    bolo: '<path d="M4 20h16M5 20v-6a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v6M5 16c1.5 1 3 1 4.5 0s3-1 4.5 0 3 1 4.5 0M9 12V9M15 12V9M12 12V9M9 6.5c0-.8.9-1.5.9-2.5M12 6.5c0-.8.9-1.5.9-2.5M15 6.5c0-.8.9-1.5.9-2.5"/>',
-    aliancas: '<circle cx="9" cy="14" r="5"/><circle cx="15" cy="14" r="5"/><path d="M10.5 5.5 12 7l1.5-1.5L12 4Z"/>',
+    balao: '<path d="M12 3a5.5 5.5 0 0 0-5.5 5.5c0 3.5 3.8 6.6 5 7.4a1 1 0 0 0 1 0c1.2-.8 5-3.9 5-7.4A5.5 5.5 0 0 0 12 3Z"/><path d="M12 16v2.5c0 1.2-1.5 1.5-1.5 2.5"/>',
+    calendario: '<rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/><path d="M12 17.2c-1.4-1.2-2.6-2.1-2.6-3.1 0-.7.6-1.2 1.2-1.2.6 0 1 .3 1.4.8.4-.5.8-.8 1.4-.8.6 0 1.2.5 1.2 1.2 0 1-1.2 1.9-2.6 3.1Z"/>',
+    envelope: '<rect x="3" y="6" width="18" height="13" rx="2"/><path d="m3.5 7 8.5 6 8.5-6"/>',
+    paleta: '<path d="M12 3a9 9 0 1 0 0 18c1 0 1.5-.8 1.5-1.5 0-1.3-1-1.5-1-2.5 0-.8.7-1.5 1.5-1.5H16a5 5 0 0 0 5-5c0-4.1-4-7.5-9-7.5Z"/><circle cx="7.5" cy="11" r="1.2"/><circle cx="10.5" cy="7" r="1.2"/><circle cx="15" cy="7.5" r="1.2"/>',
+    bolo: '<path d="M4 20h16M5 20v-6a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v6M5 16c1.5 1 3 1 4.5 0s3-1 4.5 0 3 1 4.5 0M9 12V9M15 12V9M12 12V9"/><path d="M9 6.5c0-.8.9-1.5.9-2.5M12 6.5c0-.8.9-1.5.9-2.5M15 6.5c0-.8.9-1.5.9-2.5"/>',
+    taca: '<path d="M7 3h4l-.5 6a2.5 2.5 0 0 1-3 0ZM13 3h4l.5 6a2.5 2.5 0 0 1-3 0Z"/><path d="M9 11v8M15 11v8M7 21h4M13 21h4"/>',
     coroa: '<path d="M4 18h16M5 18 3.5 8l5 4L12 5l3.5 7 5-4L19 18"/>',
+    aliancas: '<circle cx="9" cy="14" r="5"/><circle cx="15" cy="14" r="5"/><path d="M10.5 5.5 12 7l1.5-1.5L12 4Z"/>',
     bebe: '<path d="M4 11h13a6.5 6.5 0 0 1-13 0Z"/><path d="M17 11V7a3 3 0 0 1 3-3"/><circle cx="8" cy="20.5" r="1.5"/><circle cx="15" cy="20.5" r="1.5"/>',
+    pomba: '<path d="M3 13c3 0 5-2 6-5 1.5 3 4 4 7 4l3-3 2 1-3 3c-1 4-4 6-8 6-3 0-5-2-7-6Z"/>',
+    capelo: '<path d="m2 9 10-5 10 5-10 5Z"/><path d="M6 11v5c3 2.5 9 2.5 12 0v-5M22 9v5"/>',
+    maleta: '<rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2M3 12h18"/>',
     celular: '<rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M10.5 5h3M12 16.5c-1.8-1.6-3.4-2.9-3.4-4.3 0-1 .8-1.7 1.7-1.7.7 0 1.3.4 1.7 1 .4-.6 1-1 1.7-1 .9 0 1.7.7 1.7 1.7 0 1.4-1.6 2.7-3.4 4.3Z"/>',
+    imagem: '<rect x="4" y="3" width="16" height="18" rx="2"/><circle cx="9.5" cy="8.5" r="1.8"/><path d="m4 17 5-4.5 4 3.5 3-2.5 4 3.5"/>',
     pincel: '<path d="M18.5 3.5a2.1 2.1 0 0 1 3 3L12 16l-4-4Z"/><path d="M8 12c-2.5 0-4 1.8-4 4 0 1.5-.8 2.5-2 3 4 1.5 8 0 8-3.5"/>',
     cardapio: '<rect x="5" y="2.5" width="14" height="19" rx="2"/><path d="M9 7h6M9 11h6M9 14.5h6M10.5 18h3"/>',
     mesa: '<path d="M5 20 8.5 5h7L19 20"/><path d="M10.5 11 12 9.5V15"/>',
     placa: '<path d="M6 15V9a6 6 0 0 1 12 0v6Z"/><path d="M8 15l-2 6M16 15l2 6M12 15v6"/>',
     planta: '<rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8" cy="8.5" r="2"/><circle cx="8" cy="15.5" r="2"/><path d="M13 7h5v10h-5Z"/>',
+    presente: '<rect x="3.5" y="8" width="17" height="4" rx="1"/><path d="M5 12v8h14v-8M12 8v12M12 8c-1.5-3.5-5.5-3.5-5-1s5 1 5 1Zm0 0c1.5-3.5 5.5-3.5 5-1s-5 1-5 1Z"/>',
     pin: '<path d="M12 21s-6-5.6-6-11a6 6 0 0 1 12 0c0 5.4-6 11-6 11Z"/><circle cx="12" cy="10" r="2.3"/>',
     check: '<circle cx="12" cy="12" r="9"/><path d="m8 12.5 2.8 2.8L16.5 9.5"/>',
-    gift: '<rect x="3.5" y="8" width="17" height="4" rx="1"/><path d="M5 12v8h14v-8M12 8v12M12 8c-1.5-3.5-5.5-3.5-5-1s5 1 5 1Zm0 0c1.5-3.5 5.5-3.5 5-1s-5 1-5 1Z"/>'
+    chev: '<path d="m6 9 6 6 6-6"/>',
+    lixo: '<path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13"/>'
   };
-  const icon = (k, w) => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="${w || 1.6}" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${I[k]}</svg>`;
+  const icon = (k, w, cls) => `<svg${cls ? ` class="${cls}"` : ""} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="${w || 1.6}" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${I[k]}</svg>`;
 
-  /* pecas desenhadas */
+  /* ---------- pecas desenhadas ---------- */
   const sp = pos => pos.map(([l, t]) => `<span class="sp" style="left:${l}%;top:${t}%">✦</span>`).join("");
   const bars = w => w.map(x => `<i class="bar" style="width:${x}%"></i>`).join("");
-  const SW = { rosa: ["#FFE3EF", "#F9B9D4", "#B73A77", "#7E4A9E"], lavanda: ["#F3ECFC", "#CDB5EE", "#6C45A8", "#B04A86"], noite: ["#5A3E9C", "#241A48", "#FBD3E6", "#E4D2FF"], menta: ["#E2F5EE", "#F8D6E6", "#7B55B8", "#C0508C"] };
-  function mock(tipo, e) {
-    const t = e.tema;
+  function mock(tipo, t) {
+    const nome = esc(t.ex), sub = esc(t.sub);
+    const ini = t.ex.includes("&") ? t.ex.split("&").map(s => s.trim()[0]).join("&") : t.ex[0];
+    const v = `style="${vars(t)}"`;
     switch (tipo) {
-      case "phone": return `<div class="m m-phone" data-t="${t}"><i class="notch"></i><div class="scr">${sp([[12, 14], [82, 22], [18, 70]])}
-        <span class="up">${e.topo}</span><span class="nm">${e.nome}</span><span class="msg">${e.msg}</span>
-        <div class="when"><div>${e.data}<small>DATA</small></div><i>✦</i><div>${e.hora}<small>HORAS</small></div></div>
-        <div class="btns"><span><i>${icon("pin", 2)}</i>Local</span><span><i>${icon("check", 2)}</i>Confirmar</span><span><i>${icon("gift", 2)}</i>Presentes</span></div></div></div>`;
-      case "env": return `<div class="m m-env" data-t="${t}" role="button" tabindex="0" aria-label="Abrir convite">${sp([[10, 10], [84, 18], [88, 52]])}
+      case "phone": return `<div class="m m-phone" ${v}><i class="notch"></i><div class="scr">${sp([[12, 14], [82, 22], [16, 72]])}
+        <span class="up">Convite especial</span><span class="nm">${nome}</span><span class="msg">${sub}</span>
+        <div class="when"><div>22/02<small>DATA</small></div><div>15:00<small>HORAS</small></div></div>
+        <div class="btns"><span><i>${icon("pin", 2)}</i>Local</span><span><i>${icon("check", 2)}</i>Confirmar</span><span><i>${icon("presente", 2)}</i>Presentes</span></div></div></div>`;
+      case "art": return `<div class="m m-art" ${v}><span class="frame"></span>${sp([[14, 10], [80, 14], [20, 86], [78, 80]])}
+        <span class="up">Você é nosso convidado</span><span class="nm">${nome}</span><span class="up">${sub}</span><span class="dt">22 . 02</span><span class="msg">Sábado às 15h</span></div>`;
+      case "env": return `<div class="m m-env" ${v} role="button" tabindex="0" aria-label="Abrir convite">${sp([[10, 10], [84, 18], [88, 52]])}
         <div class="ttl"><span class="nm">Convite</span><span class="nm">especial</span></div>
-        <div class="env"><div class="env-back"></div><div class="env-letter"><span class="up">${e.sub}</span><span class="nm">${e.nome}</span><span class="up">${e.data.replace("/", " . ")}</span></div>
-        <div class="env-front"><span>Clique para abrir!</span></div><div class="env-flap"></div><span class="seal">${e.ini}</span></div></div>`;
-      case "card": return `<div class="m m-card" data-t="${t}"><span class="frame"></span>${sp([[12, 10], [80, 14], [14, 84]])}
-        <span class="big">SAVE<em>the</em>DATE</span><span class="nm">${e.nome}</span><span class="dt">${e.data} · ${e.hora}</span></div>`;
-      case "id": return `<div class="m m-id" data-t="${t}"><span class="mono">${e.ini}</span><span class="nm">${e.nome}</span>
-        <span class="sw">${SW[t].map(c => `<i style="background:${c}"></i>`).join("")}</span></div>`;
-      case "menu": return `<div class="m m-menu" data-t="${t}"><span class="nm">Menu</span>
+        <div class="env"><div class="env-back"></div><div class="env-letter"><span class="up">${sub}</span><span class="nm">${nome}</span><span class="up">22 . 02</span></div>
+        <div class="env-front"><span>Toque para abrir!</span></div><div class="env-flap"></div><span class="seal">${esc(ini)}</span></div></div>`;
+      case "std": return `<div class="m m-std" ${v}><span class="frame"></span>${sp([[12, 10], [80, 14], [14, 84]])}
+        <span class="big">SAVE<em>the</em>DATE</span><span class="nm">${nome}</span><span class="dt">22.02 · 15H</span></div>`;
+      case "id": return `<div class="m m-id" ${v}><span class="mono">${esc(ini)}</span><span class="nm">${nome}</span>
+        <span class="sw">${[t.t1, t.t2, t.tx, t.tx2].map(c => `<i style="background:${c}"></i>`).join("")}</span></div>`;
+      case "menu": return `<div class="m m-menu" ${v}><span class="nm">Menu</span>
         <div class="it"><b>Salgados</b>${bars([80, 62, 70])}</div><div class="it"><b>Doces</b>${bars([70, 55])}</div><div class="it"><b>Bebidas</b>${bars([75, 50])}</div></div>`;
-      case "table": return `<div class="m m-table" data-t="${t}">${sp([[12, 12], [82, 16]])}<span class="up">mesa</span><span class="num">${e.num}</span><span class="nm">${e.nome}</span></div>`;
-      case "welcome": return `<div class="m m-welcome" data-t="${t}"><span class="arc"></span>${sp([[20, 26], [76, 30], [50, 86]])}
-        <span class="up">sejam</span><span class="nm">Bem-vindos</span><span class="up">${e.nome} · ${e.data}</span></div>`;
-      case "deco": return `<div class="m m-deco"><span class="grid"></span><span class="lbl">mesa principal</span>${decoSvg(t)}</div>`;
+      case "table": return `<div class="m m-table" ${v}>${sp([[12, 12], [82, 16]])}<span class="up">mesa</span><span class="num">3</span><span class="nm">${nome}</span></div>`;
+      case "welcome": return `<div class="m m-welcome" ${v}><span class="arc"></span>${sp([[20, 26], [76, 30], [50, 86]])}
+        <span class="up">sejam</span><span class="nm">Bem-vindos</span><span class="up">${nome}</span></div>`;
+      case "deco": return `<div class="m m-deco" ${v}><span class="grid"></span><span class="lbl">mesa principal</span>
+        <svg viewBox="0 0 200 150" fill="none" stroke="${t.dark ? t.tp : t.tx}" aria-hidden="true">
+        <path d="M44 112V58a56 56 0 0 1 112 0v54" stroke-width="1.6" fill="${t.dark ? "#EFE6FA" : t.t1}"/><circle cx="100" cy="64" r="20" stroke-dasharray="3 3"/>
+        <rect x="30" y="112" width="140" height="14" rx="3" fill="${t.dark ? "#D9C8F0" : t.t2}" stroke="none"/>
+        <rect x="88" y="86" width="24" height="26" rx="2" fill="#fff"/><rect x="92" y="74" width="16" height="12" rx="2" fill="#fff"/>
+        <g stroke="none"><circle cx="48" cy="62" r="10" fill="${t.dark ? "#D9C8F0" : t.t2}"/><circle cx="38" cy="75" r="7" fill="${t.tx2}" opacity=".6"/><circle cx="154" cy="50" r="10" fill="${t.dark ? "#D9C8F0" : t.t2}"/><circle cx="163" cy="64" r="6" fill="${t.tx2}" opacity=".6"/>
+        <circle cx="56" cy="106" r="6" fill="${t.tx2}" opacity=".5"/><circle cx="144" cy="106" r="6" fill="${t.tx2}" opacity=".5"/></g></svg></div>`;
+      case "combo": return `<div class="combo">
+        <div style="left:2%;top:4%;width:36%">${mock("phone", t)}</div>
+        <div style="left:40%;top:0;width:24%">${mock("menu", t)}</div>
+        <div style="right:0;top:8%;width:32%">${mock("table", t)}</div>
+        <div style="right:4%;bottom:2%;width:42%">${mock("id", t)}</div></div>`;
     }
     return "";
   }
-  function decoSvg(t) {
-    const [c1, c2, c3, c4] = SW[t === "noite" ? "lavanda" : t];
-    return `<svg viewBox="0 0 200 150" fill="none" stroke="${c3}" aria-hidden="true">
-      <path d="M44 112V58a56 56 0 0 1 112 0v54" stroke-width="1.6" fill="${c1}"/>
-      <circle cx="100" cy="64" r="20" stroke-dasharray="3 3"/>
-      <rect x="30" y="112" width="140" height="14" rx="3" fill="${c2}" stroke="none"/>
-      <rect x="88" y="86" width="24" height="26" rx="2" fill="#fff"/><rect x="92" y="74" width="16" height="12" rx="2" fill="#fff"/>
-      <g stroke="none"><circle cx="48" cy="62" r="10" fill="${c2}"/><circle cx="38" cy="75" r="7" fill="${c4}" opacity=".5"/><circle cx="154" cy="50" r="10" fill="${c2}"/><circle cx="163" cy="64" r="6" fill="${c4}" opacity=".5"/>
-      <circle cx="56" cy="106" r="6" fill="${c4}" opacity=".45"/><circle cx="144" cy="106" r="6" fill="${c4}" opacity=".45"/></g>
-    </svg>`;
-  }
-  function kit(e) {
-    return `<div style="position:relative;width:100%;height:100%">
-      <div style="position:absolute;left:4%;top:6%;width:36%">${mock("phone", e)}</div>
-      <div style="position:absolute;left:42%;top:2%;width:24%">${mock("menu", e)}</div>
-      <div style="position:absolute;right:2%;top:14%;width:30%">${mock("table", e)}</div>
-      <div style="position:absolute;right:6%;bottom:2%;width:40%">${mock("id", e)}</div></div>`;
-  }
-  const W = { phone: 44, env: 66, card: 64, id: 76, menu: 42, table: 66, welcome: 64, deco: 100 };
-  const piece = (p, e) => p.desenho === "kit" ? kit(e) : `<div style="width:${W[p.desenho]}%">${mock(p.desenho, e)}</div>`;
+  const W = { phone: 46, art: 54, env: 68, std: 66, id: 80, menu: 42, table: 68, welcome: 66, deco: 100, combo: 100 };
+  const piece = (p, t, extra) => `<div style="width:${Math.min(W[p.desenho] + (extra || 0), 100)}%">${mock(p.desenho, t)}</div>`;
 
-  /* envelope abre ao clicar */
-  document.addEventListener("click", ev => { const m = ev.target.closest(".m-env"); if (m) m.classList.toggle("open"); });
+  document.addEventListener("click", ev => { const m = ev.target.closest(".m-env"); if (m && !m.closest(".prod-media")) m.classList.toggle("open"); });
   document.addEventListener("keydown", ev => { const m = ev.target.closest && ev.target.closest(".m-env"); if (m && (ev.key === "Enter" || ev.key === " ")) { ev.preventDefault(); m.classList.toggle("open"); } });
 
-  /* inicio */
-  const ex = OCASIOES.map(o => o.exemplo);
-  document.getElementById("showcase").innerHTML =
-    `<div class="card">${mock("phone", ex[0])}</div><div class="card">${mock("env", ex[2])}</div><div class="card">${mock("phone", ex[1])}</div>`;
+  /* ---------- menus ---------- */
+  const convites = PRODUTOS.filter(p => p.grupo === "convite"), artes = PRODUTOS.filter(p => p.grupo === "arte");
+  const MENU = [
+    { id: "tema", nome: "Tema da festa", icone: "balao", itens: TEMAS.map(t => ({ href: "#tema-" + t.id, nome: t.nome, dot: t })), all: { href: "#temas", nome: "Veja todos os temas →" } },
+    { id: "evento", nome: "Escolha o evento", icone: "calendario", itens: EVENTOS.map(e => ({ href: "#evento-" + e.id, nome: e.nome, icone: e.icone })) },
+    { id: "tipo", nome: "Tipos de convite", icone: "envelope", itens: convites.map(p => ({ href: "#produto-" + p.id, nome: p.nome, icone: p.icone })) },
+    { id: "outras", nome: "Outras artes", icone: "paleta", itens: artes.map(p => ({ href: "#produto-" + p.id, nome: p.nome, icone: p.icone })) }
+  ];
+  const link = (it, cls) => `<a href="${it.href}"${cls ? ` class="${cls}"` : ""}>${it.dot ? `<span class="dot" style="background:linear-gradient(135deg,${it.dot.t2},${it.dot.tx})"></span>` : it.icone ? icon(it.icone) : ""}${it.nome}</a>`;
 
-  const tick = ["Convite digital", "Identidade visual", "Cardápios", "Placas de mesa", "Placa de boas-vindas", "Projeto da decoração", "Save the date"].map(w => `<span>${w}</span>`).join("");
-  document.getElementById("ticker").innerHTML = tick + tick;
-
-  const peekType = ["phone", "env", "card", "phone"];
-  document.getElementById("occGrid").innerHTML = OCASIOES.map((o, i) => `
-    <a class="occ rv" href="#${o.id}" style="--c:${o.cor};--d:${(i % 2) * .1}s">
-      <div class="occ-text">
-        <span class="ico">${icon(o.icone)}</span>
-        <span class="eyebrow">${o.nome}</span>
-        <h3>${o.cartao}</h3>
-        <p>${o.texto}</p>
-        <span class="go">Ver catálogo <i>→</i></span>
-      </div>
-      <div class="occ-peek" aria-hidden="true">${mock(peekType[i], o.exemplo)}</div>
-    </a>`).join("");
-
-  document.getElementById("svcGrid").innerHTML = SERVICOS.map((s, i) => `
-    <div class="svc rv" style="--c:${s.cor};--d:${(i % 3) * .08}s"><span class="ico">${icon(s.icone)}</span><h3>${s.nome}</h3><p>${s.texto}</p></div>`).join("");
-
-  document.getElementById("sheetOcc").innerHTML = OCASIOES.map(o => `<a href="#${o.id}">${o.nome} <span>→</span></a>`).join("");
-
-  /* pagina da ocasiao */
-  const home = document.getElementById("home"), occView = document.getElementById("occView");
-  function renderOcc(o) {
-    const e = o.exemplo;
-    document.title = o.cartao + " | Mary Criativa";
-    document.getElementById("oTitle").innerHTML = `${o.titulo[0]} <span class="sc">${o.titulo[1]}</span> ${o.titulo[2]}`;
-    document.getElementById("oLead").textContent = o.lead;
-    document.getElementById("podium").innerHTML =
-      `<div class="pz pz1">${mock("phone", e)}</div><div class="pz pz2">${mock("env", e)}</div><div class="pz pz3">${mock("menu", e)}</div><div class="pz pz4">${mock("welcome", e)}</div><div class="pz pz5">${mock("table", e)}</div>`;
-    document.getElementById("tabs").innerHTML = CATEGORIAS.map((c, i) =>
-      `<button type="button" data-go="cat-${c.id}" aria-current="${i === 0}">${c.nome}</button>`).join("");
-    document.getElementById("oCats").innerHTML = CATEGORIAS.map(c => `
-      <section class="cat-sec" id="cat-${c.id}">
-        <h2>${c.nome}</h2><p>${c.texto}</p>
-        <div class="prod-grid">${PRODUTOS.filter(p => p.cat === c.id).map((p, i) => prodCard(p, o, i)).join("")}</div>
-      </section>`).join("");
-    document.getElementById("others").innerHTML = OCASIOES.filter(x => x !== o).map(x =>
-      `<a href="#${x.id}" style="--c:${x.cor}"><span class="ico">${icon(x.icone)}</span>${x.cartao}</a>`).join("");
-    observe(occView);
-  }
-  function prodCard(p, o, i) {
-    const label = { pronto: "Do catálogo", personalizado: "Personalizado" };
-    const prices = Object.entries(p.precos).map(([k, v]) => {
-      const msg = `Oi Mary! Quero o ${p.nome} (${label[k].toLowerCase()}) para ${o.nome.toLowerCase()}.`;
-      return `<a class="price" href="${wa(msg)}" target="_blank" rel="noopener">${label[k]}${v ? ` R$${v}` : ""}</a>`;
-    }).join("");
-    return `<article class="prod rv" style="--d:${(i % 3) * .08}s">
-      <div class="prod-media">${p.selo ? `<span class="badge">${p.selo}</span>` : ""}${piece(p, o.exemplo)}
-        <img class="photo" src="img/catalogo/${o.id}-${p.id}.jpg" alt="${p.nome} para ${o.nome}" loading="lazy" onerror="this.remove()"></div>
-      <div class="prod-body"><h3>${p.nome}</h3><ul>${p.itens.map(t => `<li>${t}</li>`).join("")}</ul><div class="prices">${prices}</div></div>
-    </article>`;
-  }
-  document.getElementById("tabs").addEventListener("click", ev => {
-    const b = ev.target.closest("button"); if (!b) return;
-    document.getElementById(b.dataset.go).scrollIntoView({ behavior: reduce ? "auto" : "smooth" });
+  // celular: menu sanfona
+  const acc = $("accPanel");
+  acc.innerHTML = MENU.map(g => `
+    <div class="acc"><button type="button" aria-expanded="false" aria-controls="acc-${g.id}">${icon(g.icone, 1.6, "ic")}${g.nome}${icon("chev", 2, "chev")}</button>
+      <div class="acc-body" id="acc-${g.id}"><div>${g.itens.map(i => link(i)).join("")}${g.all ? link(g.all, "all") : ""}</div></div></div>`).join("") +
+    `<div class="acc-extra"><a class="btn btn-pink js-wa" href="#" data-msg="Oi Mary! Vim pelo site e quero fazer um orçamento.">Falar com a Mary</a><a class="btn btn-line" href="#sobre">Sobre a Mary</a></div>`;
+  wireLinks(acc);
+  acc.addEventListener("click", ev => {
+    const b = ev.target.closest(".acc>button");
+    if (b) { const open = b.getAttribute("aria-expanded") === "true"; acc.querySelectorAll(".acc>button").forEach(x => x.setAttribute("aria-expanded", "false")); b.setAttribute("aria-expanded", String(!open)); return; }
+    if (ev.target.closest("a")) closeMenu();
   });
+  const menuBtn = $("menuBtn");
+  function openMenu() {
+    acc.style.setProperty("--top", Math.max(0, $("header").getBoundingClientRect().bottom) + "px");
+    acc.classList.add("open"); acc.setAttribute("aria-hidden", "false");
+    menuBtn.setAttribute("aria-expanded", "true"); menuBtn.setAttribute("aria-label", "Fechar menu");
+    $("menuIcon").innerHTML = '<path d="M6 6l12 12M18 6 6 18"/>'; document.body.style.overflow = "hidden";
+  }
+  function closeMenu() {
+    if (!acc.classList.contains("open")) return;
+    acc.classList.remove("open"); acc.setAttribute("aria-hidden", "true");
+    menuBtn.setAttribute("aria-expanded", "false"); menuBtn.setAttribute("aria-label", "Abrir menu");
+    $("menuIcon").innerHTML = '<path d="M4 7h16M4 12h16M4 17h16"/>'; document.body.style.overflow = "";
+  }
+  menuBtn.onclick = () => acc.classList.contains("open") ? closeMenu() : openMenu();
+
+  // computador: menu suspenso
+  $("hnav").innerHTML = MENU.map(g => `<button type="button" data-g="${g.id}" aria-expanded="false" aria-controls="drop">${g.nome}${icon("chev", 2.4)}</button>`).join("");
+  let dropOpen = null;
+  function setDrop(id) {
+    dropOpen = id;
+    $("hnav").querySelectorAll("button").forEach(b => b.setAttribute("aria-expanded", String(b.dataset.g === id)));
+    if (!id) { $("drop").classList.remove("open"); return; }
+    const g = MENU.find(x => x.id === id);
+    $("dropGrid").innerHTML = g.itens.map(i => link(i)).join("") + (g.all ? link(g.all, "all") : "");
+    $("drop").classList.add("open");
+  }
+  $("hnav").addEventListener("click", ev => { const b = ev.target.closest("button"); if (b) setDrop(dropOpen === b.dataset.g ? null : b.dataset.g); });
+  $("drop").addEventListener("click", ev => { if (ev.target.closest("a")) setDrop(null); });
+  document.addEventListener("click", ev => { if (dropOpen && !ev.target.closest(".header")) setDrop(null); });
+
+  $("footEvents").innerHTML = EVENTOS.slice(0, 6).map(e => `<a href="#evento-${e.id}">${e.nome}</a>`).join("");
+  $("footArts").innerHTML = PRODUTOS.slice(0, 6).map(p => `<a href="#produto-${p.id}">${p.nome}</a>`).join("");
+
+  /* ---------- inicio ---------- */
+  const fl = [["fl1", "phone", "princesas"], ["fl2", "env", "realeza"], ["fl3", "std", "jardim"], ["fl4", "art", "borboletas"]];
+  $("bArt").insertAdjacentHTML("beforeend", fl.map(([c, d, t]) => `<div class="fl ${c}">${mock(d, tema(t))}</div>`).join(""));
+
+  $("quickEvents").innerHTML = EVENTOS.map((e, i) => `<a class="rv" style="--d:${(i % 4) * .06}s" href="#evento-${e.id}"><span>${icon(e.icone)}</span>${e.nome}</a>`).join("");
+
+  const peekFor = ["phone", "art", "env", "std"];
+  const themeCard = (t, i) => `<a class="theme-card rv${t.dark ? " dark" : ""}" href="#tema-${t.id}" style="${vars(t)};--d:${(i % 3) * .07}s">
+      <div class="txt"><span class="kicker">Tema</span><h3>${t.nome}</h3><p>${t.desc}</p><span class="go">CLIQUE AQUI</span></div>
+      <div class="peek" aria-hidden="true">${mock(peekFor[i % 4], t)}</div></a>`;
+  let themesShown = 6;
+  function renderThemes() {
+    $("themeGrid").innerHTML = TEMAS.slice(0, themesShown).map(themeCard).join("");
+    $("moreThemes").hidden = themesShown >= TEMAS.length;
+    observe($("themeGrid"));
+  }
+  $("moreThemes").onclick = () => { themesShown = TEMAS.length; renderThemes(); };
+
+  const photo = (p, t) => `<img class="photo" src="img/catalogo/${p.id}-${t.id}.jpg" alt="" loading="lazy" onerror="this.onerror=function(){this.remove()};this.src='img/catalogo/${p.id}.jpg'">`;
+  function card(p, t, ctx) {
+    const price = p.preco ? `a partir de <b>R$ ${esc(p.preco)}</b>` : `<b>Consultar valor</b>`;
+    const data = `data-tema="${t.id}" data-evento="${ctx.evento || ""}"`;
+    return `<article class="prod rv" style="${vars(t)};--d:${(ctx.i % 4) * .06}s">
+      <button class="prod-media" data-open="${p.id}" ${data} aria-label="Ver ${esc(p.nome)}, tema ${t.nome}">
+        ${p.selo ? `<span class="tag">${p.selo}</span>` : ""}${piece(p, t)}${photo(p, t)}
+      </button>
+      <div class="prod-body">
+        <span class="kicker">${ctx.label || "Tema " + t.nome}</span>
+        <h3>${p.nome}</h3>
+        <span class="price">${price}</span>
+        <div class="actions">
+          <button class="btn btn-pink" data-add="${p.id}" ${data}>Adicionar</button>
+          <button class="btn btn-line" data-open="${p.id}" ${data}>Ver</button>
+        </div>
+      </div></article>`;
+  }
+  const homeT = ["jardim", "realeza", "borboletas", "princesas"];
+  $("homeConvites").innerHTML = convites.map((p, i) => card(p, tema(homeT[i % 4]), { i })).join("");
+  const artT = ["jardim", "classico", "borboletas", "floral-boho", "princesas", "unicornio"];
+  $("homeOutras").innerHTML = artes.map((p, i) => card(p, tema(artT[i % 6]), { i })).join("");
+
+  /* ---------- paginas por tema / evento / produto ---------- */
+  let chipFilter = "todos";
+  function renderList(kind, id) {
+    const head = $("listHead"); let t, title, kicker, lead, crumbs, items, docTitle;
+    if (kind === "tema") {
+      t = tema(id); kicker = "Tema"; title = `<span class="sc">${t.nome}</span>`; docTitle = "Tema " + t.nome;
+      lead = t.desc + " Escolha a peça e personalize com os dados da sua festa.";
+      crumbs = `<a href="#inicio">Início</a> › <a href="#temas">Temas</a> › ${t.nome}`;
+      items = PRODUTOS.map(p => ({ p, t, ctx: {} }));
+    } else if (kind === "evento") {
+      const e = evento(id); t = tema(e.temas[0]); kicker = "Evento"; title = e.nome; docTitle = e.nome;
+      lead = "Convites e artes para " + e.nome.toLowerCase() + ". Toque em uma peça para trocar o tema.";
+      crumbs = `<a href="#inicio">Início</a> › <a href="#eventos">Eventos</a> › ${e.nome}`;
+      items = PRODUTOS.map((p, i) => ({ p, t: tema(e.temas[i % e.temas.length]), ctx: { evento: e.id, label: e.nome } }));
+    } else {
+      const p = produto(id); t = tema("jardim"); kicker = p.grupo === "convite" ? "Tipo de convite" : "Outras artes"; title = p.nome; docTitle = p.nome;
+      lead = p.desc + " Veja como fica em cada tema.";
+      crumbs = `<a href="#inicio">Início</a> › <a href="#${p.grupo === "convite" ? "tipos" : "outras"}">${kicker}</a> › ${p.nome}`;
+      items = TEMAS.map(tt => ({ p, t: tt, ctx: {} }));
+    }
+    document.title = docTitle + " | Mary Criativa";
+    head.setAttribute("style", vars(t)); head.classList.toggle("dark", !!t.dark);
+    $("crumbs").innerHTML = crumbs; $("listKicker").textContent = kicker; $("listTitle").innerHTML = title; $("listLead").textContent = lead;
+    let pk;
+    if (kind === "produto") { const d = produto(id).desenho; const dd = d === "combo" || d === "deco" ? "phone" : d; pk = [[dd, "realeza"], [dd, "jardim"], [dd, "borboletas"]]; }
+    else pk = [["art", t.id], ["phone", t.id], ["std", t.id]];
+    $("listPeeks").innerHTML = pk.map(([d, tid]) => `<div>${mock(d, kind === "evento" ? tema(evento(id).temas[pk.findIndex(x => x[0] === d)] || t.id) : tema(tid))}</div>`).join("");
+
+    const chips = kind === "produto" ? [] : [["todos", "Tudo"], ["convite", "Convites"], ["arte", "Outras artes"]];
+    $("listChips").hidden = !chips.length;
+    $("listChips").innerHTML = chips.map(([k, n]) => `<button type="button" data-f="${k}" aria-pressed="${k === chipFilter}">${n}</button>`).join("");
+    const draw = () => {
+      $("listGrid").innerHTML = items.filter(x => kind === "produto" || chipFilter === "todos" || x.p.grupo === chipFilter)
+        .map((x, i) => card(x.p, x.t, Object.assign({ i }, x.ctx))).join("");
+      observe($("listGrid"));
+    };
+    $("listChips").onclick = ev => { const b = ev.target.closest("button"); if (!b) return; chipFilter = b.dataset.f; $("listChips").querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", String(x === b))); draw(); };
+    draw();
+  }
 
   function route() {
-    const id = decodeURIComponent(location.hash.slice(1));
-    const o = OCASIOES.find(x => x.id === id);
-    closeSheet();
-    if (o) {
-      home.hidden = true; occView.hidden = false; renderOcc(o); scrollTo(0, 0);
+    const h = decodeURIComponent(location.hash.slice(1));
+    closeMenu(); setDrop(null);
+    const m = h.match(/^(tema|evento|produto)-(.+)$/);
+    const ok = m && (m[1] === "tema" ? TEMAS.some(t => t.id === m[2]) : m[1] === "evento" ? !!evento(m[2]) : !!produto(m[2]));
+    if (ok) {
+      chipFilter = "todos";
+      $("home").hidden = true; $("listView").hidden = false; renderList(m[1], m[2]); scrollTo(0, 0);
     } else {
       document.title = "Mary Criativa";
-      const wasOcc = !occView.hidden;
-      occView.hidden = true; home.hidden = false;
-      if (wasOcc) { const t = id && document.getElementById(id); t ? t.scrollIntoView() : scrollTo(0, 0); }
+      const was = !$("listView").hidden;
+      $("listView").hidden = true; $("home").hidden = false;
+      if (h === "temas") { themesShown = TEMAS.length; renderThemes(); }
+      if (was) { const el = h && document.getElementById(h); el ? el.scrollIntoView() : scrollTo(0, 0); }
     }
   }
   addEventListener("hashchange", route);
 
-  /* menu lateral */
-  const sheet = document.getElementById("sheet"), menuBtn = document.getElementById("menuBtn");
-  function openSheet() { sheet.classList.add("open"); sheet.setAttribute("aria-hidden", "false"); menuBtn.setAttribute("aria-expanded", "true"); document.getElementById("sheetClose").focus(); }
-  function closeSheet() { if (!sheet.classList.contains("open")) return; sheet.classList.remove("open"); sheet.setAttribute("aria-hidden", "true"); menuBtn.setAttribute("aria-expanded", "false"); }
-  menuBtn.onclick = openSheet;
-  document.getElementById("sheetClose").onclick = closeSheet;
-  sheet.addEventListener("click", ev => { if (ev.target === sheet || ev.target.closest("a")) closeSheet(); });
-  addEventListener("keydown", ev => { if (ev.key === "Escape") closeSheet(); });
+  /* ---------- janela do produto ---------- */
+  const modal = $("modal");
+  let cur = null, lastFocus = null;
+  $("mTema").innerHTML = TEMAS.map(t => `<option value="${t.id}">${t.nome}</option>`).join("");
+  $("mEvento").innerHTML = `<option value="">Escolha o evento</option>` + EVENTOS.map(e => `<option value="${e.id}">${e.nome}</option>`).join("");
+  const VERSOES = [["catalogo", "Do catálogo", "modelo pronto do tema"], ["personalizado", "Personalizado", "criado do seu jeito"]];
+  function drawModal() {
+    const p = produto(cur.p), t = tema(cur.t);
+    $("mMedia").setAttribute("style", vars(t));
+    $("mMedia").innerHTML = piece(p, t, 14) + photo(p, t);
+    $("mKicker").textContent = (p.grupo === "convite" ? "Tipo de convite" : "Outras artes") + " · " + (p.preco ? "a partir de R$ " + p.preco : "consultar valor");
+    $("mTitle").textContent = p.nome; $("mDesc").textContent = p.desc;
+    $("mList").innerHTML = p.itens.map(x => `<li>${esc(x)}</li>`).join("");
+    $("mTema").value = t.id; $("mEvento").value = cur.e || "";
+    $("mVersao").innerHTML = VERSOES.map(([k, n, s]) => `<button type="button" data-v="${k}" aria-pressed="${cur.v === k}">${n}<small>${s}</small></button>`).join("");
+    $("mWa").href = wa("Oi Mary! Quero um orçamento:\n" + line(cur));
+  }
+  function openModal(pid, tid, eid) {
+    lastFocus = document.activeElement;
+    cur = { p: pid, t: tid || "jardim", e: eid || "", v: "catalogo" };
+    drawModal(); modal.classList.add("open"); modal.setAttribute("aria-hidden", "false"); document.body.style.overflow = "hidden";
+    $("closeModal").focus();
+  }
+  function closeModal() {
+    if (!modal.classList.contains("open")) return;
+    modal.classList.remove("open"); modal.setAttribute("aria-hidden", "true"); document.body.style.overflow = ""; lastFocus && lastFocus.focus();
+  }
+  $("closeModal").onclick = closeModal;
+  modal.addEventListener("click", ev => { if (ev.target === modal) closeModal(); });
+  $("mTema").onchange = () => { cur.t = $("mTema").value; drawModal(); };
+  $("mEvento").onchange = () => { cur.e = $("mEvento").value; drawModal(); };
+  $("mVersao").onclick = ev => { const b = ev.target.closest("button"); if (b) { cur.v = b.dataset.v; drawModal(); } };
+  $("mAdd").onclick = () => { addToCart(Object.assign({}, cur)); closeModal(); };
 
-  /* rolagem */
-  const header = document.getElementById("header");
-  let ticking = false;
-  function onScroll() {
-    header.classList.toggle("scrolled", scrollY > 10);
-    if (!occView.hidden) {
-      let cur = null;
-      document.querySelectorAll(".cat-sec").forEach(s => { if (s.getBoundingClientRect().top < innerHeight * .45) cur = s.id; });
-      document.querySelectorAll("#tabs button").forEach((b, i) => b.setAttribute("aria-current", cur ? b.dataset.go === cur : i === 0));
+  document.addEventListener("click", ev => {
+    const o = ev.target.closest("[data-open]"); if (o) { openModal(o.dataset.open, o.dataset.tema, o.dataset.evento); return; }
+    const a = ev.target.closest("[data-add]"); if (a) addToCart({ p: a.dataset.add, t: a.dataset.tema, e: a.dataset.evento, v: "catalogo" });
+  });
+
+  /* ---------- carrinho de orcamento ---------- */
+  let cart = [];
+  try { cart = JSON.parse(localStorage.getItem("mary-orcamento") || "[]").filter(x => x && produto(x.p)); } catch (e) { cart = []; }
+  const save = () => { try { localStorage.setItem("mary-orcamento", JSON.stringify(cart)); } catch (e) {} };
+  const vName = v => v === "personalizado" ? "Personalizado" : "Do catálogo";
+  function line(x) {
+    const p = produto(x.p), e = x.e && evento(x.e);
+    return `• ${p.nome}, tema ${tema(x.t).nome}${e ? ", " + e.nome : ""} (${vName(x.v).toLowerCase()})`;
+  }
+  function drawCart() {
+    $("cartCount").textContent = cart.length;
+    if (!cart.length) {
+      $("cartItems").innerHTML = `<div class="cart-empty">${icon("presente", 1.4)}<p>Seu orçamento está vazio.<br>Escolha um tema e adicione as peças que você quer.</p><a class="btn btn-line btn-sm" href="#temas" id="emptyGo">Ver temas</a></div>`;
+      $("cartFoot").hidden = true;
+      $("emptyGo").onclick = closeCart;
+      return;
     }
-    ticking = false;
+    $("cartFoot").hidden = false;
+    $("cartItems").innerHTML = cart.map((x, i) => {
+      const p = produto(x.p), t = tema(x.t), e = x.e && evento(x.e);
+      const d = p.desenho === "combo" || p.desenho === "deco" ? "id" : p.desenho;
+      return `<div class="ci" style="${vars(t)}"><div class="th"><div style="width:${d === "phone" || d === "menu" || d === "art" ? 46 : 84}%">${mock(d, t)}</div></div>
+        <div><b>${p.nome}</b><small>Tema ${t.nome}${e ? " · " + e.nome : ""}<br>${vName(x.v)}</small></div>
+        <button type="button" data-rm="${i}" aria-label="Remover ${esc(p.nome)}">${icon("lixo", 1.8)}</button></div>`;
+    }).join("");
+    updateSend();
   }
-  addEventListener("scroll", () => { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } }, { passive: true });
+  function updateSend() {
+    const nome = $("cNome").value.trim(), data = $("cData").value;
+    const dataBR = data ? data.split("-").reverse().join("/") : "";
+    const msg = `Oi Mary! ${nome ? "Aqui é " + nome + ". " : ""}Quero um orçamento:\n${cart.map(line).join("\n")}${dataBR ? "\nData da festa: " + dataBR : ""}`;
+    $("cSend").href = wa(msg);
+  }
+  $("cNome").oninput = updateSend; $("cData").oninput = updateSend;
+  $("cartItems").addEventListener("click", ev => { const b = ev.target.closest("[data-rm]"); if (b) { cart.splice(+b.dataset.rm, 1); save(); drawCart(); } });
+  function addToCart(x) {
+    cart.push(x); save(); drawCart();
+    const bd = $("cartCount"); bd.classList.add("bump"); setTimeout(() => bd.classList.remove("bump"), 300);
+    toast(produto(x.p).nome + " adicionado ao orçamento");
+  }
+  const cartEl = $("cart");
+  function openCart() { closeMenu(); cartEl.classList.add("open"); cartEl.setAttribute("aria-hidden", "false"); document.body.style.overflow = "hidden"; $("closeCart").focus(); }
+  function closeCart() { if (!cartEl.classList.contains("open")) return; cartEl.classList.remove("open"); cartEl.setAttribute("aria-hidden", "true"); document.body.style.overflow = ""; }
+  $("openCart").onclick = openCart; $("closeCart").onclick = closeCart;
+  cartEl.addEventListener("click", ev => { if (ev.target === cartEl) closeCart(); });
 
-  /* aparecer ao rolar */
+  let tt;
+  function toast(t) { $("toastText").textContent = t; $("toast").classList.add("show"); clearTimeout(tt); tt = setTimeout(() => $("toast").classList.remove("show"), 2200); }
+
+  /* ---------- busca ---------- */
+  const sPanel = $("searchPanel");
+  const INDEX = [
+    ...TEMAS.map(t => ({ n: t.nome, k: "Tema", h: "#tema-" + t.id, i: "balao" })),
+    ...EVENTOS.map(e => ({ n: e.nome, k: "Evento", h: "#evento-" + e.id, i: e.icone })),
+    ...PRODUTOS.map(p => ({ n: p.nome, k: p.grupo === "convite" ? "Convite" : "Arte", h: "#produto-" + p.id, i: p.icone }))
+  ];
+  const norm = s => s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
+  function search() {
+    const q = norm($("q").value.trim());
+    const list = q ? INDEX.filter(x => norm(x.n).includes(q)) : INDEX.slice(0, 8);
+    $("results").innerHTML = list.length ? list.slice(0, 12).map(x => `<a href="${x.h}">${icon(x.i)}${x.n}<small>${x.k}</small></a>`).join("") : `<p class="empty">Nada encontrado. Chama a Mary no WhatsApp que ela cria pra você!</p>`;
+  }
+  function openSearch() { closeMenu(); sPanel.classList.add("open"); sPanel.setAttribute("aria-hidden", "false"); search(); setTimeout(() => $("q").focus(), 50); }
+  function closeSearch() { sPanel.classList.remove("open"); sPanel.setAttribute("aria-hidden", "true"); }
+  $("openSearch").onclick = openSearch; $("closeSearch").onclick = closeSearch;
+  $("q").oninput = search;
+  sPanel.addEventListener("click", ev => { if (ev.target === sPanel || ev.target.closest("a")) closeSearch(); });
+
+  addEventListener("keydown", ev => { if (ev.key === "Escape") { closeModal(); closeCart(); closeSearch(); closeMenu(); setDrop(null); } });
+
+  /* ---------- aparecer ao rolar ---------- */
   let io = null;
-  if (root.classList.contains("anim")) io = new IntersectionObserver(en => en.forEach(x => { if (x.isIntersecting) { x.target.classList.add("in"); io.unobserve(x.target); } }), { threshold: .1, rootMargin: "0px 0px -30px 0px" });
+  if (root.classList.contains("anim")) io = new IntersectionObserver(en => en.forEach(x => { if (x.isIntersecting) { x.target.classList.add("in"); io.unobserve(x.target); } }), { threshold: .08 });
   function observe(scope) {
-    scope.querySelectorAll(".rv:not(.in)").forEach(el => {
-      if (!io || el.getBoundingClientRect().top < innerHeight) el.classList.add("in"); else io.observe(el);
-    });
+    scope.querySelectorAll(".rv:not(.in)").forEach(el => { if (!io || el.getBoundingClientRect().top < innerHeight) el.classList.add("in"); else io.observe(el); });
   }
 
+  renderThemes();
+  drawCart();
   route();
   observe(document);
-  requestAnimationFrame(() => document.querySelector(".hero").classList.add("ready"));
-  onScroll();
 })();
 </script>
 </body>

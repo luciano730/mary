@@ -1,17 +1,20 @@
 # Mary Criativa
 
-Site em estilo catálogo, roxo com rosinha. Tudo está em `index.html` (HTML, CSS e JS juntos).
+Site em estilo loja, nas cores rosa, dourado e lilás. Tudo está em `index.html` (HTML, CSS e JS juntos).
 
-Início com convites em destaque (o envelope abre ao tocar), catálogos por ocasião (aniversário, casamento, 15 anos, chá de bebê e batizado) e uma página para cada ocasião, com abas (convites, identidade visual, cardápios e placas, decoração) e botões de preço que abrem o WhatsApp com a mensagem pronta.
+- Menu igual ao de loja: Tema da festa, Escolha o evento, Tipos de convite e Outras artes (sanfona no celular, menu suspenso no computador).
+- Busca, página para cada tema, evento e produto.
+- Carrinho de orçamento: a cliente adiciona as peças e envia a lista pronta para o WhatsApp da Mary.
 
 ## Como personalizar
 
-1. **Contato**: no fim do `index.html`, procure `CONFIG` e coloque o WhatsApp e o Instagram reais.
-2. **Fotos** (JPG, na pasta `img/`). Enquanto a foto não existir, aparece um desenho da peça no lugar.
+1. **Contato**: no fim do `index.html`, procure `CONFIG` e coloque o WhatsApp e o Instagram reais. Ali também fica o texto da faixa do topo (pode virar um cupom).
+2. **Fotos** (pasta `img/`). Enquanto a foto não existir, aparece um desenho da peça no lugar.
+   - `img/mary-banner.png`: foto da Mary para o banner do topo (de preferência PNG sem fundo)
    - `img/mary.jpg`: foto da Mary na seção Sobre
-   - `img/catalogo/<ocasiao>-<produto>.jpg`: foto de cada produto em cada ocasião (ex.: `aniversario-convite-interativo.jpg`)
-3. **Preços e produtos**: na lista `PRODUTOS`, preencha `precos` (ex.: `pronto: "80", personalizado: "90"`). Vazio mostra só o nome do botão.
-4. **Ocasiões**: na lista `OCASIOES` dá pra mudar títulos, cores e os nomes de exemplo que aparecem nos desenhos.
+   - `img/catalogo/<produto>-<tema>.jpg` (ex.: `convite-interativo-jardim.jpg`) ou só `img/catalogo/<produto>.jpg` para usar em todos os temas
+3. **Produtos e preços**: lista `PRODUTOS`. Preencha `preco` (ex.: `preco: "80"`). Vazio mostra "Consultar valor".
+4. **Temas e eventos**: listas `TEMAS` e `EVENTOS`. Para um tema novo, copie um bloco e troque o `id`, o nome e as cores.
 5. **Textos**: edite direto no `index.html`.
 
 ## Como publicar de graça
