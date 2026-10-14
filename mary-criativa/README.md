@@ -21,3 +21,9 @@ Site em estilo loja, nas cores rosa, dourado e lilás. Tudo está em `index.html
 
 - Arraste a pasta `mary-criativa` no https://app.netlify.com/drop
 - Ou GitHub Pages: Settings > Pages > Branch > salvar (o site fica em `/mary-criativa/`).
+
+## Catálogo de identidade visual (PDF)
+
+Fica em `catalogo/`. O PDF pronto é `Catalogo-Identidade-Visual-Mary-Criativa.pdf`.
+
+Para mudar textos, itens ou preços, edite `catalogo/catalogo-identidade-visual.html` (listas `PACOTES`, `CONTATO` e `PAGAMENTO` no fim do arquivo). Para a foto da Mary na página "Sobre mim", coloque `img/mary.jpg`. Depois abra o HTML no Chrome e use Imprimir > Salvar como PDF, com margens "Nenhuma" e "Gráficos de plano de fundo" marcado.
