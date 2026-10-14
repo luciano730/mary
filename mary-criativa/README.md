@@ -27,3 +27,9 @@ Site em estilo loja, nas cores rosa, dourado e lilás. Tudo está em `index.html
 Fica em `catalogo/`. O PDF pronto é `Catalogo-Identidade-Visual-Mary-Criativa.pdf`.
 
 Para mudar textos, itens ou preços, edite `catalogo/catalogo-identidade-visual.html` (listas `PACOTES`, `CONTATO` e `PAGAMENTO` no fim do arquivo). Para a foto da Mary na página "Sobre mim", coloque `img/mary.jpg`. Depois abra o HTML no Chrome e use Imprimir > Salvar como PDF, com margens "Nenhuma" e "Gráficos de plano de fundo" marcado.
+
+## Modelo de posts para o Canva
+
+Fica em `posts/`. O arquivo `Modelo-Posts-Mary-Criativa.pptx` tem 6 páginas em 1080 x 1350 (feed do Instagram): capa com brasão, monograma/logotipo/paleta, estampas e elementos, aplicações, chamada final e post de promoção de pacote. As imagens em `posts/previas/` mostram como cada página fica.
+
+No Canva: Criar design > Importar arquivo > escolha o `.pptx`. Os retângulos tracejados "SUA ARTE AQUI" marcam onde colocar cada arte. Para mudar o modelo de novo pelo código, edite `gerar_modelo.py` e rode `python3 gerar_modelo.py`.
