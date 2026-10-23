@@ -33,3 +33,15 @@ Para mudar textos, itens ou preços, edite `catalogo/catalogo-identidade-visual.
 Fica em `posts/`. O arquivo `Modelo-Posts-Mary-Criativa.pptx` tem 6 páginas em 1080 x 1350 (feed do Instagram): capa com brasão, monograma/logotipo/paleta, estampas e elementos, aplicações, chamada final e post de promoção de pacote. As imagens em `posts/previas/` mostram como cada página fica.
 
 No Canva: Criar design > Importar arquivo > escolha o `.pptx`. Os retângulos tracejados "SUA ARTE AQUI" marcam onde colocar cada arte. Para mudar o modelo de novo pelo código, edite `gerar_modelo.py` e rode `python3 gerar_modelo.py`.
+
+## Catálogo de convites (página escura)
+
+Fica em `convites/index.html` (abre em `/convites/`). Estilo catálogo: card de cada modelo com demonstração, valor e os botões "Ver demonstração", "Quero este modelo" e "Ver o que está incluso", mais comparação rápida, extras (confirmação de presença e álbum digital), como funciona a produção e rodapé.
+
+Tudo se edita no fim do arquivo:
+
+1. `CONFIG`: WhatsApp, Instagram, prazos, passo a passo e texto de urgência.
+2. `MODELOS`: um bloco por convite (nome, descrição, tags, `preco`, `promo`, o que está incluso). Os modelos que estão lá são provisórios.
+   - `imagem`: capa do card (ex.: `img/livro.jpg` dentro de `convites/`). Sem imagem aparece uma arte provisória.
+   - `video`: vídeo `.mp4` da demonstração (abre no próprio site) ou `demo`: link do convite de exemplo. O botão "Ver demonstração" só aparece quando um dos dois está preenchido.
+3. `EXTRAS`: serviços adicionais com preço.

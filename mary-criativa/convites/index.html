@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Catálogo de Convites | Mary Criativa</title>
+<meta name="description" content="Catálogo de convites digitais da Mary Criativa: interativos, animados, em vídeo, tradicionais e save the date.">
+<meta name="theme-color" content="#1B1026">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Great+Vibes&family=Montserrat:wght@400;500;600;700&display=swap">
+<style>
+/* Catálogo escuro em ameixa, com rosa, dourado e lilás da Mary Criativa */
+:root{
+  color-scheme: dark;
+  --bg:#1B1026;
+  --bg-deep:#120A1A;
+  --card:#2A1A3A;
+  --card-2:#24162F;
+  --line:rgba(214,180,255,.16);
+  --ink:#FBF4FF;
+  --ink-soft:#CDBBDA;
+  --ink-mute:#9C88AC;
+  --pink:#F2A5CF;
+  --pink-deep:#E8789F;
+  --lilac:#B58BD9;
+  --lilac-deep:#7E4FB4;
+  --gold:#E7C77E;
+  --gold-deep:#C9A04E;
+  --mint:#9FE3C1;
+  --serif:"Cormorant Garamond", Georgia, serif;
+  --sans:"Montserrat", "Segoe UI", system-ui, sans-serif;
+  --script:"Great Vibes", cursive;
+  --gutter:clamp(16px,4.5vw,40px);
+  --radius:30px;
+  --ease:cubic-bezier(.2,.8,.2,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.6;overflow-x:hidden;
+  background-image:radial-gradient(900px 600px at 85% -10%,rgba(181,139,217,.18),transparent 60%),radial-gradient(700px 500px at -10% 30%,rgba(242,165,207,.10),transparent 60%)}
+img,video{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+.wrap{max-width:1120px;margin:0 auto;padding:0 var(--gutter)}
+.eyebrow{font-size:12px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:var(--pink)}
+.h2{font-family:var(--serif);font-weight:700;font-size:clamp(34px,7vw,56px);line-height:1.05;margin:.35em 0 .4em}
+.lead{color:var(--ink-soft);font-size:clamp(16px,2.2vw,18px);max-width:640px}
+section{padding:72px 0}
+
+/* Topo */
+.top{position:sticky;top:0;z-index:40;background:rgba(27,16,38,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:12px}
+.brand{display:flex;align-items:center;gap:10px}
+.mono{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;font-family:var(--serif);font-weight:700;font-size:17px;color:var(--gold);border:1px solid rgba(231,199,126,.5);background:radial-gradient(circle at 30% 25%,#3B2552,#1B1026)}
+.brand b{font-size:13px;letter-spacing:.24em;text-transform:uppercase;font-weight:700}
+.nav{display:flex;gap:22px;font-size:13px;font-weight:500;color:var(--ink-soft)}
+.nav a:hover{color:var(--pink)}
+.top-cta{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:10px 16px;border-radius:999px;background:linear-gradient(100deg,var(--lilac-deep),var(--lilac));box-shadow:0 8px 22px -10px var(--lilac)}
+@media (max-width:760px){.nav{display:none}}
+
+/* Hero */
+.hero{padding:64px 0 40px;text-align:center}
+.hero .script{font-family:var(--script);font-size:clamp(40px,9vw,64px);color:var(--pink);line-height:1;display:block;margin-bottom:6px}
+.hero h1{font-family:var(--serif);font-weight:700;font-size:clamp(42px,9vw,76px);line-height:1.02;letter-spacing:-.01em}
+.hero h1 em{font-style:italic;color:var(--gold)}
+.hero .lead{margin:18px auto 28px}
+.hero-btns{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.divider{display:flex;align-items:center;justify-content:center;gap:12px;color:var(--gold);margin:22px 0 0;font-size:14px}
+.divider::before,.divider::after{content:"";width:60px;height:1px;background:linear-gradient(90deg,transparent,var(--gold))}
+.divider::after{transform:scaleX(-1)}
+
+/* Botões */
+.btn{display:flex;align-items:center;justify-content:center;gap:8px;min-height:52px;padding:0 24px;border-radius:999px;font-weight:700;font-size:15px;letter-spacing:.06em;text-transform:uppercase;border:1.5px solid var(--line);background:rgba(255,255,255,.02);transition:transform .2s var(--ease),background .2s,border-color .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn-gold{color:var(--gold);border-color:rgba(231,199,126,.32)}
+.btn-pink{color:var(--pink);border-color:rgba(242,165,207,.3)}
+.btn-want{color:var(--mint);border-color:rgba(159,227,193,.4);background:linear-gradient(180deg,rgba(40,70,64,.55),rgba(30,44,46,.55))}
+.btn-plain{color:var(--ink)}
+.btn-solid{color:#fff;border:0;background:linear-gradient(100deg,#8B5CF6,#C084FC);box-shadow:0 14px 30px -12px #A26BF0}
+.btn-soft{color:#2B1636;border:0;background:var(--pink);text-transform:none;letter-spacing:0;font-size:16px;text-align:center}
+.btn-block{width:100%}
+
+/* Filtros */
+.filters{display:flex;gap:8px;overflow-x:auto;padding:4px 2px 18px;scrollbar-width:none;justify-content:flex-start}
+.filters::-webkit-scrollbar{display:none}
+.chip{flex:none;padding:9px 16px;border-radius:999px;border:1px solid var(--line);font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);background:rgba(255,255,255,.02)}
+.chip.on{color:#2B1636;background:var(--pink);border-color:var(--pink)}
+
+/* Cards de modelos */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,460px),1fr));gap:28px}
+.card{position:relative;border-radius:var(--radius);padding:12px 12px 26px;background:linear-gradient(180deg,var(--card),var(--card-2));border:1.5px solid var(--line);display:flex;flex-direction:column}
+.card.premium{border-color:rgba(231,199,126,.55);box-shadow:0 0 0 1px rgba(231,199,126,.12),0 30px 60px -40px rgba(231,199,126,.5)}
+.card.novo{border-color:rgba(242,165,207,.55)}
+.media{position:relative;aspect-ratio:16/10.4;border-radius:22px;overflow:hidden;border:1px solid var(--line);background:#2B1A3C;cursor:pointer}
+.media img{width:100%;height:100%;object-fit:cover}
+.media .demo-tag{position:absolute;left:14px;top:14px;display:flex;align-items:center;gap:6px;padding:7px 14px;border-radius:999px;background:rgba(20,10,28,.72);border:1px solid var(--line);font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;z-index:2}
+.media .seal{position:absolute;right:14px;top:14px;padding:7px 16px;border-radius:999px;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;z-index:2}
+.seal.gold{color:var(--gold);background:rgba(20,10,28,.75);border:1px solid rgba(231,199,126,.55)}
+.seal.pink{color:#3A1630;background:var(--pink)}
+.media .play{position:absolute;left:14px;bottom:14px;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;background:rgba(20,10,28,.7);border:1px solid rgba(255,255,255,.25);z-index:2}
+.media .tap{position:absolute;right:16px;bottom:12px;font-size:13px;font-weight:600;text-shadow:0 1px 6px rgba(0,0,0,.8);z-index:2}
+/* Arte provisória enquanto não tem foto do modelo */
+.ph{position:absolute;inset:0;display:flex;align-items:center;justify-content:space-around;padding:0 6%;background:radial-gradient(120% 90% at 20% 20%,var(--c1),var(--c2))}
+.ph-txt{text-align:center;color:var(--cx);max-width:52%}
+.ph-txt small{display:block;font-size:11px;letter-spacing:.32em;text-transform:uppercase;opacity:.85}
+.ph-txt strong{display:block;font-family:var(--serif);font-weight:600;font-size:clamp(24px,4.4vw,36px);line-height:1.02;margin:6px 0}
+.ph-txt i{font-family:var(--script);font-style:normal;font-size:22px;opacity:.9}
+.ph-phone{width:24%;aspect-ratio:9/18.5;border-radius:18px;border:3px solid rgba(231,199,126,.7);background:linear-gradient(180deg,rgba(255,255,255,.18),rgba(255,255,255,.04));display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;color:var(--cx);box-shadow:0 18px 30px -14px rgba(0,0,0,.6)}
+.ph-phone span{font-family:var(--script);font-size:clamp(18px,3vw,24px);line-height:1}
+.ph-phone small{font-size:8px;letter-spacing:.2em;text-transform:uppercase}
+
+.body{padding:22px 14px 0;display:flex;flex-direction:column;flex:1}
+.cat{font-size:13px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
+.card h3{font-size:clamp(24px,4.6vw,30px);font-weight:600;line-height:1.2}
+.card h3::after{content:"";display:block;width:84px;height:2px;margin:14px 0 16px;background:linear-gradient(90deg,var(--gold),transparent)}
+.promo{align-self:flex-start;padding:8px 18px;border-radius:999px;border:1px solid rgba(242,165,207,.45);color:var(--pink);font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-bottom:14px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+.tags span{padding:6px 14px;border-radius:999px;border:1px solid var(--line);background:rgba(181,139,217,.08);font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft)}
+.desc{color:var(--ink-soft);font-size:17px;padding-bottom:22px;border-bottom:1px solid var(--line);margin-bottom:20px}
+.price-l{font-size:12px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-mute);margin-bottom:10px}
+.price{align-self:flex-start;font-family:var(--serif);font-weight:700;font-size:30px;line-height:1;padding:14px 24px;border-radius:999px;background:linear-gradient(100deg,#4A2A6E,#6A3E96);border:1px solid rgba(181,139,217,.6);box-shadow:0 10px 26px -14px var(--lilac);margin-bottom:24px}
+.price.ask{font-family:var(--sans);font-size:15px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:16px 22px}
+.actions{display:grid;gap:12px;margin-top:auto}
+
+/* Comparação */
+.compare{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,340px),1fr));gap:18px;margin-top:34px}
+.cmp{border:1.5px solid var(--line);border-radius:26px;padding:26px 28px;background:linear-gradient(180deg,var(--card-2),var(--bg-deep));display:grid;grid-template-columns:110px 1fr;gap:14px 16px;align-items:baseline}
+.cmp dt{font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-mute)}
+.cmp dd{font-size:16px;color:var(--ink-soft)}
+.cmp dd.n{font-weight:700;color:var(--ink);font-size:17px}
+.cmp dd.v{font-weight:700;color:var(--gold)}
+.note{color:var(--ink-mute);font-size:14px;margin-top:22px}
+
+/* Extras */
+.extra{border-radius:var(--radius);border:1.5px solid var(--line);background:linear-gradient(160deg,#3D2158,#26163A 70%);padding:clamp(28px,5vw,48px);display:grid;gap:30px;align-items:center;margin-bottom:28px;overflow:hidden}
+@media (min-width:860px){.extra{grid-template-columns:1.1fr .9fr}}
+.badge{display:inline-block;padding:7px 18px;border-radius:999px;background:var(--pink);color:#2B1636;font-size:13px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;margin-bottom:16px}
+.extra p{color:var(--ink-soft);font-size:17px;margin-bottom:24px}
+.extra .price{font-size:30px}
+.extra .h2{font-size:clamp(34px,7vw,52px)}
+.phone{width:min(260px,70%);margin:0 auto;aspect-ratio:9/18;border-radius:42px;background:#17101F;padding:14px;box-shadow:0 30px 60px -20px rgba(0,0,0,.6);position:relative}
+.phone::before{content:"";position:absolute;top:14px;left:50%;transform:translateX(-50%);width:34%;height:20px;border-radius:0 0 14px 14px;background:#17101F;z-index:2}
+.phone-in{width:100%;height:100%;border-radius:30px;overflow:hidden;background:linear-gradient(180deg,#F6E6F7,#E6D2F2);color:#4A2A5E;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:24px 16px;text-align:center}
+.phone-in img{width:100%;height:100%;object-fit:cover}
+.phone-in .s{font-family:var(--script);font-size:38px;line-height:1;color:#8D63B8}
+.phone-in .row{width:100%;padding:9px 12px;border-radius:999px;background:#fff;font-size:11px;font-weight:600;box-shadow:0 4px 10px -6px rgba(0,0,0,.3)}
+.phone-in .row.on{background:#8D63B8;color:#fff}
+
+/* Produção */
+.panel{border:1.5px solid var(--line);border-radius:var(--radius);background:linear-gradient(180deg,var(--card-2),var(--bg-deep));padding:clamp(28px,5vw,52px) clamp(20px,4vw,48px);text-align:center}
+.info{display:grid;gap:16px;margin:30px 0 44px;text-align:left}
+.info div,.step{border:1.5px solid var(--line);border-radius:22px;padding:20px 24px;background:rgba(255,255,255,.03);color:var(--ink-soft);font-size:17px}
+.h3{font-family:var(--serif);font-weight:700;font-size:clamp(28px,5vw,38px);margin-bottom:22px}
+.steps{display:grid;gap:14px;text-align:left;counter-reset:s;margin-bottom:46px}
+.step{display:flex;gap:16px;align-items:center}
+.step::before{counter-increment:s;content:counter(s);flex:none;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font-size:14px;font-weight:700;background:#3B2552;border:1px solid var(--lilac);color:var(--ink)}
+.warn{color:var(--ink-soft);font-size:17px;max-width:620px;margin:0 auto 40px}
+.urg{font-size:clamp(22px,4vw,30px);font-weight:600;color:var(--pink);text-transform:uppercase;letter-spacing:.02em;margin-bottom:14px}
+.panel .btn-solid{display:inline-flex;margin-top:26px;min-height:56px;padding:0 40px}
+
+/* Rodapé */
+footer{border-top:1px solid var(--line);background:var(--bg-deep);padding:56px 0 110px}
+footer .brand{margin-bottom:18px}
+footer p{color:var(--ink-soft);max-width:520px}
+.fcols{display:grid;gap:34px;margin:36px 0}
+@media (min-width:760px){.fcols{grid-template-columns:repeat(3,1fr)}}
+.fcols h4{font-size:15px;letter-spacing:.24em;text-transform:uppercase;margin-bottom:16px}
+.fcols a{display:flex;align-items:center;gap:12px;color:var(--ink-soft);font-size:17px;padding:6px 0}
+.fcols a:hover{color:var(--pink)}
+.fcols svg{width:22px;height:22px;flex:none}
+.copy{border-top:1px solid var(--line);padding-top:22px;color:var(--ink-mute);font-size:14px}
+
+.wa{position:fixed;left:16px;bottom:calc(16px + env(safe-area-inset-bottom));z-index:50;width:60px;height:60px;border-radius:50%;display:grid;place-items:center;background:#25D366;color:#fff;box-shadow:0 12px 30px -8px rgba(37,211,102,.6)}
+.wa svg{width:30px;height:30px}
+
+/* Janela (demonstração e incluso) */
+.modal{position:fixed;inset:0;z-index:60;display:none;align-items:flex-end;justify-content:center;background:rgba(10,5,14,.72);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.modal.open{display:flex}
+.sheet{width:min(560px,100%);max-height:88vh;overflow:auto;background:var(--card);border:1px solid var(--line);border-radius:28px 28px 0 0;padding:28px 24px calc(28px + env(safe-area-inset-bottom));animation:up .35s var(--ease)}
+@media (min-width:640px){.modal{align-items:center}.sheet{border-radius:28px}}
+@keyframes up{from{transform:translateY(40px);opacity:0}}
+.sheet h3{font-family:var(--serif);font-size:32px;font-weight:700;line-height:1.1;margin-bottom:6px;padding-right:40px}
+.sheet .x{position:absolute;right:18px;top:18px;width:40px;height:40px;border-radius:50%;border:1px solid var(--line);font-size:22px;line-height:1}
+.sheet{position:relative}
+.sheet ul{list-style:none;display:grid;gap:10px;margin:20px 0 24px}
+.sheet li{display:flex;gap:12px;color:var(--ink-soft);font-size:16px}
+.sheet li::before{content:"✦";color:var(--gold);flex:none}
+.sheet video,.sheet iframe{width:100%;border-radius:18px;margin:16px 0 20px;background:#000;border:0}
+.sheet iframe{aspect-ratio:9/16;max-height:70vh}
+.sheet p{color:var(--ink-soft);margin:12px 0 20px}
+
+/* Brilhos e entrada ao rolar */
+.sparkles{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.sparkles i{position:absolute;color:rgba(242,165,207,.35);font-style:normal;animation:float 14s linear infinite}
+@keyframes float{from{transform:translateY(105vh) rotate(0)}to{transform:translateY(-10vh) rotate(160deg)}}
+main,footer,.top{position:relative;z-index:1}
+.top{z-index:40}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}.sparkles{display:none}*{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1-.7-.3-1.4-.7-2-1.3-.5-.5-1-1.1-1.3-1.7-.1-.2 0-.4.1-.5l.4-.5.3-.4v-.5l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.6.6-.9 1.4-.9 2.2.1 1 .5 2 1.1 2.8 1.2 1.7 2.7 3.1 4.6 3.9 1.5.6 2.1.6 2.9.5.5-.1 1.5-.6 1.7-1.2.2-.5.2-1 .1-1.2l-.4-.3z"/></symbol>
+  <symbol id="i-ig" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M7 2.8h10A4.2 4.2 0 0 1 21.2 7v10a4.2 4.2 0 0 1-4.2 4.2H7A4.2 4.2 0 0 1 2.8 17V7A4.2 4.2 0 0 1 7 2.8z"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><path fill="currentColor" d="M8 5.5v13l11-6.5z"/></symbol>
+</svg>
+
+<div class="sparkles" id="sparkles" aria-hidden="true"></div>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#inicio"><span class="mono">MC</span><b>Mary Criativa</b></a>
+    <nav class="nav">
+      <a href="#modelos">Modelos</a>
+      <a href="#comparar">Comparar</a>
+      <a href="#extras">Extras</a>
+      <a href="#producao">Como funciona</a>
+    </nav>
+    <a class="top-cta js-wa" href="#" target="_blank" rel="noopener" data-msg="Oi Mary! Vim pelo catálogo e quero fazer um orçamento.">Orçamento</a>
+  </div>
+</header>
+
+<main id="inicio">
+  <section class="hero">
+    <div class="wrap">
+      <span class="script rv">Mary Criativa</span>
+      <h1 class="rv">Catálogo de <em>convites</em> digitais</h1>
+      <p class="lead rv">Convites interativos, animados e em vídeo, feitos sob medida para a sua festa. Veja a demonstração de cada modelo, compare e escolha o seu.</p>
+      <div class="hero-btns rv">
+        <a class="btn btn-soft" href="#modelos">Ver modelos</a>
+        <a class="btn btn-plain js-wa" href="#" target="_blank" rel="noopener" data-msg="Oi Mary! Vim pelo catálogo e quero tirar uma dúvida.">Falar com a Mary</a>
+      </div>
+      <div class="divider rv">✦</div>
+    </div>
+  </section>
+
+  <section id="modelos" style="padding-top:20px">
+    <div class="wrap">
+      <span class="eyebrow">Nossos modelos</span>
+      <h2 class="h2">Escolha o convite da sua festa</h2>
+      <div class="filters" id="filters" role="tablist" aria-label="Filtrar modelos"></div>
+      <div class="grid" id="grid"></div>
+    </div>
+  </section>
+
+  <section id="comparar">
+    <div class="wrap">
+      <span class="eyebrow">Comparação rápida</span>
+      <h2 class="h2">Ainda em dúvida entre os modelos?</h2>
+      <p class="lead">Use este resumo para entender a proposta de cada convite. Depois é só abrir o card do modelo que mais combina com o seu evento.</p>
+      <div class="compare" id="compare"></div>
+      <p class="note" id="compareNote"></p>
+    </div>
+  </section>
+
+  <section id="extras">
+    <div class="wrap" id="extrasList"></div>
+  </section>
+
+  <section id="producao">
+    <div class="wrap">
+      <div class="panel rv">
+        <span class="eyebrow">Antes de contratar</span>
+        <h2 class="h2">Como funciona a produção</h2>
+        <div class="info" id="info"></div>
+        <h3 class="h3">Passo a passo</h3>
+        <div class="steps" id="steps"></div>
+        <h3 class="h3">Aviso sobre celulares e sistemas</h3>
+        <p class="warn">Pequenas diferenças visuais podem acontecer entre modelos de celular, iOS e Android, e as cores podem variar um pouco de uma tela para outra. Isso não atrapalha a visualização do convite.</p>
+        <p class="urg">Convite com urgência</p>
+        <p class="warn" id="urgText" style="margin-bottom:0"></p>
+        <a class="btn btn-solid js-wa" href="#" target="_blank" rel="noopener" data-msg="Oi Mary! Preciso de um convite com urgência. Pode verificar a disponibilidade?">Faça seu orçamento</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="brand"><span class="mono">MC</span><b>Mary Criativa</b></div>
+    <p>Convites e artes com carinho para os momentos que você quer anunciar, celebrar e lembrar para sempre.</p>
+    <div class="fcols">
+      <div>
+        <h4>Vamos conversar?</h4>
+        <a class="js-wa" href="#" target="_blank" rel="noopener" data-msg="Oi Mary! Vim pelo catálogo."><svg><use href="#i-wa"/></svg><span id="waText">WhatsApp</span></a>
+        <a class="js-ig" href="#" target="_blank" rel="noopener"><svg><use href="#i-ig"/></svg><span id="igText">Instagram</span></a>
+      </div>
+      <div>
+        <h4>Navegue</h4>
+        <a href="#modelos">Modelos</a>
+        <a href="#comparar">Comparação</a>
+        <a href="#extras">Extras</a>
+        <a href="#producao">Como funciona</a>
+      </div>
+      <div>
+        <h4>Loja completa</h4>
+        <a href="../">Todas as artes da Mary Criativa</a>
+      </div>
+    </div>
+    <div class="copy">© <span id="year"></span> Mary Criativa. Feito para celebrar histórias.</div>
+  </div>
+</footer>
+
+<a class="wa js-wa" href="#" target="_blank" rel="noopener" data-msg="Oi Mary! Vim pelo catálogo e quero fazer um orçamento." aria-label="Falar no WhatsApp"><svg><use href="#i-wa"/></svg></a>
+
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="mTitle">
+  <div class="sheet">
+    <button class="x" id="mClose" aria-label="Fechar">×</button>
+    <div id="mBody"></div>
+  </div>
+</div>
+
+<script>
+/* =====================================================================
+   CONFIGURAÇÃO: troque pelos dados reais da Mary Criativa
+   ===================================================================== */
+const CONFIG = {
+  whatsapp: "5500000000000",            // só números: 55 + DDD + número
+  whatsappTexto: "(00) 0 0000-0000",    // como aparece no rodapé
+  instagram: "marycriativa",            // sem o @
+  notaPromo: "* Valor promocional de lançamento, válido até a data indicada no card.",
+  urgencia: "Precisa do convite rapidinho? Fazemos com urgência mediante taxa adicional, sujeito à disponibilidade da agenda.",
+  info: [
+    "⏳ O prazo de confecção é de X a X dias úteis após a confirmação do pagamento.",
+    "📅 A produção segue a ordem da agenda. Consulte a disponibilidade da data antes de contratar.",
+    "💳 O pedido é confirmado somente após o pagamento."
+  ],
+  passos: [
+    "📋 Você escolhe o modelo e manda as referências que gosta.",
+    "💬 A gente alinha os detalhes: nomes, datas, cores e estilo.",
+    "🎨 Com o pagamento confirmado, seu convite entra na produção na data agendada.",
+    "✉️ Você recebe a prévia para aprovar e, se precisar, fazemos os ajustes sem custo adicional.",
+    "✅ Depois da aprovação, enviamos o arquivo final para você mandar aos convidados."
+  ]
+};
+
+/* =====================================================================
+   MODELOS: um bloco por convite. Os modelos abaixo são provisórios,
+   troque nomes, textos e preços quando tiver os modelos reais.
+   - grupo: interativo | video | estatico (usado nos filtros)
+   - selo: "Premium" (borda dourada) ou "Lançamento" (borda rosa) ou ""
+   - preco: "175" vira R$175,00. Vazio mostra "Consultar valor"
+   - promo: texto da faixa rosa (ex.: "Valor promocional até dia 20")
+   - imagem: "img/nome.jpg" (capa do card). Vazio mostra uma arte provisória
+   - video: "videos/nome.mp4" para abrir a demonstração no próprio site
+   - demo: link do convite de exemplo (abre em outra aba)
+   - cores: [fundo 1, fundo 2, texto] da arte provisória
+   ===================================================================== */
+const MODELOS = [
+  { id: "interativo-premium", grupo: "interativo", selo: "Premium", categoria: "Premium",
+    nome: "Interativo Premium", formato: "HTML interativo", destaque: "Animações e recursos interativos",
+    tags: ["HTML", "Animado", "Interativo"],
+    desc: "Convite com abertura animada, música e botões para cada informação da festa. Uma experiência completa na tela do convidado.",
+    preco: "", promo: "", imagem: "", video: "", demo: "",
+    inclui: ["Abertura animada", "Música personalizada", "Contagem regressiva", "Botões de local, presentes e confirmação", "Link pronto para enviar no WhatsApp"],
+    cores: ["#3B2A6B", "#120A28", "#E7C77E"] },
+  { id: "extenso-premium", grupo: "interativo", selo: "Premium", categoria: "Premium",
+    nome: "Extenso Premium", formato: "HTML extenso", destaque: "Experiência completa por rolagem",
+    tags: ["HTML", "Rolagem", "Premium"],
+    desc: "Modelo premium em formato extenso, com navegação por rolagem e uma apresentação completa para cada momento do convite.",
+    preco: "", promo: "", imagem: "", video: "", demo: "",
+    inclui: ["Abertura animada", "Seções com fotos e textos", "Música personalizada", "Contagem regressiva", "Botões interativos", "Link pronto para enviar"],
+    cores: ["#1F2F6B", "#0B1030", "#E7C77E"] },
+  { id: "livro", grupo: "interativo", selo: "Lançamento", categoria: "",
+    nome: "Convite Livro", formato: "Páginas interativas", destaque: "Experiência de folhear um livro",
+    tags: ["Páginas", "Interativo", "Personalizado"],
+    desc: "Convite inspirado em um livro: a experiência acontece página por página, revelando fotos, mensagens e as informações do evento.",
+    preco: "", promo: "Valor promocional de lançamento", imagem: "", video: "", demo: "",
+    inclui: ["Páginas com efeito de folhear", "Fotos e mensagens", "Informações do evento", "Botões de local e confirmação"],
+    cores: ["#5A3B6E", "#1E1028", "#F3D9A4"] },
+  { id: "interativo-extenso", grupo: "interativo", selo: "", categoria: "",
+    nome: "Interativo Extenso", formato: "Rolagem", destaque: "Informações organizadas em seções",
+    tags: ["Rolagem", "Interativo", "Link"],
+    desc: "Modelo extenso com rolagem, criado para apresentar as informações do evento em seções organizadas e fáceis de navegar.",
+    preco: "", promo: "", imagem: "", video: "", demo: "",
+    inclui: ["Seções com as informações do evento", "Fotos", "Botões de local, presentes e confirmação", "Link pronto para enviar"],
+    cores: ["#23477A", "#0E1A33", "#FFFFFF"] },
+  { id: "interativo-tradicional", grupo: "interativo", selo: "", categoria: "",
+    nome: "Interativo Tradicional", formato: "Estático com botões", destaque: "Prático e elegante",
+    tags: ["Estático", "Botões", "Link"],
+    desc: "Modelo de uma tela com botões interativos para reunir as principais informações do evento em uma apresentação elegante.",
+    preco: "", promo: "", imagem: "", video: "", demo: "",
+    inclui: ["Arte personalizada", "Botão de sugestão de presente", "Botão de confirmar presença", "Botão de endereço no mapa"],
+    cores: ["#7DA2E8", "#2C4A9A", "#FFFFFF"] },
+  { id: "interativo-video", grupo: "video", selo: "", categoria: "",
+    nome: "Interativo com Vídeo", formato: "Interativo + vídeo", destaque: "Experiência com vídeo animado",
+    tags: ["Vídeo", "Interativo", "Música"],
+    desc: "Junta a praticidade do convite interativo com um vídeo animado e música de fundo.",
+    preco: "", promo: "", imagem: "", video: "", demo: "",
+    inclui: ["Vídeo animado com música", "Botões interativos", "Informações do evento", "Link pronto para enviar"],
+    cores: ["#F08AB4", "#7B3FA0", "#FFFFFF"] },
+  { id: "animado", grupo: "video", selo: "", categoria: "",
+    nome: "Convite Animado", formato: "Vídeo", destaque: "Animação e música",
+    tags: ["Vídeo", "Animação", "Música"],
+    desc: "Convite em vídeo, personalizado com música e animação para apresentar a sua celebração de um jeito marcante.",
+    preco: "", promo: "", imagem: "", video: "", demo: "",
+    inclui: ["Vídeo em formato de celular", "Música de fundo", "Nome, data, horário e local", "Arquivo pronto para WhatsApp e stories"],
+    cores: ["#F3D7B0", "#B98654", "#5B3A1E"] },
+  { id: "tradicional", grupo: "estatico", selo: "", categoria: "",
+    nome: "Convite Tradicional", formato: "Estático", destaque: "Essencial e clássico",
+    tags: ["Estático", "Clássico"],
+    desc: "A opção mais simples e clássica para reunir data, horário, local e as demais informações essenciais da celebração.",
+    preco: "", promo: "", imagem: "", video: "", demo: "",
+    inclui: ["Arte personalizada", "Data, horário e local", "Versão digital", "Versão para impressão"],
+    cores: ["#3A3540", "#0E0C10", "#F1EDEA"] },
+  { id: "save-the-date", grupo: "estatico", selo: "", categoria: "",
+    nome: "Save the Date", formato: "Digital", destaque: "Aviso da data com antecedência",
+    tags: ["Digital", "Personalizado"],
+    desc: "Um jeito prático e delicado de avisar a data com antecedência para os convidados reservarem o dia.",
+    preco: "", promo: "", imagem: "", video: "", demo: "",
+    inclui: ["Arte personalizada", "Nome e data do evento", "Pronto para enviar no WhatsApp"],
+    cores: ["#25336E", "#0A0F2A", "#DDE4FF"] }
+];
+
+/* EXTRAS: serviços que complementam o convite */
+const EXTRAS = [
+  { id: "confirmacao", selo: "Novidade", sobre: "Mais organização para o seu evento",
+    nome: "Confirmação de presença para o seu evento.",
+    desc: "O convidado procura o próprio nome, confirma a presença e informa os acompanhantes que você autorizou. Você acompanha a lista de confirmados e pendentes sempre atualizada.",
+    preco: "", botao: "Conhecer confirmação de presença", imagem: "" },
+  { id: "album", selo: "", sobre: "Novo jeito de guardar memórias",
+    nome: "Seu evento continua vivo depois da festa.",
+    desc: "Com o Álbum Digital, seus convidados acessam fotos, vídeos e momentos especiais em uma experiência linda, prática e feita para reviver.",
+    preco: "", botao: "Conhecer álbum digital", imagem: "" }
+];
+
+/* ===================================================================== */
+(() => {
+  const $ = id => document.getElementById(id);
+  const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  const wa = msg => "https://wa.me/" + CONFIG.whatsapp + (msg ? "?text=" + encodeURIComponent(msg) : "");
+  const money = p => "R$" + Number(String(p).replace(",", ".")).toLocaleString("pt-BR", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  const hasPrice = p => p !== "" && p != null && !isNaN(Number(String(p).replace(",", ".")));
+  const hasDemo = m => m.video || m.demo;
+
+  const placeholder = m => {
+    const [c1, c2, cx] = m.cores;
+    return `<div class="ph" style="--c1:${c1};--c2:${c2};--cx:${cx}">
+      <div class="ph-txt"><small>Convite</small><strong>${esc(m.nome)}</strong><i>Mary Criativa</i></div>
+      <div class="ph-phone"><span>Sua festa</span><small>Seu nome</small></div>
+    </div>`;
+  };
+  const media = m => `
+    <div class="media" data-demo="${m.id}" ${hasDemo(m) ? 'role="button" tabindex="0" aria-label="Ver demonstração de ' + esc(m.nome) + '"' : ""}>
+      ${m.imagem ? `<img src="${esc(m.imagem)}" alt="${esc(m.nome)}" loading="lazy">` : placeholder(m)}
+      ${hasDemo(m) ? `<span class="demo-tag"><svg width="10" height="10"><use href="#i-play"/></svg>Demonstração</span>
+        <span class="play"><svg width="26" height="26"><use href="#i-play"/></svg></span><span class="tap">Toque para assistir</span>` : ""}
+      ${m.selo ? `<span class="seal ${m.selo === "Premium" ? "gold" : "pink"}">${esc(m.selo)}</span>` : ""}
+    </div>`;
+
+  const card = m => `
+    <article class="card rv${m.selo === "Premium" ? " premium" : m.selo ? " novo" : ""}" data-grupo="${m.grupo}">
+      ${media(m)}
+      <div class="body">
+        ${m.categoria ? `<p class="cat">${esc(m.categoria)}</p>` : ""}
+        <h3>${esc(m.nome)}</h3>
+        ${m.promo ? `<span class="promo">${esc(m.promo)}</span>` : ""}
+        <div class="tags">${m.tags.map(t => `<span>${esc(t)}</span>`).join("")}</div>
+        <p class="desc">${esc(m.desc)}</p>
+        <p class="price-l">Valor</p>
+        ${hasPrice(m.preco) ? `<span class="price">${money(m.preco)}</span>` : `<span class="price ask">Consultar valor</span>`}
+        <div class="actions">
+          ${hasDemo(m) ? `<button class="btn btn-gold" data-demo="${m.id}">Ver demonstração</button>` : ""}
+          <a class="btn btn-want" href="${wa(`Oi Mary! Quero o modelo ${m.nome}. Pode me passar mais detalhes?`)}" target="_blank" rel="noopener">Quero este modelo</a>
+          <button class="btn btn-plain" data-inclui="${m.id}">Ver o que está incluso</button>
+        </div>
+      </div>
+    </article>`;
+
+  // Filtros
+  const GRUPOS = [["todos", "Todos"], ["interativo", "Interativos"], ["video", "Em vídeo"], ["estatico", "Estáticos"]]
+    .filter(([g]) => g === "todos" || MODELOS.some(m => m.grupo === g));
+  $("filters").innerHTML = GRUPOS.map(([g, n], i) => `<button class="chip${i ? "" : " on"}" data-g="${g}" role="tab">${n}</button>`).join("");
+  $("filters").addEventListener("click", e => {
+    const b = e.target.closest(".chip"); if (!b) return;
+    document.querySelectorAll(".chip").forEach(c => c.classList.toggle("on", c === b));
+    document.querySelectorAll("#grid .card").forEach(c => c.style.display = b.dataset.g === "todos" || c.dataset.grupo === b.dataset.g ? "" : "none");
+  });
+
+  $("grid").innerHTML = MODELOS.map(card).join("");
+
+  // Comparação
+  $("compare").innerHTML = MODELOS.map(m => `
+    <dl class="cmp rv">
+      <dt>Modelo</dt><dd class="n">${esc(m.nome)}</dd>
+      <dt>Formato</dt><dd>${esc(m.formato)}</dd>
+      <dt>Destaque</dt><dd>${esc(m.destaque)}</dd>
+      <dt>Valor</dt><dd class="v">${hasPrice(m.preco) ? money(m.preco) + (m.promo ? "*" : "") : "Consultar"}</dd>
+    </dl>`).join("");
+  $("compareNote").textContent = MODELOS.some(m => m.promo && hasPrice(m.preco)) ? CONFIG.notaPromo : "";
+
+  // Extras
+  $("extrasList").innerHTML = EXTRAS.map(x => `
+    <div class="extra rv" id="extra-${x.id}">
+      <div>
+        ${x.selo ? `<span class="badge">${esc(x.selo)}</span>` : ""}
+        <p class="eyebrow">${esc(x.sobre)}</p>
+        <h2 class="h2">${esc(x.nome)}</h2>
+        <p>${esc(x.desc)}</p>
+        ${hasPrice(x.preco) ? `<span class="price" style="display:inline-block">+ ${money(x.preco)}</span><br>` : ""}
+        <a class="btn btn-soft" style="display:inline-flex" href="${wa(`Oi Mary! Tenho interesse no serviço: ${x.botao.replace(/^Conhecer /, "")}.`)}" target="_blank" rel="noopener">${esc(x.botao)}</a>
+      </div>
+      <div class="phone"><div class="phone-in">${x.imagem ? `<img src="${esc(x.imagem)}" alt="" loading="lazy">` :
+        x.id === "confirmacao"
+          ? `<span class="s">Sua festa</span><small>Você vai comparecer?</small><span class="row on">✓ Sim, vou comparecer</span><span class="row">Vou com acompanhantes</span><span class="row">Não poderei ir</span>`
+          : `<span class="s">Álbum</span><small>Fotos e vídeos da festa</small><span class="row">📸 Ver fotos</span><span class="row">🎬 Ver vídeos</span><span class="row on">💌 Deixar recado</span>`}
+      </div></div>
+    </div>`).join("");
+
+  // Produção
+  $("info").innerHTML = CONFIG.info.map(t => `<div>${esc(t)}</div>`).join("");
+  $("steps").innerHTML = CONFIG.passos.map(t => `<div class="step">${esc(t)}</div>`).join("");
+  $("urgText").textContent = CONFIG.urgencia;
+
+  // Contato
+  document.querySelectorAll(".js-wa").forEach(a => a.href = wa(a.dataset.msg));
+  document.querySelectorAll(".js-ig").forEach(a => a.href = "https://instagram.com/" + CONFIG.instagram);
+  $("waText").textContent = "WhatsApp " + CONFIG.whatsappTexto;
+  $("igText").textContent = "@" + CONFIG.instagram;
+  $("year").textContent = new Date().getFullYear();
+
+  // Janela
+  const modal = $("modal"), body = $("mBody");
+  const open = html => { body.innerHTML = html; modal.classList.add("open"); document.body.style.overflow = "hidden"; $("mClose").focus(); };
+  const close = () => { modal.classList.remove("open"); body.innerHTML = ""; document.body.style.overflow = ""; };
+  const find = id => MODELOS.find(m => m.id === id);
+  const want = m => `<a class="btn btn-want btn-block" href="${wa(`Oi Mary! Quero o modelo ${m.nome}. Pode me passar mais detalhes?`)}" target="_blank" rel="noopener">Quero este modelo</a>`;
+
+  const showDemo = m => {
+    if (m.video) open(`<h3>${esc(m.nome)}</h3><video src="${esc(m.video)}" controls autoplay playsinline></video>${want(m)}`);
+    else if (m.demo) window.open(m.demo, "_blank", "noopener");
+  };
+  document.addEventListener("click", e => {
+    const d = e.target.closest("[data-demo]"), i = e.target.closest("[data-inclui]");
+    if (d && hasDemo(find(d.dataset.demo))) showDemo(find(d.dataset.demo));
+    if (i) {
+      const m = find(i.dataset.inclui);
+      open(`<h3>${esc(m.nome)}</h3><p class="cat" style="margin:0">${esc(m.formato)}</p><ul>${m.inclui.map(t => `<li>${esc(t)}</li>`).join("")}</ul>
+        <p class="price-l">Valor</p><p style="margin:0 0 20px;color:var(--gold);font-weight:700;font-size:20px">${hasPrice(m.preco) ? money(m.preco) : "Consultar valor"}</p>${want(m)}`);
+    }
+  });
+  document.addEventListener("keydown", e => {
+    if (e.key === "Escape") close();
+    if (e.key === "Enter" && e.target.matches(".media[data-demo]")) showDemo(find(e.target.dataset.demo));
+  });
+  $("mClose").addEventListener("click", close);
+  modal.addEventListener("click", e => { if (e.target === modal) close(); });
+
+  // Brilhos
+  const sp = $("sparkles");
+  for (let k = 0; k < 10; k++) {
+    const s = document.createElement("i");
+    s.textContent = k % 3 ? "✦" : "♥";
+    s.style.cssText = `left:${Math.random() * 100}%;font-size:${10 + Math.random() * 16}px;animation-delay:${-Math.random() * 14}s;animation-duration:${12 + Math.random() * 10}s`;
+    sp.appendChild(s);
+  }
+
+  // Entrada ao rolar
+  const io = new IntersectionObserver(es => es.forEach(x => { if (x.isIntersecting) { x.target.classList.add("in"); io.unobserve(x.target); } }), { threshold: .12 });
+  document.querySelectorAll(".rv").forEach(el => io.observe(el));
+})();
+</script>
+</body>
+</html>
