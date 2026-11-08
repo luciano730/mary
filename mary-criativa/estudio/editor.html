@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Editor | Estúdio de Convites Mary Criativa</title>
+<meta name="theme-color" content="#1B1026">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icone.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Great+Vibes&family=Montserrat:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<header class="topo editor-topo">
+  <a class="btn-icone" href="./" id="voltar" aria-label="Voltar para o painel" title="Voltar para o painel"></a>
+  <div class="editor-titulo">
+    <h1 id="titulo-editor">Novo convite</h1>
+  </div>
+  <span class="chip" id="chip-tipo">Cinematográfico</span>
+  <span class="espaco"></span>
+  <span class="salvo" id="salvo" aria-live="polite"></span>
+  <a class="btn btn-linha esconde-movel" id="abrir-convite" target="_blank" rel="noopener"></a>
+  <button type="button" class="btn btn-primario" id="exportar"></button>
+</header>
+
+<div class="editor">
+  <div class="coluna">
+    <div class="pendencias" id="pendencias" role="status"></div>
+
+    <section class="cartao" aria-labelledby="t-dados">
+      <span class="rotulo">Passo 1</span>
+      <h2 id="t-dados">Dados do convite</h2>
+      <div class="campos">
+        <label class="campo largo"><span>Nome do projeto <em>(só você vê)</em></span><input data-campo="nomeProjeto" maxlength="80" placeholder="Ex.: 15 anos Giovanna, cliente Ana"></label>
+        <label class="campo"><span>Nome no convite</span><input data-campo="titulo" maxlength="40" placeholder="Ex.: Giovanna"></label>
+        <label class="campo"><span>Complemento <em>(opcional)</em></span><input data-campo="subtitulo" maxlength="40" placeholder="Ex.: 15 anos"></label>
+        <label class="campo"><span>Data do evento</span><input type="date" data-campo="data"></label>
+        <label class="campo"><span>Horário</span><input type="time" data-campo="hora"></label>
+        <label class="campo largo"><span>Mensagem <em>(opcional)</em></span><textarea data-campo="mensagem" maxlength="400" placeholder="Ex.: Tenho a honra de convidar você para celebrar comigo este momento tão especial."></textarea></label>
+        <div class="campo largo"><span>Cor principal</span><div class="cores" id="cores"></div></div>
+      </div>
+    </section>
+
+    <section class="cartao" aria-labelledby="t-capa">
+      <span class="rotulo">Passo 2</span>
+      <h2 id="t-capa">Capa</h2>
+      <p class="ajuda">Aparece na abertura e no topo do convite. Use uma imagem vertical (1080 x 1920) em JPG ou PNG.</p>
+      <div data-slot-capa></div>
+      <div class="uso" id="uso"><div class="uso-barra"><i></i></div><small><span></span><span></span></small></div>
+    </section>
+
+    <section class="cartao" aria-labelledby="t-secoes">
+      <span class="rotulo">Passo 3</span>
+      <h2 id="t-secoes">Partes do convite</h2>
+      <p class="ajuda">Ligue o que a sua cliente quer no convite. Cada parte ligada vira um botão para o convidado.</p>
+      <div class="secoes" id="secoes"></div>
+    </section>
+  </div>
+
+  <aside class="previa" aria-label="Prévia no celular">
+    <button type="button" class="btn btn-linha fechar-previa" id="fechar-previa"></button>
+    <div class="abas-previa" role="group" aria-label="Escolha a tela da prévia">
+      <button type="button" data-tela="abertura" aria-pressed="true">Abertura</button>
+      <button type="button" data-tela="video" aria-pressed="false">Vídeo</button>
+      <button type="button" data-tela="principal" aria-pressed="false">Convite</button>
+    </div>
+    <div class="celular"><iframe id="previa" title="Prévia do convite" src="convite.html?previa=1"></iframe></div>
+    <p class="previa-dica">A prévia atualiza sozinha enquanto você edita. Toque nos botões do convite para testar.</p>
+  </aside>
+</div>
+
+<button type="button" class="btn btn-ouro botao-previa-movel" id="ver-previa"></button>
+
+<script src="js/store.js"></script>
+<script src="js/exportar.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/editor.js"></script>
+</body>
+</html>

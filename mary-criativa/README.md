@@ -45,3 +45,27 @@ Tudo se edita no fim do arquivo:
    - `imagem`: capa do card (ex.: `img/livro.jpg` dentro de `convites/`). Sem imagem aparece uma arte provisória.
    - `video`: vídeo `.mp4` da demonstração (abre no próprio site) ou `demo`: link do convite de exemplo. O botão "Ver demonstração" só aparece quando um dos dois está preenchido.
 3. `EXTRAS`: serviços adicionais com preço.
+
+## Estúdio de Convites (app)
+
+Fica em `estudio/` (abre em `/estudio/`). É o app para a Mary criar convites digitais e entregar para as clientes. Funciona no computador e no celular, e dá para instalar na tela inicial (no Chrome: menu > Instalar app; no iPhone: Compartilhar > Adicionar à Tela de Início).
+
+- **Painel** (`estudio/index.html`): saudação, tipos de convite e lista de projetos (editar, ver, exportar, duplicar, excluir).
+- **Editor** (`estudio/editor.html`): dados do convite, cor, capa e as partes que liga e desliga (abertura, vídeo, música, contagem regressiva, confirmação de presença, localização, presente, Pix, dress code, informações, manual do convidado e galeria). O celular de prévia ao lado atualiza na hora. Salva sozinho.
+- **Convite** (`estudio/convite.html`): o que o convidado vê. Abertura com a capa, vídeo em tela cheia com som, e depois as informações com botões. A confirmação de presença chega pronta no WhatsApp informado.
+
+### Como entregar um convite
+
+1. No editor, clique em **Exportar**. Baixa um arquivo `.html` com tudo dentro (fotos, vídeo e música).
+2. Crie uma pasta, coloque o arquivo nela com o nome `index.html` e arraste a pasta no https://app.netlify.com/drop.
+3. Mande o link para a cliente.
+
+### Importante
+
+- Os projetos ficam salvos **no navegador do aparelho** onde foram criados. Limpar os dados do navegador apaga os projetos, então exporte os convites prontos.
+- O estúdio precisa abrir por um endereço `http`/`https` (GitHub Pages, Netlify ou, no computador, `python3 -m http.server` dentro da pasta `estudio`). Abrindo o arquivo direto (duplo clique), a exportação não funciona.
+- Vídeo: MP4 na vertical (9:16), de preferência até uns 20 MB para o link abrir rápido no 4G.
+
+### Próximos passos (para vender assinatura)
+
+Para outras pessoas usarem com login, link online direto (sem exportar) e lista de confirmações dentro do app, o estúdio precisa de um servidor (por exemplo Supabase). O código já está preparado: tudo que salva e lê dados passa pelo arquivo `estudio/js/store.js`, que é o único que muda.

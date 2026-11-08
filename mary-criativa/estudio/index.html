@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Estúdio de Convites | Mary Criativa</title>
+<meta name="theme-color" content="#1B1026">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icone.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icone.svg">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Mary Convites">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Great+Vibes&family=Montserrat:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<header class="topo">
+  <a class="marca" href="./"><b>Mary Criativa</b><small>Estúdio de Convites</small></a>
+  <span class="espaco"></span>
+  <a class="btn btn-primario" href="editor.html?tipo=cinematografico" id="botao-novo"></a>
+</header>
+
+<main class="pagina">
+  <section class="boas-vindas">
+    <div>
+      <span class="rotulo">Seu espaço criativo</span>
+      <h1><span id="saudacao">Olá</span>, <button type="button" id="nome-usuaria" title="Trocar nome">Mary</button></h1>
+      <p>Crie convites cinematográficos, veja como fica no celular e entregue para a sua cliente.</p>
+    </div>
+    <div class="numeros" aria-label="Resumo">
+      <div class="numero"><strong id="n-total">0</strong><small>convites</small></div>
+      <div class="numero"><strong id="n-prontos">0</strong><small>prontos</small></div>
+    </div>
+  </section>
+
+  <section class="bloco" aria-labelledby="titulo-criar">
+    <div class="bloco-topo"><div><span class="rotulo">Criação</span><h2 id="titulo-criar">O que vamos criar hoje?</h2></div></div>
+    <div class="tipos" id="tipos"></div>
+  </section>
+
+  <section class="bloco" aria-labelledby="titulo-projetos">
+    <div class="bloco-topo"><div><span class="rotulo">Meus projetos</span><h2 id="titulo-projetos">Convites</h2></div></div>
+    <div id="projetos"></div>
+  </section>
+
+  <aside class="aviso-local" id="aviso-local"></aside>
+</main>
+
+<script src="js/store.js"></script>
+<script src="js/exportar.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/painel.js"></script>
+</body>
+</html>

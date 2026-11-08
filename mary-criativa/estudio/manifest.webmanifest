@@ -1,0 +1,14 @@
+{
+  "name": "Estúdio de Convites Mary Criativa",
+  "short_name": "Mary Convites",
+  "description": "Crie convites digitais cinematográficos e entregue para as suas clientes.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#1B1026",
+  "theme_color": "#1B1026",
+  "lang": "pt-BR",
+  "icons": [
+    { "src": "icone.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}

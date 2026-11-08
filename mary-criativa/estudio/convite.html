@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Convite</title>
+<meta name="theme-color" content="#140B1A">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Great+Vibes&family=Montserrat:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="css/convite.css">
+</head>
+<body>
+<div id="carregando" class="carregando"><span></span></div>
+
+<!-- 1. Abertura -->
+<section id="tela-abertura" class="tela" aria-label="Abertura do convite">
+  <div class="fundo-capa" data-capa></div>
+  <div class="abertura-conteudo">
+    <p class="selo">Você foi convidado</p>
+    <h1 class="nome-script" data-titulo></h1>
+    <p class="subtitulo" data-subtitulo></p>
+    <button type="button" class="botao-abrir" id="botao-abrir">
+      <span class="pulso" aria-hidden="true"></span>
+      <span data-texto-abrir>Toque para abrir</span>
+    </button>
+  </div>
+</section>
+
+<!-- 2. Vídeo em tela cheia -->
+<section id="tela-video" class="tela" aria-label="Vídeo do convite">
+  <video id="video" playsinline webkit-playsinline preload="auto"></video>
+  <button type="button" class="botao-pular" id="botao-pular"></button>
+</section>
+
+<!-- 3. Convite com as informações -->
+<main id="tela-principal" class="tela">
+  <header class="hero">
+    <div class="hero-capa" data-capa></div>
+    <div class="hero-texto">
+      <h1 class="nome-script" data-titulo></h1>
+      <p class="subtitulo" data-subtitulo></p>
+      <div class="ornamento" aria-hidden="true"><i></i><b></b><i></i></div>
+      <p class="data-evento" id="data-evento"></p>
+      <p class="mensagem" id="mensagem"></p>
+    </div>
+  </header>
+
+  <section class="contagem" id="contagem" aria-label="Contagem regressiva"></section>
+
+  <div class="acoes-rapidas" id="acoes-rapidas"></div>
+
+  <nav class="grade-secoes" id="grade-secoes" aria-label="Informações do convite"></nav>
+
+  <footer class="rodape">
+    <p>Convite feito com carinho por <strong>Mary Criativa</strong></p>
+  </footer>
+</main>
+
+<!-- Painel que sobe com o conteúdo de cada botão -->
+<div class="folha" id="folha" aria-hidden="true">
+  <div class="folha-fundo" data-fechar></div>
+  <section class="folha-cartao" role="dialog" aria-modal="true" aria-labelledby="folha-titulo">
+    <button type="button" class="folha-fechar" data-fechar aria-label="Fechar"></button>
+    <div class="folha-icone" id="folha-icone"></div>
+    <h2 id="folha-titulo"></h2>
+    <div class="folha-corpo" id="folha-corpo"></div>
+  </section>
+</div>
+
+<div class="visor" id="visor" aria-hidden="true"><img alt=""><button type="button" data-fechar-visor aria-label="Fechar foto"></button></div>
+
+<button type="button" class="botao-som" id="botao-som" aria-label="Ligar ou desligar a música"></button>
+<audio id="musica" loop preload="auto"></audio>
+<div class="aviso" id="aviso" role="status" aria-live="polite"></div>
+
+<script src="js/store.js"></script>
+<script src="js/convite.js"></script>
+</body>
+</html>
