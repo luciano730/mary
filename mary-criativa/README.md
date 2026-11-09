@@ -50,15 +50,39 @@ Tudo se edita no fim do arquivo:
 
 Fica em `estudio/` (abre em `/estudio/`). É o app para a Mary criar convites digitais e entregar para as clientes. Funciona no computador e no celular, e dá para instalar na tela inicial (no Chrome: menu > Instalar app; no iPhone: Compartilhar > Adicionar à Tela de Início).
 
-- **Painel** (`estudio/index.html`): saudação, tipos de convite e lista de projetos (editar, ver, exportar, duplicar, excluir).
-- **Editor** (`estudio/editor.html`): dados do convite, cor, capa e as partes que liga e desliga (abertura, vídeo, música, contagem regressiva, confirmação de presença, localização, presente, Pix, dress code, informações, manual do convidado e galeria). O celular de prévia ao lado atualiza na hora. Salva sozinho.
-- **Convite** (`estudio/convite.html`): o que o convidado vê. Abertura com a capa, vídeo em tela cheia com som, e depois as informações com botões. A confirmação de presença chega pronta no WhatsApp informado.
+- **Painel** (`estudio/index.html`): saudação, Minha marca (nome e logo no rodapé dos convites), modelos de convite e projetos com status (Rascunho, Aguardando aprovação, Aprovado, Entregue).
+- **Editor** (`estudio/editor.html`): dados, cor, idioma (português, inglês ou espanhol), mídias de cada modelo, abertura e efeitos (contagem regressiva, efeito ao tocar, senha, marca d'água de prévia) e botões. O celular de prévia ao lado atualiza na hora, tem zoom e salva sozinho.
+- **Convite** (`estudio/convite.html`): o que o convidado vê. Um motor só para todos os modelos.
+
+### Modelos
+
+- **Cinematográfico**: abertura, vídeo em tela cheia com som e depois o convite. O vídeo pode parar no último quadro com os botões por cima.
+- **Interativo**: uma arte em tela cheia com áreas de toque em cima dos desenhos.
+- **Livrinho**: até 15 páginas (imagem, GIF ou vídeo, no máximo 6 vídeos) que viram como livro. Os cartões de página se arrastam para mudar a ordem. Sem capa, a primeira página vira a capa.
+- **Revelação**: raspadinha que revela a imagem surpresa, com confete.
+- **Quebra-cabeça**: de 2 x 2 a 5 x 5 peças, o convidado troca as peças de lugar.
+- **Lista de presentes**: um presente por linha (`nome | preço | link`), com botão de comprar e aviso pelo WhatsApp.
+- **Mural de recados**: em breve, precisa do servidor.
+
+### Botões
+
+Cada botão (confirmar presença, localização, WhatsApp, sugestão de presente, lista, Pix, dress code, informações, manual, galeria, agenda, rever vídeo, ver convite ou personalizado) pode:
+
+- mostrar o conteúdo padrão, **mostrar uma imagem** enviada ou **abrir um link externo**;
+- ficar na lista do convite ou ser **posicionado** na abertura, no vídeo, na arte, no livrinho, na raspadinha, no quebra-cabeça ou no topo do convite. No modo "Posicionar botões" da prévia, os botões aparecem com contorno tracejado para arrastar e redimensionar. No vídeo, os botões "Início do vídeo" e "Final do vídeo" ajudam a encaixar no quadro certo;
+- ter estilo na cor do convite, claro, transparente ou **invisível** (só a área de toque, por cima de um botão desenhado na arte);
+- aparecer o tempo todo ou só no final (fim do vídeo, última página, depois de raspar ou de montar).
+
+Dá para adicionar quantos botões quiser (Localização 2, WhatsApp 2 etc.).
 
 ### Como entregar um convite
 
-1. No editor, clique em **Exportar**. Baixa um arquivo `.html` com tudo dentro (fotos, vídeo e música).
-2. Crie uma pasta, coloque o arquivo nela com o nome `index.html` e arraste a pasta no https://app.netlify.com/drop.
+1. No editor, clique em **Exportar**. Baixa um `.zip` com o convite (`index.html`), a pasta `midia/` e a imagem do link.
+2. Descompacte e arraste a pasta no https://app.netlify.com/drop.
 3. Mande o link para a cliente.
+4. Para a imagem aparecer quando o link for enviado no WhatsApp, cole o link final em **Endereço do convite** (Passo 5) e exporte de novo.
+
+Para mandar para aprovação antes do pagamento, ligue a **Marca d'água de prévia**. Quando a cliente pagar, desligue e exporte de novo.
 
 ### Importante
 
@@ -68,4 +92,4 @@ Fica em `estudio/` (abre em `/estudio/`). É o app para a Mary criar convites di
 
 ### Próximos passos (para vender assinatura)
 
-Para outras pessoas usarem com login, link online direto (sem exportar) e lista de confirmações dentro do app, o estúdio precisa de um servidor (por exemplo Supabase). O código já está preparado: tudo que salva e lê dados passa pelo arquivo `estudio/js/store.js`, que é o único que muda.
+Para outras pessoas usarem com login, link online direto (sem exportar), lista de confirmações dentro do app, mural de recados, votação e contador de carinhos, o estúdio precisa de um servidor (por exemplo Supabase). O código já está preparado: tudo que salva e lê dados passa pelo arquivo `estudio/js/store.js`, que é o único que muda.

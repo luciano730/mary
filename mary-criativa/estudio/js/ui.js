@@ -17,43 +17,47 @@
     el.classList.toggle("erro", !!erro);
     el.classList.add("visivel");
     clearTimeout(toast.t);
-    toast.t = setTimeout(() => el.classList.remove("visivel"), 3200);
+    toast.t = setTimeout(() => el.classList.remove("visivel"), 3400);
+  }
+
+  function dialogo(html) {
+    const d = document.createElement("dialog");
+    d.className = "dialogo";
+    d.innerHTML = '<div class="dialogo-corpo">' + html + "</div>";
+    document.body.appendChild(d);
+    d.addEventListener("close", () => d.remove());
+    d.addEventListener("click", e => { if (e.target.closest("[data-fechar-dialogo]")) d.close(); });
+    d.showModal();
+    return d;
   }
 
   /* Exporta e explica como transformar o arquivo em link. */
   async function exportarComAjuda(projeto) {
     const falta = S.pendencias(projeto);
     if (falta.length && !confirm("Ainda falta: " + falta.join(", ") + ".\n\nQuer exportar mesmo assim?")) return;
-    toast("Preparando o arquivo do convite...");
-    let res;
+    toast("Preparando o convite...");
+    let r;
     try {
-      res = await window.Exportar.baixar(projeto);
+      r = await window.Exportar.baixar(projeto);
     } catch (e) {
       console.error(e);
-      toast("Não consegui exportar. Abra o estúdio por um link (http), não direto do arquivo.", true);
+      toast(e && e.message && e.message.includes("zip") ? e.message : "Não consegui exportar. Abra o estúdio por um link (https), não direto do arquivo.", true);
       return;
     }
-    const d = document.createElement("dialog");
-    d.className = "dialogo";
-    d.innerHTML =
-      '<div class="dialogo-corpo">' +
+    dialogo(
       '<span class="rotulo">Convite exportado</span>' +
       "<h2>Pronto! Agora é só gerar o link</h2>" +
-      "<p>O arquivo <strong>" + S.esc(res.nome) + "</strong> (" + S.formatarTamanho(res.tamanho) + ") já está nos seus downloads, com fotos, vídeo e música dentro dele.</p>" +
+      "<p>Baixou o arquivo <strong>" + S.esc(r.nome) + "</strong> (" + S.formatarTamanho(r.tamanho) + ").</p>" +
       "<ol>" +
-      '<li>Abra o <a href="https://app.netlify.com/drop" target="_blank" rel="noopener">Netlify Drop</a> (é grátis).</li>' +
-      "<li>Crie uma pasta, coloque o arquivo dentro com o nome <strong>index.html</strong> e arraste a pasta para a página.</li>" +
+      "<li>Descompacte o arquivo. Vai aparecer a pasta <strong>" + S.esc(r.pasta) + "</strong>.</li>" +
+      '<li>Abra o <a href="https://app.netlify.com/drop" target="_blank" rel="noopener">Netlify Drop</a> e arraste essa pasta para a página.</li>' +
       "<li>Copie o link que aparecer e mande para a sua cliente.</li>" +
       "</ol>" +
-      "<p>As confirmações de presença chegam direto no WhatsApp que você colocou no convite.</p>" +
-      (res.tamanho > 40 * 1024 * 1024 ? '<p style="color:var(--gold);margin-top:8px">O arquivo ficou grande. Em internet de celular ele pode demorar para abrir. Se der, use um vídeo mais leve (até uns 20 MB).</p>' : "") +
-      '<div class="dialogo-acoes"><button type="button" class="btn btn-primario" data-ok>Entendi</button></div>' +
-      "</div>";
-    document.body.appendChild(d);
-    d.querySelector("[data-ok]").addEventListener("click", () => d.close());
-    d.addEventListener("close", () => d.remove());
-    d.showModal();
+      (r.temEndereco ? "" : '<p class="nota">Para a imagem aparecer quando o link for enviado no WhatsApp, cole o link final no campo <strong>Endereço do convite</strong> (no editor) e exporte de novo.</p>') +
+      (projeto.opcoes.previa.on ? '<p class="nota">A marca d\'água de prévia está ligada. Quando a cliente pagar, desligue e exporte de novo.</p>' : "") +
+      '<div class="dialogo-acoes"><button type="button" class="btn btn-primario" data-fechar-dialogo>Entendi</button></div>'
+    );
   }
 
-  window.UI = { toast, exportarComAjuda };
+  window.UI = { toast, dialogo, exportarComAjuda };
 })();
