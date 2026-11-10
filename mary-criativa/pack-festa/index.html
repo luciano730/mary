@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pack Identidade de Festa | Mary Criativa</title>
+<meta name="description" content="Pack de identidade visual de festa da Mary Criativa: convite, save the date, tags, rótulos, topo de bolo, placa e painel com a mesma cara, editável no Canva.">
+<meta name="theme-color" content="#1B1026">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Great+Vibes&family=Montserrat:wght@400;500;600;700&display=swap">
+<style>
+/* Mesmo estilo escuro do catálogo de convites */
+:root{
+  color-scheme: dark;
+  --bg:#1B1026;
+  --bg-deep:#120A1A;
+  --card:#2A1A3A;
+  --card-2:#24162F;
+  --line:rgba(214,180,255,.16);
+  --ink:#FBF4FF;
+  --ink-soft:#CDBBDA;
+  --ink-mute:#9C88AC;
+  --pink:#F2A5CF;
+  --lilac:#B58BD9;
+  --lilac-deep:#7E4FB4;
+  --gold:#E7C77E;
+  --mint:#9FE3C1;
+  /* cores das peças do tema (claras) */
+  --t-rosa:#C95A80;
+  --t-lilas:#8A63B5;
+  --t-ouro:#C49A48;
+  --t-tinta:#4A3550;
+  --t-creme:#FFFBF8;
+  --serif:"Cormorant Garamond", Georgia, serif;
+  --sans:"Montserrat", "Segoe UI", system-ui, sans-serif;
+  --script:"Great Vibes", cursive;
+  --gutter:clamp(16px,4.5vw,40px);
+  --radius:30px;
+  --ease:cubic-bezier(.2,.8,.2,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.6;overflow-x:hidden;
+  background-image:radial-gradient(900px 600px at 85% -10%,rgba(181,139,217,.18),transparent 60%),radial-gradient(700px 500px at -10% 30%,rgba(242,165,207,.10),transparent 60%)}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button,input{font:inherit;color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 var(--gutter)}
+.eyebrow{font-size:12px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:var(--pink)}
+.h2{font-family:var(--serif);font-weight:700;font-size:clamp(34px,7vw,56px);line-height:1.05;margin:.35em 0 .4em}
+.lead{color:var(--ink-soft);font-size:clamp(16px,2.2vw,18px);max-width:640px}
+section{padding:72px 0}
+
+.top{position:sticky;top:0;z-index:40;background:rgba(27,16,38,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:12px}
+.brand{display:flex;align-items:center;gap:10px}
+.mono{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;font-family:var(--serif);font-weight:700;font-size:17px;color:var(--gold);border:1px solid rgba(231,199,126,.5);background:radial-gradient(circle at 30% 25%,#3B2552,#1B1026)}
+.brand b{font-size:13px;letter-spacing:.24em;text-transform:uppercase;font-weight:700}
+.nav{display:flex;gap:22px;font-size:13px;font-weight:500;color:var(--ink-soft)}
+.nav a:hover{color:var(--pink)}
+.top-cta{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:10px 16px;border-radius:999px;background:linear-gradient(100deg,var(--lilac-deep),var(--lilac))}
+@media (max-width:760px){.nav{display:none}}
+
+.btn{display:flex;align-items:center;justify-content:center;gap:8px;min-height:52px;padding:0 26px;border-radius:999px;font-weight:700;font-size:15px;letter-spacing:.06em;text-transform:uppercase;border:1.5px solid var(--line);background:rgba(255,255,255,.02);transition:transform .2s var(--ease);text-align:center}
+.btn:hover{transform:translateY(-2px)}
+.btn-want{color:var(--mint);border-color:rgba(159,227,193,.4);background:linear-gradient(180deg,rgba(40,70,64,.55),rgba(30,44,46,.55))}
+.btn-gold{color:var(--gold);border-color:rgba(231,199,126,.35)}
+.btn-soft{color:#2B1636;border:0;background:var(--pink);text-transform:none;letter-spacing:0;font-size:16px}
+.btn-plain{color:var(--ink)}
+.btn-solid{color:#fff;border:0;background:linear-gradient(100deg,#8B5CF6,#C084FC);box-shadow:0 14px 30px -12px #A26BF0}
+
+/* Hero */
+.hero{padding:56px 0 30px;text-align:center}
+.badge{display:inline-block;padding:7px 18px;border-radius:999px;background:var(--pink);color:#2B1636;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;margin-bottom:18px}
+.hero h1{font-family:var(--serif);font-weight:700;font-size:clamp(40px,8.4vw,72px);line-height:1.03}
+.hero h1 em{font-style:italic;color:var(--gold)}
+.hero .lead{margin:18px auto 28px}
+.hero-btns{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.hero-art{margin:44px auto 0;max-width:860px;display:grid;grid-template-columns:1fr 1.15fr 1fr;gap:14px;align-items:end}
+.hero-art img{border-radius:18px;box-shadow:0 30px 60px -30px rgba(0,0,0,.8);border:1px solid var(--line)}
+.hero-art img:nth-child(2){transform:translateY(-16px)}
+
+/* Prévia ao vivo */
+.live{display:grid;gap:30px;margin-top:30px}
+@media (min-width:920px){.live{grid-template-columns:340px 1fr;align-items:start}.form{position:sticky;top:90px}}
+.form{border:1.5px solid var(--line);border-radius:var(--radius);padding:26px;background:linear-gradient(180deg,var(--card),var(--card-2));display:grid;gap:16px}
+.form label{display:grid;gap:6px;font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-mute)}
+.form input{width:100%;min-height:50px;padding:0 18px;border-radius:16px;border:1.5px solid var(--line);background:rgba(255,255,255,.04);font-size:17px;letter-spacing:0;text-transform:none;color:var(--ink);outline:none}
+.form input:focus{border-color:var(--pink)}
+.form small{color:var(--ink-mute);font-size:13px;letter-spacing:0;text-transform:none;font-weight:400}
+.stage{border-radius:var(--radius);padding:clamp(18px,3vw,30px);background:url(elementos/fundo-aquarela-a4.jpg) center/cover;color:var(--t-tinta);display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(12px,2.4vw,22px);align-items:center;container-type:inline-size}
+@media (min-width:640px){.stage{grid-template-columns:1.1fr 1fr 1fr}}
+.piece{text-align:center}
+.piece figcaption{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--t-lilas);margin-top:8px}
+/* convite no celular */
+.phone{grid-row:span 2;aspect-ratio:9/16;border-radius:26px;border:6px solid #2B1E36;background:url(elementos/fundo-aquarela-story.jpg) center/cover;position:relative;overflow:hidden;box-shadow:0 26px 50px -24px rgba(60,30,80,.6);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:0 8%;container-type:inline-size}
+.phone .c1,.phone .c2{position:absolute;width:62%}
+.phone .c1{left:-14%;top:-14%}
+.phone .c2{right:-14%;bottom:-14%;transform:rotate(180deg)}
+.phone .k{font-size:3.6cqw;font-weight:700;letter-spacing:.2em;color:var(--t-lilas);text-transform:uppercase}
+.phone .n{font-family:var(--script);font-size:calc(24cqw * var(--fit,1));line-height:1.05;color:var(--t-rosa);white-space:nowrap}
+.phone .a{font-family:var(--serif);font-style:italic;font-size:7cqw;color:var(--t-ouro);display:flex;align-items:center;gap:8px}
+.phone .a::before,.phone .a::after{content:"";width:14cqw;height:1px;background:var(--t-ouro)}
+.phone .d{display:flex;align-items:center;gap:4cqw;margin:6cqw 0 3cqw;font-size:3.6cqw;font-weight:700;letter-spacing:.14em;color:#7C6A82;text-transform:uppercase}
+.phone .d b{font-family:var(--serif);font-size:15cqw;color:var(--t-ouro);line-height:1;padding:0 4cqw;border-left:1px solid var(--t-ouro);border-right:1px solid var(--t-ouro)}
+.phone .l{font-size:3.8cqw;font-weight:700;letter-spacing:.14em;color:var(--t-lilas);text-transform:uppercase;text-align:center}
+.phone .b{margin-top:5cqw;padding:2.6cqw 6cqw;border-radius:999px;background:var(--t-lilas);color:#fff;font-size:3.2cqw;font-weight:700;letter-spacing:.1em}
+/* peças redondas */
+.round{position:relative;aspect-ratio:1;border-radius:50%;background:var(--t-creme);border:1.5px solid var(--t-ouro);display:grid;place-items:center;container-type:inline-size;box-shadow:0 14px 30px -18px rgba(60,30,80,.6)}
+.round.bare{background:none;border:0;box-shadow:none}
+.round img{position:absolute;inset:3%;width:94%}
+.round .n{position:relative;font-family:var(--script);font-size:calc(26cqw * var(--fit,1));line-height:1;color:var(--t-rosa);margin-top:-6cqw;white-space:nowrap}
+.round .n.ini{font-size:46cqw;margin-top:-8cqw}
+.label-strip .n,.label-strip .a{position:relative;white-space:nowrap}
+.round .a{position:absolute;top:62%;left:0;right:0;font-family:var(--serif);font-style:italic;font-size:8cqw;color:var(--t-ouro)}
+.label-strip{grid-column:1/-1;position:relative;height:clamp(84px,14cqw,120px);background:#F3ECFB;border:1.5px solid var(--t-ouro);display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;container-type:size}
+.label-strip img{position:absolute;height:86%;top:7%}
+.label-strip img:first-child{left:1%}
+.label-strip img:nth-child(2){right:1%;transform:scaleX(-1)}
+.label-strip .n{font-family:var(--script);font-size:calc(48cqh * var(--fit,1));line-height:1;color:var(--t-rosa)}
+.label-strip .a{font-family:var(--serif);font-style:italic;font-size:15cqh;color:var(--t-lilas)}
+
+/* O que vem */
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(46%,220px),1fr));gap:18px;margin-top:30px}
+.gallery figure{border:1.5px solid var(--line);border-radius:22px;overflow:hidden;background:var(--card-2);cursor:zoom-in}
+.gallery img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:top}
+.gallery figcaption{padding:12px 16px 14px;font-weight:600;font-size:15px}
+.gallery figcaption small{display:block;color:var(--ink-mute);font-weight:500;font-size:13px}
+
+/* Temas */
+.themes{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.themes span{padding:10px 18px;border-radius:999px;border:1px solid var(--line);font-size:14px;font-weight:600;color:var(--ink-soft)}
+.themes span.on{background:var(--pink);color:#2B1636;border-color:var(--pink)}
+.themes span em{font-style:normal;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-mute);margin-left:6px}
+
+/* Versões */
+.plans{display:grid;gap:24px;margin-top:34px}
+@media (min-width:860px){.plans{grid-template-columns:1fr 1fr}}
+.plan{border-radius:var(--radius);border:1.5px solid var(--line);padding:30px 28px;background:linear-gradient(180deg,var(--card),var(--card-2));display:flex;flex-direction:column}
+.plan.best{border-color:rgba(231,199,126,.55);box-shadow:0 30px 60px -40px rgba(231,199,126,.5)}
+.plan .tag{align-self:flex-start;padding:6px 14px;border-radius:999px;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;border:1px solid var(--line);color:var(--ink-soft);margin-bottom:16px}
+.plan.best .tag{color:var(--gold);border-color:rgba(231,199,126,.55)}
+.plan h3{font-size:clamp(24px,4.6vw,30px);font-weight:600;line-height:1.2}
+.plan h3::after{content:"";display:block;width:84px;height:2px;margin:14px 0 16px;background:linear-gradient(90deg,var(--gold),transparent)}
+.plan p{color:var(--ink-soft);font-size:16px}
+.plan ul{list-style:none;display:grid;gap:10px;margin:20px 0 24px}
+.plan li{display:flex;gap:12px;color:var(--ink-soft)}
+.plan li::before{content:"✦";color:var(--gold);flex:none}
+.price{align-self:flex-start;font-family:var(--serif);font-weight:700;font-size:30px;line-height:1;padding:14px 24px;border-radius:999px;background:linear-gradient(100deg,#4A2A6E,#6A3E96);border:1px solid rgba(181,139,217,.6);margin:auto 0 22px}
+.price.ask{font-family:var(--sans);font-size:15px;letter-spacing:.08em;text-transform:uppercase;padding:16px 22px}
+
+/* Passos e dúvidas */
+.steps{display:grid;gap:14px;margin-top:30px;counter-reset:s}
+@media (min-width:860px){.steps{grid-template-columns:repeat(3,1fr)}}
+.step{border:1.5px solid var(--line);border-radius:22px;padding:22px 24px;background:rgba(255,255,255,.03);color:var(--ink-soft)}
+.step::before{counter-increment:s;content:counter(s);display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:#3B2552;border:1px solid var(--lilac);color:var(--ink);font-weight:700;font-size:14px;margin-bottom:12px}
+.step b{display:block;color:var(--ink);font-size:17px;margin-bottom:4px}
+.faq{display:grid;gap:12px;margin-top:30px}
+.faq details{border:1.5px solid var(--line);border-radius:20px;padding:18px 22px;background:rgba(255,255,255,.03)}
+.faq summary{cursor:pointer;font-weight:600;font-size:17px;list-style:none;display:flex;justify-content:space-between;gap:12px}
+.faq summary::after{content:"+";color:var(--pink);font-size:22px;line-height:1}
+.faq details[open] summary::after{content:"−"}
+.faq p{color:var(--ink-soft);margin-top:10px}
+
+footer{border-top:1px solid var(--line);background:var(--bg-deep);padding:50px 0 110px}
+footer p{color:var(--ink-soft);margin:14px 0 22px;max-width:520px}
+.links{display:flex;flex-wrap:wrap;gap:12px 26px}
+.links a{display:flex;align-items:center;gap:10px;color:var(--ink-soft)}
+.links a:hover{color:var(--pink)}
+.links svg{width:22px;height:22px}
+.wa{position:fixed;left:16px;bottom:calc(16px + env(safe-area-inset-bottom));z-index:50;width:60px;height:60px;border-radius:50%;display:grid;place-items:center;background:#25D366;color:#fff;box-shadow:0 12px 30px -8px rgba(37,211,102,.6)}
+.wa svg{width:30px;height:30px}
+
+.zoom{position:fixed;inset:0;z-index:60;display:none;align-items:center;justify-content:center;padding:20px;background:rgba(10,5,14,.85)}
+.zoom.open{display:flex}
+.zoom img{max-height:90vh;border-radius:14px}
+
+.rv{opacity:0;transform:translateY(24px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}*{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1-.7-.3-1.4-.7-2-1.3-.5-.5-1-1.1-1.3-1.7-.1-.2 0-.4.1-.5l.4-.5.3-.4v-.5l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.6.6-.9 1.4-.9 2.2.1 1 .5 2 1.1 2.8 1.2 1.7 2.7 3.1 4.6 3.9 1.5.6 2.1.6 2.9.5.5-.1 1.5-.6 1.7-1.2.2-.5.2-1 .1-1.2l-.4-.3z"/></symbol>
+  <symbol id="i-ig" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M7 2.8h10A4.2 4.2 0 0 1 21.2 7v10a4.2 4.2 0 0 1-4.2 4.2H7A4.2 4.2 0 0 1 2.8 17V7A4.2 4.2 0 0 1 7 2.8z"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor"/></symbol>
+</svg>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#inicio"><span class="mono">MC</span><b>Mary Criativa</b></a>
+    <nav class="nav">
+      <a href="#teste">Teste com seu nome</a>
+      <a href="#pack">O que vem</a>
+      <a href="#versoes">Versões</a>
+      <a href="#duvidas">Dúvidas</a>
+    </nav>
+    <a class="top-cta js-wa" href="#" target="_blank" rel="noopener" data-msg="Oi Mary! Vim pela página do pack de identidade visual de festa.">Quero o meu</a>
+  </div>
+</header>
+
+<main id="inicio">
+  <section class="hero">
+    <div class="wrap">
+      <span class="badge rv">Novidade</span>
+      <h1 class="rv">Toda a festa com a <em>mesma cara</em>, do convite ao topo de bolo.</h1>
+      <p class="lead rv">O Pack de Identidade Visual traz convite, save the date, tags, rótulos, topo de bolo, placa e painel no mesmo tema. Você edita no Canva em minutos, ou deixa a Mary fazer tudo por você.</p>
+      <div class="hero-btns rv">
+        <a class="btn btn-soft" href="#teste">Testar com o nome da festa</a>
+        <a class="btn btn-plain" href="#versoes">Ver versões</a>
+      </div>
+      <div class="hero-art rv">
+        <img src="previas/digital-2.jpg" alt="Save the date do tema Jardim Encantado" loading="lazy">
+        <img src="previas/digital-1.jpg" alt="Convite digital do tema Jardim Encantado">
+        <img src="previas/a4-6.jpg" alt="Placa de boas-vindas do tema Jardim Encantado" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <section id="teste">
+    <div class="wrap">
+      <span class="eyebrow">Teste agora</span>
+      <h2 class="h2">Veja como fica a sua festa</h2>
+      <p class="lead">Digite os dados e as peças mudam na hora. É assim que fica o pack do tema <b id="themeName">Jardim Encantado</b>.</p>
+      <div class="live">
+        <form class="form" id="form" autocomplete="off" onsubmit="return false">
+          <label>Nome<input id="fNome" maxlength="16" value="Luna"></label>
+          <label>Idade<input id="fIdade" inputmode="numeric" maxlength="3" value="10"></label>
+          <label>Data da festa<input id="fData" type="date" value="2026-12-14"></label>
+          <label>Local<input id="fLocal" maxlength="30" value="Espaço Flores"></label>
+          <small>É só uma prévia. No pack, cada peça vem pronta em arquivo editável.</small>
+          <a class="btn btn-want" id="liveWa" href="#" target="_blank" rel="noopener">Quero o pack com esses dados</a>
+        </form>
+        <div class="stage" aria-live="polite">
+          <figure class="piece" style="grid-row:span 2">
+            <div class="phone">
+              <img class="c1" src="elementos/arranjo-de-canto.png" alt="">
+              <img class="c2" src="elementos/arranjo-de-canto.png" alt="">
+              <span class="k">Você é meu convidado especial</span>
+              <span class="n js-nome">Luna</span>
+              <span class="a js-idade">10 anos</span>
+              <span class="d"><span class="js-dia-semana">Sábado</span><b class="js-dia">14</b><span class="js-mes">Dezembro</span></span>
+              <span class="l js-local">Espaço Flores</span>
+              <span class="b">CONFIRME SUA PRESENÇA</span>
+            </div>
+            <figcaption>Convite digital</figcaption>
+          </figure>
+          <figure class="piece">
+            <div class="round bare"><img src="elementos/coroa-floral.png" alt=""><span class="n ini js-ini">L</span></div>
+            <figcaption>Monograma</figcaption>
+          </figure>
+          <figure class="piece">
+            <div class="round"><img src="elementos/coroa-floral.png" alt=""><span class="n js-nome">Luna</span><span class="a js-idade">10 anos</span></div>
+            <figcaption>Tag 5 cm</figcaption>
+          </figure>
+          <figure class="piece">
+            <div class="round bare"><img src="elementos/coroa-floral.png" alt=""><span class="n js-nome">Luna</span><span class="a js-idade">10 anos</span></div>
+            <figcaption>Topo de bolo</figcaption>
+          </figure>
+          <figure class="piece">
+            <div class="round"><img src="elementos/coroa-floral.png" alt=""><span class="n ini js-ini">L</span></div>
+            <figcaption>Topper de docinho</figcaption>
+          </figure>
+          <figure class="piece" style="grid-column:1/-1">
+            <div class="label-strip"><img src="elementos/raminho.png" alt=""><img src="elementos/raminho.png" alt=""><span class="n js-nome">Luna</span><span class="a"><span class="js-idade">10 anos</span> · Jardim Encantado</span></div>
+            <figcaption>Rótulo para garrafinha</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pack">
+    <div class="wrap">
+      <span class="eyebrow">O que vem no pack</span>
+      <h2 class="h2">10 peças, um tema só</h2>
+      <p class="lead">Tudo combinando: as mesmas flores, cores e letras em cada detalhe. Toque numa peça para ver maior.</p>
+      <div class="gallery" id="gallery"></div>
+      <div class="themes" id="themes"></div>
+    </div>
+  </section>
+
+  <section id="versoes">
+    <div class="wrap">
+      <span class="eyebrow">Escolha como prefere</span>
+      <h2 class="h2">Duas versões do pack</h2>
+      <div class="plans" id="plans"></div>
+    </div>
+  </section>
+
+  <section id="como">
+    <div class="wrap">
+      <span class="eyebrow">Como funciona</span>
+      <h2 class="h2">Simples assim</h2>
+      <div class="steps">
+        <div class="step rv"><b>Escolha o tema</b>Veja os temas disponíveis e escolha a versão do pack.</div>
+        <div class="step rv"><b>Receba pelo WhatsApp</b>Depois do pagamento, você recebe o link do Canva ou a Mary começa a criar.</div>
+        <div class="step rv"><b>Imprima e envie</b>Mande o convite aos convidados e leve os impressos para a gráfica ou imprima em casa.</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="duvidas">
+    <div class="wrap">
+      <span class="eyebrow">Dúvidas</span>
+      <h2 class="h2">Perguntas frequentes</h2>
+      <div class="faq">
+        <details><summary>Preciso saber usar o Canva?</summary><p>Não precisa saber design. Você abre o link, clica no texto e troca nome, idade, data e local. O pack vem com um guia rapidinho na primeira página.</p></details>
+        <details><summary>Funciona no Canva grátis?</summary><p>Sim. As fontes e os elementos do pack funcionam na versão gratuita do Canva, no celular ou no computador.</p></details>
+        <details><summary>Posso imprimir em casa?</summary><p>Pode. Tags, rótulos, toppers e placa estão em folha A4 e já vêm no tamanho certo. Para o painel, leve o arquivo à gráfica.</p></details>
+        <details><summary>Posso mudar as cores ou o tema?</summary><p>Na versão "Faça você mesma" você pode mudar as cores no Canva. Para um tema que ainda não existe, fale com a Mary: ela cria na versão personalizada.</p></details>
+        <details><summary>Em quanto tempo eu recebo?</summary><p>A versão "Faça você mesma" é enviada logo após a confirmação do pagamento. A versão personalizada segue a agenda da Mary, consulte a disponibilidade da sua data.</p></details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="brand"><span class="mono">MC</span><b>Mary Criativa</b></div>
+    <p>Convites e artes com carinho para os momentos que você quer anunciar, celebrar e lembrar para sempre.</p>
+    <div class="links">
+      <a class="js-wa" href="#" target="_blank" rel="noopener" data-msg="Oi Mary! Vim pela página do pack de identidade visual."><svg><use href="#i-wa"/></svg><span id="waText">WhatsApp</span></a>
+      <a class="js-ig" href="#" target="_blank" rel="noopener"><svg><use href="#i-ig"/></svg><span id="igText">Instagram</span></a>
+      <a href="../convites/">Catálogo de convites</a>
+    </div>
+  </div>
+</footer>
+
+<a class="wa js-wa" href="#" target="_blank" rel="noopener" data-msg="Oi Mary! Quero saber mais sobre o pack de identidade visual de festa." aria-label="Falar no WhatsApp"><svg><use href="#i-wa"/></svg></a>
+<div class="zoom" id="zoom" role="dialog" aria-modal="true" aria-label="Peça ampliada"><img id="zoomImg" alt=""></div>
+
+<script>
+/* =====================================================================
+   CONFIGURAÇÃO: troque pelos dados reais da Mary Criativa
+   ===================================================================== */
+const CONFIG = {
+  whatsapp: "5500000000000",           // só números: 55 + DDD + número
+  whatsappTexto: "(00) 0 0000-0000",
+  instagram: "marycriativa"            // sem o @
+};
+
+/* VERSÕES do pack. preco "97" vira R$97,00. Vazio mostra "Consultar valor" */
+const VERSOES = [
+  { id: "diy", tag: "Mais em conta", nome: "Faça você mesma", preco: "",
+    desc: "Você recebe o pack editável no Canva e troca os dados quando quiser.",
+    itens: ["As 10 peças do tema em arquivo editável", "Link do Canva enviado pelo WhatsApp", "Elementos em PNG (flores, folhas, borboleta)", "Guia rápido de como editar"],
+    botao: "Quero o pack editável" },
+  { id: "mary", tag: "A Mary faz tudo", nome: "A Mary personaliza", preco: "", best: true,
+    desc: "A Mary coloca os dados da festa em todas as peças e entrega tudo pronto.",
+    itens: ["Tudo da versão Faça você mesma", "Nome, idade, data e local em todas as peças", "Ajustes de cores e detalhes", "Arquivos prontos para gráfica em alta resolução"],
+    botao: "Quero que a Mary faça" }
+];
+
+/* PEÇAS mostradas em "O que vem no pack" (imagens em previas/) */
+const PECAS = [
+  ["digital-1.jpg", "Convite digital", "Para enviar no WhatsApp"],
+  ["digital-2.jpg", "Save the date", "Aviso da data"],
+  ["digital-3.jpg", "Story de agradecimento", "Com espaço para foto"],
+  ["a4-2.jpg", "Monograma e paleta", "Identidade da festa"],
+  ["a4-3.jpg", "Tags redondas", "5 cm, 12 por folha"],
+  ["a4-4.jpg", "Rótulos", "Garrafinha ou latinha"],
+  ["a4-5.jpg", "Topo de bolo e toppers", "Topo 12 cm e toppers 4 cm"],
+  ["a4-6.jpg", "Placa de boas-vindas", "A4"],
+  ["a4-7.jpg", "Painel redondo", "Arte para a gráfica"],
+  ["a4-1.jpg", "Guia e elementos", "Como editar e PNGs"]
+];
+
+/* TEMAS: o primeiro com pronto: true aparece em destaque */
+const TEMAS = [
+  { nome: "Jardim Encantado", pronto: true },
+  { nome: "Ursinho", pronto: false },
+  { nome: "Circo", pronto: false },
+  { nome: "Princesa", pronto: false }
+];
+
+/* ===================================================================== */
+(() => {
+  const $ = id => document.getElementById(id);
+  const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  const wa = msg => "https://wa.me/" + CONFIG.whatsapp + (msg ? "?text=" + encodeURIComponent(msg) : "");
+  const money = p => "R$" + Number(String(p).replace(",", ".")).toLocaleString("pt-BR", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  const hasPrice = p => p !== "" && p != null && !isNaN(Number(String(p).replace(",", ".")));
+  const tema = TEMAS.find(t => t.pronto) || TEMAS[0];
+
+  // Prévia ao vivo
+  const SEMANA = ["Domingo", "Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado"];
+  const MESES = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
+  const setAll = (cls, v) => document.querySelectorAll("." + cls).forEach(el => el.textContent = v);
+  const atualizar = () => {
+    const nome = $("fNome").value.trim() || "Seu nome";
+    const idade = $("fIdade").value.replace(/\D/g, "");
+    const idadeTxt = idade ? idade + (idade === "1" ? " ano" : " anos") : "";
+    setAll("js-nome", nome);
+    document.documentElement.style.setProperty("--fit", Math.min(1, 5.5 / nome.length).toFixed(3));
+    setAll("js-ini", nome[0].toUpperCase());
+    setAll("js-idade", idadeTxt);
+    setAll("js-local", $("fLocal").value.trim() || "Local da festa");
+    const [y, m, d] = ($("fData").value || "").split("-").map(Number);
+    const dt = y ? new Date(y, m - 1, d) : null;
+    setAll("js-dia-semana", dt ? SEMANA[dt.getDay()] : "Dia");
+    setAll("js-dia", dt ? String(d).padStart(2, "0") : "00");
+    setAll("js-mes", dt ? MESES[m - 1] : "Mês");
+    const dataTxt = dt ? dt.toLocaleDateString("pt-BR") : "a definir";
+    $("liveWa").href = wa(`Oi Mary! Quero o pack de identidade visual do tema ${tema.nome}.\nNome: ${nome}\nIdade: ${idadeTxt || "-"}\nData: ${dataTxt}\nLocal: ${$("fLocal").value.trim() || "-"}`);
+  };
+  $("form").addEventListener("input", atualizar);
+  atualizar();
+  $("themeName").textContent = tema.nome;
+
+  // Galeria
+  $("gallery").innerHTML = PECAS.map(([img, n, s]) =>
+    `<figure class="rv" data-img="previas/${img}"><img src="previas/${img}" alt="${esc(n)}" loading="lazy"><figcaption>${esc(n)}<small>${esc(s)}</small></figcaption></figure>`).join("");
+  $("gallery").addEventListener("click", e => {
+    const f = e.target.closest("figure"); if (!f) return;
+    $("zoomImg").src = f.dataset.img; $("zoomImg").alt = f.querySelector("figcaption").firstChild.textContent;
+    $("zoom").classList.add("open");
+  });
+  $("zoom").addEventListener("click", () => $("zoom").classList.remove("open"));
+  document.addEventListener("keydown", e => { if (e.key === "Escape") $("zoom").classList.remove("open"); });
+
+  $("themes").innerHTML = TEMAS.map(t => `<span class="${t.pronto ? "on" : ""}">${esc(t.nome)}${t.pronto ? "" : "<em>em breve</em>"}</span>`).join("");
+
+  // Versões
+  $("plans").innerHTML = VERSOES.map(v => `
+    <article class="plan rv${v.best ? " best" : ""}">
+      <span class="tag">${esc(v.tag)}</span>
+      <h3>${esc(v.nome)}</h3>
+      <p>${esc(v.desc)}</p>
+      <ul>${v.itens.map(i => `<li>${esc(i)}</li>`).join("")}</ul>
+      ${hasPrice(v.preco) ? `<span class="price">${money(v.preco)}</span>` : `<span class="price ask">Consultar valor</span>`}
+      <a class="btn ${v.best ? "btn-gold" : "btn-want"}" href="${wa(`Oi Mary! Quero o pack de identidade visual do tema ${tema.nome}, versão "${v.nome}".`)}" target="_blank" rel="noopener">${esc(v.botao)}</a>
+    </article>`).join("");
+
+  // Contato
+  document.querySelectorAll(".js-wa").forEach(a => a.href = wa(a.dataset.msg));
+  document.querySelectorAll(".js-ig").forEach(a => a.href = "https://instagram.com/" + CONFIG.instagram);
+  $("waText").textContent = "WhatsApp " + CONFIG.whatsappTexto;
+  $("igText").textContent = "@" + CONFIG.instagram;
+
+  // Entrada ao rolar
+  const io = new IntersectionObserver(es => es.forEach(x => { if (x.isIntersecting) { x.target.classList.add("in"); io.unobserve(x.target); } }), { threshold: .12 });
+  document.querySelectorAll(".rv").forEach(el => io.observe(el));
+})();
+</script>
+</body>
+</html>

@@ -45,3 +45,17 @@ Tudo se edita no fim do arquivo:
    - `imagem`: capa do card (ex.: `img/livro.jpg` dentro de `convites/`). Sem imagem aparece uma arte provisória.
    - `video`: vídeo `.mp4` da demonstração (abre no próprio site) ou `demo`: link do convite de exemplo. O botão "Ver demonstração" só aparece quando um dos dois está preenchido.
 3. `EXTRAS`: serviços adicionais com preço.
+
+## Pack de Identidade Visual de Festa
+
+Fica em `pack-festa/`.
+
+- `index.html`: página de venda (abre em `/pack-festa/`). Tem a prévia ao vivo: a cliente digita nome, idade, data e local e vê o convite, o monograma, a tag, o topo de bolo, o topper e o rótulo mudando na hora. Preços e textos das duas versões ficam na lista `VERSOES` no fim do arquivo, e os temas na lista `TEMAS`.
+- `Pack-Jardim-Encantado-Digital.pptx`: convite, save the date e story de agradecimento (1080 x 1920).
+- `Pack-Jardim-Encantado-Impressos-A4.pptx`: capa e guia, identidade (monograma, paleta, fontes), tags 5 cm, rótulos, topo de bolo e toppers, placa de boas-vindas e arte do painel redondo.
+- `elementos/`: flores, folhas, borboleta, coroa floral, arranjo e fundos em PNG/JPG.
+- `previas/`: imagens das peças usadas na página.
+
+Para vender a versão "Faça você mesma": no Canva, Criar design > Importar arquivo > escolha o `.pptx`. Depois em Compartilhar > Link de modelo, e esse link é o que a cliente recebe. Os textos ficam editáveis e as fontes (Great Vibes, Cormorant Garamond, Montserrat) existem no Canva grátis.
+
+Para mudar o tema ou os dados de exemplo, edite `gerar_pack.py` (cores, `NOME`, `IDADE`, `TEMA`) e rode `python3 gerar_pack.py`. As prévias saem convertendo os `.pptx` em PDF (LibreOffice) e depois em imagem.
