@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Identidade Visual XV Anos | Mary Criativa</title>
+<meta name="description" content="Pacotes de Identidade Visual para debutantes: brasão, monograma, logotipo, cores, convites digitais, filtros e aplicações para festas de 15 anos.">
+<meta name="theme-color" content="#FBF7F3">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&family=Pinyon+Script&display=swap">
+<style>
+/* Catálogo editorial: off-white, rosa suave, nude e dourado discreto */
+:root{
+  color-scheme: light;
+  --bg:#FBF6F1;
+  --white:#FFFDFB;
+  --blush:#F6E2DF;
+  --rose:#EBC3BF;
+  --rose-deep:#C98A86;
+  --nude:#EBD9CD;
+  --nude-2:#D9C0B1;
+  --gold:#A8735A;
+  --gold-soft:#DDB9A6;
+  --ink:#4B3229;
+  --ink-soft:#866A5F;
+  --line:rgba(75,50,41,.13);
+  --serif:"Cormorant Garamond", "Iowan Old Style", Georgia, serif;
+  --sans:"Jost", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+  --script:"Pinyon Script", "Snell Roundhand", cursive;
+  --gutter:clamp(16px,5vw,64px);
+  --ease:cubic-bezier(.2,.75,.2,1);
+  --shadow:0 30px 60px -36px rgba(92,52,40,.5);
+  --shadow-sm:0 14px 30px -20px rgba(91,60,48,.4);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-weight:400;font-size:16.5px;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+button{font:inherit;color:inherit}
+h1,h2,h3{margin:0;font-family:var(--serif);font-weight:400;line-height:1.08;text-wrap:balance;letter-spacing:-.005em}
+p{margin:0}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.wrap{max-width:1200px;margin-inline:auto;padding-inline:var(--gutter)}
+.eyebrow{display:inline-flex;align-items:center;gap:12px;font-size:11.5px;font-weight:500;letter-spacing:.32em;text-transform:uppercase;color:var(--gold)}
+.eyebrow::before,.eyebrow.both::after{content:"";width:28px;height:1px;background:currentColor;opacity:.7}
+em.it{font-style:italic;color:var(--gold)}
+.sec{padding-block:clamp(56px,7vw,96px)}
+.head{display:grid;justify-items:center;text-align:center;gap:16px;margin-bottom:clamp(30px,4.5vw,52px)}
+.head h2{font-size:clamp(36px,5.6vw,64px)}
+.head p{color:var(--ink-soft);max-width:600px;font-size:17px}
+.rule{display:flex;align-items:center;gap:14px;color:var(--gold-soft)}
+.rule::before,.rule::after{content:"";width:60px;height:1px;background:currentColor}
+.rule svg{width:14px;height:14px;color:var(--gold)}
+
+/* botoes */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 30px;font-size:12.5px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;text-decoration:none;border:0;cursor:pointer;transition:background .4s var(--ease),color .4s var(--ease),box-shadow .4s var(--ease),transform .4s var(--ease);text-align:center}
+.btn-dark{background:var(--ink);color:var(--bg)}
+.btn-dark:hover{background:var(--rose-deep)}
+.btn-line{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
+.btn-line:hover{background:var(--ink);color:var(--bg)}
+.btn-gold{background:var(--rose-deep);color:#fff}
+.btn-gold:hover{background:var(--ink)}
+.btn svg{width:18px;height:18px;flex:none}
+
+/* topo */
+.header{position:sticky;top:0;z-index:50;padding-top:env(safe-area-inset-top,0px);background:rgba(251,247,243,.86);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);transition:box-shadow .3s}
+.header.scrolled{box-shadow:0 1px 0 var(--line)}
+.header .wrap{display:flex;align-items:center;gap:24px;height:78px}
+.logo{display:flex;flex-direction:column;text-decoration:none;line-height:1;margin-right:auto}
+.logo b{font-family:var(--serif);font-weight:500;font-size:26px;letter-spacing:.04em}
+.logo small{white-space:nowrap;font-size:9px;letter-spacing:.42em;text-transform:uppercase;color:var(--gold);margin-top:6px}
+.nav{display:flex;gap:30px}
+.nav a{white-space:nowrap;text-decoration:none;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-soft);transition:color .3s}
+.nav a:hover{color:var(--gold)}
+.header .btn{min-height:44px;padding:0 22px;font-size:11px}
+.menu-btn{display:none;width:46px;height:46px;border:0;background:none;cursor:pointer;place-items:center;margin-right:-10px}
+.menu-btn svg{width:26px;height:26px}
+.sheet{position:fixed;inset:0;z-index:70;background:rgba(59,47,44,.32);opacity:0;visibility:hidden;transition:opacity .35s,visibility .35s}
+.sheet.open{opacity:1;visibility:visible}
+.sheet-panel{position:absolute;top:0;right:0;bottom:0;width:min(380px,88vw);background:var(--bg);padding:calc(22px + env(safe-area-inset-top,0px)) 28px 32px;display:flex;flex-direction:column;transform:translateX(100%);transition:transform .5s var(--ease);overflow:auto}
+.sheet.open .sheet-panel{transform:none}
+.sheet-close{align-self:flex-end;width:44px;height:44px;border:0;background:none;cursor:pointer;display:grid;place-items:center;margin:0 -10px 18px 0}
+.sheet-close svg{width:22px;height:22px}
+.sheet a:not(.btn){text-decoration:none;font-family:var(--serif);font-size:26px;padding:12px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}
+.sheet a span{font-family:var(--sans);font-size:13px;color:var(--gold)}
+.sheet .btn{margin-top:30px}
+.sheet .note{margin-top:auto;padding-top:30px;font-size:13px;color:var(--ink-soft)}
+
+/* hero */
+.hero{position:relative;overflow:hidden;padding-block:clamp(40px,6vw,84px) clamp(80px,9vw,120px)}
+.hero::before{content:"";position:absolute;inset:auto -10% -40% 40%;height:90%;background:radial-gradient(closest-side,var(--rose),transparent);opacity:.7;z-index:-1}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(40px,6vw,90px);align-items:center}
+.hero h1{font-size:clamp(46px,7vw,88px);margin:22px 0 26px}
+.hero h1 .scr{display:block;font-family:var(--script);color:var(--gold);font-size:.92em;line-height:1.1;margin-top:4px}
+.hero .lead{font-size:clamp(16.5px,1.6vw,19px);color:var(--ink-soft);max-width:500px}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:14px;margin-top:38px}
+.hero .facts{display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:44px;padding-top:26px;border-top:1px solid var(--line);font-size:13px;color:var(--ink-soft)}
+.hero .facts b{display:block;font-family:var(--serif);font-weight:500;font-size:28px;color:var(--ink);line-height:1.1}
+.portrait{position:relative;justify-self:center;width:min(470px,100%);margin-bottom:24px}
+.portrait .arch{position:relative;aspect-ratio:4/5;border-radius:999px 999px 0 0;overflow:hidden;box-shadow:var(--shadow);background:var(--nude)}
+.portrait .arch img{position:absolute;left:0;top:-6%;width:100%;height:112%;object-fit:cover;object-position:88% 40%;transform:translateY(var(--py,0px)) scale(1.04);animation:kb 16s ease-in-out infinite alternate}
+@keyframes kb{to{transform:translateY(var(--py,0px)) scale(1.12)}}
+.portrait .ring{position:absolute;inset:-14px -14px 14px;border-radius:999px 999px 0 0;border:1px solid var(--gold-soft);pointer-events:none}
+.float{position:absolute;z-index:2;background:var(--white);padding:6px;box-shadow:var(--shadow);cursor:zoom-in;border:0;animation:bob 7s ease-in-out infinite}
+.float img{width:100%;height:100%;object-fit:cover;display:block}
+.f1{left:-16%;bottom:14%;width:34%;aspect-ratio:4/5;rotate:-7deg}
+.f2{right:-14%;top:10%;width:30%;aspect-ratio:4/5;rotate:6deg;animation-delay:-3.5s}
+@keyframes bob{50%{translate:0 -14px}}
+.hello{position:absolute;z-index:3;left:50%;bottom:-26px;translate:-50% 0;background:var(--white);padding:14px 26px 12px;box-shadow:var(--shadow-sm);text-align:center;white-space:nowrap}
+.hello b{display:block;font-family:var(--script);font-weight:400;font-size:30px;color:var(--gold);line-height:1}
+.hello span{font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:var(--ink-soft)}
+.anim .portrait{opacity:0;transform:translateY(30px);transition:opacity 1.2s var(--ease),transform 1.4s var(--ease)}
+.anim .portrait .float{opacity:0;transition:opacity 1s var(--ease) .6s}
+.ready .portrait{opacity:1;transform:none}
+.ready .portrait .float{opacity:1}
+
+/* selo */
+.tag{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;background:rgba(255,255,255,.92);color:var(--ink);font-size:10.5px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;box-shadow:inset 0 0 0 1px var(--gold-soft)}
+.tag::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--gold)}
+
+/* faixa de fotos em movimento */
+.marq{padding:clamp(24px,3.5vw,40px) 0;overflow:hidden;display:grid;gap:12px;background:var(--blush)}
+.marq .row{display:flex;width:max-content;animation:slide 70s linear infinite}
+.marq .row.rev{animation-direction:reverse;animation-duration:85s}
+.marq:hover .row{animation-play-state:paused}
+.marq button{flex:none;height:clamp(140px,17vw,220px);margin-right:12px;padding:0;border:0;background:var(--blush);cursor:zoom-in;overflow:hidden}
+.marq img{height:100%;width:auto;display:block;transition:transform .9s var(--ease)}
+.marq button:hover img{transform:scale(1.06)}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+/* sobre */
+.me{overflow:hidden}
+.me{background:var(--white)}
+.me .wrap{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(40px,7vw,110px);align-items:center}
+.me-photo{position:relative;isolation:isolate;max-width:460px;width:100%;justify-self:center}
+.me-photo::before{content:"";position:absolute;inset:22px -22px -22px 22px;border:1px solid var(--gold-soft);z-index:-1}
+.me-photo img{width:100%;aspect-ratio:680/941;object-fit:cover}
+.me-photo .sig{position:absolute;right:-8%;bottom:7%;background:var(--white);padding:12px 22px;font-family:var(--script);font-size:30px;color:var(--gold);box-shadow:var(--shadow-sm);line-height:1.1}
+.anim .reveal{clip-path:inset(0 0 100% 0);transition:clip-path 1.5s var(--ease) .15s}
+.anim .in .reveal,.anim .reveal.in{clip-path:inset(0)}
+.me h2{font-size:clamp(36px,5vw,60px);margin:20px 0 24px}
+.me p{color:var(--ink-soft);max-width:540px;font-size:17px}
+.me p+p{margin-top:14px}
+.me-list{list-style:none;margin:30px 0 36px;padding:0;display:grid;gap:0;border-top:1px solid var(--line);max-width:540px}
+.me-list li{padding:14px 0;border-bottom:1px solid var(--line);color:var(--ink-soft);font-size:15.5px}
+.me-list b{font-family:var(--serif);font-weight:500;font-size:21px;color:var(--ink);margin-right:6px}
+
+/* galeria: um card por identidade, abre para passar o dedo */
+.proj-row{display:flex;gap:clamp(12px,1.6vw,20px);overflow-x:auto;scroll-snap-type:x mandatory;padding:6px var(--gutter) 22px;margin-inline:calc(-1 * var(--gutter));scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.proj-row::-webkit-scrollbar{display:none}
+.proj{flex:0 0 min(270px,74vw);scroll-snap-align:start;position:relative;aspect-ratio:4/5;border:0;padding:0;background:var(--blush);cursor:pointer;overflow:hidden;text-align:left;box-shadow:var(--shadow-sm);transition:transform .6s var(--ease),box-shadow .6s var(--ease)}
+.proj:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+.proj img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+.proj:hover img{transform:scale(1.06)}
+.proj::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 45%,rgba(40,22,18,.78))}
+.proj .pt{position:absolute;left:0;right:0;bottom:0;z-index:1;padding:0 20px 20px;color:#fff}
+.proj .pt b{display:block;font-family:var(--serif);font-weight:400;font-size:28px;line-height:1.1}
+.proj .pt span{display:flex;align-items:center;gap:8px;margin-top:8px;font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;opacity:.85}
+.proj .pt span i{font-style:normal;transition:transform .4s var(--ease)}
+.proj:hover .pt span i{transform:translateX(4px)}
+.proj .n{position:absolute;right:14px;top:14px;z-index:1;padding:6px 10px;background:rgba(255,255,255,.9);color:var(--ink);font-size:10px;letter-spacing:.2em;text-transform:uppercase}
+.proj-nav{display:flex;justify-content:center;gap:10px;margin-top:6px}
+.proj-nav button{width:46px;height:46px;border:0;border-radius:50%;background:var(--white);color:var(--ink);cursor:pointer;display:grid;place-items:center;box-shadow:inset 0 0 0 1px var(--line);transition:background .3s,color .3s}
+.proj-nav button:hover{background:var(--rose-deep);color:#fff}
+.proj-nav svg{width:20px;height:20px}
+.swipe-hint{text-align:center;font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-top:14px}
+
+/* lightbox */
+.lb{border:0;padding:0;background:transparent;max-width:none;max-height:none;width:100%;height:100%;overflow:hidden}
+.lb::backdrop{background:rgba(35,27,25,.86);backdrop-filter:blur(4px)}
+.lb-in{position:relative;height:100%;display:grid;place-items:center;padding:calc(64px + env(safe-area-inset-top,0px)) 16px 24px}
+.lb-fig{margin:0;display:grid;gap:16px;justify-items:center;max-width:min(92vw,720px)}
+.lb-media{position:relative;width:min(92vw,calc((100dvh - 200px) * .8),640px);aspect-ratio:4/5;background:var(--blush);overflow:hidden}
+.lb-media svg,.lb-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.lb-media .tag{position:absolute;left:16px;top:16px}
+.lb figcaption{color:#F4EBE6;text-align:center}
+.lb figcaption b{display:block;font-family:var(--serif);font-weight:400;font-size:28px;line-height:1.2}
+.lb figcaption span{font-size:13px;opacity:.75}
+.lb-btn{position:absolute;width:52px;height:52px;border:0;border-radius:50%;background:rgba(255,255,255,.12);color:#fff;cursor:pointer;display:grid;place-items:center;transition:background .3s}
+.lb-btn:hover{background:rgba(255,255,255,.24)}
+.lb-btn svg{width:22px;height:22px}
+.lb-close{top:calc(10px + env(safe-area-inset-top,0px));right:12px}
+.lb-prev{left:16px;top:50%;transform:translateY(-50%)}
+.lb-next{right:16px;top:50%;transform:translateY(-50%)}
+.lb-count{position:absolute;top:calc(24px + env(safe-area-inset-top,0px));left:24px;color:#F4EBE6;font-size:12px;letter-spacing:.24em}
+
+/* convites */
+.invites{background:linear-gradient(180deg,var(--blush),var(--bg));overflow:hidden}
+.invites .wrap{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(40px,7vw,100px);align-items:center}
+.invites h2{font-size:clamp(36px,5vw,60px);margin:20px 0 22px}
+.invites p{color:var(--ink-soft);max-width:520px;font-size:17px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:28px 0 14px}
+.chips span{padding:9px 14px;background:var(--white);font-size:12.5px;color:var(--ink);box-shadow:inset 0 0 0 1px var(--line)}
+.invites .inv-note{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin:18px 0 30px}
+.inv-stage{position:relative;aspect-ratio:1/1.05;max-width:560px;width:100%;justify-self:center}
+.inv{position:absolute;width:56%;aspect-ratio:2/3;padding:0;border:0;background:#fff;box-shadow:var(--shadow);cursor:zoom-in;overflow:hidden;transition:transform .8s var(--ease),box-shadow .8s var(--ease)}
+.inv img{width:100%;height:100%;object-fit:cover;display:block}
+.inv .tag{position:absolute;left:12px;top:12px;padding:6px 12px;font-size:9px}
+.inv.i1{left:0;top:0;rotate:-5deg;z-index:2}
+.inv.i2{right:0;bottom:0;rotate:5deg}
+.inv:hover{transform:translateY(-12px) scale(1.03);z-index:3;box-shadow:0 40px 70px -30px rgba(92,52,40,.6)}
+.anim .inv-stage .inv{opacity:0;translate:0 40px;transition:opacity 1.2s var(--ease),translate 1.4s var(--ease),transform .8s var(--ease)}
+.anim .inv-stage.in .inv{opacity:1;translate:0 0}
+.anim .inv-stage.in .i2{transition-delay:.2s}
+
+/* festas reais */
+.real{background:var(--ink);color:var(--bg);overflow:hidden}
+.real .head h2,.real .head p{color:inherit}
+.real .head p{color:rgba(251,247,243,.72)}
+.real .tag{background:rgba(255,255,255,.1);color:var(--bg);box-shadow:inset 0 0 0 1px rgba(221,185,166,.5)}
+.reel{position:relative;width:min(300px,78vw);aspect-ratio:9/16;padding:9px;border-radius:32px;background:#1d1715;box-shadow:0 40px 80px -30px rgba(0,0,0,.7),inset 0 0 0 1px rgba(255,255,255,.08)}
+.reel video{width:100%;height:100%;object-fit:cover;border-radius:24px;display:block;background:#000}
+.reel .tag{position:absolute;left:22px;top:22px;z-index:2;pointer-events:none}
+.reel .snd{position:absolute;right:20px;bottom:20px;z-index:2;width:44px;height:44px;border:0;border-radius:50%;background:rgba(0,0,0,.55);color:#fff;cursor:pointer;display:grid;place-items:center}
+.reel .snd svg{width:22px;height:22px}
+.reel .snd[hidden]{display:none}
+.screen-row{display:flex;justify-content:center;align-items:flex-start;gap:clamp(20px,3vw,40px);flex-wrap:wrap}
+.screen-row figure{margin:0;display:grid;justify-items:center;gap:14px}
+.screen-row figcaption{text-align:center;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft);max-width:300px}
+.ig-card{position:relative;display:block;width:min(300px,78vw);aspect-ratio:9/16;overflow:hidden;border-radius:32px;box-shadow:var(--shadow);text-decoration:none;color:#fff;background:#0B2465}
+.ig-card img{position:absolute;left:0;right:0;top:4%;width:100%;height:auto;aspect-ratio:1;object-fit:cover;filter:brightness(.92);transition:transform 1.2s var(--ease)}
+.ig-card:hover img{transform:scale(1.05)}
+.ig-card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 35%,rgba(8,22,64,.85) 70%);pointer-events:none}
+.ig-card>span{z-index:1}
+.ig-play{position:absolute;left:50%;top:62%;translate:-50% -50%;width:72px;height:72px;border-radius:50%;background:rgba(255,255,255,.18);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);display:grid;place-items:center;box-shadow:inset 0 0 0 1px rgba(255,255,255,.5);animation:pulse 2.6s ease-in-out infinite}
+.ig-play svg{width:28px;height:28px;margin-left:4px}
+@keyframes pulse{50%{box-shadow:inset 0 0 0 1px rgba(255,255,255,.5),0 0 0 14px rgba(255,255,255,.08)}}
+.ig-txt{position:absolute;left:0;right:0;top:72%;text-align:center;font-family:var(--serif);font-size:24px;line-height:1.2;padding:0 20px}
+.ig-txt small{display:block;font-family:var(--sans);font-size:10px;letter-spacing:.26em;text-transform:uppercase;opacity:.8;margin-bottom:8px}
+.ig-foot{position:absolute;left:0;right:0;bottom:20px;display:flex;justify-content:center;align-items:center;gap:8px;font-size:12px;letter-spacing:.14em}
+.ig-foot svg{width:18px;height:18px}
+
+/* site personalizado */
+.site{background:var(--white);overflow:hidden}
+.site .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(40px,7vw,100px);align-items:center}
+.site h2{font-size:clamp(36px,5vw,60px);margin:20px 0 22px}
+.site .lead{color:var(--ink-soft);max-width:540px;font-size:17px}
+.feats{list-style:none;margin:30px 0 34px;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.feats li{display:flex;gap:12px;align-items:flex-start;padding:16px;background:var(--bg);font-size:14.5px;color:var(--ink-soft);line-height:1.45}
+.feats b{display:block;font-family:var(--serif);font-weight:500;font-size:19px;color:var(--ink);margin-bottom:2px}
+.feats svg{flex:none;width:26px;height:26px;color:var(--rose-deep);margin-top:2px}
+.phones{position:relative;aspect-ratio:1/1.05;max-width:540px;width:100%;justify-self:center}
+.ph{position:absolute;width:52%;aspect-ratio:9/19;background:#2a1d18;border-radius:36px;padding:9px;box-shadow:var(--shadow)}
+.ph .scr{position:relative;height:100%;border-radius:28px;overflow:hidden;display:flex;flex-direction:column;background:var(--c-bg)}
+.ph.p1{left:2%;top:0;rotate:-5deg;z-index:2;--c-bg:#FBF3F1;--c-ac:#9E2A2B;animation:bob 8s ease-in-out infinite}
+.ph.p2{right:2%;top:9%;rotate:5deg;--c-bg:#F2F6FC;--c-ac:#4E6FA8;animation:bob 8s ease-in-out infinite -4s}
+.ph .cover{position:relative;height:47%;flex:none}
+.ph .cover img{width:100%;height:100%;object-fit:cover}
+.ph .cover::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 45%,var(--c-bg))}
+.ph .nm{position:relative;z-index:1;margin-top:-34px;text-align:center;font-family:var(--script);font-size:clamp(26px,3vw,36px);line-height:1;color:var(--c-ac)}
+.ph .sub{text-align:center;font-size:8px;letter-spacing:.3em;color:var(--ink-soft);margin:6px 0 10px}
+.ph .menu{display:grid;gap:6px;padding:0 12px}
+.ph .menu span{display:flex;align-items:center;gap:8px;padding:8px 10px;background:#fff;border-radius:10px;font-size:9.5px;letter-spacing:.06em;color:var(--ink);box-shadow:0 4px 10px -8px rgba(0,0,0,.4)}
+.ph .menu i{width:16px;height:16px;border-radius:50%;background:var(--c-ac);opacity:.85;flex:none}
+.ph .menu span.on{background:var(--c-ac);color:#fff}
+.ph .menu span.on i{background:#fff}
+.ph .pics{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;padding:10px 12px 0}
+.ph .pics b{aspect-ratio:1;border-radius:6px;background:var(--c-ac);opacity:.18}
+.ph .pics b:nth-child(2n){opacity:.32}
+.site .tag{position:absolute;z-index:3;left:50%;bottom:-4%;translate:-50% 0;white-space:nowrap}
+
+/* pacotes */
+.packs{background:var(--blush)}
+.pack-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2vw,24px);align-items:stretch}
+.pack{position:relative;background:var(--white);display:flex;flex-direction:column;padding:clamp(28px,3vw,40px);box-shadow:var(--shadow-sm);transition:transform .6s var(--ease),box-shadow .6s var(--ease)}
+.pack:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+.pack::before{content:"";position:absolute;inset:10px;border:1px solid var(--gold-soft);opacity:.55;pointer-events:none}
+.pack .num{font-family:var(--serif);font-style:italic;font-size:18px;color:var(--gold)}
+.pack h3{font-size:clamp(30px,2.8vw,36px);margin:10px 0 0}
+@media (min-width:941px){.pack h3{min-height:2.16em}}
+.pack .for{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-soft);margin-top:10px}
+.pack .price{display:flex;align-items:baseline;gap:6px;margin:26px 0 6px;font-family:var(--serif);color:var(--ink)}
+.pack .price small{font-size:20px}
+.pack .price b{font-weight:500;font-size:clamp(46px,4.4vw,56px);line-height:1}
+.pack .price i{font-style:normal;font-size:24px}
+.pack .desc{color:var(--ink-soft);font-size:15.5px;padding-bottom:24px;border-bottom:1px solid var(--line)}
+.pack .group{margin-top:22px}
+.pack .group h4{margin:0 0 8px;font-size:10.5px;font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:var(--gold)}
+.pack ul{list-style:none;margin:0;padding:0;display:grid;gap:7px}
+.pack li{position:relative;padding-left:22px;font-size:15.5px;line-height:1.5}
+.pack li::before{content:"";position:absolute;left:2px;top:.62em;width:9px;height:1px;background:var(--gold)}
+.pack details{margin-top:10px;border-top:1px dashed var(--line)}
+.pack details:last-of-type{border-bottom:1px dashed var(--line)}
+.pack summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:10px;padding:12px 0;font-size:13.5px;color:var(--ink)}
+.pack summary::-webkit-details-marker{display:none}
+.pack summary::after{content:"+";font-family:var(--serif);font-size:22px;line-height:1;color:var(--gold);transition:transform .3s}
+.pack details[open] summary::after{transform:rotate(45deg)}
+.pack details ul{padding:0 0 14px}
+.pack details li{font-size:14px;color:var(--ink-soft)}
+.pack .spacer{flex:1;min-height:28px}
+.pack .btn{width:100%}
+.packs-note{text-align:center;margin-top:28px;font-size:13.5px;color:var(--ink-soft)}
+.pack .see{border:0;background:none;padding:0;cursor:pointer;font:inherit;display:inline-flex;align-items:center;gap:10px;margin-top:22px;font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);text-decoration:none}
+.pack .see:hover{color:var(--ink)}
+.pack .see i{font-style:normal;transition:transform .4s var(--ease)}
+.pack .see:hover i{transform:translateX(4px)}
+
+/* comparativo */
+.compare{margin-top:clamp(56px,7vw,88px);background:var(--white);padding:clamp(20px,3.5vw,44px)}
+.compare h3{font-size:clamp(26px,3vw,34px);text-align:center;margin-bottom:24px}
+.compare table{width:100%;border-collapse:collapse}
+.compare th,.compare td{padding:12px 6px;border-bottom:1px solid var(--line);text-align:center;font-weight:400}
+.compare th:first-child,.compare td:first-child{text-align:left;padding-left:0}
+.compare thead th{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-soft);vertical-align:bottom}
+.compare thead th b{display:block;font-family:var(--serif);font-weight:500;font-size:20px;letter-spacing:0;text-transform:none;color:var(--ink)}
+.compare td:first-child{font-size:15px}
+.compare td:not(:first-child){width:15%}
+.compare .y{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--gold)}
+.compare .n{display:inline-block;width:12px;height:1px;background:var(--nude-2);vertical-align:middle}
+.compare tr.sep td{padding-top:22px;font-size:10.5px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);border-bottom:0}
+
+/* como funciona */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--line)}
+.step{padding:34px clamp(16px,2.2vw,30px) 10px;border-right:1px solid var(--line)}
+.step:last-child{border-right:0}
+.step .n{font-family:var(--serif);font-size:58px;line-height:1;color:var(--gold-soft)}
+.step h3{font-family:var(--sans);font-weight:500;font-size:13px;letter-spacing:.22em;text-transform:uppercase;margin:20px 0 12px;line-height:1.5}
+.step p{color:var(--ink-soft);font-size:15.5px}
+
+/* final */
+.final{position:relative;overflow:hidden;background:var(--ink);color:var(--bg);text-align:center}
+.final::before{content:"";position:absolute;inset:-40% 10% auto;height:120%;background:radial-gradient(closest-side,rgba(235,195,191,.25),transparent);pointer-events:none}
+.final .wrap{position:relative;z-index:1;display:grid;justify-items:center;gap:24px}
+.final .ff{position:absolute;width:clamp(150px,15vw,220px);padding:6px;background:#fff;box-shadow:0 30px 60px -30px rgba(0,0,0,.8);animation:bob 8s ease-in-out infinite;opacity:.95}
+.final .ff img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover}
+.final .ff1{left:4%;top:16%;rotate:-8deg}
+.final .ff2{right:4%;bottom:14%;rotate:7deg;animation-delay:-4s}
+.final svg.crest{width:84px;height:auto;color:var(--gold-soft)}
+.final h2{font-size:clamp(38px,6vw,72px);max-width:900px}
+.final p{color:rgba(251,247,243,.75);max-width:520px;font-size:17.5px}
+.final .btn{margin-top:14px}
+.final .btn-gold:hover{background:var(--bg);color:var(--ink)}
+.final .contact{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 28px;margin-top:10px;font-size:13.5px}
+.final .contact a{color:rgba(251,247,243,.75);text-decoration:none;display:inline-flex;align-items:center;gap:8px}
+.final .contact a:hover{color:var(--gold-soft)}
+.final .contact svg{width:17px;height:17px}
+
+.footer{padding:34px 0 calc(34px + env(safe-area-inset-bottom,0px));background:var(--ink);color:rgba(251,247,243,.55);border-top:1px solid rgba(251,247,243,.1);font-size:12.5px}
+.footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+
+.wa{position:fixed;right:max(16px,env(safe-area-inset-right,0px));bottom:max(16px,env(safe-area-inset-bottom,0px));z-index:40;width:58px;height:58px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;box-shadow:0 14px 30px -12px rgba(59,47,44,.6);transition:transform .35s var(--ease),background .35s}
+.wa:hover{transform:scale(1.06);background:var(--rose-deep)}
+.wa svg{width:26px;height:26px}
+
+/* aparecer ao rolar */
+.anim .rv{opacity:0;transform:translateY(28px);transition:opacity 1s var(--ease),transform 1s var(--ease);transition-delay:var(--d,0s)}
+.anim .rv.in{opacity:1;transform:none}
+
+.scr{font-family:var(--script)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+svg text{font-family:var(--serif)}
+svg .scr{font-family:var(--script)}
+svg .caps{font-family:var(--sans);letter-spacing:.3em}
+
+@media (max-width:1080px){
+  .nav{display:none}
+  .menu-btn{display:grid}
+}
+@media (max-width:940px){
+  .hero .wrap{grid-template-columns:1fr}
+  .about .wrap{grid-template-columns:1fr}
+  .about .head{position:static}
+  .pack-grid{grid-template-columns:1fr;max-width:540px;margin-inline:auto}
+  .steps{grid-template-columns:1fr 1fr}
+  .step:nth-child(2){border-right:0}
+  .step:nth-child(-n+2){border-bottom:1px solid var(--line);padding-bottom:30px}
+  .jrow{grid-template-columns:repeat(3,1fr)}
+  .me .wrap{grid-template-columns:1fr}
+  .invites .wrap{grid-template-columns:1fr}
+  .site .wrap{grid-template-columns:1fr}
+  .phones{max-width:420px}
+  .inv-stage{max-width:440px}
+  .me-photo{max-width:400px}
+  .portrait{width:min(400px,80%)}
+  .final .ff{display:none}
+}
+@media (max-width:640px){
+  body{font-size:16px}
+  .header .wrap{height:68px}
+  .header .btn{display:none}
+  .hero{padding-top:36px}
+  .hero .ctas .btn{flex:1 1 100%}
+  .pieces{grid-template-columns:1fr}
+  .piece:nth-child(odd){border-right:0;padding-right:8px}
+  .piece:nth-child(even){padding-left:8px}
+  .jrow{grid-template-columns:1fr 1fr;gap:8px}
+  .feats{grid-template-columns:1fr}
+  .ph .menu span{font-size:8px;padding:6px 8px}
+  .gi .tag{display:none}
+  .grp-h span{font-size:13px}
+  .gi .tag{left:8px;top:8px;font-size:8px;padding:5px 8px;letter-spacing:.14em}
+  .gi .tag::before{display:none}
+  .gi .ov{padding:30px 10px 10px}
+  .gi .ov b{font-size:17px}
+  .gi .ov small{font-size:8.5px}
+  .tabs{flex-wrap:nowrap;justify-content:flex-start;overflow-x:auto;scrollbar-width:none;margin-inline:calc(-1 * var(--gutter));padding-inline:var(--gutter)}
+  .tabs::-webkit-scrollbar{display:none}
+  .tabs button{padding:10px 14px;font-size:10.5px;letter-spacing:.14em}
+  .portrait{width:74%;order:-1;margin:6px auto 34px}
+  .hero{padding-top:28px}
+  .f1{left:-18%;width:38%}
+  .f2{right:-16%;width:32%}
+  .hello b{font-size:24px}
+  .hello{padding:10px 18px 9px}
+  .me-photo .sig{right:-4%;font-size:24px}
+  .steps{grid-template-columns:1fr}
+  .step{border-right:0;border-bottom:1px solid var(--line);padding:26px 0}
+  .step:last-child{border-bottom:0}
+  .compare th,.compare td{padding:11px 3px}
+  .compare thead th b{font-size:17px}
+  .compare td:first-child{font-size:13.5px}
+  .compare thead th{font-size:9px;letter-spacing:.1em}
+  .lb-prev,.lb-next{top:auto;bottom:max(18px,env(safe-area-inset-bottom,0px));transform:none}
+  .lb-in{padding-bottom:90px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .marq .row{animation:none}
+  .marq{overflow-x:auto}
+  .gi,.portrait .arch img,.float,.final .ff,.ig-play,.ph{animation:none}
+  *{transition-duration:.01ms!important}
+}
+</style>
+</head>
+<body>
+
+<header class="header" id="header">
+  <div class="wrap">
+    <a class="logo" href="#inicio" aria-label="Início">
+      <b class="js-brand">Mary Criativa</b>
+      <small>Identidade visual · XV anos</small>
+    </a>
+    <nav class="nav" aria-label="Seções">
+      <a href="#sobre">Sobre</a>
+      <a href="#aplicacoes">Galeria</a>
+      <a href="#site">Site</a>
+      <a href="#pacotes">Pacotes</a>
+      <a href="#como-funciona">Como funciona</a>
+    </nav>
+    <a class="btn btn-dark js-wa" href="#" data-msg="Oi! Vi o site e quero solicitar um orçamento de Identidade Visual para os meus 15 anos.">Solicitar orçamento</a>
+    <button class="menu-btn" id="menuBtn" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="sheet">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true"><path d="M3 7h18M3 12h18M9 17h12"/></svg>
+    </button>
+  </div>
+</header>
+
+<div class="sheet" id="sheet" aria-hidden="true">
+  <div class="sheet-panel" role="dialog" aria-modal="true" aria-label="Menu">
+    <button class="sheet-close" id="sheetClose" type="button" aria-label="Fechar menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true"><path d="M5 5l14 14M19 5 5 19"/></svg>
+    </button>
+    <a href="#sobre">Sobre <span>01</span></a>
+    <a href="#aplicacoes">Galeria <span>02</span></a>
+    <a href="#convites">Convites <span>03</span></a>
+    <a href="#festa-real">Festas reais <span>04</span></a>
+    <a href="#pacotes">Pacotes <span>05</span></a>
+    <a href="#site">Site da debutante <span>06</span></a>
+    <a href="#como-funciona">Como funciona <span>07</span></a>
+    <a class="btn btn-dark js-wa" href="#" data-msg="Oi! Vi o site e quero solicitar um orçamento de Identidade Visual para os meus 15 anos.">Solicitar orçamento</a>
+    <p class="note">Identidade visual personalizada para debutantes, do convite às lembranças da festa.</p>
+  </div>
+</div>
+
+<main>
+
+<section class="hero" id="inicio">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">Identidade visual para debutantes</span>
+      <h1>Seus 15 anos com uma identidade <span class="scr">só sua</span></h1>
+      <p class="lead">Brasão, monograma, cores e elementos criados exclusivamente para a sua festa, aplicados no convite, nos materiais digitais e em cada detalhe da celebração.</p>
+      <div class="ctas">
+        <a class="btn btn-dark" href="#pacotes">Conhecer os pacotes</a>
+        <a class="btn btn-line" href="#aplicacoes">Ver aplicações</a>
+      </div>
+      <div class="facts">
+        <div><b>3</b>pacotes</div>
+        <div><b>100%</b>personalizado</div>
+        <div><b>10</b>elementos gráficos</div>
+      </div>
+    </div>
+    <div class="portrait">
+      <span class="ring" aria-hidden="true"></span>
+      <div class="arch"><img id="heroImg" src="img/designer/designer.jpg" alt="Designer de identidade visual no estúdio" fetchpriority="high"></div>
+      <button class="float f1" type="button" data-lb="isadora" data-i="0" aria-label="Ver garrafa térmica"><img src="img/projeto-modelo/garrafa.jpg" alt=""></button>
+      <button class="float f2" type="button" data-lb="isadora" data-i="3" aria-label="Ver placa de mesa"><img src="img/projeto-modelo/placa-mesa.jpg" alt=""></button>
+      <div class="hello"><b>Prazer!</b><span>Designer de identidade visual</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="marq" id="marq" aria-label="Fotos de identidades visuais"></div>
+
+<section class="sec me" id="sobre">
+  <div class="wrap">
+    <div class="me-photo rv">
+      <img class="reveal" src="img/designer/designer-sobre.jpg" alt="Foto da designer" loading="lazy">
+      <span class="sig js-brand">Mary Criativa</span>
+    </div>
+    <div class="rv" style="--d:.1s">
+      <span class="eyebrow">Quem cria a sua identidade</span>
+      <h2>Cada identidade começa com <em class="it">uma conversa</em></h2>
+      <p>Sou designer especializada em identidade visual para eventos. Antes de desenhar qualquer coisa, quero entender quem você é, o que você ama e como imagina essa noite.</p>
+      <p>A partir disso, crio uma identidade só sua, pensada para aparecer em cada detalhe da festa, do convite às lembranças.</p>
+      <ul class="me-list"><li><b>Atendimento próximo</b>do início ao fim</li><li><b>Criação personalizada</b>para o seu tema e estilo</li><li><b>Arquivos organizados</b>para usar na festa</li></ul>
+      <a class="btn btn-dark js-wa" href="#" data-msg="Oi! Vi o site e quero conversar sobre a identidade visual dos meus 15 anos.">Vamos conversar</a>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="aplicacoes">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow both">Galeria</span>
+      <h2>Veja identidades visuais que <em class="it">já criei</em></h2>
+      <p>Toque em uma identidade e passe o dedo para ver todas as fotos.</p>
+    </div>
+    <div class="proj-row rv" id="projRow"></div>
+    <div class="proj-nav rv" aria-hidden="true">
+      <button type="button" id="projPrev" aria-label="Anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+      <button type="button" id="projNext" aria-label="Próxima"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+    </div>
+  </div>
+</section>
+
+<section class="sec invites" id="convites">
+  <div class="wrap">
+    <div class="rv">
+      <span class="eyebrow">Convites digitais</span>
+      <h2>Convites que encantam <em class="it">antes da festa</em></h2>
+      <p>O convite é o primeiro contato dos convidados com a sua identidade. Ele chega pelo WhatsApp, com animação, contagem regressiva e botões para confirmar presença, ver a localização e as sugestões de presentes.</p>
+      <div class="chips"><span>Convite infinito ou cinematográfico</span><span>Contagem regressiva</span><span>Confirmar presença</span><span>Localização</span><span>Sugestão de presentes</span><span>Save the Date</span><span>Música opcional</span></div>
+      <p class="inv-note">Incluso nos Pacotes 02 e 03</p>
+      <a class="btn btn-dark" href="#pacotes">Ver os pacotes</a>
+    </div>
+    <div class="inv-stage rv">
+      <button class="inv i1" type="button" data-lb="convites" data-i="0" aria-label="Ampliar convite azul"><img src="img/convites/convite-lais.jpg" alt="Convite digital azul com save the date e contagem regressiva" loading="lazy"></button>
+      <button class="inv i2" type="button" data-lb="convites" data-i="1" aria-label="Ampliar convite vermelho"><img src="img/convites/convite-maria-eloisa.jpg" alt="Convite digital vermelho com save the date e confirmação de presença" loading="lazy"></button>
+    </div>
+  </div>
+</section>
+
+<section class="sec real" id="festa-real">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow both">Festas reais</span>
+      <h2>Do papel para a <em class="it">festa</em></h2>
+      <p>Identidades que criei e que ganharam vida no dia: nas lembranças, na decoração e no telão de LED.</p>
+    </div>
+    <div class="screen-row">
+      <figure class="rv">
+        <div class="reel">
+          <span class="tag">Festa real</span>
+          <video src="video/xv-alicia.mp4" poster="video/xv-alicia.jpg" muted loop playsinline preload="metadata" aria-label="Vídeo da festa XV da Alícia"></video>
+          <button class="snd" type="button" aria-label="Ativar som"></button>
+        </div>
+        <figcaption>XV da Alícia · decoração e lembranças</figcaption>
+      </figure>
+      <figure class="rv" style="--d:.1s">
+        <div class="reel">
+          <span class="tag">Festa real</span>
+          <video src="video/telao-manuela.mp4" poster="video/telao-manuela.jpg" muted loop playsinline preload="metadata" aria-label="Vídeo da arte do telão de LED do XV da Manuela"></video>
+          <button class="snd" type="button" aria-label="Ativar som"></button>
+        </div>
+        <figcaption>XV da Manuela · arte para telão de LED</figcaption>
+      </figure>
+      <figure class="rv" style="--d:.2s">
+        <a class="ig-card" href="https://www.instagram.com/reel/DazEGxWNQfD/" target="_blank" rel="noopener" aria-label="Assistir ao reel da festa no Instagram">
+          <img src="img/projeto-helena/monograma.jpg" alt="" loading="lazy">
+          <span class="ig-play"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5Z"/></svg></span>
+          <span class="ig-txt"><small>Reel no Instagram</small>Assista à festa completa</span>
+          <span class="ig-foot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg><span class="js-ig-name">@marycriativa0</span></span>
+        </a>
+        <figcaption>Mais no Instagram</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="sec site" id="site">
+  <div class="wrap">
+    <div class="rv">
+      <span class="eyebrow">Novo · Site da debutante</span>
+      <h2>Um site só seu para os <em class="it">seus 15 anos</em></h2>
+      <p class="lead">Também crio sites personalizados para debutantes, com a mesma identidade visual da festa. Um endereço único para os convidados acompanharem tudo antes, durante e depois do grande dia.</p>
+      <ul class="feats">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="8" width="17" height="4" rx="1"/><path d="M5 12v8h14v-8M12 8v12M12 8c-1.5-3.5-5.5-3.5-5-1s5 1 5 1Zm0 0c1.5-3.5 5.5-3.5 5-1s-5 1-5 1Z"/></svg><span><b>Lista de presentes</b>Os convidados escolhem o presente pelo site</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M16 5.2a3 3 0 0 1 0 5.6M18 14.5c2 .8 3 2.8 3 5.5"/></svg><span><b>Lista de convidados</b>Controle de quem foi convidado e de quem já confirmou</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8 12.5 2.8 2.8L16.5 9.5"/></svg><span><b>Confirmação de presença</b>O convidado confirma em poucos cliques</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="m21 16-5-5-9 9"/></svg><span><b>Galeria de fotos</b>Ensaio, making of e as fotos da festa</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2.5M9 2h6"/></svg><span><b>Contagem regressiva</b>Para criar expectativa até o dia</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-6-5.6-6-11a6 6 0 0 1 12 0c0 5.4-6 11-6 11Z"/><circle cx="12" cy="10" r="2.3"/></svg><span><b>Local e informações</b>Endereço, mapa, horário e traje</span></li>
+      </ul>
+      <a class="btn btn-dark js-wa" href="#" data-msg="Oi! Vi o site e quero saber sobre o site personalizado para os meus 15 anos.">Quero meu site</a>
+    </div>
+    <div class="phones rv" aria-hidden="true">
+      <div class="ph p1"><div class="scr">
+        <div class="cover"><img src="img/site/debutante-vermelho.jpg" alt="" loading="lazy"></div>
+        <div class="nm">Maria Eloisa</div><div class="sub">XV ANOS · 10 . 07 . 2026</div>
+        <div class="menu"><span class="on"><i></i>Confirmar presença</span><span><i></i>Lista de presentes</span><span><i></i>Galeria de fotos</span><span><i></i>Local da festa</span></div>
+      </div></div>
+      <div class="ph p2"><div class="scr">
+        <div class="cover"><img src="img/site/debutante-azul.jpg" alt="" loading="lazy"></div>
+        <div class="nm">Laís</div><div class="sub">XV ANOS · 17 . 12 . 2026</div>
+        <div class="menu"><span><i></i>Lista de convidados</span><span class="on"><i></i>Galeria de fotos</span></div>
+        <div class="pics"><b></b><b></b><b></b><b></b><b></b><b></b></div>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec packs" id="pacotes">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow both">Escolha seu pacote</span>
+      <h2>Três formas de criar a <em class="it">sua identidade</em></h2>
+      <p>Cada pacote é uma opção diferente, de acordo com o nível de personalização que você deseja para a sua festa.</p>
+    </div>
+    <div class="pack-grid" id="packs"></div>
+    <p class="packs-note rv">Ficou com dúvida sobre qual escolher? <a class="js-wa" href="#" data-msg="Oi! Vi o site e queria ajuda para escolher o pacote de Identidade Visual ideal para os meus 15 anos.">Me chama no WhatsApp</a> que eu te ajudo.</p>
+
+    <div class="compare rv">
+      <h3>O que cada pacote inclui</h3>
+      <table id="compare"></table>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="como-funciona">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow both">Como funciona</span>
+      <h2>Do primeiro contato à <em class="it">entrega</em></h2>
+    </div>
+    <div class="steps" id="steps"></div>
+  </div>
+</section>
+
+<section class="sec final" id="orcamento">
+  <button class="ff ff1" type="button" data-lb="isadora" data-i="1" aria-label="Ver menu de drinks"><img src="img/projeto-modelo/menu.jpg" alt="" loading="lazy"></button>
+  <button class="ff ff2" type="button" data-lb="isadora" data-i="2" aria-label="Ver pulseira"><img src="img/projeto-modelo/pulseira.jpg" alt="" loading="lazy"></button>
+  <div class="wrap">
+    <svg class="crest rv" viewBox="0 0 120 140" aria-hidden="true"><use href="#crest-plain"/></svg>
+    <h2 class="rv">Seus 15 anos merecem uma identidade só sua.</h2>
+    <p class="rv">Cada detalhe pode carregar a sua personalidade, do convite às lembranças da festa.</p>
+    <a class="btn btn-gold rv js-wa" href="#" data-msg="Oi! Vi o site e quero solicitar um orçamento de Identidade Visual para os meus 15 anos.">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#i-wa"/></svg>Solicitar orçamento</a>
+    <div class="contact rv">
+      <a class="js-wa" href="#" data-msg="Oi! Vi o site de Identidade Visual XV anos."><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#i-wa"/></svg><span id="waText"></span></a>
+      <a class="js-ig" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg><span id="igText"></span></a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <span>© <span id="year"></span> <span class="js-brand">Mary Criativa</span>. Identidade visual para eventos.</span>
+  </div>
+</footer>
+
+<a class="wa js-wa" href="#" data-msg="Oi! Vi o site e quero saber mais sobre a Identidade Visual para 15 anos." aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#i-wa"/></svg>
+</a>
+
+<dialog class="lb" id="lb" aria-label="Visualização ampliada">
+  <div class="lb-in" id="lbIn">
+    <span class="lb-count" id="lbCount"></span>
+    <button class="lb-btn lb-close" id="lbClose" type="button" aria-label="Fechar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M5 5l14 14M19 5 5 19"/></svg></button>
+    <button class="lb-btn lb-prev" id="lbPrev" type="button" aria-label="Anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+    <button class="lb-btn lb-next" id="lbNext" type="button" aria-label="Próxima"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+    <figure class="lb-fig">
+      <div class="lb-media" id="lbMedia"></div>
+      <figcaption><b id="lbTitle"></b><span id="lbText"></span></figcaption>
+    </figure>
+  </div>
+</dialog>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="crest-plain" viewBox="0 0 120 140">
+      <g fill="none" stroke="currentColor" stroke-linejoin="round" stroke-linecap="round">
+        <path d="M42 30 38 13 50 21 60 7 70 21 82 13 78 30Z" stroke-width="1.4"/><path d="M41 35h38" stroke-width="1.4"/>
+        <path d="M34 41h52v36c0 22-26 38-26 38S34 99 34 77Z" stroke-width="1.6"/><path d="M39 46h42v31c0 18-21 31-21 31S39 95 39 77Z" stroke-width=".7"/>
+      </g>
+      <g fill="currentColor"><circle cx="60" cy="5" r="2"/><circle cx="38" cy="11" r="1.6"/><circle cx="82" cy="11" r="1.6"/><circle cx="60" cy="25" r="1.6"/></g>
+      <text x="60" y="88" text-anchor="middle" font-size="30" fill="currentColor" style="font-family:'Cormorant Garamond',Georgia,serif">XV</text>
+    </symbol>
+    <symbol id="i-wa" viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2Zm0 18.15a8.2 8.2 0 0 1-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.21 8.21 0 0 1 6.99-12.53c4.54 0 8.23 3.7 8.23 8.24s-3.69 8.15-8.23 8.15Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.16.04-.31-.02-.43-.06-.13-.56-1.35-.77-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28Z"/></symbol>
+  </defs>
+</svg>
+
+<script>
+/* ============================================================
+   CONFIGURAÇÃO: troque aqui pelos seus dados reais
+   ============================================================ */
+const CONFIG = {
+  marca: "Mary Criativa",              // nome que aparece no topo e no rodapé
+  whatsapp: "5515998404102",           // só números: 55 + DDD + número
+  whatsappTexto: "(15) 99840-4102",    // como aparece no site
+  instagram: "marycriativa0"           // sem o @
+};
+
+/* Os 3 pacotes. Valores oficiais: não alterar. */
+const BASE = ["Brasão personalizado", "Monograma", "Logotipo extenso do nome", "Cartela de cores", "Tipografia", "10 elementos gráficos personalizados"];
+const CONVITE = ["Animação cinematográfica", "Botões interativos", "Música personalizada opcional", "Formato digital para WhatsApp", "Envio fácil pelo WhatsApp"];
+const FILTRO = ["Filtro personalizado com a identidade visual", "Efeitos exclusivos", "Ideal para fotos e Stories durante o evento"];
+const PACOTES = [
+  { num: "Pacote 01", nome: "Identidade Visual", para: "A base da identidade", preco: "780", exemplo: "helena",
+    desc: "A base visual completa para criar uma identidade única para os seus 15 anos. Ideal para quem deseja ter uma identidade visual personalizada e utilizar os elementos em diferentes materiais da festa.",
+    grupos: [{ t: "Identidade", itens: BASE }], detalhes: [] },
+  { num: "Pacote 02", nome: "Identidade Visual + Digitais", para: "Identidade + digitais", preco: "1.400",
+    desc: "Uma experiência mais completa, unindo a identidade visual aos principais materiais digitais da celebração.",
+    grupos: [{ t: "Identidade", itens: BASE }, { t: "Digitais", itens: ["Convite infinito ou cinematográfico", "Save the Date", "Lembrete", "Filtro personalizado para Instagram"] }],
+    detalhes: [{ t: "Sobre o convite cinematográfico", itens: CONVITE }, { t: "Sobre o filtro para Instagram", itens: FILTRO }] },
+  { num: "Pacote 03", nome: "Identidade Visual Completa", para: "Identidade, digitais e evento", preco: "2.200", exemplo: "leticia",
+    desc: "Uma identidade visual completa, pensada para levar a mesma linguagem visual para diferentes momentos e materiais da celebração.",
+    grupos: [{ t: "Identidade", itens: BASE }, { t: "Digitais", itens: ["Convite infinito ou cinematográfico", "Save the Date", "Lembrete", "Filtro personalizado para Instagram"] },
+      { t: "Evento", itens: ["Arte para telão de LED", "Placa de boas-vindas", "5 aplicações da identidade visual em mockups"] }],
+    detalhes: [{ t: "Sobre o convite cinematográfico", itens: CONVITE }, { t: "Sobre o filtro para Instagram", itens: FILTRO },
+      { t: "Sobre as 5 aplicações em mockups", itens: ["Mostram como a identidade fica aplicada em produtos e materiais do evento", "Exemplos: sacola, necessaire, garrafa térmica, papelaria, embalagens, lembranças, placas e outros itens personalizados"] }] }
+];
+
+/* Galeria com abas. Cada projeto tem as suas fotos (pasta img/).
+   r = largura / altura da foto. */
+const PROJETOS = [
+  { id: "isadora", nome: "Sakura", desc: "Flores de cerejeira, pink e rosé gold", capa: "img/projeto-modelo/garrafa.jpg" },
+  { id: "lais", nome: "Flores azuis", desc: "Azul, branco e flores, com coroa e laços", capa: "img/projeto-lais/topo-monograma.jpg" },
+  { id: "helena", nome: "Conto de fadas", desc: "Azul e prata, com carruagem, tiara e sapatinho de cristal", capa: "img/projeto-helena/necessaire.jpg" },
+  { id: "leticia", nome: "Pérolas e laços", desc: "Turquesa, preto e pérolas", capa: "img/projeto-leticia/copo.jpg" },
+  { id: "convites", nome: "Convites digitais", desc: "Save the date, contagem regressiva e confirmação de presença", capa: "img/convites/convite-lais.jpg" }
+];
+
+const GALERIA = [
+  { p: "isadora", src: "img/projeto-modelo/garrafa.jpg", r: 1145 / 1374, nome: "Garrafa térmica", texto: "Garrafa com caixa, tag e flores de cerejeira" },
+  { p: "isadora", src: "img/projeto-modelo/menu.jpg", r: 1145 / 1374, nome: "Menu de drinks", texto: "Menu em acrílico para o bar da festa" },
+  { p: "isadora", src: "img/projeto-modelo/pulseira.jpg", r: 1312 / 1199, nome: "Pulseira de acesso", texto: "Monograma repetido na pulseira da entrada" },
+  { p: "isadora", src: "img/projeto-modelo/placa-mesa.jpg", r: 1312 / 1199, nome: "Placa de mesa", texto: "Número da mesa em acrílico com a identidade" },
+  { p: "isadora", src: "img/projeto-modelo/menu-arco.jpg", r: 1145 / 1374, nome: "Menu em arco", texto: "Acrílico em arco com flores de cerejeira" },
+  { p: "helena", src: "img/projeto-helena/monograma.jpg", r: 1, nome: "Monograma", texto: "Iniciais entrelaçadas com moldura e XV" },
+  { p: "helena", src: "img/projeto-helena/logotipo.jpg", r: 1.5, nome: "Logotipo extenso do nome", texto: "Nome em letra cursiva com tiara, carruagem e sapatinho" },
+  { p: "helena", src: "img/projeto-helena/necessaire-azul.jpg", r: 1, nome: "Necessaire", texto: "Monograma aplicado em relevo" },
+  { p: "helena", src: "img/projeto-helena/necessaire.jpg", r: 1.5, nome: "Necessaire box", texto: "Logotipo, tag e elementos do tema" },
+  { p: "helena", src: "img/projeto-helena/sacola.jpg", r: 1.5, nome: "Sacola", texto: "Logotipo e tag com o monograma" },
+  { p: "leticia", src: "img/projeto-leticia/brasao.jpg", r: 9 / 16, nome: "Brasão", texto: "Brasão com coroa, pérolas, laços e o nome" },
+  { p: "leticia", src: "img/projeto-leticia/carrinho-drinks.jpg", r: 9 / 16, nome: "Carrinho de drinks", texto: "Menu, painel e copos com a identidade" },
+  { p: "leticia", src: "img/projeto-leticia/copo.jpg", r: 9 / 16, nome: "Copo personalizado", texto: "Estampa de corações e brasão aplicado" },
+  { p: "leticia", src: "img/projeto-leticia/caixa-presente.jpg", r: 9 / 16, nome: "Caixa de presente", texto: "Caixa, cartão e fita com o nome" },
+  { p: "leticia", src: "img/projeto-leticia/chinelos.jpg", r: 9 / 16, nome: "Chinelos", texto: "Estampas criadas com a identidade" },
+  { p: "lais", src: "img/projeto-lais/topo-monograma.jpg", r: 1, nome: "Topo com monograma", texto: "Monograma com coroa, flores e laço em acrílico" },
+  { p: "lais", src: "img/projeto-lais/kit-lembrancas.jpg", r: 1145 / 1374, nome: "Kit de lembranças", texto: "Leque, chinelos, caixa com prato e tag de agradecimento" },
+  { p: "convites", src: "img/convites/convite-lais.jpg", r: 2 / 3, nome: "Convite digital azul", texto: "Save the date, contagem regressiva e confirmação de presença" },
+  { p: "convites", src: "img/convites/convite-maria-eloisa.jpg", r: 2 / 3, nome: "Convite digital vermelho", texto: "Brasão com rosas, save the date e botões interativos" }
+];
+
+const PASSOS = [
+  ["Você escolhe o pacote", "Escolha a opção que mais combina com o que você deseja para o seu evento."],
+  ["Conversamos sobre o seu projeto", "Entendemos seu tema, estilo, cores e referências."],
+  ["Sua identidade é criada", "Todos os elementos são desenvolvidos de forma personalizada e harmoniosa."],
+  ["Você recebe sua identidade", "Os arquivos são organizados e entregues para você utilizar no seu evento."]
+];
+
+/* ============================================================ */
+(function () {
+  const root = document.documentElement;
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (!reduce && "IntersectionObserver" in window) root.classList.add("anim");
+  const $ = id => document.getElementById(id);
+
+  const wa = msg => "https://wa.me/" + CONFIG.whatsapp + (msg ? "?text=" + encodeURIComponent(msg) : "");
+  function bindWa(scope) {
+    scope.querySelectorAll(".js-wa").forEach(a => { a.href = wa(a.dataset.msg); a.target = "_blank"; a.rel = "noopener"; });
+  }
+  document.querySelectorAll(".js-brand").forEach(el => el.textContent = CONFIG.marca);
+  document.querySelectorAll(".js-ig").forEach(a => a.href = "https://instagram.com/" + CONFIG.instagram);
+  document.querySelectorAll(".js-ig-name").forEach(el => el.textContent = "@" + CONFIG.instagram);
+  $("waText").textContent = "WhatsApp " + CONFIG.whatsappTexto;
+  $("igText").textContent = "@" + CONFIG.instagram;
+  $("year").textContent = new Date().getFullYear();
+
+  /* parallax leve na foto do topo */
+  const heroImg = $("heroImg");
+
+  /* ordem por cor: rosa, azuis, turquesa e convites */
+  const ORDEM = PROJETOS.map(pr => pr.id);
+
+  /* faixa de fotos em movimento: uma fileira rosa e azul, outra turquesa e convites */
+  const fotos = ORDEM.flatMap(id => GALERIA.filter(g => g.src && g.p === id));
+  const half = fotos.findIndex(g => g.p === "leticia");
+  const rowHtml = arr => { const h = arr.concat(arr).map(g => `<button type="button" data-src="${g.src}" aria-label="Ampliar ${g.nome}"><img src="${g.src}" alt="" loading="lazy" style="aspect-ratio:${g.r}"></button>`).join(""); return h + h; };
+  $("marq").innerHTML = `<div class="row">${rowHtml(fotos.slice(0, half))}</div><div class="row rev">${rowHtml(fotos.slice(half))}</div>`;
+
+  /* galeria: um card por identidade */
+  const byP = id => GALERIA.filter(g => g.p === id);
+  const LISTS = {};
+  PROJETOS.forEach(pr => { LISTS[pr.id] = byP(pr.id); });
+  $("projRow").innerHTML = PROJETOS.map(pr => { const f = LISTS[pr.id]; return `
+    <button class="proj" type="button" data-lb="${pr.id}" data-i="0" aria-label="Ver fotos da identidade ${pr.nome}">
+      <img src="${(f.find(g => g.src === pr.capa) || f[0]).src}" alt="" loading="lazy">
+      <span class="n">${f.length} fotos</span>
+      <span class="pt"><b>${pr.nome}</b><span>Ver galeria <i>→</i></span></span>
+    </button>`; }).join("");
+  const projRow = $("projRow");
+  const step = () => (projRow.querySelector(".proj").offsetWidth + 16);
+  $("projPrev").onclick = () => projRow.scrollBy({ left: -step(), behavior: reduce ? "auto" : "smooth" });
+  $("projNext").onclick = () => projRow.scrollBy({ left: step(), behavior: reduce ? "auto" : "smooth" });
+
+  /* lightbox */
+  const lb = $("lb");
+  let list = [], cur = 0;
+  function show(i) {
+    cur = (i + list.length) % list.length;
+    const m = list[cur];
+    const box = $("lbMedia");
+    const ratio = r => { box.style.aspectRatio = r; box.style.width = r > 1 ? `min(92vw,calc((100dvh - 200px) * ${r}),900px)` : `min(92vw,calc((100dvh - 200px) * ${r}),640px)`; };
+    ratio(m.r);
+    box.innerHTML = `<img src="${m.src}" alt="${m.nome}">`;
+    $("lbTitle").textContent = m.nome;
+    $("lbText").textContent = m.texto + " · " + PROJETOS.find(x => x.id === m.p).nome;
+    $("lbCount").textContent = String(cur + 1).padStart(2, "0") + " / " + String(list.length).padStart(2, "0");
+  }
+  function openLb(arr, i) {
+    list = arr; show(i);
+    if (lb.showModal) lb.showModal(); else lb.setAttribute("open", "");
+    document.body.style.overflow = "hidden";
+  }
+  document.addEventListener("click", ev => {
+    const b = ev.target.closest("[data-lb]");
+    if (b) return openLb(LISTS[b.dataset.lb], +b.dataset.i);
+    const m = ev.target.closest("[data-src]");
+    if (m) openLb(fotos, fotos.findIndex(g => g.src === m.dataset.src));
+  });
+  const closeLb = () => lb.close ? lb.close() : lb.removeAttribute("open");
+  lb.addEventListener("close", () => { document.body.style.overflow = ""; });
+  $("lbClose").onclick = closeLb;
+  $("lbPrev").onclick = () => show(cur - 1);
+  $("lbNext").onclick = () => show(cur + 1);
+  $("lbIn").addEventListener("click", ev => { if (ev.target === $("lbIn")) closeLb(); });
+  lb.addEventListener("keydown", ev => { if (ev.key === "ArrowLeft") show(cur - 1); if (ev.key === "ArrowRight") show(cur + 1); });
+  let tx = null;
+  lb.addEventListener("touchstart", ev => { tx = ev.touches[0].clientX; }, { passive: true });
+  lb.addEventListener("touchend", ev => { if (tx === null) return; const dx = ev.changedTouches[0].clientX - tx; if (Math.abs(dx) > 50) show(cur + (dx < 0 ? 1 : -1)); tx = null; });
+
+  /* pacotes */
+  $("packs").innerHTML = PACOTES.map((p, i) => `
+    <article class="pack rv" style="--d:${i * .1}s">
+      <span class="num">${p.num}</span>
+      <h3>${p.nome}</h3>
+      <span class="for">${p.para}</span>
+      <div class="price"><small>R$</small><b>${p.preco}</b><i>,00</i></div>
+      <p class="desc">${p.desc}</p>
+      ${p.grupos.map(g => `<div class="group"><h4>${g.t}</h4><ul>${g.itens.map(t => `<li>${t}</li>`).join("")}</ul></div>`).join("")}
+      ${p.detalhes.length ? `<div class="group">${p.detalhes.map(d => `<details><summary>${d.t}</summary><ul>${d.itens.map(t => `<li>${t}</li>`).join("")}</ul></details>`).join("")}</div>` : ""}
+      ${p.exemplo ? `<button class="see" type="button" data-lb="${p.exemplo}" data-i="0">Ver na galeria <i>→</i></button>` : ""}
+      <div class="spacer"></div>
+      <a class="btn btn-dark js-wa" href="#" data-msg="Oi! Vi o site e quero o ${p.num}: ${p.nome} (R$ ${p.preco},00) para os meus 15 anos.">Quero este pacote</a>
+    </article>`).join("");
+
+  /* comparativo */
+  const ROWS = [
+    ["Identidade"], ...BASE.map(t => [t, 1, 1, 1]),
+    ["Digitais"], ["Convite infinito ou cinematográfico", 0, 1, 1], ["Save the Date", 0, 1, 1], ["Lembrete", 0, 1, 1], ["Filtro personalizado para Instagram", 0, 1, 1],
+    ["Evento"], ["Arte para telão de LED", 0, 0, 1], ["Placa de boas-vindas", 0, 0, 1], ["5 aplicações em mockups", 0, 0, 1]
+  ];
+  const mark = v => v ? '<span class="y" role="img" aria-label="Incluso"></span>' : '<span class="n" role="img" aria-label="Não incluso"></span>';
+  $("compare").innerHTML = `<thead><tr><th scope="col"><span class="sr">Item</span></th>${PACOTES.map(p => `<th scope="col">${p.num.replace("Pacote ", "Pac. ")}<b>R$ ${p.preco}</b></th>`).join("")}</tr></thead>
+    <tbody>${ROWS.map(r => r.length === 1 ? `<tr class="sep"><td colspan="4">${r[0]}</td></tr>` : `<tr><td>${r[0]}</td>${r.slice(1).map(v => `<td>${mark(v)}</td>`).join("")}</tr>`).join("")}</tbody>`;
+
+  /* passos */
+  $("steps").innerHTML = PASSOS.map(([t, p], i) => `<div class="step rv" style="--d:${i * .08}s"><span class="n">${String(i + 1).padStart(2, "0")}</span><h3>${t}</h3><p>${p}</p></div>`).join("");
+
+  bindWa(document);
+
+  /* videos das festas reais: tocam quando aparecem na tela */
+  const ICON_MUTE = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4Z"/><path d="m16 9 5 6m0-6-5 6"/></svg>';
+  const ICON_SOUND = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4Z"/><path d="M16 9a4 4 0 0 1 0 6M18.5 6.5a8 8 0 0 1 0 11"/></svg>';
+  const vio = "IntersectionObserver" in window && !reduce
+    ? new IntersectionObserver(en => en.forEach(x => { if (x.isIntersecting) x.target.play().catch(() => {}); else x.target.pause(); }), { threshold: .35 })
+    : null;
+  document.querySelectorAll(".reel").forEach(box => {
+    const v = box.querySelector("video"), snd = box.querySelector(".snd");
+    snd.innerHTML = ICON_MUTE;
+    if (vio) vio.observe(v); else { v.controls = true; snd.hidden = true; }
+    snd.onclick = () => {
+      document.querySelectorAll(".reel video").forEach(o => { if (o !== v) { o.muted = true; o.parentNode.querySelector(".snd").innerHTML = ICON_MUTE; } });
+      v.muted = !v.muted;
+      if (!v.muted) v.play().catch(() => {});
+      snd.setAttribute("aria-label", v.muted ? "Ativar som" : "Desativar som");
+      snd.innerHTML = v.muted ? ICON_MUTE : ICON_SOUND;
+    };
+    v.addEventListener("click", () => v.paused ? v.play() : v.pause());
+  });
+
+  /* menu lateral */
+  const sheet = $("sheet"), menuBtn = $("menuBtn");
+  function openSheet() { sheet.classList.add("open"); sheet.setAttribute("aria-hidden", "false"); menuBtn.setAttribute("aria-expanded", "true"); $("sheetClose").focus(); }
+  function closeSheet() { if (!sheet.classList.contains("open")) return; sheet.classList.remove("open"); sheet.setAttribute("aria-hidden", "true"); menuBtn.setAttribute("aria-expanded", "false"); }
+  menuBtn.onclick = openSheet;
+  $("sheetClose").onclick = closeSheet;
+  sheet.addEventListener("click", ev => { if (ev.target === sheet || ev.target.closest("a")) closeSheet(); });
+  addEventListener("keydown", ev => { if (ev.key === "Escape") closeSheet(); });
+
+  /* rolagem */
+  const header = $("header");
+  let ticking = false;
+  addEventListener("scroll", () => { if (!ticking) { ticking = true; requestAnimationFrame(() => {
+    header.classList.toggle("scrolled", scrollY > 10);
+    if (!reduce && scrollY < innerHeight * 1.2) heroImg.style.setProperty("--py", (scrollY * .12).toFixed(1) + "px");
+    ticking = false; }); } }, { passive: true });
+
+  /* aparecer ao rolar */
+  const els = document.querySelectorAll(".rv");
+  if (root.classList.contains("anim")) {
+    const io = new IntersectionObserver(en => en.forEach(x => { if (x.isIntersecting) { x.target.classList.add("in"); io.unobserve(x.target); } }), { threshold: .08, rootMargin: "0px 0px -30px 0px" });
+    els.forEach(el => io.observe(el));
+  }
+  requestAnimationFrame(() => document.querySelector(".hero").classList.add("ready"));
+})();
+</script>
+</body>
+</html>
